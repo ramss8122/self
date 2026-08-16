@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Chef's Seasonal Cake Specials & Limited Edition Gourmet Bakes. Small-batch seasonal cakes, luxury gift hampers and pastries." />
+  <title>Chef's Seasonal Specials</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+    .cakes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      row-gap: 38px;
+      padding-top: 8px;
+    }
+
+    .page-hero-content .eyebrow,
+    .section-title span,
+    .cake-card-badge,
+    .service-tag,
+    .tag {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .page-hero-content h1,
+    .section-title h2,
+    .section-head h2,
+    .cake-card-body h3,
+    .step-card h4,
+    .offer-banner-content h2 {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #1b2e3c;
+      font-weight: 700;
+    }
+
+    .page-hero-content h1 {
+      font-size: clamp(34px, 5vw, 64px);
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin-bottom: 14px;
+    }
+
+    .page-hero-content p,
+    .section-title p,
+    .cake-card-body p,
+    .step-card p,
+    .offer-banner-content p {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      color: #5b6c7a;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .page-hero-content .eyebrow,
+    .section-title span {
+      color: var(--pink-dark);
+      font-size: 11px;
+    }
+
+    .section-title p,
+    .page-hero-content p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title,
+    .page-hero-content {
+      text-align: center;
+    }
+
+    .section-title > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 500px) {
+      .page-hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
+      .section-title h2 { font-size: clamp(26px, 7vw, 38px); }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="../index.html">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="cakes.html" class="active">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="cakes.html" class="">All Cakes Collection</a>
+            <a href="wedding.html" class="">Wedding Tiers 💍</a>
+            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
+            <a href="specials.html" class="active">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="delivery.html" class="">Delivery & Care 🚚</a>
+            <a href="faq.html" class="">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="../index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../home2.html">Home 2 (Artisan Studio)</a>
+    <a href="cakes.html" class="">All Cakes Collection</a>
+    <a href="wedding.html" class="">Wedding Cakes 💍</a>
+    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
+    <a href="specials.html" class="active">Chef's Specials 🔥</a>
+    <a href="about.html" class="">About Us</a>
+    <a href="gallery.html" class="">Gallery</a>
+    <a href="services.html" class="">Services & Pricing</a>
+    <a href="delivery.html" class="">Delivery & Care 🚚</a>
+    <a href="faq.html" class="">FAQ Guide ❓</a>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="hero">
+  <div class="hero-bg"
+    style="background-image: url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1600&auto=format&fit=crop&q=80');">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
+  <span
+    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
+    class="fade-in-up">✦ Limited Edition Small-Batch ✦</span>
+  <h1 class="fade-in-up delay-1"
+    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+    Chef's Seasonal<br /><span style="color:var(--pink-dark);font-style:italic;">Cake Specials</span>
+  </h1>
+  <p class="fade-in-up delay-2"
+    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
+    Exclusive seasonal creations baked in limited quantities each week featuring rare harvest fruits, European pralines, and exotic spice infusions.
+  </p>
+  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <a href="../pages/booking.html" class="btn-primary">🍓 Reserve Seasonal Cake</a>
+    <a href="#seasonal-menu" class="btn-secondary">View Weekly Menu →</a>
+  </div>
+
+  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        Weekly</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Flavor Rotations</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        100%</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Seasonal Harvest</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        Limited</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Small Batches</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- ===================== SPECIALS GRID ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>This Month's Exclusive Bakes</span>
+        <h2>Limited Quantity Creations</h2>
+        <p>Available while weekly ingredients last. Pre-order recommended.</p>
+      </div>
+
+      <div class="cakes-grid">
+        
+        <div class="cake-card fade-in-up">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&auto=format&fit=crop&q=80" alt="Lotus Biscoff Speculoos Cake" loading="lazy" />
+            <span class="cake-card-badge">Seasonal Hit 🍯</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(340 reviews)</span></div>
+            <h3>Lotus Biscoff Speculoos Bomb</h3>
+            <p>Spiced cookie butter infused sponge with caramelized cream cheese and whole crunchy Belgian speculoos biscuits.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,400 <span>/ 1kg</span></div>
+              <a href="booking.html" class="btn-sm">Order Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-1">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format&fit=crop&q=80" alt="Sicilian Pistachio Raspberry" loading="lazy" />
+            <span class="cake-card-badge" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:var(--text-dark);">Artisan Pistachio 🌰</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(195 reviews)</span></div>
+            <h3>Sicilian Pistachio & Wild Raspberry</h3>
+            <p>100% pure Bronte pistachio paste sponge layered with tart wild raspberry coulis and white chocolate mousse.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,800 <span>/ 1kg</span></div>
+              <a href="booking.html" class="btn-sm">Order Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-2">
+          <div class="cake-card-img">
+            <img src="/dist/assets/image.png" alt="Parisian Macaron Gift Hamper" loading="lazy" />
+            <span class="cake-card-badge">Luxury Hamper 🎁</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(512 reviews)</span></div>
+            <h3>Parisian Royal Macaron & Cake Hamper</h3>
+            <p>Luxury gold-foiled celebration box with 1 mini celebration cake, 6 assorted French macarons, and birthday sparklers.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹1,950 <span>/ Set</span></div>
+              <a href="booking.html" class="btn-sm">Order Set →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch — same-day enquiries, location, opening hours, and our contact form." />
+  <title>Contact Us</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    /* Grid Layout */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+/* Individual Card Styling */
+.contact-info-card {
+  background-color: #fff0f5; /* Light pink background */
+  border: 1px solid #f8c8dc;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.contact-info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styling */
+.ci-icon {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+  background-color: #ffffff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* Title Styling */
+.contact-info-card h4 {
+  font-size: 1.2rem;
+  color: #333333;
+  margin: 8px 0 10px 0;
+  font-weight: 600;
+}
+
+/* Text Content Styling */
+.contact-info-card p {
+  font-size: 0.95rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+    @media(max-width:768px){ .contact-layout{ grid-template-columns:1fr; } }
+    .faq-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: var(--card-shadow);
+    }
+    .faq-question {
+      padding: 18px 22px;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+    .faq-question:hover { color: var(--pink-dark); }
+    .faq-question .arrow { font-size: 12px; color: var(--pink-dark); transition: transform 0.3s; }
+    .faq-answer {
+      padding: 0 22px 18px;
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      display: none;
+    }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-item.open .arrow { transform: rotate(180deg); }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="../index.html">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="cakes.html" class="">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="cakes.html" class="">All Cakes Collection</a>
+            <a href="wedding.html" class="">Wedding Tiers 💍</a>
+            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
+            <a href="specials.html" class="">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="delivery.html" class="">Delivery & Care 🚚</a>
+            <a href="faq.html" class="">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="../index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../home2.html">Home 2 (Artisan Studio)</a>
+    <a href="cakes.html" class="">All Cakes Collection</a>
+    <a href="wedding.html" class="">Wedding Cakes 💍</a>
+    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
+    <a href="specials.html" class="">Chef's Specials 🔥</a>
+    <a href="about.html" class="">About Us</a>
+    <a href="gallery.html" class="">Gallery</a>
+    <a href="services.html" class="">Services & Pricing</a>
+    <a href="delivery.html" class="">Delivery & Care 🚚</a>
+    <a href="faq.html" class="">FAQ Guide ❓</a>
+    <a href="contact.html" class="active">Contact Us</a>
+    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="hero">
+  <div class="hero-bg"
+    style="background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?w=1800&auto=format&fit=crop&q=80');">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" >
+    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
+  <span
+    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
+    class="fade-in-up">✦ We'd Love to Hear from You ✦</span>
+  <h1 class="fade-in-up delay-1"
+    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+    Get in Touch<br /><span style="color:var(--pink-dark);font-style:italic;">With Our Team</span>
+  </h1>
+  <p class="fade-in-up delay-2"
+    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
+    Got a question, a special request or just want to say hi? We're here to help — always.
+  </p>
+  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <a href="#contact-form" class="btn-primary">✉️ Send Message</a>
+    <a href="tel:+1234567890" class="btn-secondary">Call Us Directly →</a>
+  </div>
+
+  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        1hr</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Response Time</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        7 Days</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Store Open</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        100%</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Customer Delight</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- CONTACT INFO CARDS -->
+  <section class="section-sm bg-white">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card fade-in-up">
+          <div class="ci-icon">📍</div>
+          <h4>Visit Our Bakehouse</h4>
+          <p>Our Bakery<br/>Coimbatore – 600 017<br/>Tamil Nadu, India</p>
+        </div>
+        <div class="contact-info-card fade-in-up delay-1">
+          <div class="ci-icon">📞</div>
+          <h4>Call or WhatsApp</h4>
+          <p>8122932402<br/>+91 91234 56789<br/>(Mon–Sat, 8am–8pm)</p>
+        </div>
+        <div class="contact-info-card fade-in-up delay-2">
+          <div class="ci-icon">📧</div>
+          <h4>Email Us</h4>
+          <p>krams5240@gmail.com<br/>krams5240@gmail.com<br/>Reply within 2 hours</p>
+        </div>
+        <div class="contact-info-card fade-in-up delay-3">
+          <div class="ci-icon">🕐</div>
+          <h4>Opening Hours</h4>
+          <p>Mon–Fri: 8am – 9pm<br/>Saturday: 8am – 10pm<br/>Sunday: 9am – 8pm</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORM + MAP -->
+  <section class="section bg-blush">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Form -->
+        <div class="fade-in-up">
+          <span class="eyebrow">Drop Us a Message</span>
+          <h2 style="font-size:clamp(26px,3vw,38px);margin-bottom:8px;">We Reply<br/><span style="color:var(--pink-dark);">within 2 Hours</span></h2>
+          <p style="font-size:14px;color:var(--text-mid);margin-bottom:32px;">For same-day orders, please call us directly on WhatsApp for the fastest response.</p>
+
+          <form data-validate id="contactForm" style="background:white;border-radius:var(--radius-lg);padding:36px;box-shadow:var(--card-shadow);">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" class="form-control" placeholder="e.g. Priya" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" class="form-control" placeholder="e.g. Sharma" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" class="form-control" placeholder="priya@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone / WhatsApp</label>
+              <input type="tel" id="phone" class="form-control" placeholder="8122932402" />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" class="form-control">
+                <option value="">Select a topic…</option>
+                <option>Custom Cake Enquiry</option>
+                <option>Wedding Cake Consultation</option>
+                <option>Same-Day Order Query</option>
+                <option>Pricing & Packages</option>
+                <option>Delivery Coverage</option>
+                <option>Masterclass Booking</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Your Message</label>
+              <textarea id="message" class="form-control" placeholder="Tell us what you're looking for — occasion date, cake size, design ideas, flavour preferences…" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">Send Message 💌</button>
+          </form>
+        </div>
+
+        <!-- Map + Quick Info -->
+        <div class="fade-in-up delay-2">
+          <div style="background:white;border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--card-shadow);margin-bottom:24px;border:1.5px solid var(--blue-light);">
+            <div style="padding:14px 20px;background:linear-gradient(135deg,var(--blue-light),var(--pink-light));display:flex;align-items:center;justify-content:space-between;">
+              <div style="font-weight:700;font-size:14px;color:var(--text-dark);">📍 Our Bakery, Coimbatore</div>
+              <a href="https://maps.google.com/?q=Coimbatore,TamilNadu" target="_blank" class="btn-sm" style="font-size:11px;padding:5px 12px;">Open Maps ↗</a>
+            </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125322.44173117497!2d76.88483259999999!3d11.0168445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81e183ed282!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              width="100%"
+              height="300"
+              style="border:0;display:block;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div style="background:white;border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);border:1px solid rgba(168,216,234,0.3);">
+            <h3 style="font-size:18px;margin-bottom:16px;">Coimbatore Delivery Coverage</h3>
+            <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;">We deliver fresh cakes across all major hubs in Coimbatore. Same-day express delivery available for orders placed before 4 PM.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="tag">RS Puram</span>
+              <span class="tag">Gandhipuram</span>
+              <span class="tag">Peelamedu</span>
+              <span class="tag">Saibaba Colony</span>
+              <span class="tag">Race Course</span>
+              <span class="tag">Saravanampatti</span>
+              <span class="tag">Singanallur</span>
+              <span class="tag">Ramanathapuram</span>
+              <span class="tag">Vadavalli</span>
+              <span class="tag">Kovaipudur</span>
+              <span class="tag">Thudiyalur</span>
+              <span class="tag">+ All Area Hubs</span>
+            </div>
+            <p style="font-size:12px;color:var(--text-light);margin-top:14px;">Express delivery: Free for orders above ₹1,999 · Temperature controlled vans</p>
+          </div>
+
+          <!-- Quick Connect -->
+          <div style="background:linear-gradient(135deg,var(--pink-light),var(--blue-light));border-radius:var(--radius-md);padding:24px;margin-top:20px;text-align:center;">
+            <div style="font-size:32px;margin-bottom:8px;">💬</div>
+            <h4 style="font-size:16px;color:var(--text-dark);margin-bottom:6px;">Instant Orders & Enquiries?</h4>
+            <p style="font-size:13px;color:var(--text-mid);margin-bottom:16px;">WhatsApp us directly at <strong>8122932402</strong> for immediate confirmation.</p>
+            <a href="https://wa.me/918122932402" target="_blank" class="btn-primary">WhatsApp 8122932402 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section bg-white">
+    <div class="container" style="max-width:800px;">
+      <div class="section-head fade-in-up">
+        <span class="eyebrow">✦ Quick Answers ✦</span>
+        <h2>Frequently Asked Questions</h2>
+        <div class="divider"></div>
+      </div>
+
+      <div id="faqAccordion" class="fade-in-up">
+        <div class="faq-item open">
+          <div class="faq-question">How far in advance should I order a custom cake? <span class="arrow">▼</span></div>
+          <div class="faq-answer">For standard custom cakes, we recommend at least 48 hours' notice. For wedding or multi-tier cakes, we suggest booking 2–4 weeks in advance to allow time for design consultation and preparation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you offer same-day delivery? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Yes! We offer same-day delivery for orders placed before 12 PM from our standard menu. Custom cakes may not be available same-day. WhatsApp us for urgent enquiries.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I request a specific flavour not on the menu? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Absolutely! We love experimenting. Contact us and describe your ideal flavour — our development chef will work to create something special for you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do you cater for dietary requirements (vegan, eggless, gluten-free)? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Yes, we offer eggless cakes across our entire menu at no extra charge. Vegan and gluten-free options are available on request — please mention your requirements when ordering.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What is your cancellation and refund policy? <span class="arrow">▼</span></div>
+          <div class="faq-answer">Orders cancelled 24+ hours before delivery receive a full refund. Cancellations within 24 hours are eligible for a 50% store credit. Custom cakes with completed design work are non-refundable once work has begun.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const wasOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!wasOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

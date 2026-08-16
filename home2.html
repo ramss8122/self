@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Artisan Studio — Handcrafted celebration cakes, bespoke wedding tiers, and same-day delivery. Sweet moments start here." />
+  <title>Artisan Cakes & Custom Studio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Specific Home 2 Hero & Card Enhancements */
+    .hero-home2 {
+      position: relative;
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--text-dark);
+      isolation: isolate;
+      clear: both;
+    }
+    .hero-home2-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('https://images.unsplash.com/photo-1517433670267-08bbd4be890f?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      transform: scale(1.03);
+      transition: transform 7s ease-out;
+    }
+    .hero-home2:hover .hero-home2-bg {
+      transform: scale(1.08);
+    }
+    .hero-home2-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.94) 0%,
+        rgba(255, 255, 255, 0.88) 38%,
+        rgba(255, 255, 255, 0.55) 65%,
+        rgba(255, 255, 255, 0.15) 100%
+      );
+    }
+    @media (max-width: 900px) {
+      .hero-home2 {
+        min-height: 100vh;
+      }
+      .hero-home2-overlay {
+        background: linear-gradient(
+          to bottom,
+          rgba(255, 255, 255, 0.95) 0%,
+          rgba(255, 255, 255, 0.90) 60%,
+          rgba(255, 255, 255, 0.65) 100%
+        );
+      }
+    }
+    @media (prefers-color-scheme: dark) {
+      .hero-home2-overlay {
+        background: linear-gradient(
+          105deg,
+          rgba(20, 20, 20, 0.94) 0%,
+          rgba(20, 20, 20, 0.85) 45%,
+          rgba(20, 20, 20, 0.4) 100%
+        );
+      }
+    }
+    html[data-theme="dark"] .hero-home2-overlay {
+      background: linear-gradient(
+        105deg,
+        rgba(20, 20, 20, 0.94) 0%,
+        rgba(20, 20, 20, 0.85) 45%,
+        rgba(20, 20, 20, 0.4) 100%
+      );
+    }
+
+    /* Interactive Category Circles */
+    .cat-circle-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 992px) {
+      .cat-circle-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (max-width: 576px) {
+      .cat-circle-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+    }
+    .cat-circle-card {
+      background: var(--white);
+      border: 1.5px solid var(--blue-light);
+      border-radius: var(--radius-md);
+      padding: 24px 16px;
+      text-align: center;
+      transition: var(--transition);
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+    }
+    .cat-circle-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--pink);
+      box-shadow: var(--hover-shadow);
+    }
+    .cat-circle-card .icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      margin-bottom: 14px;
+      transition: transform 0.4s ease;
+    }
+    .cat-circle-card:hover .icon-wrap {
+      transform: scale(1.15) rotate(8deg);
+    }
+    .cat-circle-card h4 {
+      font-size: 15px;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .cat-circle-card p {
+      font-size: 11px;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+
+    /* FAQ accordion styling */
+    .faq-list {
+      max-width: 780px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .faq-item {
+      background: var(--white);
+      border: 1.5px solid var(--blue-light);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(168,216,234,0.15);
+      transition: var(--transition);
+    }
+    .faq-item.active {
+      border-color: var(--pink);
+      box-shadow: var(--pink-shadow);
+    }
+    .faq-question {
+      padding: 18px 24px;
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      gap: 16px;
+    }
+    .faq-question .faq-arrow {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      transition: transform 0.3s ease, background 0.3s ease;
+      flex-shrink: 0;
+    }
+    .faq-item.active .faq-arrow {
+      transform: rotate(180deg);
+      background: var(--pink);
+      color: white;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 24px;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 24px 20px;
+    }
+
+    /* ---- Hero Inner Layout ---- */
+    .hero-home2-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 140px 32px 80px;
+      display: flex;
+      align-items: center;
+    }
+    .hero-home2-text {
+      max-width: 680px;
+    }
+
+    /* ---- Hero Badge Pill ---- */
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      padding: 6px 18px;
+      border-radius: 50px;
+      border: 1.5px solid var(--pink-light);
+      margin-bottom: 18px;
+      box-shadow: 0 4px 16px rgba(255,175,197,0.3);
+    }
+    .hero-badge-pill span {
+      color: var(--pink-dark);
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    /* ---- Hero H1 ---- */
+    .hero-home2-h1 {
+      font-size: clamp(34px, 5.8vw, 68px);
+      color: var(--text-dark);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero-gradient-text {
+      color: var(--pink-dark);
+      font-style: italic;
+      background: linear-gradient(135deg, var(--pink-dark), #e05275);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---- Hero Description ---- */
+    .hero-home2-desc {
+      font-size: 17px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 34px;
+      max-width: 520px;
+      
+    }
+
+    /* ---- Hero Buttons ---- */
+    .hero-home2-btns {
+      margin-bottom: 44px;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* ---- Trust Stats ---- */
+    .hero-trust-stats {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+      padding-top: 24px;
+      border-top: 1.5px solid rgba(168,216,234,0.5);
+    }
+    .hero-trust-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-trust-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .hero-trust-num.pink { color: var(--pink-dark); }
+    .hero-trust-label { font-size: 12px; color: var(--text-mid); font-weight: 600; }
+    .hero-trust-divider { width: 1px; height: 40px; background: var(--blue-light); flex-shrink: 0; }
+
+    /* ---- Responsive Hero ---- */
+    @media (max-width: 992px) {
+      .hero-home2-inner { padding: 110px 24px 60px; }
+      .hero-home2-text { max-width: 100%; text-align: center; }
+      .hero-home2-desc { max-width: 100%; }
+      .hero-badge-pill { justify-content: center; }
+      .hero-home2-btns { justify-content: center; }
+      .hero-trust-stats { justify-content: center; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-home2-inner { padding: 90px 20px 50px; }
+      .hero-home2-h1 { font-size: clamp(28px, 7vw, 48px); }
+      .hero-home2-desc { font-size: 15px; }
+      .hero-home2-btns { flex-direction: column; align-items: stretch; }
+      .hero-home2-btns a { width: 100%; text-align: center; justify-content: center; }
+      .hero-trust-stats { gap: 16px; }
+      .hero-trust-divider { display: none; }
+      .hero-home2 { min-height: clamp(360px, 58vh, 540px); }
+    }
+
+    @media (max-width: 480px) {
+      .hero-home2-inner { padding: 80px 16px 40px; }
+      .hero-home2-h1 { font-size: clamp(26px, 8vw, 40px); }
+      .hero-trust-num { font-size: 20px; }
+    }
+
+    /* ==========================
+       Additional responsive tweaks for Home 2 only
+       - Hero background sizing & positioning
+       - Section title responsive typography
+       - Cake categories theming & responsive text
+       - Testimonials / section-title consistency
+       These rules are intentionally scoped inside this page's style block so they do not affect other pages.
+    ========================== */
+
+    /* Ensure hero background covers full width and adapts on different screens */
+    .hero-home2-bg {
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      width: 100%;
+      left: 0;
+      right: 0;
+    }
+
+    /* Slightly different hero heights for large / medium / small screens to avoid excessive cropping */
+    @media (min-width: 1200px) {
+      .hero-home2 { min-height: clamp(520px, 78vh, 900px); }
+    }
+    @media (max-width: 1199px) and (min-width: 769px) {
+      .hero-home2 { min-height: clamp(420px, 70vh, 720px); }
+      .hero-home2-inner { padding: 110px 24px 60px; }
+    }
+    @media (max-width: 768px) {
+      .hero-home2 { min-height: clamp(340px, 52vh, 520px); }
+      .hero-home2-bg {
+        background-position: center top;
+        transform: scale(1);
+      }
+      .hero-home2-inner { padding: 80px 16px 40px; }
+    }
+
+    /* Responsive Section Title styling (keeps existing content unchanged) */
+    .section-title {
+      text-align: center;
+      margin-bottom: 28px;
+      display: block;
+    }
+    .section-title span {
+      display: block;
+      font-size: clamp(11px, 1.4vw, 13px);
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--pink-dark);
+      margin-bottom: 10px;
+    }
+    .section-title h2 {
+      font-size: clamp(22px, 4vw, 36px);
+      line-height: 1.12;
+      margin-bottom: 12px;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+    .section-title p {
+      font-size: clamp(13px, 1.6vw, 16px);
+      color: var(--text-mid);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Cake Categories: pink + light-blue themed boxes and responsive text */
+    .cat-circle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+      align-items: start;
+    }
+    .cat-circle-card {
+      background: linear-gradient(135deg, rgba(255,175,197,0.10), rgba(212,238,247,0.10));
+      border: 1px solid rgba(168,216,234,0.18);
+      color: var(--text-dark);
+      transition: var(--transition);
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.04);
+    }
+    .cat-circle-card:hover { transform: translateY(-6px); box-shadow: var(--hover-shadow); }
+
+    /* Icon circle with pink -> blue gradient */
+    .cat-circle-card .icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink), var(--blue));
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 14px;
+    }
+
+    .cat-circle-card h4 {
+      font-size: clamp(14px, 1.6vw, 16px);
+      margin-bottom: 6px;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+    .cat-circle-card p {
+      font-size: clamp(11px, 1.3vw, 13px);
+      color: var(--text-mid);
+      margin: 0;
+    }
+
+    /* Testimonials: reuse .section-title look and ensure cards/text are responsive */
+    .testimonials .section-title { text-align: center; }
+    .testimonial-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+    .testimonial-card .testi-text {
+      font-size: clamp(14px, 1.6vw, 16px);
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .testimonial-card .testi-author {
+      margin-top: 12px;
+      font-size: clamp(13px, 1.3vw, 14px);
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    @media (max-width: 600px) {
+      .section-title h2 { text-align: center; }
+      .cat-circle-card { padding: 18px 12px; }
+      .cat-circle-card .icon-wrap { width:56px; height:56px; font-size:24px; }
+      .hero-home2-inner { padding-top: 70px; }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="index.html" class="active">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="index.html" class="">Home 1 (Classic Patisserie)</a>
+            <a href="home2.html" class="active">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="pages/cakes.html" class="">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="pages/cakes.html">All Cakes Collection</a>
+            <a href="pages/wedding.html">Wedding Tiers 💍</a>
+            <a href="pages/custom.html">Custom 3D Designs 🎨</a>
+            <a href="pages/specials.html">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="pages/about.html" class="">About Us</a></li>
+        <li><a href="pages/gallery.html" class="">Gallery</a></li>
+        <li><a href="pages/services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="pages/faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="pages/delivery.html">Delivery & Care 🚚</a>
+            <a href="pages/faq.html">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="pages/contact.html" class="">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="pages/booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="index.html" class="">Home 1 (Classic Patisserie)</a>
+    <a href="home2.html" class="active">Home 2 (Artisan Studio)</a>
+    <a href="pages/cakes.html">All Cakes Collection</a>
+    <a href="pages/wedding.html">Wedding Cakes 💍</a>
+    <a href="pages/custom.html">Custom 3D Cakes 🎨</a>
+    <a href="pages/specials.html">Chef's Specials 🔥</a>
+    <a href="pages/about.html">About Us</a>
+    <a href="pages/gallery.html">Gallery</a>
+    <a href="pages/services.html">Services & Pricing</a>
+    <a href="pages/delivery.html">Delivery & Care 🚚</a>
+    <a href="pages/faq.html">FAQ Guide ❓</a>
+    <a href="pages/contact.html">Contact Us</a>
+    <a href="pages/booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== FULL-WIDTH HERO SECTION ===================== -->
+  <section class="hero-home2">
+    <div class="hero-home2-bg"></div>
+    <div class="hero-home2-overlay"></div>
+
+    <div class="hero-home2-inner">
+      <div class="hero-home2-text fade-in-up">
+        
+        <div class="hero-badge-pill">
+          <span>✦ MADE FRESH WITH LOVE ✦</span>
+        </div>
+
+        <h1 class="hero-home2-h1">
+          Sweet Moments<br/>
+          <span class="hero-gradient-text">Start Right Here</span>
+        </h1>
+
+        <p class="hero-home2-desc">
+          Welcome to our artisan confectionery studio. We blend French patisserie heritage with modern cake artistry to craft mouthwatering centerpieces for every milestone celebration.
+        </p>
+
+        <div class="btn-group hero-home2-btns">
+          <a href="pages/booking.html" class="btn-primary">🎂 Order Your Cake</a>
+          <a href="pages/cakes.html" class="btn-secondary">Explore Our Cakes →</a>
+        </div>
+
+        <!-- Trust Stats Badges -->
+        <div class="hero-trust-stats">
+          <div class="hero-trust-item">
+            <div class="hero-trust-num">15,000+</div>
+            <div class="hero-trust-label">Cakes Delivered</div>
+          </div>
+          <div class="hero-trust-divider"></div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-num pink">4.9 ★★★★★</div>
+            <div class="hero-trust-label">5-Star Reviews</div>
+          </div>
+          <div class="hero-trust-divider"></div>
+          <div class="hero-trust-item">
+            <div class="hero-trust-num">2 Hours</div>
+            <div class="hero-trust-label">Express Dispatch</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAKE CATEGORIES SECTION ===================== -->
+  <section class="section" style="background:var(--blush);">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Handcrafted Varieties</span>
+        <h2>Explore By Cake Category</h2>
+        <p>From whimsical birthday bento boxes to majestic 3-tier wedding centerpieces, find your ideal treat.</p>
+      </div>
+
+      <div class="cat-circle-grid">
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up">
+          <div class="icon-wrap">🎂</div>
+          <h4>Birthday Cakes</h4>
+          <p>Custom Themes & Plaques</p>
+        </a>
+
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up delay-1">
+          <div class="icon-wrap">💍</div>
+          <h4>Wedding Tiers</h4>
+          <p>Multi-Tier Masterpieces</p>
+        </a>
+
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up delay-2">
+          <div class="icon-wrap">🍫</div>
+          <h4>Belgian Truffle</h4>
+          <p>70% Dark Cocoa Ganache</p>
+        </a>
+
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up delay-3">
+          <div class="icon-wrap">🍓</div>
+          <h4>Fresh Berry Fruit</h4>
+          <p>Orchard Fresh Medley</p>
+        </a>
+
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up delay-4">
+          <div class="icon-wrap">🎀</div>
+          <h4>Korean Bento</h4>
+          <p>Pocket Aesthetic Treats</p>
+        </a>
+
+        <a href="pages/cakes.html" class="cat-circle-card fade-in-up delay-4">
+          <div class="icon-wrap">🧁</div>
+          <h4>Party Cupcakes</h4>
+          <p>Assorted Box Sets</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FEATURED CAKES SECTION ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Chef's Signature Selection</span>
+        <h2>Featured Cake Creations</h2>
+        <p>Each cake is baked to order using 100% pure organic dairy butter, Belgian chocolates, and Madagascar bourbon vanilla.</p>
+      </div>
+
+      <div class="cakes-grid">
+        
+        <!-- Card 1 -->
+        <div class="cake-card fade-in-up">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format&fit=crop&q=80" alt="Royal Velvet Dream Cake" loading="lazy" />
+            <span class="cake-badge">Bestseller 🔥</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Signature Special</div>
+            <h3 class="cake-title">Royal Velvet & Mascarpone</h3>
+            <p class="cake-desc">Moist crimson cocoa sponge layered with whipped Italian mascarpone and raspberry dust.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$44.00 <span>/ 1kg</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now 🎂</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="cake-card fade-in-up delay-1">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&auto=format&fit=crop&q=80" alt="Strawberry Chantilly Cloud Cake" loading="lazy" />
+            <span class="cake-badge badge-blue">Fresh Berries 🍓</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Fruit Patisserie</div>
+            <h3 class="cake-title">Strawberry Chantilly Cloud</h3>
+            <p class="cake-desc">Featherlight vanilla chiffon layered with fresh mountain strawberries and vanilla chantilly.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$39.00 <span>/ 1kg</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now 🎂</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="cake-card fade-in-up delay-2">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&auto=format&fit=crop&q=80" alt="Nutella Hazelnut Rocher Cake" loading="lazy" />
+            <span class="cake-badge">Deluxe 🌰</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Chocolate Luxe</div>
+            <h3 class="cake-title">Nutella Hazelnut Rocher</h3>
+            <p class="cake-desc">Crispy wafer hazelnut praline, roasted Texas nuts, and melted dark hazelnut ganache.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$52.00 <span>/ 1kg</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now 🎂</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="cake-card fade-in-up delay-3">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&auto=format&fit=crop&q=80" alt="Grand Floral 3-Tier Wedding Cake" loading="lazy" />
+            <span class="cake-badge badge-blue">Royal Tier 👑</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Grand Wedding</div>
+            <h3 class="cake-title">Grand Floral 3-Tier Luxury</h3>
+            <p class="cake-desc">Opulent triple-tier wedding centerpiece adorned with handmade sugar peonies and lace.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$180.00 <span>/ 4kg+</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding 💍</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <!--  -->
+
+        <!-- Card 6 -->
+        <div class="cake-card fade-in-up delay-2">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=600&auto=format&fit=crop&q=80" alt="Lotus Biscoff Speculoos Cake" loading="lazy" />
+            <span class="cake-badge">Trending 🍯</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Biscoff Dream</div>
+            <h3 class="cake-title">Lotus Biscoff Speculoos</h3>
+            <p class="cake-desc">Spiced Belgian cookie butter sponge layered with caramelized cream and crunchy Biscoff topping.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$48.00 <span>/ 1kg</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now 🎂</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 (added) -->
+        <div class="cake-card fade-in-up delay-3">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&auto=format&fit=crop&q=80" alt="Salted Caramel Pecan Cake" loading="lazy" />
+            <span class="cake-badge">Chef's Pick 🍯</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-category">Caramel Indulgence</div>
+            <h3 class="cake-title">Salted Caramel Pecan</h3>
+            <p class="cake-desc">Buttery caramel layers with roasted pecans and a salted caramel drizzle.</p>
+            <div class="cake-footer">
+              <div class="cake-price">$46.00 <span>/ 1kg</span></div>
+              <a href="pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now 🎂</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 (added) -->
+    
+
+      </div>
+
+      <div style="text-align:center;margin-top:48px;">
+        <a href="pages/cakes.html" class="btn-primary" style="font-size:15px;padding:14px 38px;">View Full 30+ Cake Menu →</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== WHY CHOOSE US ===================== -->
+  <section class="section" style="background:linear-gradient(135deg,var(--blue-light),var(--pink-light));">
+    <div class="container">
+      
+      <div class="section-title">
+      <span>Our Promise</span>
+        <h2>Why Customers Choose Our Bakery</h2>
+        <p>We are dedicated to crafting unforgettable memories with highest hygiene and ingredient purity.</p>
+      </div>
+
+      <div class="feature-grid">
+        
+        <div class="feature-card fade-in-up">
+          <div class="feature-icon icon-blue">🧈</div>
+          <h3>100% Pure Organic Butter</h3>
+          <p>Zero hydrogenated vegetable oils or artificial preservatives. We use only pure dairy butter and European cocoa.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-1">
+          <div class="feature-icon icon-pink">⚡</div>
+          <h3>2-Hour Express Delivery</h3>
+          <p>Last-minute celebration? Our climate-controlled delivery vans bring freshly baked cakes in perfect shape.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-2">
+          <div class="feature-icon icon-blue">🌿</div>
+          <h3>100% Eggless & Vegan</h3>
+          <p>Enjoy our entire menu baked eggless with identical ultra-soft texture, plus gluten-free and sugar-free options.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-3">
+          <div class="feature-icon icon-pink">👨‍🍳</div>
+          <h3>Award-Winning Pastry Chefs</h3>
+          <p>Confectionery artists trained in classical French baking with over 15 years of artisan cake sculpting expertise.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== SPECIAL OFFERS & DEALS ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Limited-Time Promotions</span>
+        <h2>Special Monthly Bakery Deals</h2>
+        <p>Save on your celebration cakes with our exclusive packages and limited-time discounts.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+        
+        <!-- Offer 1 -->
+        <div style="background:linear-gradient(145deg,white,var(--pink-light));border:2px solid var(--pink);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--pink-shadow);display:flex;flex-direction:column;justify-content:space-between;" class="fade-in-up">
+          <div>
+            <span style="background:linear-gradient(135deg,var(--pink),var(--pink-dark));color:white;font-size:11px;font-weight:700;padding:5px 14px;border-radius:50px;display:inline-block;margin-bottom:14px;">🎁 BUY 2 GET 1 FREE</span>
+            <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:10px;">Gourmet Cupcake Fiesta</h3>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Order any two 6-pack assorted cupcake boxes and get a third box absolutely complimentary for your party!</p>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,143,173,0.3);">
+            <span style="font-family:monospace;font-size:14px;font-weight:700;color:var(--pink-dark);">CODE: SWEET15</span>
+            <a href="pages/booking.html" class="btn-primary" style="padding:8px 20px;font-size:12px;">Claim Offer 🎂</a>
+          </div>
+        </div>
+
+        <!-- Offer 2 -->
+        <div style="background:linear-gradient(145deg,white,var(--blue-light));border:2px solid var(--blue-dark);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;justify-content:space-between;" class="fade-in-up delay-1">
+          <div>
+            <span style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:var(--text-dark);font-size:11px;font-weight:700;padding:5px 14px;border-radius:50px;display:inline-block;margin-bottom:14px;">🎉 15% FLAT DISCOUNT</span>
+            <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:10px;">First Time Customer Treat</h3>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Enjoy 15% off your first custom cake booking with complimentary candles and personalized cake inscription plaque.</p>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.4);">
+            <span style="font-family:monospace;font-size:14px;font-weight:700;color:var(--text-dark);">CODE: FIRST15</span>
+            <a href="pages/booking.html" class="btn-primary" style="padding:8px 20px;font-size:12px;">Order Now 🎂</a>
+          </div>
+        </div>
+
+        <!-- Offer 3 -->
+        <div style="background:linear-gradient(145deg,white,var(--blush));border:2px solid var(--pink-dark);border-radius:var(--radius-md);padding:32px 28px;box-shadow:var(--card-shadow);display:flex;flex-direction:column;justify-content:space-between;" class="fade-in-up delay-2">
+          <div>
+            <span style="background:linear-gradient(135deg,var(--pink-dark),#e05275);color:white;font-size:11px;font-weight:700;padding:5px 14px;border-radius:50px;display:inline-block;margin-bottom:14px;">💍 BRIDAL COMPLIMENTARY</span>
+            <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:10px;">Wedding Tasting & Stand</h3>
+            <p style="font-size:14px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Book your wedding cake consultation and receive a complimentary 5-flavor cake tasting flight plus luxury cake stand hire.</p>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(255,143,173,0.3);">
+            <span style="font-family:monospace;font-size:14px;font-weight:700;color:var(--pink-dark);">CODE: WEDLUXE</span>
+            <a href="pages/booking.html" class="btn-primary" style="padding:8px 20px;font-size:12px;">Book Tasting 💍</a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== CUSTOMER TESTIMONIALS ===================== -->
+  <section class="section" style="background:var(--blush);">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Celebrator Stories</span>
+        <h2>Loved by Over 15,000+ Customers</h2>
+        <p>Read what our happy clients say about our taste, artistic detailing, and punctual delivery.</p>
+      </div>
+
+      <div class="testimonial-grid">
+        
+        <div class="testimonial-card fade-in-up">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Our bakery created our 3-tier floral wedding cake and it was the crown jewel of our reception! The Belgian chocolate truffle flavor was heavenly. All guests asked for seconds!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">👰</div>
+            <div class="testi-info">
+              <div class="name">Ananya & Karthik R.</div>
+              <div class="role">Grand Wedding Couple • 3-Tier Luxury</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in-up delay-1">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"Ordered a custom car theme cake for my son's 6th birthday. Arrived in 2 hours flat in pristine condition. The sponge was super soft and 100% eggless. Highly recommended!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">👨‍💼</div>
+            <div class="testi-info">
+              <div class="name">Vikramaditya Sharma</div>
+              <div class="role">Birthday Celebration • Custom Theme Cake</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in-up delay-2">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">"We ordered 120 personalized cupcake boxes for our corporate annual gala. Each box was beautifully ribboned with our logo. Delicious, on-time, and top-tier professionalism!"</p>
+          <div class="testi-author">
+            <div class="testi-avatar">👩‍💻</div>
+            <div class="testi-info">
+              <div class="name">Meera Nair</div>
+              <div class="role">HR Director • Corporate Event Catering</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FAQ ACCORDION SECTION ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Got Questions?</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about cake customization, dietary options, and delivery.</p>
+      </div>
+
+      <div class="faq-list">
+        
+        <div class="faq-item active">
+          <div class="faq-question">
+            <span>How much in advance should I place my cake order?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            For standard signature cakes and bento boxes, we accept orders just 2 to 4 hours in advance! For multi-tier designer wedding cakes or custom 3D fondant sculptures, we recommend placing your order 2 to 4 days ahead.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Do you offer 100% Eggless, Vegan, and Gluten-Free cakes?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Yes! Over 95% of our cake flavors can be prepared 100% Eggless with the exact same melt-in-your-mouth fluffiness. We also bake certified Vegan, Gluten-Free, and Sugar-Free/Keto cakes upon request.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How are the cakes delivered safely without damage?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            All cakes are dispatched in specialized shock-absorbing, climate-controlled delivery boxes with dedicated riders to ensure your cake arrives in picture-perfect condition.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I customize the flavor, size, and message on the cake?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            Absolutely! You can choose from over 20+ sponge and frosting flavors, select any weight from 0.5kg to 10kg+, and add any customized message or photo topper via our online booking form.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What payment methods do you accept?</span>
+            <span class="faq-arrow">▼</span>
+          </div>
+          <div class="faq-answer">
+            We accept all major UPI apps (Google Pay, PhonePe, Paytm), Credit & Debit cards, Net Banking, and Cash on Delivery (COD) for eligible delivery locations.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== FINAL CALL TO ACTION ===================== -->
+  <section class="section" style="background:linear-gradient(135deg,var(--pink-dark),#52cfe0);color:black;text-align:center;">
+    <div class="container" style="max-width: 720px; background-color: lightpink;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;background:rgba(255,255,255,0.2);padding:6px 18px;border-radius:50px;display:inline-block;margin-bottom:16px;">✦ LET'S BAKE YOUR DREAM CAKE ✦</span>
+      <h2 style="font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,52px);color:black;margin-bottom:18px;line-height:1.2;">Ready to Make Your Celebration Sweet?</h2>
+      <p style=" font-size:16px;color:black;line-height:1.8;margin-bottom:34px;">Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp.</p>
+      
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+        <a href="pages/booking.html" class="btn-primary" style="background:black;color:var(--pink-dark);font-size:15px;padding:14px 34px;box-shadow:0 8px 24px rgba(0,0,0,0.15);">🎂 Order Online Now</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Sweet%20Delight!%20I%20would%20like%20to%20order%20a%20cake." target="_blank" class="btn-secondary" style="border-color:black;color:darkmagenta;font-size:15px;padding:14px 30px;background:rgba(255,255,255,0.1);">💬 WhatsApp Inquiry</a>
+      </div>
+    </div>
+  </section>
+
+    <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

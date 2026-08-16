@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore our full menu of handcrafted cakes — birthday, wedding, anniversary, festive and custom orders." />
+  <title>Our Cakes</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+    .filter-btn {
+      background: white;
+      color: var(--text-mid);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 50px;
+      border: 2px solid var(--blue-light);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white;
+      border-color: transparent;
+      box-shadow: var(--pink-shadow);
+    }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="../index.html">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="cakes.html" class="active">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="cakes.html" class="active">All Cakes Collection</a>
+            <a href="wedding.html" class="">Wedding Tiers 💍</a>
+            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
+            <a href="specials.html" class="">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="delivery.html" class="">Delivery & Care 🚚</a>
+            <a href="faq.html" class="">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="../index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../home2.html">Home 2 (Artisan Studio)</a>
+    <a href="cakes.html" class="active">All Cakes Collection</a>
+    <a href="wedding.html" class="">Wedding Cakes 💍</a>
+    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
+    <a href="specials.html" class="">Chef's Specials 🔥</a>
+    <a href="about.html" class="">About Us</a>
+    <a href="gallery.html" class="">Gallery</a>
+    <a href="services.html" class="">Services & Pricing</a>
+    <a href="delivery.html" class="">Delivery & Care 🚚</a>
+    <a href="faq.html" class="">FAQ Guide ❓</a>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+  <section class="hero">
+  <div class="hero-bg"
+    style="background-image: url('https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=1400&auto=format&fit=crop&q=80');">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
+  <span
+    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
+    class="fade-in-up">✦ Our Signature Collection ✦</span>
+  <h1 class="fade-in-up delay-1"
+    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+    Explore Our<br />Artisanal <span style="color:var(--pink-dark);font-style:italic;">Cake Gallery</span>
+  </h1>
+  <p class="fade-in-up delay-2"
+    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
+    Discover our curated selection of handcrafted cakes. From classic flavors to bespoke centerpiece creations, find the perfect treat for your celebration.
+  </p>
+  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <a href="../pages/booking.html" class="btn-primary">🎂 Custom Order</a>
+    <a href="#gallery" class="btn-secondary">View Categories ↓</a>
+  </div>
+
+  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        50+</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Unique Flavors</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        100%</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Fresh Ingredients</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        Daily</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Fresh Baked</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+  <!-- CAKE MENU -->
+  <section class="section bg-blush">
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar fade-in-up">
+        <button class="filter-btn active" data-filter="all">All Cakes</button>
+        <button class="filter-btn" data-filter="birthday">Birthday 🎂</button>
+        <button class="filter-btn" data-filter="wedding">Wedding 💍</button>
+        <button class="filter-btn" data-filter="anniversary">Anniversary 💕</button>
+        <button class="filter-btn" data-filter="festive">Festive 🪔</button>
+        <button class="filter-btn" data-filter="custom">Custom 🎨</button>
+      </div>
+
+      <div class="cake-grid">
+
+        <!-- Birthday -->
+        <div class="cake-card fade-in-up" data-category="birthday">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=500&auto=format&fit=crop&q=80" alt="Confetti Birthday Cake" loading="lazy"/>
+            <span class="cake-card-badge">Birthday</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(312 reviews)</span></div>
+            <h3>Confetti Burst</h3>
+            <p>Colourful vanilla sponge with rainbow sprinkles and whipped cream frosting — pure party joy!</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹1,800 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-1" data-category="birthday">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&auto=format&fit=crop&q=80" alt="Chocolate Birthday Cake" loading="lazy"/>
+            <span class="cake-card-badge">Best Seller</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(248 reviews)</span></div>
+            <h3>Chocolate Velvet Dream</h3>
+            <p>Rich Belgian chocolate layers with velvety ganache and luxurious gold-dust finish.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,200 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wedding -->
+        <div class="cake-card fade-in-up delay-2" data-category="wedding">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=500&auto=format&fit=crop&q=80" alt="Wedding Cake" loading="lazy"/>
+            <span class="cake-card-badge">Wedding</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(184 reviews)</span></div>
+            <h3>Royal White Elegance</h3>
+            <p>Three-tiered white fondant masterpiece with hand-crafted sugar roses and pearl accents.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹8,500 <span>onwards</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-3" data-category="wedding">
+          <div class="cake-card-img">
+            <img src="/dist/assets/WhatsApp Image 2026-08-16 at 6.17.20 PM.jpeg" alt="Floral Wedding Cake" loading="lazy"/>
+            <span class="cake-card-badge">Wedding</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(147 reviews)</span></div>
+            <h3>Floral Garden Tier</h3>
+            <p>Pastel tiers adorned with fresh edible flowers, watercolour fondant and gold leaf details.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹9,200 <span>onwards</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Anniversary -->
+        <div class="cake-card fade-in-up" data-category="anniversary">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=500&auto=format&fit=crop&q=80" alt="Strawberry Anniversary Cake" loading="lazy"/>
+            <span class="cake-card-badge">Anniversary</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(203 reviews)</span></div>
+            <h3>Strawberry Romance</h3>
+            <p>Heart-shaped strawberry mousse cake with a red velvet base and edible heart decorations.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,400 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-1" data-category="anniversary">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=500&auto=format&fit=crop&q=80" alt="Drip cake" loading="lazy"/>
+            <span class="cake-card-badge">Anniversary</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★☆</span><span class="rating-count">(119 reviews)</span></div>
+            <h3>Golden Drip Luxury</h3>
+            <p>Dark chocolate drip cake with gold accents, macarons, and champagne truffles on top.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹3,100 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Festive -->
+        <div class="cake-card fade-in-up delay-2" data-category="festive">
+          <div class="cake-card-img">
+            <img src="/dist/assets/WhatsApp Image 2026-08-16 at 6.17.35 PM.jpeg" alt="Christmas Cake" loading="lazy"/>
+            <span class="cake-card-badge">Festive</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(95 reviews)</span></div>
+            <h3>Christmas Snow Cake</h3>
+            <p>Spiced fruit cake with marzipan, royal icing snow peaks and festive sugar figurines.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,600 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-3" data-category="festive">
+          <div class="cake-card-img">
+            <img src="/dist/assets/WhatsApp Image 2026-08-16 at 6.17.23 PM.jpeg" alt="Diwali Cake" loading="lazy"/>
+            <span class="cake-card-badge">Festive</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(108 reviews)</span></div>
+            <h3>Diwali Glow Cake</h3>
+            <p>Saffron and cardamom infused sponge with mango cream, edible diyas and gold accents.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,800 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom -->
+        <div class="cake-card fade-in-up" data-category="custom">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500&auto=format&fit=crop&q=80" alt="Custom Cake" loading="lazy"/>
+            <span class="cake-card-badge">Custom</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(267 reviews)</span></div>
+            <h3>Your Dream Cake</h3>
+            <p>Completely bespoke — your chosen flavour, design, colours, theme and size. No limits!</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,000 <span>onwards</span></div>
+              <a href="booking.html" class="btn-sm">Design Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-1" data-category="custom">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=500&auto=format&fit=crop&q=80" alt="Photo Cake" loading="lazy"/>
+            <span class="cake-card-badge">Custom</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(153 reviews)</span></div>
+            <h3>Photo Print Cake</h3>
+            <p>Edible high-resolution photo printed on a premium sponge of your favourite flavour.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹1,600 <span>per kg</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-2" data-category="birthday">
+          <div class="cake-card-img">
+            <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=500&auto=format&fit=crop&q=80" alt="Cupcakes" loading="lazy"/>
+            <span class="cake-card-badge">Birthday</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(421 reviews)</span></div>
+            <h3>Mini Cupcake Box</h3>
+            <p>Assorted box of 12 gourmet cupcakes — chocolate, red velvet, vanilla, and lemon curd.</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹950 <span>/ 12 pcs</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cake-card fade-in-up delay-3" data-category="anniversary">
+          <div class="cake-card-img">
+            <img src="/dist/assets/WhatsApp Image 2026-08-16 at 3.58.04 PM.jpeg" alt="Macarons" loading="lazy"/>
+            <span class="cake-card-badge">Special</span>
+          </div>
+          <div class="cake-card-body">
+            <div class="cake-card-rating"><span class="stars">★★★★★</span><span class="rating-count">(88 reviews)</span></div>
+            <h3>French Macaron Tower</h3>
+            <p>Elegant tower of 36 handcrafted macarons in assorted gourmet flavours. A showstopper!</p>
+            <div class="cake-card-footer">
+              <div class="cake-price">₹2,500 <span>/ tower</span></div>
+              <a href="booking.html" class="btn-sm">Order →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="section-sm bg-white">
+    <div class="container">
+      <div class="offer-banner fade-in-up">
+        <div class="offer-banner-content">
+          <span class="eyebrow">Can't Find What You Want?</span>
+          <h2>Design Your Own<br/>Dream Cake</h2>
+          <p>Our bakers love a challenge. Describe your vision and we'll make it a reality.</p>
+        </div>
+        <a href="booking.html" class="btn-primary">Start Designing 🎨</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

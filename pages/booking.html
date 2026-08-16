@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book your custom cake — choose flavour, design, size, date and delivery. Easy online order form." />
+  <title>Book a Cake</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .booking-layout {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    @media(max-width:900px){ .booking-layout{ grid-template-columns:1fr; } }
+
+    .form-section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--text-dark);
+      margin: 28px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--blue-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .form-section-title:first-child { margin-top: 0; }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: white;
+      border: 2px solid var(--blue-light);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-mid);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .checkbox-label input[type="checkbox"] { display: none; }
+
+    .checkbox-label:has(input:checked),
+    .checkbox-label.checked {
+      background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+      border-color: var(--pink);
+      color: var(--pink-dark);
+    }
+
+    .progress-bar {
+      display: flex;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .progress-step {
+      flex: 1;
+      text-align: center;
+    }
+
+    .progress-step .step-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue-light);
+      color: var(--text-mid);
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 6px;
+      transition: var(--transition);
+    }
+
+    .progress-step.done .step-dot {
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white;
+    }
+
+    .progress-step .step-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sidebar-widget {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      margin-bottom: 20px;
+    }
+
+    .sidebar-widget h4 {
+      font-size: 15px;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--blue-light);
+    }
+
+    .sidebar-widget ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-mid);
+      padding: 6px 0;
+    }
+
+    .sidebar-widget ul li::before {
+      content: '✓';
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 12px;
+      margin-top: 2px;
+    }
+
+    .size-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .size-card {
+      border: 2px solid var(--blue-light);
+      border-radius: var(--radius-sm);
+      padding: 12px 8px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .size-card:hover, .size-card.selected {
+      border-color: var(--pink);
+      background: var(--pink-light);
+    }
+
+    .size-card .size-icon { font-size: 22px; margin-bottom: 4px; }
+    .size-card .size-name { font-size: 12px; font-weight: 700; color: var(--text-dark); }
+    .size-card .size-serves { font-size: 11px; color: var(--text-light); }
+    .size-card .size-price { font-size: 13px; font-weight: 700; color: var(--pink-dark); margin-top: 4px; }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="../index.html">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="cakes.html" class="">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="cakes.html" class="">All Cakes Collection</a>
+            <a href="wedding.html" class="">Wedding Tiers 💍</a>
+            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
+            <a href="specials.html" class="">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="delivery.html" class="">Delivery & Care 🚚</a>
+            <a href="faq.html" class="">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="../index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../home2.html">Home 2 (Artisan Studio)</a>
+    <a href="cakes.html" class="">All Cakes Collection</a>
+    <a href="wedding.html" class="">Wedding Cakes 💍</a>
+    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
+    <a href="specials.html" class="">Chef's Specials 🔥</a>
+    <a href="about.html" class="">About Us</a>
+    <a href="gallery.html" class="">Gallery</a>
+    <a href="services.html" class="">Services & Pricing</a>
+    <a href="delivery.html" class="">Delivery & Care 🚚</a>
+    <a href="faq.html" class="">FAQ Guide ❓</a>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+<!-- ===================== BOOKING PAGE HERO (CENTERED & LARGER) ===================== -->
+<section class="hero" style="display:flex;align-items:center;justify-content:center;text-align:center;">
+  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=1600&auto=format&fit=crop&q=80');"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content" style="display:flex;justify-content:center;width:100%;">
+    <div class="hero-content-inner" style="max-width:800px;margin:0 auto;text-align:center;">
+      <span style="font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:16px;display:block;" class="fade-in-up">✦ Design Your Perfect Cake ✦</span>
+      <h1 class="fade-in-up delay-1" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;">
+        Book Your Cake
+      </h1>
+      <div class="divider" style="margin:0 auto 24px auto;"></div>
+      <p class="fade-in-up delay-2" style="font-size:clamp(18px,2vw,22px);color:var(--text-mid);margin:0 auto;max-width:680px;line-height:1.7;font-weight:500;">
+        Fill in the details below and our team will confirm your order within 2 hours. No payment needed upfront.
+      </p>
+    </div>
+  </div>
+</section>
+
+  <!-- BOOKING FORM -->
+  <section class="section bg-blush">
+    <div class="container">
+
+      <!-- Progress Steps -->
+      <div class="progress-bar fade-in-up" style="max-width:560px;margin:0 auto 40px;">
+        <div class="progress-step done"><div class="step-dot">1</div><div class="step-label">Details</div></div>
+        <div class="progress-step done"><div class="step-dot">2</div><div class="step-label">Cake Design</div></div>
+        <div class="progress-step done"><div class="step-dot">3</div><div class="step-label">Delivery</div></div>
+        <div class="progress-step"><div class="step-dot">4</div><div class="step-label">Confirm</div></div>
+      </div>
+
+      <div class="booking-layout">
+
+        <!-- FORM -->
+        <form data-validate id="bookingForm" style="background:white;border-radius:var(--radius-lg);padding:40px;box-shadow:var(--card-shadow);" class="fade-in-up">
+
+          <!-- Section 1: Your Details -->
+          <div class="form-section-title">👤 Your Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bfName">Full Name</label>
+              <input type="text" id="bfName" class="form-control" placeholder="Your name" required />
+            </div>
+            <div class="form-group">
+              <label for="bfPhone">Phone / WhatsApp</label>
+              <input type="tel" id="bfPhone" class="form-control" placeholder="8122932402" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="bfEmail">Email Address</label>
+            <input type="email" id="bfEmail" class="form-control" placeholder="your@email.com" required />
+          </div>
+
+          <!-- Section 2: Occasion -->
+          <div class="form-section-title">🎉 Occasion</div>
+          <div class="form-group">
+            <label for="bfOccasion">Occasion Type</label>
+            <select id="bfOccasion" class="form-control" required>
+              <option value="">Select occasion…</option>
+              <option>Birthday</option>
+              <option>Wedding</option>
+              <option>Anniversary</option>
+              <option>Baby Shower</option>
+              <option>Graduation</option>
+              <option>Festive / Holiday</option>
+              <option>Corporate / Event</option>
+              <option>Just Because 💝</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bfDate">Delivery / Collection Date</label>
+              <input type="date" id="bfDate" class="form-control" required />
+            </div>
+            <div class="form-group">
+              <label for="bfTime">Preferred Time</label>
+              <select id="bfTime" class="form-control">
+                <option>10:00 AM – 12:00 PM</option>
+                <option>12:00 PM – 2:00 PM</option>
+                <option>2:00 PM – 4:00 PM</option>
+                <option>4:00 PM – 6:00 PM</option>
+                <option>6:00 PM – 8:00 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Section 3: Cake Design -->
+          <div class="form-section-title">🎨 Cake Design</div>
+
+          <div class="form-group">
+            <label>Cake Size</label>
+            <div class="size-cards" id="sizeCards">
+              <div class="size-card selected" data-size="half">
+                <div class="size-icon">🍰</div>
+                <div class="size-name">Half Kg</div>
+                <div class="size-serves">Serves 4–6</div>
+                <div class="size-price">from ₹750</div>
+              </div>
+              <div class="size-card" data-size="one">
+                <div class="size-icon">🎂</div>
+                <div class="size-name">1 Kg</div>
+                <div class="size-serves">Serves 8–12</div>
+                <div class="size-price">from ₹1,500</div>
+              </div>
+              <div class="size-card" data-size="two">
+                <div class="size-icon">🏆</div>
+                <div class="size-name">2 Kg</div>
+                <div class="size-serves">Serves 20–25</div>
+                <div class="size-price">from ₹3,000</div>
+              </div>
+              <div class="size-card" data-size="three">
+                <div class="size-icon">👑</div>
+                <div class="size-name">3 Kg</div>
+                <div class="size-serves">Serves 30–40</div>
+                <div class="size-price">from ₹4,500</div>
+              </div>
+              <div class="size-card" data-size="tier2">
+                <div class="size-icon">🗼</div>
+                <div class="size-name">2-Tier</div>
+                <div class="size-serves">Serves 40–60</div>
+                <div class="size-price">from ₹8,000</div>
+              </div>
+              <div class="size-card" data-size="custom">
+                <div class="size-icon">✨</div>
+                <div class="size-name">Custom</div>
+                <div class="size-serves">Any size</div>
+                <div class="size-price">Quote me</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bfFlavour">Cake Flavour</label>
+            <select id="bfFlavour" class="form-control" required>
+              <option value="">Choose flavour…</option>
+              <optgroup label="Classic">
+                <option>Vanilla</option>
+                <option>Chocolate</option>
+                <option>Strawberry</option>
+                <option>Butterscotch</option>
+              </optgroup>
+              <optgroup label="Premium">
+                <option>Red Velvet</option>
+                <option>Blueberry Cheesecake</option>
+                <option>Hazelnut Praline</option>
+                <option>Mango Mousse</option>
+                <option>Lemon Curd</option>
+                <option>Black Forest</option>
+              </optgroup>
+              <optgroup label="Signature">
+                <option>Saffron Rose</option>
+                <option>Pistachio Cardamom</option>
+                <option>Dark Rum Truffle</option>
+                <option>Tell us your idea! →</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Frosting Type</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox"/> Whipped Cream</label>
+              <label class="checkbox-label"><input type="checkbox"/> Buttercream</label>
+              <label class="checkbox-label"><input type="checkbox"/> Fondant</label>
+              <label class="checkbox-label"><input type="checkbox"/> Ganache</label>
+              <label class="checkbox-label"><input type="checkbox"/> Naked (No Frosting)</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Add-ons</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label"><input type="checkbox"/> Photo Print (+₹300)</label>
+              <label class="checkbox-label"><input type="checkbox"/> Edible Gold Dust (+₹250)</label>
+              <label class="checkbox-label"><input type="checkbox"/> Fondant Figurine (+₹500)</label>
+              <label class="checkbox-label"><input type="checkbox"/> Sugar Flowers (+₹400)</label>
+              <label class="checkbox-label"><input type="checkbox"/> Candles &amp; Topper</label>
+              <label class="checkbox-label"><input type="checkbox"/> Gift Ribbon &amp; Box</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bfMessage">Cake Message / Text</label>
+            <input type="text" id="bfMessage" class="form-control" placeholder="e.g. Happy Birthday Priya! 🎂 Love, Mum" />
+          </div>
+
+          <!-- Section 4: Design Description -->
+          <div class="form-section-title">🖼 Design Description</div>
+          <div class="form-group">
+            <label for="bfDesign">Describe Your Design</label>
+            <textarea id="bfDesign" class="form-control" placeholder="Describe colours, theme, style, characters or any design references. You can also share a reference image after submitting." style="min-height:140px;"></textarea>
+          </div>
+
+          <!-- Section 5: Delivery -->
+          <div class="form-section-title">🚚 Delivery Details</div>
+          <div class="form-group">
+            <label>How do you want to receive your cake?</label>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text-mid);">
+                <input type="radio" name="deliveryType" value="delivery" style="accent-color:var(--pink-dark);" checked/> 🚚 Home Delivery
+              </label>
+              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text-mid);">
+                <input type="radio" name="deliveryType" value="pickup" style="accent-color:var(--pink-dark);" /> 🏬 Bakehouse Pickup
+              </label>
+            </div>
+          </div>
+          <div class="form-group" id="addressGroup">
+            <label for="bfAddress">Delivery Address</label>
+            <textarea id="bfAddress" class="form-control" placeholder="Full delivery address including flat no, street, area, city and pincode…" style="min-height:90px;"></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="bfSpecial">Any Special Instructions?</label>
+            <textarea id="bfSpecial" class="form-control" placeholder="Allergies, gate access codes, or any other notes for our team…" style="min-height:80px;"></textarea>
+          </div>
+
+          <!-- Budget -->
+          <div class="form-group">
+            <label for="bfBudget">Approximate Budget</label>
+            <select id="bfBudget" class="form-control">
+              <option>Under ₹1,500</option>
+              <option>₹1,500 – ₹3,000</option>
+              <option>₹3,000 – ₹6,000</option>
+              <option>₹6,000 – ₹10,000</option>
+              <option>Above ₹10,000</option>
+              <option>No budget limit 👑</option>
+            </select>
+          </div>
+
+          <div style="background:var(--blue-light);border-radius:var(--radius-sm);padding:14px 16px;font-size:12px;color:var(--text-mid);margin-bottom:24px;">
+            ℹ️ After submitting, our team will contact you within 2 hours to confirm your order, finalise pricing and collect your 50% advance payment.
+          </div>
+
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
+            Place My Order 🎂
+          </button>
+        </form>
+
+        <!-- SIDEBAR -->
+        <div class="fade-in-up delay-2">
+
+          <div class="sidebar-widget">
+            <h4>🌟 Why Order With Us?</h4>
+            <ul>
+              <li>No upfront full payment — 50% advance only</li>
+              <li>Free design consultation included</li>
+              <li>We contact you within 2 hours</li>
+              <li>Same-day delivery available</li>
+              <li>100% satisfaction guarantee</li>
+              <li>Eggless & vegan options available</li>
+              <li>Premium packaging included</li>
+            </ul>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>📋 Order Timeline</h4>
+            <div class="timeline" style="padding-left:24px;">
+              <div class="timeline-item">
+                <span class="year">Step 1</span>
+                <h4>Submit This Form</h4>
+                <p>Fill in all details — takes less than 3 minutes.</p>
+              </div>
+              <div class="timeline-item">
+                <span class="year">Step 2</span>
+                <h4>Team Confirms (2 hrs)</h4>
+                <p>We call/WhatsApp to finalise design and pricing.</p>
+              </div>
+              <div class="timeline-item">
+                <span class="year">Step 3</span>
+                <h4>Pay 50% Advance</h4>
+                <p>Secure your order slot with a 50% advance via UPI.</p>
+              </div>
+              <div class="timeline-item" style="margin-bottom:0;">
+                <span class="year">Step 4</span>
+                <h4>Enjoy Your Cake!</h4>
+                <p>We deliver fresh. Balance payment on delivery.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--pink-light),var(--blue-light));border:none;">
+            <h4 style="color:var(--text-dark);">💬 Prefer to Chat First?</h4>
+            <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px;">Talk to our bakers directly on WhatsApp — we're friendly, fast and love cake talk!</p>
+            <a href="https://wa.me/919876543210" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">WhatsApp Us Now →</a>
+          </div>
+
+          <div class="sidebar-widget">
+            <h4>⭐ Recent Happy Orders</h4>
+            <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">
+              <p style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--blue-light);">
+                <strong>Unicorn Birthday Cake</strong><br/>
+                "Absolutely stunning! Exceeded all our expectations." — Meena, Coimbatore ★★★★★
+              </p>
+              <p style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--blue-light);">
+                <strong>3-Tier Wedding Cake</strong><br/>
+                "The most beautiful cake I've ever seen. Worth every rupee!" — Karthik ★★★★★
+              </p>
+              <p>
+                <strong>Custom Photo Cake</strong><br/>
+                "Same-day delivery, arrived perfectly. Tasted amazing!" — Sana ★★★★★
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script>
+    // Size card selection
+    document.querySelectorAll('.size-card').forEach(card => {
+      card.addEventListener('click', () => {
+        document.querySelectorAll('.size-card').forEach(c => c.classList.remove('selected'));
+        card.classList.add('selected');
+      });
+    });
+
+    // Checkbox label toggle
+    document.querySelectorAll('.checkbox-label input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', () => {
+        cb.closest('.checkbox-label').classList.toggle('checked', cb.checked);
+      });
+    });
+
+    // Toggle address field based on delivery type
+    document.querySelectorAll('input[name="deliveryType"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        document.getElementById('addressGroup').style.display =
+          radio.value === 'pickup' && radio.checked ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>

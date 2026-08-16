@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased selection:bg-accent-200 selection:text-accent-900 dark:selection:bg-accent-900 dark:selection:text-accent-100;
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 50%, #fdf2f8 100%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-semibold;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply rounded-3xl border border-white/60 bg-white/80 backdrop-blur-xl shadow-soft transition duration-300 dark:border-white/10 dark:bg-slate-900/60 dark:shadow-lg dark:shadow-black/20;
+  }
+
+  .glass-panel-pink {
+    @apply rounded-3xl border border-accent-100/60 bg-white/80 backdrop-blur-xl shadow-pink-glow transition duration-300 dark:border-accent-900/20 dark:bg-slate-900/60 dark:shadow-lg;
+  }
+
+  .glass-panel-blue {
+    @apply rounded-3xl border border-primary-100/60 bg-white/80 backdrop-blur-xl shadow-soft transition duration-300 dark:border-primary-900/20 dark:bg-slate-900/60 dark:shadow-lg;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-8 py-3 font-semibold text-white shadow-lg shadow-primary-500/30 transition duration-300 hover:shadow-primary-500/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 dark:focus:ring-offset-slate-950;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-primary-500 px-8 py-3 font-semibold text-primary-600 transition duration-300 hover:bg-primary-50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 dark:border-primary-400 dark:text-primary-300 dark:hover:bg-primary-950/30 dark:focus:ring-offset-slate-950;
+  }
+
+  .btn-accent {
+    @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent-500 to-accent-600 px-8 py-3 font-semibold text-white shadow-lg shadow-accent-500/30 transition duration-300 hover:shadow-accent-500/50 hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-accent-400 focus:ring-offset-2 dark:focus:ring-offset-slate-950;
+  }
+  
+  .glass-input {
+    @apply w-full rounded-2xl border border-primary-200/50 bg-white/60 px-5 py-3 text-slate-800 placeholder:text-slate-400 transition-all duration-300 focus:border-primary-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-300/50 focus:shadow-soft dark:border-slate-700 dark:bg-slate-950/50 dark:text-slate-200 dark:placeholder:text-slate-600 dark:focus:border-primary-500 dark:focus:bg-slate-950 dark:focus:ring-primary-500/30;
+  }
+
+  .glass-input-pink {
+    @apply w-full rounded-2xl border border-accent-200/50 bg-white/60 px-5 py-3 text-slate-800 placeholder:text-slate-400 transition-all duration-300 focus:border-accent-400 focus:bg-white focus:outline-none focus:ring-2 focus:ring-accent-300/50 focus:shadow-pink-glow dark:border-slate-700 dark:bg-slate-950/50 dark:text-slate-200 dark:placeholder:text-slate-600 dark:focus:border-accent-500 dark:focus:bg-slate-950 dark:focus:ring-accent-500/30;
+  }
+
+  /* Premium card styling */
+  .card-premium {
+    @apply group rounded-2xl border border-white/60 bg-white/80 backdrop-blur-lg shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden;
+  }
+
+  .card-premium-pink {
+    @apply group rounded-2xl border border-accent-100/60 bg-white/80 backdrop-blur-lg shadow-pink-glow hover:shadow-pink-glow-lg transition-all duration-300 overflow-hidden;
+  }
+
+  .card-premium-blue {
+    @apply group rounded-2xl border border-primary-100/60 bg-white/80 backdrop-blur-lg shadow-soft hover:shadow-soft-lg transition-all duration-300 overflow-hidden;
+  }
+
+  /* Gradient text */
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-primary-600 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-pink {
+    @apply bg-gradient-to-r from-accent-600 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-mixed {
+    @apply bg-gradient-to-r from-primary-600 via-accent-500 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {

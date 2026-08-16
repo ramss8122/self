@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grand Luxury Wedding Cakes — Multi-tier bespoke wedding cakes, sugar flower artistry, and wedding tasting consultations." />
+  <title>Luxury Wedding Cakes</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
+
+    .wedding-pkg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      row-gap: 38px;
+      padding-top: 8px;
+    }
+    .wedding-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1.5px solid var(--blue-light);
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+    .wedding-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--hover-shadow);
+      border-color: var(--pink);
+    }
+    .wedding-card-img {
+      height: 280px;
+      overflow: hidden;
+      position: relative;
+    }
+    .wedding-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .wedding-card:hover .wedding-card-img img {
+      transform: scale(1.08);
+    }
+    .wedding-card-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .wedding-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+      color: white;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+    .wedding-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .page-hero-content .eyebrow,
+    .section-title span,
+    .wedding-badge,
+    .service-tag,
+    .tag {
+      font-family: 'Montserrat', 'Segoe UI', sans-serif;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .page-hero-content h1,
+    .section-title h2,
+    .section-head h2,
+    .wedding-card-body h3,
+    .step-card h4,
+    .offer-banner-content h2 {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #1b2e3c;
+      font-weight: 700;
+    }
+
+    .page-hero-content h1 {
+      font-size: clamp(34px, 5vw, 64px);
+    }
+
+    .section-title h2 {
+      font-size: clamp(30px, 4vw, 48px);
+      margin-bottom: 14px;
+    }
+
+    .page-hero-content p,
+    .section-title p,
+    .wedding-card-body p,
+    .step-card p,
+    .offer-banner-content p {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      color: #5b6c7a;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .page-hero-content .eyebrow,
+    .section-title span {
+      color: var(--pink-dark);
+      font-size: 11px;
+    }
+
+    .section-title p,
+    .page-hero-content p {
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section-title,
+    .page-hero-content {
+      text-align: center;
+    }
+
+    .section-title > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 900px) {
+      .wedding-steps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 500px) {
+      .wedding-steps-grid { grid-template-columns: 1fr; }
+      .page-hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
+      .section-title h2 { font-size: clamp(26px, 7vw, 38px); }
+    }
+  </style>
+</head>
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="logo-icon">🍰</div>
+        <div class="logo-text">Our <span>Bakery</span></div>
+      </a>
+
+      <ul class="nav-links">
+        <li class="nav-dropdown">
+          <a href="../index.html">Home ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="../index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">
+          <a href="cakes.html" class="active">Our Cakes ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="cakes.html" class="">All Cakes Collection</a>
+            <a href="wedding.html" class="active">Wedding Tiers 💍</a>
+            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
+            <a href="specials.html" class="">Chef's Specials 🔥</a>
+          </div>
+        </li>
+        <li><a href="about.html" class="">About Us</a></li>
+        <li><a href="gallery.html" class="">Gallery</a></li>
+        <li><a href="services.html" class="">Services</a></li>
+        <li class="nav-dropdown">
+          <a href="faq.html" class="">Info ▾</a>
+          <div class="nav-dropdown-menu">
+            <a href="delivery.html" class="">Delivery & Care 🚚</a>
+            <a href="faq.html" class="">FAQ & Guide ❓</a>
+          </div>
+        </li>
+        <li><a href="contact.html" class="">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
+        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+    </div>
+    <a href="../index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../home2.html">Home 2 (Artisan Studio)</a>
+    <a href="cakes.html" class="">All Cakes Collection</a>
+    <a href="wedding.html" class="active">Wedding Cakes 💍</a>
+    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
+    <a href="specials.html" class="">Chef's Specials 🔥</a>
+    <a href="about.html" class="">About Us</a>
+    <a href="gallery.html" class="">Gallery</a>
+    <a href="services.html" class="">Services & Pricing</a>
+    <a href="delivery.html" class="">Delivery & Care 🚚</a>
+    <a href="faq.html" class="">FAQ Guide ❓</a>
+    <a href="contact.html" class="">Contact Us</a>
+    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+  </div>
+
+  <!-- ===================== PAGE HERO ===================== -->
+ <section class="hero">
+  <div class="hero-bg"
+    style="background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1600&auto=format&fit=crop&q=80');">
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
+  <span
+    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
+    class="fade-in-up">✦ Royal Wedding Confectionery ✦</span>
+  <h1 class="fade-in-up delay-1"
+    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+    Grand Luxury<br /><span style="color:var(--pink-dark);font-style:italic;">Wedding Cakes</span>
+  </h1>
+  <p class="fade-in-up delay-2"
+    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
+    Handcrafted 3-tier to 7-tier bespoke centerpieces adorned with edible 24k gold leaf, lifelike sugar floral bouquets, and unforgettable gourmet flavors.
+  </p>
+  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+    <a href="../pages/booking.html" class="btn-primary">💍 Book Tasting Consultation</a>
+    <a href="#wedding-gallery" class="btn-secondary">View Designs →</a>
+  </div>
+
+  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        300+</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Weddings Catered</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        7-Tier</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Custom Build Limit</div>
+    </div>
+    <div style="width:1px;background:var(--blue-light);"></div>
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
+        24k Gold</div>
+      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Edible Detailing</div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+  <!-- ===================== WEDDING SHOWCASE ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>Bespoke Bridal Collections</span>
+        <h2>Signature Wedding Cake Tiers</h2>
+        <p>Every wedding cake is custom designed to harmonize with your reception theme, bridal florals, and venue aesthetics.</p>
+      </div>
+
+      <div class="wedding-pkg-grid">
+        
+        <!-- Tier 1 -->
+        <div class="wedding-card fade-in-up">
+          <div class="wedding-card-img">
+            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&auto=format&fit=crop&q=80" alt="The Victorian Sugar Rose 3-Tier" loading="lazy" />
+            <span class="wedding-badge">3-Tier Classic 💍</span>
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--pink-dark);text-transform:uppercase;margin-bottom:6px;">Serves 60 – 80 Guests</div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">The Victorian Sugar Peony</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Ivory velvet fondant with cascading blush handcrafted sugar peonies, Madagascan vanilla bean and raspberry champagne curd layers.</p>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹18,500 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
+              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 2 -->
+        <div class="wedding-card fade-in-up delay-1">
+          <div class="wedding-card-img">
+            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&auto=format&fit=crop&q=80" alt="The Grand 4-Tier Gold Leaf Monogram" loading="lazy" />
+            <span class="wedding-badge" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:var(--text-dark);">4-Tier Deluxe 👑</span>
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--blue-dark);text-transform:uppercase;margin-bottom:6px;">Serves 120 – 160 Guests</div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">Grand 4-Tier 24K Gold Monogram</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Hand-painted 24 karat edible gold leaf trim, customized initials crest, Belgian dark chocolate truffle and hazelnut praline sponge.</p>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹28,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
+              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="wedding-card fade-in-up delay-2">
+          <div class="wedding-card-img">
+            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=700&auto=format&fit=crop&q=80" alt="The Royal 5-Tier Crystal Palace" loading="lazy" />
+            <span class="wedding-badge">5-Tier Royal 🏰</span>
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <div style="font-size:12px;font-weight:700;color:var(--pink-dark);text-transform:uppercase;margin-bottom:6px;">Serves 220+ Guests</div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">The Royal Crystal Grandeur</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Showstopper five-tier architectural masterpiece with edible lace embroidery, illuminated crystal tier separator, and 4 custom flavors.</p>
+            </div>
+            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
+              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹42,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
+              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== HOW WEDDING BOOKING WORKS ===================== -->
+  <section class="section" style="background:var(--blush);">
+    <div class="container">
+      
+      <div class="section-title">
+        <span>The Journey to Perfection</span>
+        <h2>How We Create Your Wedding Cake</h2>
+        <p>From initial design sketches and cake tasting to flawless on-site venue setup.</p>
+      </div>
+
+      <div class="wedding-steps-grid">
+        
+        <div class="feature-card fade-in-up">
+          <div class="feature-icon icon-pink">☕</div>
+          <h3>1. Tasting Consultation</h3>
+          <p>Sample 6 gourmet cake sponges and fillings while discussing your dream design with our Master Pastry Chef.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-1">
+          <div class="feature-icon icon-blue">🎨</div>
+          <h3>2. 3D Sketch & Palette</h3>
+          <p>Receive a bespoke full-color illustration of your cake tailored to match your wedding invitation & florals.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-2">
+          <div class="feature-icon icon-pink">👩‍🍳</div>
+          <h3>3. Artisan Crafting</h3>
+          <p>Baked 24 hours prior to your wedding using pure organic butter and decorated by hand with meticulous artistry.</p>
+        </div>
+
+        <div class="feature-card fade-in-up delay-3">
+          <div class="feature-icon icon-blue">🚚</div>
+          <h3>4. Venue Setup</h3>
+          <p>Our dedicated logistics team delivers in a temperature-controlled van and sets up the cake at your venue.</p>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:44px;">
+        <a href="booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;">Schedule Wedding Tasting Flight →</a>
+      </div>
+
+    </div>
+  </section>
+
+    <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <p>Crafting memories one slice at a time since 2012.</p>
+        <div class="footer-socials">
+          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Quick Links</h5><ul>
+        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
+        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
+        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Cake Categories</h5><ul>
+        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
+        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+  </footer>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
