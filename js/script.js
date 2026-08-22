@@ -138,14 +138,14 @@ document.addEventListener('click', (e) => {
 
 
   /* ---- Active nav link detection ---- */
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const currentPath = window.location.pathname.split('/').pop() || './index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
     const hrefFile = href.split('/').pop();
     if (hrefFile === currentPath ||
-       (currentPath === '' && hrefFile === 'index.html') ||
-       (currentPath === 'index.html' && hrefFile === 'index.html')) {
+       (currentPath === '' && hrefFile === './index.html') ||
+       (currentPath === './index.html' && hrefFile === './index.html')) {
       link.classList.add('active');
     }
   });
