@@ -4,6 +4,13 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---- Lucide Icon Initialization ---- */
+  function initIcons() {
+    if (window.lucide && typeof window.lucide.createIcons === 'function') {
+      window.lucide.createIcons();
+    }
+  }
+
   /* ---- Light / Dark Theme Management ---- */
   const savedTheme = localStorage.getItem('sweet_delight_theme') || 
     (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -12,13 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('sweet_delight_theme', theme);
     document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
-      btn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+      btn.innerHTML = theme === 'dark' 
+        ? '<i data-lucide="sun"></i>' 
+        : '<i data-lucide="moon"></i>';
       btn.setAttribute('title', theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme');
       btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to Light Theme' : 'Switch to Dark Theme');
     });
+    initIcons();
   }
 
   applyTheme(savedTheme);
+  initIcons();
 
   document.addEventListener('click', (e) => {
     const btn = e.target.closest('.theme-toggle-btn');
@@ -28,6 +39,43 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  /* ---- LTR / RTL Direction Management ---- */
+ const savedDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'ltr';
+
+function applyDirection(dir) {
+  const validDir = dir === 'rtl' ? 'rtl' : 'ltr';
+  document.documentElement.setAttribute('dir', validDir);
+  if (document.body) {
+    document.body.setAttribute('dir', validDir);
+  }
+  localStorage.setItem('sweet_delight_dir', validDir);
+  localStorage.setItem('siteDir', validDir);
+
+  document.querySelectorAll('.dir-toggle-btn').forEach(btn => {
+    btn.setAttribute('data-dir', validDir);
+    btn.setAttribute('title', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+    btn.setAttribute('aria-label', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+    // Keeps the icon persistent instead of overriding with text
+    if (!btn.querySelector('i')) {
+      btn.innerHTML = '<i data-lucide="arrow-left-right"></i>';
+    }
+  });
+
+  if (window.lucide && typeof window.lucide.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+}
+
+applyDirection(savedDir);
+
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.dir-toggle-btn');
+  if (btn) {
+    const current = document.documentElement.getAttribute('dir') || 'ltr';
+    const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
+    applyDirection(nextDir);
+  }
+});
   /* ---- Navbar scroll behaviour ---- */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
@@ -196,6 +244,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+    
 
     lightbox.addEventListener('click', () => {
       lightbox.style.display = 'none';
@@ -239,3 +288,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+
+
+
+
+
+

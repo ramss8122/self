@@ -3,207 +3,276 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Frequently asked questions — lead times, 100% eggless options, vegan cakes, custom designs, and payment options." />
-  <title>Frequently Asked Questions</title>
+  <meta name="description" content="Frequently asked questions — lead times, 100% eggless options, vegan cakes, custom 3D designs, midnight deliveries, and payment options." />
+  <title>Frequently Asked Questions — Our Bakery</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❓</text></svg>" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
 
-    .faq-category-title {
-      font-size: 20px;
+    .faq-search-wrapper {
+      max-width: 680px;
+      margin: 0 auto 36px auto;
+      position: relative;
+    }
+
+    .faq-search-input {
+      width: 100%;
+      padding: 16px 24px 16px 54px;
+      border-radius: 40px;
+      border: 2px solid var(--blue);
+      background: var(--white);
+      font-size: 16px;
       color: var(--text-dark);
+      box-shadow: var(--card-shadow);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .faq-search-input:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255,175,197,0.3);
+    }
+
+    .faq-search-icon {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      color: var(--text-light);
+    }
+
+    /* Filter pills */
+    .faq-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 36px;
+    }
+
+    .filter-btn {
+      padding: 9px 18px;
+      border-radius: 30px;
+      border: 1px solid var(--blue-light);
+      background: var(--white);
+      color: var(--text-dark);
+      font-size: 13px;
       font-weight: 700;
-      margin: 36px 0 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+      border-color: var(--pink);
+      color: var(--text-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--pink-shadow);
+    }
+
+    .faq-category-block {
+      margin-bottom: 40px;
+      transition: opacity 0.3s ease;
+    }
+
+    .faq-category-title {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--pink-dark);
+      margin: 28px 0 16px;
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 10px;
-      font-family: 'Montserrat', 'Segoe UI', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--pink-dark);
-      text-align: center;
-    }
-
-    .page-hero-content .eyebrow,
-    .section-title span,
-    .faq-item .faq-question {
-      font-family: 'Montserrat', 'Segoe UI', sans-serif;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .page-hero-content h1,
-    .section-title h2,
-    .faq-item .faq-question {
-      font-family: 'Cormorant Garamond', 'Georgia', serif;
-      letter-spacing: -0.02em;
-      line-height: 1.08;
-      color: #1b2e3c;
-      font-weight: 700;
-    }
-
-    .page-hero-content h1 {
-      font-size: clamp(34px, 5vw, 64px);
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      margin-bottom: 14px;
-    }
-
-    .page-hero-content p,
-    .section-title p,
-    .faq-answer,
-    .faq-item .faq-question span:first-child {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      color: #5b6c7a;
-      line-height: 1.8;
-      font-weight: 500;
-    }
-
-    .page-hero-content .eyebrow,
-    .section-title span {
-      color: var(--pink-dark);
-      font-size: 11px;
-    }
-
-    .page-hero-content,
-    .section-title {
-      text-align: center;
-    }
-
-    .page-hero-content > *,
-    .section-title > * {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .faq-item {
-      border-radius: 22px;
-      padding: 6px 0;
-    }
-
-    .faq-item .faq-question {
-      font-size: 20px;
-      text-transform: none;
-      letter-spacing: 0;
-      font-weight: 700;
-      padding: 18px 22px;
-      color: var(--text-dark);
-    }
-
-    .faq-answer {
-      font-size: 15px;
-      padding: 0 22px 20px;
-      color: var(--text-mid);
+      border-bottom: 2px solid var(--blue-light);
+      padding-bottom: 8px;
     }
 
     .faq-list {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .faq-item {
-      height: 100%;
-      background: linear-gradient(135deg, rgba(168,216,234,0.18), rgba(255,255,255,0.9));
-      border: 1px solid rgba(126, 200, 227, 0.25);
-      border-radius: 20px;
+      background: var(--white);
+      border: 1px solid var(--blue-light);
+      border-radius: var(--radius-sm);
       overflow: hidden;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .faq-item:hover {
+      border-color: var(--pink);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 18px 22px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-dark);
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      color: var(--pink-dark);
+    }
+
+    .faq-question .faq-arrow {
+      font-size: 14px;
+      color: var(--pink-dark);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
     }
 
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease, padding 0.35s ease;
+      transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.3s ease;
       padding: 0 22px 0;
       opacity: 0;
+      font-size: 14px;
+      color: var(--text-mid);
+      line-height: 1.8;
     }
 
-    .faq-item.active .faq-answer {
-      max-height: 260px;
-      padding: 0 22px 20px;
-      opacity: 1;
+    .faq-item.active {
+      border-color: var(--pink);
     }
 
-    .faq-question {
-      width: 100%;
-      border: 0;
-      background: transparent;
-      appearance: none;
-      cursor: pointer;
-      text-align: left;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .faq-question .faq-arrow {
-      font-size: 16px;
-      transition: transform 0.3s ease;
+    .faq-item.active .faq-question {
+      color: var(--pink-dark);
     }
 
     .faq-item.active .faq-arrow {
       transform: rotate(180deg);
     }
 
-    @media (max-width: 500px) {
-      .page-hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
-      .section-title h2 { font-size: clamp(26px, 7vw, 38px); }
-      .faq-item .faq-question { font-size: 18px; }
-      .faq-category-title { letter-spacing: 0.08em; font-size: 14px; }
+    .faq-item.active .faq-answer {
+      max-height: 400px;
+      padding: 0 22px 20px;
+      opacity: 1;
+    }
+
+    /* Sizing Table */
+    .table-container {
+      overflow-x: auto;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--card-shadow);
+      border: 1px solid var(--blue-light);
+      margin-top: 24px;
+    }
+
+    .sizing-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .sizing-table th {
+      background: linear-gradient(135deg, var(--blue-light), var(--pink-light));
+      color: var(--text-dark);
+      padding: 16px 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .sizing-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--blue-light);
+      color: var(--text-mid);
+    }
+
+    .sizing-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .sizing-table tr:hover td {
+      background: var(--blush);
+    }
+
+    /* Ask Chef card */
+    .ask-chef-box {
+      background: linear-gradient(135deg, #FFF0F5 0%, #E8F4FA 100%);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--pink);
+      padding: 36px;
+      box-shadow: var(--pink-shadow);
+      margin-top: 48px;
+    }
+
+    @media(max-width:768px){
+      .faq-question { font-size: 15px; padding: 16px 18px; }
+      .faq-answer { font-size: 13.5px; }
+      .filter-btn { font-size: 12px; padding: 7px 14px; }
     }
   </style>
 </head>
 <body>
 
-    <!-- ===================== NAVBAR ===================== -->
+  <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🍰</div>
-        <div class="logo-text">Our <span>Bakery</span></div>
+      <a href="../pages/index.html" class="nav-logo">
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></div>
+        <div class="logo-text">Sweet<span>Delight</span></div>
       </a>
 
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="../index.html">Home ▾</a>
+          <a href="../pages/index.html">Home ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="../index.html">Home 1 (Classic Patisserie)</a>
-            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+            <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
           </div>
         </li>
+        <li><a href="../pages/about.html">About</a></li>
         <li class="nav-dropdown">
-          <a href="cakes.html" class="">Our Cakes ▾</a>
+          <a href="../pages/cakes.html">Cakes ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="cakes.html" class="">All Cakes Collection</a>
-            <a href="wedding.html" class="">Wedding Tiers 💍</a>
-            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
-            <a href="specials.html" class="">Chef's Specials 🔥</a>
+            <a href="../pages/cakes.html">All Cakes Collection</a>
+            <a href="../pages/wedding.html">Wedding Tiers</a>
+            <a href="../pages/custom.html">Custom 3D Designs</a>
+            <a href="../pages/specials.html">Chef's Specials</a>
           </div>
         </li>
-        <li><a href="about.html" class="">About Us</a></li>
-        <li><a href="gallery.html" class="">Gallery</a></li>
-        <li><a href="services.html" class="">Services</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
         <li class="nav-dropdown">
-          <a href="faq.html" class="active">Info ▾</a>
+          <a href="../pages/contact.html" class="active">Contact ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="delivery.html" class="">Delivery & Care 🚚</a>
-            <a href="faq.html" class="active">FAQ & Guide ❓</a>
+            <a href="../pages/faq.html" class="active">FAQ & Guide</a>
+            <a href="../pages/delivery.html">Delivery & Care</a>
           </div>
         </li>
-        <li><a href="contact.html" class="">Contact</a></li>
       </ul>
-
+ <div>
+       <button class="dir-toggle-btn" id="dirToggle" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+        <span class="dir-label">LTR</span>
+      </button>
+    </div>
       <div class="nav-cta">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
-        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <a href="../pages/booking.html" class="btn-nav">Order Now</a>
         <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -215,240 +284,565 @@
   <div class="mobile-menu" id="mobileMenu">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
       <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
-      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme"><i data-lucide="moon"></i></button>
     </div>
-    <a href="../index.html">Home 1 (Classic Patisserie)</a>
-    <a href="../home2.html">Home 2 (Artisan Studio)</a>
-    <a href="cakes.html" class="">All Cakes Collection</a>
-    <a href="wedding.html" class="">Wedding Cakes 💍</a>
-    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
-    <a href="specials.html" class="">Chef's Specials 🔥</a>
-    <a href="about.html" class="">About Us</a>
-    <a href="gallery.html" class="">Gallery</a>
-    <a href="services.html" class="">Services & Pricing</a>
-    <a href="delivery.html" class="">Delivery & Care 🚚</a>
-    <a href="faq.html" class="active">FAQ Guide ❓</a>
-    <a href="contact.html" class="">Contact Us</a>
-    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+    <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/cakes.html">All Cakes Collection</a>
+    <a href="../pages/wedding.html">Wedding Cakes</a>
+    <a href="../pages/custom.html">Custom 3D Cakes</a>
+    <a href="../pages/specials.html">Chef's Specials</a>
+    <a href="../pages/services.html">Services</a>
+    <a href="../pages/gallery.html">Gallery</a>
+    <a href="../pages/delivery.html">Delivery & Care</a>
+    <a href="../pages/faq.html" class="active">FAQ Guide</a>
+    <a href="../pages/contact.html">Contact</a>
+    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
   <section class="hero">
-  <div class="hero-bg"
-    style="background-image: url('https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=1600&auto=format&fit=crop&q=80');">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
-  <span
-    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
-    class="fade-in-up">✦ Knowledge Base ✦</span>
-  <h1 class="fade-in-up delay-1"
-    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
-    Frequently Asked<br /><span style="color:var(--pink-dark);font-style:italic;">Questions</span>
-  </h1>
-  <p class="fade-in-up delay-2"
-    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
-    Find quick, clear answers to common questions about our ingredients, ordering process, custom design timelines, and deliveries.
-  </p>
-  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-    <a href="#faq-list" class="btn-primary">❓ Browse Questions</a>
-    <a href="../pages/booking.html" class="btn-secondary">Contact Support →</a>
-  </div>
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=1600&auto=format&fit=crop&q=80');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-content-inner" style="max-width:680px; margin: 0 auto; text-align: center;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;" class="fade-in-up">✦ Complete Knowledge Base ✦</span>
+        <h1 class="fade-in-up delay-1" style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+          Frequently Asked<br /><span style="color:var(--pink-dark);font-style:italic;">Questions</span>
+        </h1>
+        <p class="fade-in-up delay-2" style="font-size:17px;color:rgb(255, 255, 255);margin:0 auto 36px auto;max-width:520px;line-height:1.8;">
+          Find instant, verified answers regarding ingredients, 100% eggless options, custom 3D designs, midnight deliveries, cake sizing, and payment policies.
+        </p>
+       <div class="btn-group fade-in-up delay-3">
+  <!-- Primary Action Button -->
+  <a href="#faqSection" class="btn-primary btn-search-faq">
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-question-mark-icon lucide-file-question-mark"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M12 17h.01"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/></svg>
+    <span class="btn-text">Search Questions</span>
+    <span class="btn-arrow">
+      
+    </span>
+  </a>
 
-  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        24/7</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Instant Answers</div>
-    </div>
-    <div style="width:1px;background:var(--blue-light);"></div>
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        100%</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Transparent Info</div>
-    </div>
-    <div style="width:1px;background:var(--blue-light);"></div>
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        Direct</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Chef Support</div>
-    </div>
-  </div>
+  <!-- Secondary Glass Action Button -->
+  <a href="#sizingGuide" class="btn-secondary btn-sizing-guide">
+    <span class="btn-icon-box">
+      <i data-lucide="ruler"></i>
+    </span>
+    <span class="btn-text">Cake Sizing Guide</span>
+    <span class="btn-arrow">
+      
+    </span>
+  </a>
 </div>
-  </div>
-</section>
 
-  <!-- ===================== FAQ CONTENT ===================== -->
-  <section class="section" style="background:linear-gradient(135deg, rgba(255, 214, 227, 0.38), rgba(168, 216, 234, 0.32));">
-    <div class="container" style="max-width:860px;">
-      
-      <!-- Category 1 -->
-      <div class="faq-category-title"><span>🎂</span> Ordering & Customization</div>
-      
-      <div class="faq-list">
-        <div class="faq-item active">
-          <button class="faq-question" type="button" aria-expanded="true">
-            <span>How much advance notice is required for standard vs custom cakes?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            For signature menu cakes, we accept orders just 2 to 4 hours in advance! For customized 3D fondant cakes, photo cakes, or wedding tiers, we recommend placing orders 24 to 72 hours ahead.
+        <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">25+</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Topics Answered</div>
           </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Can I customize the cake flavor, message, and color scheme?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Yes! Every cake includes complimentary custom text piping (up to 35 characters) and personalized candles. You can select your favorite sponge, filling, and frosting colors via our booking page.
+          <div style="width:1px;background:var(--blue-light);"></div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">100%</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Eggless Options</div>
           </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Do you offer delivery for large celebration cakes and wedding tiers?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Yes. We deliver statement cakes, celebration tiers, and wedding masterpieces with special handling, gated support, and temperature-controlled transport to protect the design and finish.
+          <div style="width:1px;background:var(--blue-light);"></div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">24/7</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Online Concierge</div>
           </div>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Category 2 -->
-      <div class="faq-category-title"><span>🌿</span> Dietary & Ingredients</div>
-      
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Do you bake 100% Eggless, Vegan, or Gluten-Free cakes?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Absolutely! Over 95% of our menu can be baked 100% Eggless with our proprietary flax-yogurt sponge that maintains identical fluffiness. We also prepare certified Vegan and Gluten-Free cakes in a sanitized workstation.
-          </div>
-        </div>
+  <!-- ===================== FAQ SEARCH & FILTERS ===================== -->
+  <section class="section bg-white" id="faqSection">
+    <div class="container" style="max-width:920px;">
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Do you use artificial preservatives or margarine?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Never. We bake exclusively with 100% pure organic dairy butter, French cream, Madagascar bourbon vanilla, and Belgian Callebaut chocolates. Zero dalda, zero margarine, zero artificial shelf-life extenders.
-          </div>
-        </div>
+      <!-- Live Search Box -->
+      <div class="faq-search-wrapper fade-in-up">
+        <span class="faq-search-icon">🔍</span>
+        <input type="text" id="faqSearchInput" class="faq-search-input" placeholder="Search keywords (e.g. eggless, midnight delivery, wedding advance, refund, fondant)..." />
+      </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Can you prepare allergy-aware or nut-free cakes?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Yes, we can accommodate nut-conscious and allergy-aware requests with a dedicated prep process. Please inform us at the time of booking so our kitchen team can plan the safest production schedule.
+      <!-- Filter Pills -->
+     <div class="faq-filters fade-in-up delay-1">
+  <button class="filter-btn active" data-category="all">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-question-mark-icon lucide-file-question-mark"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"/><path d="M12 17h.01"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/></svg></span>
+    <span class="filter-text">All Questions</span>
+  </button>
+  <button class="filter-btn" data-category="ordering">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></span>
+    <span class="filter-text">Ordering &amp; Lead Times</span>
+  </button>
+  <button class="filter-btn" data-category="custom">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-palette-icon lucide-palette"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+    <span class="filter-text">Custom &amp; 3D Cakes</span>
+  </button>
+  <button class="filter-btn" data-category="dietary">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf-icon lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+    <span class="filter-text">Dietary &amp; Eggless</span>
+  </button>
+  <button class="filter-btn" data-category="delivery">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
+    <span class="filter-text">Delivery &amp; Midnight</span>
+  </button>
+  <button class="filter-btn" data-category="pricing">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign-icon lucide-dollar-sign"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span>
+    <span class="filter-text">Pricing &amp; Refunds</span>
+  </button>
+  <button class="filter-btn" data-category="care">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></span>
+    <span class="filter-text">Storage &amp; Cutting</span>
+  </button>
+  <button class="filter-btn" data-category="corporate">
+    <span class="filter-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg></span>
+    <span class="filter-text">Corporate &amp; Bulk</span>
+  </button>
+</div>
+
+      <!-- ===================== CATEGORY 1: ORDERING ===================== -->
+      <div class="faq-category-block" data-cat="ordering">
+        <div class="faq-category-title"><span class="emoji-badge emoji-cake">
+  <span class="emoji-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></span>
+</span> Ordering Process & Lead Times</div>
+        <div class="faq-list">
+          
+          <div class="faq-item active">
+            <button class="faq-question" type="button">
+              <span>How much advance notice is required for standard vs custom cakes?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              For our classic signature cakes (Belgian Truffle, Red Velvet, Fresh Fruit), we require only <strong>2 to 4 hours advance notice</strong>. For bespoke fondant 3D sculpted cakes, caricature cakes, and photo prints, we ask for <strong>24 to 48 hours</strong>. Multi-tier wedding cakes should ideally be booked <strong>2 to 4 weeks in advance</strong>.
+            </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I place an urgent same-day order today?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes! We maintain fresh batches of our bestselling gourmet cakes daily in our RS Puram & Peelamedu cold storage. Call or WhatsApp our hotline at <strong>+91 81229 32402</strong> for instant inventory check and 90-minute rush delivery.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How do I add a personalized cake message and birthday candles?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Every single cake includes complimentary custom text piping (up to 35 characters on a fondant plaque), a metallic cake topper, a safe wooden cake knife, and premium sparkler candles. You can write your custom message during booking or mention it on WhatsApp.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can I schedule a cake delivery for a future date or midnight?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes, you can schedule your delivery up to 6 months in advance. Simply select your preferred date and time slot (Morning, Afternoon, Evening, or Midnight 11:30 PM–12:15 AM) on our online booking form.
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <!-- Category 3 -->
-      <div class="faq-category-title"><span>🚚</span> Delivery & Payments</div>
-      
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>What payment methods do you support?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            We accept all UPI apps (GPay, PhonePe, Paytm), Credit/Debit Cards, Net Banking, and Cash on Delivery (COD) for orders up to ₹2,500.
-          </div>
-        </div>
+    
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>What is your cancellation and refund policy?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Orders cancelled at least 12 hours prior to dispatch receive a 100% instant refund or store credit. For bespoke wedding cakes, deposits are refundable up to 7 days before the event.
-          </div>
-        </div>
 
-        <div class="faq-item">
-          <button class="faq-question" type="button" aria-expanded="false">
-            <span>Can I place a same-day order for a birthday or celebration cake?</span>
-            <span class="faq-arrow">▼</span>
-          </button>
-          <div class="faq-answer">
-            Yes, same-day orders are possible for select in-stock designs. Please call or message us early in the day to confirm availability and delivery timing for your location.
+      <!-- ===================== CATEGORY 4: DELIVERY ===================== -->
+      <div class="faq-category-block" data-cat="delivery">
+        <div class="faq-category-title"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck-icon lucide-truck"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span> Delivery Logistics & Midnight Slots</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Which areas in Coimbatore do you cover? Is delivery free?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              We deliver across all municipal limits of Coimbatore including RS Puram, Gandhipuram, Peelamedu, Saibaba Colony, Race Course, Saravanampatti, Singanallur, Ramanathapuram, Vadavalli, Thudiyalur, Kovaipudur, and Kalapatti. <strong>Delivery is 100% FREE for all orders above ₹1,999.</strong> Standard delivery is ₹70–₹150 depending on distance.
+            </div>
           </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How do you ensure tall and delicate cakes don't melt or get damaged?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              All our delicate cakes travel in <strong>climate-controlled AC delivery vans set at 18°C</strong>. Each cake is mounted on a heavy-gauge silver drum base locked into high-density corrugated thermal boxes with dry gel packs to prevent shifting and melting on bumpy roads.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How does Midnight Surprise Delivery work?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Our midnight delivery riders arrive between <strong>11:30 PM and 12:15 AM</strong>. If you want a complete surprise, our driver will not call the recipient beforehand — they will contact you directly upon reaching the building gate for a stealth drop-off.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What happens if my cake arrives damaged during transit?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              We provide an unconditional <strong>100% Damage-Free Guarantee</strong>. In the rare event of transit damage, our nearest hub will dispatch an immediate fresh replacement cake via express dispatch or provide a 100% instant refund with zero questions asked.
+            </div>
+          </div>
+
         </div>
       </div>
 
-      <div style="text-align:center;margin-top:48px;">
-        <p style="font-size:15px;color:var(--text-mid);margin-bottom:18px;">Still have a question? Our pastry chefs are available 7 days a week.</p>
-        <a href="contact.html" class="btn-primary">Contact Our Bakery Team →</a>
+      <!-- ===================== CATEGORY 5: PRICING & REFUNDS ===================== -->
+      <div class="faq-category-block" data-cat="pricing">
+        <div class="faq-category-title"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dollar-sign-icon lucide-dollar-sign"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></span> Pricing, Payments & Refund Policy</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What payment methods do you accept? Is COD available?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              We accept all UPI applications (Google Pay, PhonePe, Paytm, BHIM), Credit Cards, Debit Cards, Net Banking, and Bank NEFT/RTGS. Cash on Delivery (COD) is available for standard catalogue orders up to ₹2,500. Custom fondant & wedding tier cakes require advance payment to begin sugar craftwork.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is your cancellation and rescheduling policy?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <ul style="margin:8px 0 0 18px;line-height:1.7;">
+                <li><strong>Standard Cakes:</strong> Full 100% refund if cancelled at least 6 hours before dispatch.</li>
+                <li><strong>Custom 3D Cakes:</strong> 100% refund if cancelled 24+ hours before delivery. 50% store credit if sugar work has already begun.</li>
+                <li><strong>Rescheduling:</strong> You can change your delivery date and time slot with <strong>zero penalty</strong> up to 12 hours before delivery.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How are custom 3D cake prices calculated?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Custom cake pricing is based on the cake weight (base rate per kg depending on flavor) plus the handcrafted artistry complexity (hours required by our sugar artists for fondant modeling, structural doweling, airbrushing, and edible accents). We always provide a transparent, upfront fixed quote with no hidden extras.
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="faq-note" style="margin-top:48px; background:linear-gradient(135deg,var(--blue-light),var(--pink-light)); border:1px solid rgba(255,175,197,0.25); border-radius:24px; padding:28px 24px; text-align:center; box-shadow:var(--card-shadow);">
-        <div class="faq-category-title" style="margin:0 0 10px; justify-content:center; font-size:15px;">
-          <span>💬</span> Need More Help?
+      <!-- ===================== CATEGORY 6: STORAGE & CARE ===================== -->
+      <div class="faq-category-block" data-cat="care">
+        <div class="faq-category-title"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package-icon lucide-package"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></span> Cake Storage, Slicing & Leftovers</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How should I store the cake once it arrives at my venue?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              <strong>Buttercream / Truffle Cakes:</strong> Store in an air-conditioned room (18°C–22°C) or refrigerator. Bring out to room temperature 20 to 30 minutes before cutting for the creamiest texture.<br/>
+              <strong>Fresh Fruit / Whipped Cream:</strong> Keep refrigerated (2°C–6°C) until cutting.<br/>
+              <strong>Fondant Sculpted Cakes:</strong> Keep in a cool, dry air-conditioned room. Avoid humid domestic refrigerators as condensation can melt sugar figurines.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>What is the chef's secret to cutting clean, perfect cake slices?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Dip a tall chef's knife in hot water for 5 seconds, wipe the blade dry with a clean kitchen towel, and slice straight down in one smooth stroke. Wipe and reheat the blade between each cut. This prevents ganache from dragging and yields razor-sharp bakery slices!
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>How long do leftover cake slices stay fresh? Can I freeze them?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Leftovers stay fresh in an airtight container in the fridge for up to <strong>4 days</strong>. You can also wrap individual slices tightly in cling film and foil to freeze for up to <strong>30 days</strong>. Thaw overnight in the fridge before enjoying.
+            </div>
+          </div>
+
         </div>
-        <p style="max-width:640px; margin:0 auto; font-size:15px; line-height:1.8; color:var(--text-mid); font-family:'Inter', 'Segoe UI', sans-serif;">Our cake specialists are available to guide you on flavor pairing, design inspiration, delivery timing, and custom quotes. Send a quick message and we’ll help plan your celebration.</p>
+      </div>
+
+      <!-- ===================== CATEGORY 7: CORPORATE ===================== -->
+      <div class="faq-category-block" data-cat="corporate">
+        <div class="faq-category-title"><span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing-icon lucide-person-standing"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m6 8 6 2 6-2"/><path d="M12 10v4"/></svg></span> Corporate Catering & Bulk Event Orders</div>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Can you print edible company logos on cupcakes and cakes?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes! We use high-resolution food-grade edible printing on Belgian white chocolate wafers or sugar sheets. We cater to corporate product launches, annual milestones, employee birthday subscriptions, and Diwali/New Year hampers with custom branded satin ribbons and gift boxes.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button">
+              <span>Do you offer GST invoices and corporate credit terms?</span>
+              <span class="faq-arrow">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes. We provide official B2B GST tax invoices for all corporate orders. For registered corporate clients ordering monthly hampers or office catering, we offer tailored 15-day and 30-day PO billing cycles. Contact <strong>krams5240@gmail.com</strong> for our corporate catalog.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ===================== CAKE SIZING & PORTIONS GUIDE ===================== -->
+      <div style="margin-top:60px;" id="sizingGuide" class="fade-in-up">
+        <div class="section-title">
+          <span>Portion Calculator</span>
+          <h2>Cake Sizing & Serving Guide</h2>
+          <p>Not sure how much cake to order? Use our pastry chef's portion recommendation chart.</p>
+        </div>
+
+        <div class="table-container">
+          <table class="sizing-table">
+            <thead>
+              <tr>
+                <th>Cake Weight</th>
+                <th>Diameter (Inches)</th>
+                <th>Generous Servings</th>
+                <th>Party Finger Servings</th>
+                <th>Best Suited For</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>0.5 kg (1 lb)</strong></td>
+                <td>6" Round</td>
+                <td>4 – 5 slices</td>
+                <td>6 – 8 finger portions</td>
+                <td>Intimate celebrations, Date nights, Bento cake surprises</td>
+              </tr>
+              <tr>
+                <td><strong>1.0 kg (2.2 lbs)</strong></td>
+                <td>7" – 8" Round</td>
+                <td>8 – 10 slices</td>
+                <td>12 – 14 portions</td>
+                <td>Family birthdays, House parties, Small team celebrations</td>
+              </tr>
+              <tr>
+                <td><strong>1.5 kg (3.3 lbs)</strong></td>
+                <td>9" Round</td>
+                <td>12 – 15 slices</td>
+                <td>18 – 20 portions</td>
+                <td>Dinner parties, Kids milestone birthdays (15–20 guests)</td>
+              </tr>
+              <tr>
+                <td><strong>2.0 kg (4.4 lbs)</strong></td>
+                <td>10" or 2-Tier mini</td>
+                <td>16 – 20 slices</td>
+                <td>24 – 28 portions</td>
+                <td>Engagement parties, 25th Anniversaries, Large gatherings</td>
+              </tr>
+              <tr>
+                <td><strong>3.0 kg (6.6 lbs)</strong></td>
+                <td>2-Tier (8" + 6")</td>
+                <td>25 – 30 slices</td>
+                <td>35 – 40 portions</td>
+                <td>Grand Birthday celebrations, Sangeet, Office milestones</td>
+              </tr>
+              <tr>
+                <td><strong>5.0 kg+ (11+ lbs)</strong></td>
+                <td>3-Tier Couture</td>
+                <td>45 – 60 slices</td>
+                <td>70 – 90 portions</td>
+                <td>Wedding Receptions, Grand Gala Banquets</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+     
+
+      <!-- Quick contact bar -->
+      <div style="text-align:center;margin-top:48px;" class="fade-in-up">
+        <p style="font-size:15px;color:var(--text-mid);margin-bottom:18px;">Need immediate cake booking or custom design consultation?</p>
+        <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;">
+          <a href="https://wa.me/918122932402" target="_blank" class="btn-primary">WhatsApp Live Support 💬</a>
+          <a href="../pages/contact.html" class="btn-secondary">Visit Our Contact Page →</a>
+        </div>
       </div>
 
     </div>
   </section>
 
-    <!-- ===================== FOOTER ===================== -->
-  <!-- FOOTER -->
+   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <a href="../pages/index.html" class="logo-text">
+  <span class="logo-icon-box">
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+  </span>
+  <span class="brand-name">
+    Sweet <span class="brand-highlight">Delight</span>
+  </span>
+</a>
         <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-socials">
-          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Phone -->
+          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Email -->
+          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </a>
         </div>
+        
       </div>
       <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
-        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
-        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+        <li><a href="../pages/index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
       </ul></div>
       <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
-        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
       </ul></div>
       <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
-        <li><span>Sunday</span><span>9am – 8pm</span></li>
-      </ul>
+  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
+  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
+  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
+</ul>
       <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+   <div class="footer-bottom">
+  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
+  <span class="tagline-text">
+    Made with 
+    <span class="heart-icon-box">
+      <i data-lucide="heart"></i>
+    </span> 
+    and lots of butter
+  </span>
+</div>
   </footer>
+
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.faq-item').forEach((item) => {
-        const button = item.querySelector('.faq-question');
-        if (!button) return;
+    // FAQ Accordion interactive toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.closest('.faq-item');
+        const wasActive = item.classList.contains('active');
+        
+        // Close siblings in same list
+        const parentList = item.closest('.faq-list');
+        if (parentList) {
+          parentList.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        }
+        
+        if (!wasActive) {
+          item.classList.add('active');
+        }
+      });
+    });
 
-        button.type = 'button';
-        button.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+    // Category Filter Pills
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const categoryBlocks = document.querySelectorAll('.faq-category-block');
 
-        button.addEventListener('click', () => {
-          const isOpen = item.classList.contains('active');
-          item.classList.toggle('active', !isOpen);
-          button.setAttribute('aria-expanded', String(!isOpen));
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const selectedCat = btn.getAttribute('data-category');
+        categoryBlocks.forEach(block => {
+          if (selectedCat === 'all' || block.getAttribute('data-cat') === selectedCat) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
         });
       });
     });
+
+    // Live Search Filter
+    const searchInput = document.getElementById('faqSearchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        
+        categoryBlocks.forEach(block => {
+          let blockHasMatch = false;
+          const items = block.querySelectorAll('.faq-item');
+          
+          items.forEach(item => {
+            const questionText = item.querySelector('.faq-question').textContent.toLowerCase();
+            const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (questionText.includes(query) || answerText.includes(query)) {
+              item.style.display = 'block';
+              blockHasMatch = true;
+              if (query.length > 2) {
+                item.classList.add('active'); // auto open matching answers
+              }
+            } else {
+              item.style.display = 'none';
+              item.classList.remove('active');
+            }
+          });
+
+          block.style.display = blockHasMatch ? 'block' : 'none';
+        });
+      });
+    }
+
+    // Ask Chef Form Handling
+    const askChefForm = document.getElementById('askChefForm');
+    if (askChefForm) {
+      askChefForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = askChefForm.querySelector('button[type="submit"]');
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Question Sent to Pastry Chef! We Will Reply in 30 Mins';
+        btn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.style.background = '';
+          askChefForm.reset();
+        }, 4000);
+      });
+    }
   </script>
 </body>
 </html>

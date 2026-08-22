@@ -153,44 +153,47 @@
     <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🍰</div>
-        <div class="logo-text">Our <span>Bakery</span></div>
+      <a href="../pages/index.html" class="nav-logo">
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></div>
+        <div class="logo-text">Sweet<span>Delight</span></div>
       </a>
 
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="../index.html">Home ▾</a>
+          <a href="../pages/index.html">Home ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="../index.html">Home 1 (Classic Patisserie)</a>
-            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+            <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
           </div>
         </li>
+        <li><a href="../pages/about.html" class="">About</a></li>
         <li class="nav-dropdown">
-          <a href="cakes.html" class="active">Our Cakes ▾</a>
+          <a href="../pages/cakes.html" class="active">Cakes ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="cakes.html" class="">All Cakes Collection</a>
-            <a href="wedding.html" class="active">Wedding Tiers 💍</a>
-            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
-            <a href="specials.html" class="">Chef's Specials 🔥</a>
+            <a href="../pages/cakes.html">All Cakes Collection</a>
+            <a href="../pages/wedding.html" class="active">Wedding Tiers</a>
+            <a href="../pages/custom.html" class="">Custom 3D Designs</a>
+            <a href="../pages/specials.html" class="">Chef's Specials</a>
           </div>
         </li>
-        <li><a href="about.html" class="">About Us</a></li>
-        <li><a href="gallery.html" class="">Gallery</a></li>
-        <li><a href="services.html" class="">Services</a></li>
+        <li><a href="../pages/services.html" class="">Services</a></li>
+        <li><a href="../pages/gallery.html" class="">Gallery</a></li>
         <li class="nav-dropdown">
-          <a href="faq.html" class="">Info ▾</a>
+          <a href="../pages/contact.html" class="">Contact ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="delivery.html" class="">Delivery & Care 🚚</a>
-            <a href="faq.html" class="">FAQ & Guide ❓</a>
+            <a href="../pages/faq.html" class="active">FAQ & Guide</a>
+            <a href="../pages/delivery.html">Delivery & Care</a>
           </div>
         </li>
-        <li><a href="contact.html" class="">Contact</a></li>
       </ul>
-
+ <div>
+       <button class="dir-toggle-btn" id="dirToggle" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+        <span class="dir-label">LTR</span>
+      </button>
+    </div>
       <div class="nav-cta">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
-        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <a href="../pages/booking.html" class="btn-nav">Order Now</a>
         <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -202,21 +205,21 @@
   <div class="mobile-menu" id="mobileMenu">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
       <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
-      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme"><i data-lucide="moon"></i></button>
     </div>
-    <a href="../index.html">Home 1 (Classic Patisserie)</a>
-    <a href="../home2.html">Home 2 (Artisan Studio)</a>
-    <a href="cakes.html" class="">All Cakes Collection</a>
-    <a href="wedding.html" class="active">Wedding Cakes 💍</a>
-    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
-    <a href="specials.html" class="">Chef's Specials 🔥</a>
-    <a href="about.html" class="">About Us</a>
-    <a href="gallery.html" class="">Gallery</a>
-    <a href="services.html" class="">Services & Pricing</a>
-    <a href="delivery.html" class="">Delivery & Care 🚚</a>
-    <a href="faq.html" class="">FAQ Guide ❓</a>
-    <a href="contact.html" class="">Contact Us</a>
-    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+    <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/cakes.html">All Cakes Collection</a>
+    <a href="../pages/wedding.html" class="active">Wedding Cakes</a>
+    <a href="../pages/custom.html">Custom 3D Cakes</a>
+    <a href="../pages/specials.html">Chef's Specials</a>
+    <a href="../pages/services.html">Services</a>
+    <a href="../pages/gallery.html">Gallery</a>
+    <a href="../pages/delivery.html">Delivery & Care</a>
+    <a href="../pages/faq.html">FAQ Guide</a>
+    <a href="../pages/contact.html">Contact</a>
+    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
@@ -238,10 +241,16 @@
     style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
     Handcrafted 3-tier to 7-tier bespoke centerpieces adorned with edible 24k gold leaf, lifelike sugar floral bouquets, and unforgettable gourmet flavors.
   </p>
-  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-    <a href="../pages/booking.html" class="btn-primary">💍 Book Tasting Consultation</a>
-    <a href="#wedding-gallery" class="btn-secondary">View Designs →</a>
-  </div>
+ <div class="btn-group fade-in-up delay-3">
+  <a href="../pages/booking.html" class="btn-primary">
+    <span class="btn-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-omega-icon lucide-omega"><path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21"/></svg></span>
+    <span>Book Tasting Consultation</span>
+  </a>
+  <a href="../pages/gallery.html" class="btn-secondary">
+    <span>View Designs</span>
+    <span class="btn-arrow">→</span>
+  </a>
+</div>
 
   <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
     <div>
@@ -281,7 +290,7 @@
         <div class="wedding-card fade-in-up">
           <div class="wedding-card-img">
             <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&auto=format&fit=crop&q=80" alt="The Victorian Sugar Rose 3-Tier" loading="lazy" />
-            <span class="wedding-badge">3-Tier Classic 💍</span>
+
           </div>
           <div class="wedding-card-body">
             <div>
@@ -291,7 +300,7 @@
             </div>
             <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
               <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹18,500 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
             </div>
           </div>
         </div>
@@ -300,7 +309,7 @@
         <div class="wedding-card fade-in-up delay-1">
           <div class="wedding-card-img">
             <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&auto=format&fit=crop&q=80" alt="The Grand 4-Tier Gold Leaf Monogram" loading="lazy" />
-            <span class="wedding-badge" style="background:linear-gradient(135deg,var(--blue),var(--blue-dark));color:var(--text-dark);">4-Tier Deluxe 👑</span>
+          
           </div>
           <div class="wedding-card-body">
             <div>
@@ -310,7 +319,7 @@
             </div>
             <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
               <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹28,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
             </div>
           </div>
         </div>
@@ -319,7 +328,7 @@
         <div class="wedding-card fade-in-up delay-2">
           <div class="wedding-card-img">
             <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=700&auto=format&fit=crop&q=80" alt="The Royal 5-Tier Crystal Palace" loading="lazy" />
-            <span class="wedding-badge">5-Tier Royal 🏰</span>
+           
           </div>
           <div class="wedding-card-body">
             <div>
@@ -329,7 +338,7 @@
             </div>
             <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
               <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹42,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
+              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
             </div>
           </div>
         </div>
@@ -339,81 +348,262 @@
     </div>
   </section>
 
-  <!-- ===================== HOW WEDDING BOOKING WORKS ===================== -->
-  <section class="section" style="background:var(--blush);">
+
+
+  <!-- ===================== WEDDING STYLES GALLERY ===================== -->
+  <section class="section bg-white">
     <div class="container">
-      
       <div class="section-title">
-        <span>The Journey to Perfection</span>
-        <h2>How We Create Your Wedding Cake</h2>
-        <p>From initial design sketches and cake tasting to flawless on-site venue setup.</p>
+        <span>Wedding Cake Inspirations</span>
+        <h2>Popular Wedding Cake Styles</h2>
+        <p>Browse our most requested wedding cake aesthetics</p>
       </div>
-
-      <div class="wedding-steps-grid">
-        
-        <div class="feature-card fade-in-up">
-          <div class="feature-icon icon-pink">☕</div>
-          <h3>1. Tasting Consultation</h3>
-          <p>Sample 6 gourmet cake sponges and fillings while discussing your dream design with our Master Pastry Chef.</p>
+    </br></br>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;">
+        <div class="wedding-card fade-in-up">
+          <div class="wedding-card-img">
+            <img src="../assets/WhatsApp Image 2026-08-16 at 3.58.04 PM.jpeg" alt="Classic Romantic Wedding Cake" loading="lazy" />
+           
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">Classic Romantic</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Timeless white-on-white elegance with delicate sugar lace, pearl piping, and cascading fondant roses. Perfect for traditional ceremony themes.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Vanilla Bean</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--pink-light);color:var(--text-mid);font-weight:600;">Champagne Buttercream</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Sugar Roses</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="feature-card fade-in-up delay-1">
-          <div class="feature-icon icon-blue">🎨</div>
-          <h3>2. 3D Sketch & Palette</h3>
-          <p>Receive a bespoke full-color illustration of your cake tailored to match your wedding invitation & florals.</p>
+        <div class="wedding-card fade-in-up delay-1">
+          <div class="wedding-card-img">
+            <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=700&auto=format&fit=crop&q=80" alt="Modern Minimalist Wedding Cake" loading="lazy" />
+   
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">Modern Minimalist</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Clean geometric lines, marble-effect fondant, and metallic leaf accents. Ideal for contemporary chic receptions and garden venues.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Dark Chocolate</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--pink-light);color:var(--text-mid);font-weight:600;">Gold Leaf</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Marble Effect</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="feature-card fade-in-up delay-2">
-          <div class="feature-icon icon-pink">👩‍🍳</div>
-          <h3>3. Artisan Crafting</h3>
-          <p>Baked 24 hours prior to your wedding using pure organic butter and decorated by hand with meticulous artistry.</p>
+        <div class="wedding-card fade-in-up delay-2">
+          <div class="wedding-card-img">
+            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=700&auto=format&fit=crop&q=80" alt="Rustic Bohemian Wedding Cake" loading="lazy" />
+          
+          </div>
+          <div class="wedding-card-body">
+            <div>
+              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">Rustic Bohemian</h3>
+              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:14px;">Semi-naked frosted tiers adorned with fresh seasonal florals, dried lavender, eucalyptus, and drizzled honey-caramel accents.</p>
+              <div style="display:flex;gap:8px;flex-wrap:wrap;">
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Honey Lavender</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--pink-light);color:var(--text-mid);font-weight:600;">Fresh Florals</span>
+                <span style="font-size:11px;padding:4px 12px;border-radius:50px;background:var(--blue-light);color:var(--text-mid);font-weight:600;">Semi-Naked</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="feature-card fade-in-up delay-3">
-          <div class="feature-icon icon-blue">🚚</div>
-          <h3>4. Venue Setup</h3>
-          <p>Our dedicated logistics team delivers in a temperature-controlled van and sets up the cake at your venue.</p>
-        </div>
-
       </div>
-
-      <div style="text-align:center;margin-top:44px;">
-        <a href="booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;">Schedule Wedding Tasting Flight →</a>
-      </div>
-
     </div>
   </section>
 
-    <!-- ===================== FOOTER ===================== -->
-  <!-- FOOTER -->
+  <!-- ===================== PRICING PACKAGES ===================== -->
+  <section class="section" style="background:var(--blush);">
+    <div class="container">
+      <div class="section-title">
+        <span>Wedding Cake Pricing</span>
+        <h2>Choose Your Perfect Package</h2>
+        <p>Transparent pricing with no hidden fees. Every package includes free tasting consultation and venue delivery.</p>
+      </div>
+</br></br>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:960px;margin:0 auto;">
+        <!-- Silver Package -->
+        <div class="fade-in-up" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);text-align:center;">
+         <!-- Glassmorphic Silver Medal Icon Badge -->
+<div class="medal-badge medal-silver fade-in-up">
+  <span class="medal-icon">🥈</span>
+</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Silver</h3>
+          <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">2-Tier • Serves 40-60</div>
+          <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--text-dark);margin-bottom:24px;">₹12,500</div>
+          <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 2 custom flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Fondant floral decor</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Free tasting session</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Venue delivery & setup</li>
+            <li style="font-size:13px;color:var(--text-light);padding:8px 0;">❌ Gold leaf detailing</li>
+          </ul>
+          <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Silver →</a>
+        </div>
+
+        <!-- Gold Package -->
+        <div class="fade-in-up delay-1" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:2px solid var(--pink);box-shadow:var(--pink-shadow);text-align:center;position:relative;">
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--pink),var(--pink-dark));color:white;font-size:11px;font-weight:700;padding:5px 18px;border-radius:50px;letter-spacing:0.1em;">MOST POPULAR</div>
+         <!-- Glassmorphic Gold Medal Icon Badge -->
+<div class="medal-badge medal-gold fade-in-up">
+  <span class="medal-icon">🥇</span>
+</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Gold</h3>
+          <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">3-4 Tier • Serves 80-160</div>
+          <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--pink-dark);margin-bottom:24px;">₹24,000</div>
+          <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 4 custom flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Sugar flower bouquet</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 24K gold leaf accent</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Custom monogram topper</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;">✅ Premium venue setup</li>
+          </ul>
+          <a href="../pages/booking.html" class="btn-primary" style="width:100%;display:block;text-align:center;">Select Gold →</a>
+        </div>
+
+        <!-- Platinum Package -->
+        <div class="fade-in-up delay-2" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);text-align:center;">
+          <!-- Glassmorphic Diamond Tier Icon Badge -->
+<div class="medal-badge medal-diamond fade-in-up">
+  <span class="medal-icon">💎</span>
+</div>
+          <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Platinum</h3>
+          <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">5-7 Tier • Serves 200+</div>
+          <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--text-dark);margin-bottom:24px;">₹42,000+</div>
+          <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Unlimited flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Crystal tier separators</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Edible lace embroidery</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Dedicated pastry chef</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;">✅ VIP venue coordination</li>
+          </ul>
+          <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Platinum →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== WEDDING TESTIMONIALS ===================== -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="section-title">
+        <span>Love Stories We've Sweetened</span>
+        <h2>From Our Happy Couples</h2>
+        <p>Real reviews from real weddings. Over 300+ weddings catered across Tamil Nadu and Pondicherry.</p>
+      </div>
+</br></br>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;max-width:900px;margin:0 auto;">
+        <div class="fade-in-up" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);">
+         <!-- Glassmorphic Star Rating Component -->
+<div class="star-rating fade-in-up" aria-label="5 out of 5 stars">
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+</div>
+          <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"Our 4-tier gold monogram cake was the highlight of our reception. 300 guests and everyone was raving about the hazelnut praline filling. The gold leaf work was museum-quality. Sweet Delight made our wedding unforgettable!"</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;">S</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Sneha & Vikram</div>
+              <div style="font-size:12px;color:var(--text-light);">4-Tier Gold Package • Chennai Wedding</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in-up delay-1" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);">
+      <div class="star-rating fade-in-up" aria-label="5 out of 5 stars">
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+  <span class="star">★</span>
+</div>
+          <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"From the tasting session to the venue setup, everything was flawless. Chef personally matched our cake design with our wedding mandap florals. The rose-cardamom sponge was divine — our families are still talking about it!"</p>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;">D</div>
+            <div>
+              <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Deepa & Karthik</div>
+              <div style="font-size:12px;color:var(--text-light);">5-Tier Royal Package • Pondicherry Wedding</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:44px;">
+        <a href="../pages/booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-omega-icon lucide-omega"><path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21"/></svg> Start Your Wedding Cake Journey →</a>
+      </div>
+    </div>
+  </section>
+
+   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <a href="../pages/index.html" class="logo-text">
+  <span class="logo-icon-box">
+    <i data-lucide="cake-slice"></i>
+  </span>
+  <span class="brand-name">
+    Sweet <span class="brand-highlight">Delight</span>
+  </span>
+</a>
         <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-socials">
-          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Phone -->
+          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Email -->
+          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </a>
         </div>
+        
       </div>
       <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
-        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
-        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+        <li><a href="../pages/index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
       </ul></div>
       <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
-        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
       </ul></div>
       <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
-        <li><span>Sunday</span><span>9am – 8pm</span></li>
-      </ul>
+  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
+  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
+  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
+</ul>
       <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+   <div class="footer-bottom">
+  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
+  <span class="tagline-text">
+    Made with 
+    <span class="heart-icon-box">
+      <i data-lucide="heart"></i>
+    </span> 
+    and lots of butter
+  </span>
+</div>
   </footer>
 
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>
 </body>
 </html>

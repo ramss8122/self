@@ -3,131 +3,287 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Delivery information — 2-Hour same-day express cake delivery, climate-controlled packaging, and cake care instructions." />
-  <title>Express Delivery & Cake Care</title>
+  <meta name="description" content="Delivery information — 2-Hour same-day express cake delivery across Coimbatore, climate-controlled packaging, midnight surprise slots, and expert cake care guide." />
+  <title>Express Delivery & Cake Care — Our Bakery</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚚</text></svg>" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
 
-    .page-hero-content .eyebrow,
-    .section-title span,
-    .feature-card h3,
-    .feature-card p,
-    .alert-note {
+    .pincode-checker-box {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--blue);
+      padding: 36px 32px;
+      box-shadow: var(--card-shadow);
+      max-width: 780px;
+      margin: 0 auto 50px auto;
       text-align: center;
     }
 
-    .page-hero-content .eyebrow,
-    .section-title span {
-      font-family: 'Montserrat', 'Segoe UI', sans-serif;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: var(--pink-dark);
+    .pincode-input-group {
+      display: flex;
+      gap: 12px;
+      max-width: 500px;
+      margin: 20px auto 0 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pincode-input {
+      flex: 1;
+      min-width: 220px;
+      padding: 14px 20px;
+      border-radius: 30px;
+      border: 2px solid var(--blue-light);
+      font-size: 15px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .pincode-input:focus {
+      border-color: var(--pink);
+      box-shadow: 0 0 0 4px rgba(255,175,197,0.25);
+    }
+
+    .pincode-result {
+      margin-top: 18px;
+      padding: 14px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .pincode-result.success {
+      display: block;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #c8e6c9;
+    }
+
+    .pincode-result.alert {
+      display: block;
+      background: #fff3e0;
+      color: #e65100;
+      border: 1px solid #ffe0b2;
+    }
+
+    /* Slots Grid */
+    .slots-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .slot-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--blue-light);
+      padding: 28px 24px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slot-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--hover-shadow);
+      border-color: var(--pink);
+    }
+
+    .slot-badge {
       font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 20px;
+      background: var(--pink-light);
+      color: var(--text-dark);
+      align-self: flex-start;
+      margin-bottom: 12px;
     }
 
-    .page-hero-content h1,
-    .section-title h2,
-    .feature-card h3 {
-      font-family: 'Cormorant Garamond', 'Georgia', serif;
-      letter-spacing: -0.02em;
-      line-height: 1.05;
-      color: #1b2e3c;
-      font-weight: 700;
+    .slot-card h3 {
+      font-size: 18px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
     }
 
-    .page-hero-content h1 {
-      font-size: clamp(34px, 5vw, 64px);
-    }
-
-    .section-title h2 {
-      font-size: clamp(30px, 4vw, 48px);
-      margin-bottom: 14px;
-    }
-
-    .page-hero-content p,
-    .section-title p,
-    .feature-card p,
-    .info-card p,
-    .delivery-tips p {
-      font-family: 'Inter', 'Segoe UI', sans-serif;
-      color: #5b6c7a;
-      line-height: 1.8;
-      font-weight: 500;
-    }
-
-    .section-title,
-    .page-hero-content {
-      text-align: center;
-    }
-
-    .section-title > *,
-    .page-hero-content > * {
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .feature-card h3 {
-      font-size: clamp(24px, 2vw, 30px);
+    .slot-time {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--pink-dark);
+      font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
     }
 
-    .feature-card p {
-      max-width: 300px;
-      margin: 0 auto;
+    .slot-card p {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 16px;
     }
 
-    @media (max-width: 500px) {
-      .page-hero-content h1 { font-size: clamp(28px, 8vw, 42px); }
-      .section-title h2 { font-size: clamp(26px, 7vw, 38px); }
+    /* Packaging Layers Grid */
+    .packaging-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .layer-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--blue-light);
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .layer-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--hover-shadow);
+      border-color: var(--pink);
+    }
+
+    .layer-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
+      color: var(--text-dark);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px auto;
+      font-size: 16px;
+    }
+
+    .layer-card h4 {
+      font-size: 15px;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .layer-card p {
+      font-size: 13px;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Care Steps Grid */
+    .care-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .care-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border-left: 5px solid var(--pink-dark);
+      padding: 26px;
+      box-shadow: var(--card-shadow);
+      transition: var(--transition);
+    }
+
+    .care-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .care-card h4 {
+      font-size: 17px;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .care-card p {
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* Guarantee Card */
+    .guarantee-box {
+      background: linear-gradient(135deg, #FFF0F5 0%, #E8F4FA 100%);
+      border: 1.5px solid var(--pink);
+      border-radius: var(--radius-lg);
+      padding: 38px 32px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      box-shadow: var(--pink-shadow);
+      margin-top: 48px;
+    }
+
+    @media(max-width:768px){
+      .guarantee-box { flex-direction: column; text-align: center; }
+      .pincode-input-group { flex-direction: column; width: 100%; }
     }
   </style>
 </head>
 <body>
 
-    <!-- ===================== NAVBAR ===================== -->
+  <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
       <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🍰</div>
-        <div class="logo-text">Our <span>Bakery</span></div>
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></div>
+        <div class="logo-text">Sweet <span>Delight</span></div>
       </a>
 
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="../index.html">Home ▾</a>
+          <a href="../pages/index.html">Home ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="../index.html">Home 1 (Classic Patisserie)</a>
-            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+            <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
           </div>
         </li>
+        <li><a href="../pages/about.html">About</a></li>
         <li class="nav-dropdown">
-          <a href="cakes.html" class="">Our Cakes ▾</a>
+          <a href="../pages/cakes.html">Cakes ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="cakes.html" class="">All Cakes Collection</a>
-            <a href="wedding.html" class="">Wedding Tiers 💍</a>
-            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
-            <a href="specials.html" class="">Chef's Specials 🔥</a>
+            <a href="../pages/cakes.html">All Cakes Collection</a>
+            <a href="../pages/wedding.html">Wedding Tiers</a>
+            <a href="../pages/custom.html">Custom 3D Designs</a>
+            <a href="../pages/specials.html">Chef's Specials</a>
           </div>
         </li>
-        <li><a href="about.html" class="">About Us</a></li>
-        <li><a href="gallery.html" class="">Gallery</a></li>
-        <li><a href="services.html" class="">Services</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
         <li class="nav-dropdown">
-          <a href="faq.html" class="active">Info ▾</a>
+          <a href="../pages/contact.html" class="active">Contact ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="delivery.html" class="active">Delivery & Care 🚚</a>
-            <a href="faq.html" class="">FAQ & Guide ❓</a>
+            <a href="../pages/faq.html">FAQ & Guide</a>
+            <a href="../pages/delivery.html" class="active">Delivery & Care</a>
           </div>
         </li>
-        <li><a href="contact.html" class="">Contact</a></li>
       </ul>
-
+ <div>
+       <button class="dir-toggle-btn" id="dirToggle" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+        <span class="dir-label">LTR</span>
+      </button>
+    </div>
       <div class="nav-cta">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
-        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <a href="../pages/booking.html" class="btn-nav">Order Now</a>
         <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -139,180 +295,538 @@
   <div class="mobile-menu" id="mobileMenu">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
       <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
-      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme"><i data-lucide="moon"></i></button>
     </div>
-    <a href="../index.html">Home 1 (Classic Patisserie)</a>
-    <a href="../home2.html">Home 2 (Artisan Studio)</a>
-    <a href="cakes.html" class="">All Cakes Collection</a>
-    <a href="wedding.html" class="">Wedding Cakes 💍</a>
-    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
-    <a href="specials.html" class="">Chef's Specials 🔥</a>
-    <a href="about.html" class="">About Us</a>
-    <a href="gallery.html" class="">Gallery</a>
-    <a href="services.html" class="">Services & Pricing</a>
-    <a href="delivery.html" class="active">Delivery & Care 🚚</a>
-    <a href="faq.html" class="">FAQ Guide ❓</a>
-    <a href="contact.html" class="">Contact Us</a>
-    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+    <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/cakes.html">All Cakes Collection</a>
+    <a href="../pages/wedding.html">Wedding Cakes</a>
+    <a href="../pages/custom.html">Custom 3D Cakes</a>
+    <a href="../pages/specials.html">Chef's Specials</a>
+    <a href="../pages/services.html">Services</a>
+    <a href="../pages/gallery.html">Gallery</a>
+    <a href="../pages/delivery.html" class="active">Delivery & Care</a>
+    <a href="../pages/faq.html">FAQ Guide</a>
+    <a href="../pages/contact.html">Contact</a>
+    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
   <section class="hero">
-  <div class="hero-bg"
-    style="background-image: url('https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=1600&auto=format&fit=crop&q=80');">
-  </div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
-  <span
-    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
-    class="fade-in-up">✦ Fresh From Our Ovens ✦</span>
-  <h1 class="fade-in-up delay-1"
-    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
-    Delivery, Packaging<br /><span style="color:var(--pink-dark);font-style:italic;">& Cake Care</span>
-  </h1>
-  <p class="fade-in-up delay-2"
-    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
-    Your cake is a work of art. We ensure it reaches your celebration in immaculate condition via climate-controlled vehicles and reinforced packaging.
-  </p>
-  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-    <a href="../pages/booking.html" class="btn-primary">🚚 Track Your Order</a>
-    <a href="#care-guide" class="btn-secondary">Care Instructions ↓</a>
+    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1524351199678-941a58a3df50?w=1600&auto=format&fit=crop&q=80');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-content-inner" style="max-width:680px; margin: 0 auto; text-align: center;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;" class="fade-in-up">✦ Fresh From Our Ovens ✦</span>
+        <h1 class="fade-in-up delay-1" style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+          Delivery, Packaging<br /><span style="color:var(--pink-dark);font-style:italic;"> Cake Care Guide</span>
+        </h1>
+        <p class="fade-in-up delay-2" style="font-size:17px;color:white;margin:0 auto 36px auto;max-width:520px;line-height:1.8;">
+          Your cake is a handcrafted masterpiece. We ensure it reaches your celebration in pristine condition via chilled 18°C AC delivery vans and reinforced multi-layer safety packaging.
+        </p>
+        <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+          <a href="#pincodeCheck" class="btn-primary btn-pincode">
+  <span class="btn-icon-box">
+    <i data-lucide="map-pin"></i>
+  </span>
+  <span class="btn-text">Check Delivery Pin Code</span>
+  <span class="btn-arrow">
+   
+  </span>
+</a>
+          <a href="#careGuide" class="btn-secondary">Cake Care Instructions ↓</a>
+        </div>
+
+        <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">100%</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Safe Transit Promise</div>
+          </div>
+          <div style="width:1px;background:var(--blue-light);"></div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">18°C</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Chilled AC Fleet</div>
+          </div>
+          <div style="width:1px;background:var(--blue-light);"></div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">Midnight</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Surprise Drops</div>
+          </div>
+          <div style="width:1px;background:var(--blue-light);"></div>
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">₹0</div>
+            <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Free Over ₹1,999</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== INTERACTIVE PINCODE CHECKER ===================== -->
+  <section class="section-sm bg-white" id="pincodeCheck">
+    <div class="container">
+      <div class="pincode-checker-box fade-in-up">
+      <div class="location-hero-badge">
+  <span class="badge-glow"></span>
+  <i data-lucide="map-pin"></i>
+</div>
+        <h3 style="font-size:22px;color:var(--text-dark);margin-bottom:6px;">Check Instant Delivery Availability for Your Area</h3>
+        <p style="font-size:14px;color:var(--text-mid);">Enter your 6-digit Coimbatore pin code or area name (e.g. 641002, 641004, RS Puram, Peelamedu, Saravanampatti).</p>
+        
+        <div class="pincode-input-group">
+          <input type="text" id="pincodeInput" class="pincode-input" placeholder="Enter Pincode (e.g. 641002)" maxlength="6" />
+          <button type="button" id="pincodeBtn" class="btn-primary" style="padding:14px 28px;">Check Zone </button>
+        </div>
+
+        <div id="pincodeResult" class="pincode-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4 CORE DELIVERY FEATURES ===================== -->
+  <section class="section bg-blush">
+    <div class="container">
+      
+      <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; align-items: center;">
+  <span style="display: inline-block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #ff69b4;">Flawless Cold-Chain Logistics</span>
+  <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">How We Guarantee Safe, Melt-Free Delivery</h2>
+  <p style="font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.8;">Zero melting, zero slipping, zero transit distortion — backed by our 100% Damage-Free Guarantee.</p>
+</div>
+
+     <div class="feature-grid">
+  <!-- Feature 1: Express Dispatch -->
+  <div class="feature-card fade-in-up">
+    <div class="feature-icon icon-blue">
+      <i data-lucide="truck"></i>
+    </div>
+    <h3>2-Hour Express Dispatch</h3>
+    <p>Order by 4 PM for guaranteed same-day delivery anywhere within Coimbatore municipal limits.</p>
   </div>
 
-  <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        100%</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Safe Transit</div>
+  <!-- Feature 2: Temperature Controlled -->
+  <div class="feature-card fade-in-up delay-1">
+    <div class="feature-icon icon-pink">
+      <i data-lucide="snowflake"></i>
     </div>
-    <div style="width:1px;background:var(--blue-light);"></div>
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        Chilled</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Climate Control</div>
+    <h3>Chilled 18°C Delivery Vans</h3>
+    <p>Multi-tier and delicate whipped cream cakes travel in temperature-controlled vans to prevent melting.</p>
+  </div>
+
+  <!-- Feature 3: Reinforced Packaging -->
+  <div class="feature-card fade-in-up delay-2">
+    <div class="feature-icon icon-blue">
+      <i data-lucide="package"></i>
     </div>
-    <div style="width:1px;background:var(--blue-light);"></div>
-    <div>
-      <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
-        Same-Day</div>
-      <div style="font-size:12px;color:var(--text-mid);font-weight:600;">Express Slots</div>
+    <h3>5-Layer Reinforced Packaging</h3>
+    <p>Heavy-duty, food-grade corrugated boxes with built-in base locks prevent shifting during transit.</p>
+  </div>
+
+  <!-- Feature 4: Live GPS Tracking -->
+  <div class="feature-card fade-in-up delay-3">
+    <div class="feature-icon icon-pink">
+      <i data-lucide="map-pin"></i>
+    </div>
+    <h3>Live WhatsApp GPS Tracking</h3>
+    <p>Receive real-time WhatsApp rider updates with live GPS tracking from our oven to your venue door.</p>
+  </div>
+</div>
+
+    </div>
+  </section>
+
+  <!-- ===================== DELIVERY SLOTS & TIMINGS ===================== -->
+  <section class="section bg-white">
+   <div class="container">
+  <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; align-items: center;">
+    <span style="display: inline-block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; color: #ff69b4;">Flexible Scheduling</span>
+    <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">Available Delivery Slots Across Coimbatore</h2>
+    <p style="font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.8;">Choose the exact time slot that aligns perfectly with your cake-cutting ceremony.</p>
+  </div>
+</div>
+
+    <div class="slots-grid">
+  <!-- Slot 1: Early Morning -->
+  <div class="slot-card fade-in-up">
+    <div class="slot-badge badge-amber">
+      <i data-lucide="sun"></i>
+      <span>Morning Fresh</span>
+    </div>
+    <h3>Early Morning Slot</h3>
+    <div class="slot-time">
+      <i data-lucide="clock"></i>
+      <span>8:00 AM – 11:30 AM</span>
+    </div>
+    <p>Freshly pulled out of our 5:00 AM bake batches. Ideal for office morning celebrations, school birthdays, and pooja offerings.</p>
+    <div class="slot-footer">
+      <span class="tag-price">
+        <i data-lucide="tag"></i>
+        Standard Delivery: ₹70
+      </span>
+    </div>
+  </div>
+
+  <!-- Slot 2: Afternoon -->
+  <div class="slot-card fade-in-up delay-1">
+    <div class="slot-badge badge-blue">
+      <i data-lucide="sun-medium"></i>
+      <span>Afternoon Delight</span>
+    </div>
+    <h3>Lunch &amp; Afternoon Slot</h3>
+    <div class="slot-time">
+      <i data-lucide="clock"></i>
+      <span>1:00 PM – 4:30 PM</span>
+    </div>
+    <p>Temperature-shielded transport during peak heat hours. Perfect for lunch gatherings, cafes, and restaurant reservations.</p>
+    <div class="slot-footer">
+      <span class="tag-price">
+        <i data-lucide="tag"></i>
+        Standard Delivery: ₹70
+      </span>
+    </div>
+  </div>
+
+  <!-- Slot 3: Evening -->
+  <div class="slot-card fade-in-up delay-2">
+    <div class="slot-badge badge-pink">
+      <i data-lucide="moon"></i>
+      <span>Evening Prime</span>
+    </div>
+    <h3>Prime Party Slot</h3>
+    <div class="slot-time">
+      <i data-lucide="clock"></i>
+      <span>5:30 PM – 9:00 PM</span>
+    </div>
+    <p>Our most popular slot for birthday parties, family dinners, and anniversary celebrations. Dispatched from nearest neighborhood hub.</p>
+    <div class="slot-footer">
+      <span class="tag-price">
+        <i data-lucide="tag"></i>
+        Standard Delivery: ₹70
+      </span>
     </div>
   </div>
 </div>
-  </div>
-</section>
-
-  <!-- ===================== DELIVERY FEATURES ===================== -->
-  <section class="section bg-white">
-    <div class="container">
-      
-      <div class="section-title">
-        <span>Flawless Logistics</span>
-        <h2>How We Guarantee Safe Delivery</h2>
-        <p>Zero melting, zero slipping, zero damage — backed by our 100% Fresh Delivery Guarantee.</p>
-      </div>
-
-      <div class="feature-grid">
-        
-        <div class="feature-card fade-in-up">
-          <div class="feature-icon icon-blue">🚚</div>
-          <h3>2-Hour Express Dispatch</h3>
-          <p>Order by 4 PM for guaranteed same-day delivery anywhere within Coimbatore municipal limits.</p>
-        </div>
-
-        <div class="feature-card fade-in-up delay-1">
-          <div class="feature-icon icon-pink">❄️</div>
-          <h3>Chilled AC Delivery Vans</h3>
-          <p>Multi-tier and delicate whipped cream cakes travel in 18°C temperature-controlled vans.</p>
-        </div>
-
-        <div class="feature-card fade-in-up delay-2">
-          <div class="feature-icon icon-blue">📦</div>
-          <h3>Reinforced Safety Boxes</h3>
-          <p>Heavy-duty, food-grade corrugated boxes with built-in base locks prevent movement during transit.</p>
-        </div>
-
-        <div class="feature-card fade-in-up delay-3">
-          <div class="feature-icon icon-pink">📍</div>
-          <h3>Live Rider Tracking</h3>
-          <p>Receive real-time WhatsApp updates with live GPS tracking from our bakery kitchen to your doorstep.</p>
-        </div>
-
-      </div>
-
     </div>
   </section>
 
-  <!-- ===================== CAKE CARE INSTRUCTIONS ===================== -->
-  <section class="section" style="background:var(--blush);">
+  <!-- ===================== 5-LAYER PACKAGING ANATOMY ===================== -->
+  <section class="section bg-blush">
     <div class="container">
-      
-      <div class="section-title">
-        <span>Baker's Best Practices</span>
-        <h2>Cake Care & Storage Instructions</h2>
-        <p>Follow these quick tips to keep your cake tasting and looking bakery-fresh.</p>
-      </div>
+  <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; align-items: center;">
+    <span style="display: inline-block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; color: #ff69b4;">Patisserie Engineering</span>
+    <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">Our 5-Layer Climate-Shield Packaging</h2>
+    <p style="font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.85;">How we guarantee your bespoke cake survives Coimbatore roads and ambient heat without a single scratch.</p>
+  </div>
+</div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+      <div class="packaging-grid">
         
-        <div style="background:var(--white);border:1.5px solid var(--blue-light);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);" class="fade-in-up">
-          <div style="font-size:32px;margin-bottom:12px;">❄️</div>
-          <h3 style="font-size:18px;margin-bottom:8px;color:var(--text-dark);">Buttercream & Truffle Cakes</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;">Refrigerate upon delivery. Bring to room temperature 20 to 30 minutes before cutting for the smoothest, melt-in-the-mouth texture.</p>
+        <div class="layer-card fade-in-up">
+          <div class="layer-number">1</div>
+          <h4>Heavyweight Cake Drum</h4>
+          <p>Solid 12mm silver-embossed rigid drum prevents flexing or cake base cracking.</p>
         </div>
 
-        <div style="background:var(--white);border:1.5px solid var(--pink-light);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);" class="fade-in-up delay-1">
-          <div style="font-size:32px;margin-bottom:12px;">🍓</div>
-          <h3 style="font-size:18px;margin-bottom:8px;color:var(--text-dark);">Fresh Fruit & Whipped Cream</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;">Must be kept chilled at all times (2°C – 6°C). Serve chilled immediately upon cutting. Consume within 48 hours of delivery.</p>
+        <div class="layer-card fade-in-up delay-1">
+          <div class="layer-number">2</div>
+          <h4>Anti-Slip Base Anchor</h4>
+          <p>Food-safe non-slip silicone pads lock the board firmly to the bottom of the box.</p>
         </div>
 
-        <div style="background:var(--white);border:1.5px solid var(--blue-light);border-radius:var(--radius-md);padding:28px;box-shadow:var(--card-shadow);" class="fade-in-up delay-2">
-          <div style="font-size:32px;margin-bottom:12px;">🎨</div>
-          <h3 style="font-size:18px;margin-bottom:8px;color:var(--text-dark);">3D Fondant Sculpted Cakes</h3>
-          <p style="font-size:13px;color:var(--text-mid);line-height:1.7;">Store in an air-conditioned room (not inside a high-humidity fridge) to prevent sugar condensation and preserve structural crispness.</p>
+        <div class="layer-card fade-in-up delay-2">
+          <div class="layer-number">3</div>
+          <h4>Thermal Honeycomb Walls</h4>
+          <p>Multi-ply insulated corrugated walls reflect outside heat and absorb road vibrations.</p>
+        </div>
+
+        <div class="layer-card fade-in-up delay-3">
+          <div class="layer-number">4</div>
+          <h4>Dry Gel Chill Chamber</h4>
+          <p>Pre-chilled food-safe gel inserts keep interior at 16°C for up to 4 hours in transit.</p>
+        </div>
+
+        <div class="layer-card fade-in-up delay-4">
+          <div class="layer-number">5</div>
+          <h4>Gold Tamper Seal & Handle</h4>
+          <p>Sanitized hygiene seal ensures zero tampering, accompanied by luxury satin ribbon.</p>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== CAKE CARE INSTRUCTIONS & HANDLING ===================== -->
+  <section class="section bg-white" id="careGuide">
+   <div class="container">
+  <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; align-items: center;">
+    <span style="display: inline-block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; color: #ff69b4;">Baker's Best Practices</span>
+    <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">Cake Care, Storage & Slicing Masterclass</h2>
+    <p style="font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.85;">Follow these expert guidelines from our master chefs to keep your cake looking and tasting fresh.</p>
+  </div>
+</div>
+
+   <div class="care-grid">
+  <!-- Card 1: Self-Transport by Car -->
+  <div class="care-card fade-in-up">
+    <div class="care-header">
+      <div class="care-icon icon-blue">
+        <i data-lucide="car"></i>
+      </div>
+      <h4>Self-Transport by Car</h4>
+    </div>
+    <p>Always place the cake box on the <strong>flat floorboard of your car</strong> (passenger side) with AC blowing down on maximum. <em>NEVER place the cake on a slanted car seat or hold it tilted on your lap.</em></p>
+  </div>
+
+  <!-- Card 2: Safe Unboxing Technique -->
+  <div class="care-card fade-in-up delay-1">
+    <div class="care-header">
+      <div class="care-icon icon-pink">
+        <i data-lucide="box"></i>
+      </div>
+      <h4>Safe Unboxing Technique</h4>
+    </div>
+    <p>Our boxes feature easy-tear front flaps. Pull the side perforations down and <strong>slide the cake board horizontally</strong> outward. Never try to lift a heavy cake upward over tall box edges.</p>
+  </div>
+
+  <!-- Card 3: Buttercream & Truffle Storage -->
+  <div class="care-card fade-in-up delay-2">
+    <div class="care-header">
+      <div class="care-icon icon-cyan">
+        <i data-lucide="snowflake"></i>
+      </div>
+      <h4>Buttercream &amp; Truffle Storage</h4>
+    </div>
+    <p>Refrigerate upon delivery. Bring out to room temperature <strong>20 to 30 minutes before cutting</strong> so the butter ganache softens into its signature silky, melt-in-the-mouth texture.</p>
+  </div>
+
+  <!-- Card 4: Fresh Fruit & Fresh Cream Care -->
+  <div class="care-card fade-in-up delay-3">
+    <div class="care-header">
+      <div class="care-icon icon-rose">
+        <i data-lucide="citrus"></i>
+      </div>
+      <h4>Fresh Fruit &amp; Fresh Cream Care</h4>
+    </div>
+    <p>Fresh dairy cream cakes must remain <strong>strictly refrigerated (2°C – 6°C)</strong> until the moment of cutting. Do not leave exposed under hot halogen event lighting or direct sunlight.</p>
+  </div>
+
+  <!-- Card 5: 3D Fondant Sculpted Cakes -->
+  <div class="care-card fade-in-up delay-4">
+    <div class="care-header">
+      <div class="care-icon icon-amber">
+        <i data-lucide="palette"></i>
+      </div>
+      <h4>3D Fondant Sculpted Cakes</h4>
+    </div>
+    <p>Store in an <strong>air-conditioned room (18°C–22°C)</strong>. Avoid standard domestic refrigerators, as opening the door causes humidity condensation that can soften sugar craft figurines.</p>
+  </div>
+
+  <!-- Card 6: Chef's Knife Slicing Secret -->
+  <div class="care-card fade-in-up delay-5">
+    <div class="care-header">
+      <div class="care-icon icon-purple">
+        <i data-lucide="utensils-crossed"></i>
+      </div>
+      <h4>Chef's Knife Slicing Secret</h4>
+    </div>
+    <p>Dip your slicing knife in a tall mug of warm water for 5 seconds, wipe dry, and cut straight down. Reheat and wipe the blade after each slice for pristine, bakery-grade presentation slices.</p>
+  </div>
+
+  <!-- Card 7: Perfect Serving Temperature -->
+  <div class="care-card fade-in-up delay-6">
+    <div class="care-header">
+      <div class="care-icon icon-amber">
+        <i data-lucide="thermometer"></i>
+      </div>
+      <h4>Perfect Serving Temperature</h4>
+    </div>
+    <p>Buttercream and ganache cakes taste best at room temperature. Take your cake out of the refrigerator 30 to 45 minutes before slicing to allow the flavors to soften and reach their rich, creamy texture.</p>
+  </div>
+
+  <!-- Card 8: Safe Car Transport Rule -->
+  <div class="care-card fade-in-up delay-7">
+    <div class="care-header">
+      <div class="care-icon icon-blue">
+        <i data-lucide="shield-check"></i>
+      </div>
+      <h4>Safe Car Transport Rule</h4>
+    </div>
+    <p>When carrying the cake in a vehicle, always place the box flat on the car floorboard (passenger side) rather than on a tilted seat. Keep the AC running on high to maintain a cool environment during transit.</p>
+  </div>
+</div>
+
+      
 
       <div style="text-align:center;margin-top:44px;">
-        <a href="booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;">Order with Express Delivery 🚚</a>
+       <a href="../pages/booking.html" class="btn-primary btn-express-delivery">
+  <span class="btn-icon-box">
+    <i data-lucide="truck"></i>
+  </span>
+  <span class="btn-text">Order with Express Delivery</span>
+  <span class="btn-arrow">
+   
+  </span>
+</a>
       </div>
 
     </div>
   </section>
 
-    <!-- ===================== FOOTER ===================== -->
+  <!-- ===================== CURBSIDE SELF PICKUP GUIDE ===================== -->
+  <section class="section bg-blush">
+   <div class="container" style="max-width:860px;">
+  <div class="section-title" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto; display: flex; flex-direction: column; align-items: center;">
+    <span style="display: inline-block; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 8px; color: #ff69b4;">Prefer Self Pickup?</span>
+    <h2 style="font-size: 32px; font-weight: 700; margin: 0 0 12px 0; line-height: 1.3;">Curbside Drive-Through Pickup Available</h2>
+    <p style="font-size: 16px; margin: 0; line-height: 1.5; opacity: 0.85;">Pick up directly from our flagship RS Puram Studio or Peelamedu Hub in under 5 minutes.</p>
+  </div>
+</div>
+
+      <div style="background:var(--white);border-radius:var(--radius-md);padding:32px;box-shadow:var(--card-shadow);border:1px solid var(--blue-light);">
+        <div style="display:flex;flex-direction:column;gap:18px;">
+          
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="background:var(--pink-light);color:var(--text-dark);font-weight:800;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">1</div>
+            <div>
+              <h4 style="font-size:15px;color:var(--text-dark);margin-bottom:4px;">Select "Store Pickup" at Checkout</h4>
+              <p style="font-size:13px;color:var(--text-mid);margin:0;">Choose either our RS Puram Flagship or Peelamedu Express counter and your preferred pickup time.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="background:var(--pink-light);color:var(--text-dark);font-weight:800;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">2</div>
+            <div>
+              <h4 style="font-size:15px;color:var(--text-dark);margin-bottom:4px;">Receive WhatsApp "Ready for Pickup" Alert</h4>
+              <p style="font-size:13px;color:var(--text-mid);margin:0;">We will notify you 30 minutes before your scheduled slot once the cake has undergone final quality inspection.</p>
+            </div>
+          </div>
+
+          <div style="display:flex;align-items:flex-start;gap:14px;">
+            <div style="background:var(--pink-light);color:var(--text-dark);font-weight:800;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">3</div>
+            <div>
+              <h4 style="font-size:15px;color:var(--text-dark);margin-bottom:4px;">Drive Up & We Load into Your Car</h4>
+              <p style="font-size:13px;color:var(--text-mid);margin:0;">Pull up to our dedicated curbside bay. Our pastry assistants will bring the chilled reinforced box directly to your car and position it safely.</p>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+    </div>
+  </section>
+
    <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <a href="../pages/index.html" class="logo-text">
+  <span class="logo-icon-box">
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+  </span>
+  <span class="brand-name">
+    Sweet <span class="brand-highlight">Delight</span>
+  </span>
+</a>
         <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-socials">
-          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Phone -->
+          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Email -->
+          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </a>
         </div>
+        
       </div>
       <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
-        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
-        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+        <li><a href="../pages/index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
       </ul></div>
       <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
-        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
       </ul></div>
       <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
-        <li><span>Sunday</span><span>9am – 8pm</span></li>
-      </ul>
+  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
+  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
+  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
+</ul>
       <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+   <div class="footer-bottom">
+  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
+  <span class="tagline-text">
+    Made with 
+    <span class="heart-icon-box">
+      <i data-lucide="heart"></i>
+    </span> 
+    and lots of butter
+  </span>
+</div>
   </footer>
 
+
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>
+  <script>
+    // Coimbatore Pincode Checker Logic
+    const supportedPincodes = {
+      '641001': 'Coimbatore Head Post / Town Hall (Express 90-Min Delivery)',
+      '641002': 'RS Puram & DB Road (Immediate 45-Min Hub Dispatch)',
+      '641004': 'Peelamedu & PSG Tech Zone (Immediate 45-Min Hub Dispatch)',
+      '641006': 'Ganapathy & Avarampalayam (Express 90-Min Delivery)',
+      '641011': 'Saibaba Colony & NSR Road (Express 60-Min Delivery)',
+      '641012': 'Gandhipuram & Cross Cut Road (Express 60-Min Delivery)',
+      '641018': 'Race Course & Ramanathapuram (Express 60-Min Delivery)',
+      '641028': 'Singanallur & Trichy Road (Express 90-Min Delivery)',
+      '641035': 'Saravanampatti & IT SEZ (Immediate 45-Min Hub Dispatch)',
+      '641041': 'Vadavalli & Marudhamalai Road (Express 90-Min Delivery)',
+      '641042': 'Kovaipudur & Kuniyamuthur (Express 90-Min Delivery)',
+      '641029': 'Thudiyalur & Koundampalayam (Express 90-Min Delivery)',
+      '641048': 'Kalapatti & Airport Area (Express 90-Min Delivery)'
+    };
+
+    const pincodeBtn = document.getElementById('pincodeBtn');
+    const pincodeInput = document.getElementById('pincodeInput');
+    const pincodeResult = document.getElementById('pincodeResult');
+
+    function checkPincode() {
+      const val = pincodeInput.value.trim();
+      if (!val) {
+        pincodeResult.className = 'pincode-result alert';
+        pincodeResult.innerHTML = '⚠️ Please enter a 6-digit Coimbatore pin code.';
+        return;
+      }
+
+      if (supportedPincodes[val]) {
+        pincodeResult.className = 'pincode-result success';
+        pincodeResult.innerHTML = `✅ <strong>Eligible for Fast Chilled Delivery!</strong><br/>Area: <strong>${supportedPincodes[val]}</strong>.<br/>✨ Free delivery on orders above ₹1,999. Same-day slots available now!`;
+      } else if (val.startsWith('641')) {
+        pincodeResult.className = 'pincode-result success';
+        pincodeResult.innerHTML = `✅ <strong>Delivery Available in Coimbatore Zone (${val})!</strong><br/>Estimated Transit: 90–120 mins in chilled delivery van.`;
+      } else {
+        pincodeResult.className = 'pincode-result alert';
+        pincodeResult.innerHTML = `ℹ️ <strong>Outside Primary Express Zone.</strong> We deliver out-of-city celebration tiers via special temperature-locked transport! Please WhatsApp us at <strong>+91 81229 32402</strong> to arrange custom outstation delivery.`;
+      }
+    }
+
+    if (pincodeBtn) pincodeBtn.addEventListener('click', checkPincode);
+    if (pincodeInput) {
+      pincodeInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') checkPincode();
+      });
+    }
+  </script>
 </body>
 </html>

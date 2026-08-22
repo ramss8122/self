@@ -13,6 +13,7 @@
       grid-template-columns: 1.6fr 1fr;
       gap: 48px;
       align-items: start;
+        
     }
     @media(max-width:900px){ .booking-layout{ grid-template-columns:1fr; } }
 
@@ -35,21 +36,33 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 8px;
+       font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      color: var(--text-dark);
+      margin: 28px 0 16px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--blue-light);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
     }
 
     .checkbox-label {
       display: flex;
       align-items: center;
       gap: 7px;
-      background: white;
+      /* background: pink; */
+        background: linear-gradient(135deg, var(--pink-light), var(--blue-light));
       border: 2px solid var(--blue-light);
       border-radius: 50px;
       padding: 8px 16px;
       font-size: 13px;
       font-weight: 600;
-      color: var(--text-mid);
+      /* color: black; */
       cursor: pointer;
       transition: var(--transition);
+        color: var(--pink-dark);
     }
 
     .checkbox-label input[type="checkbox"] { display: none; }
@@ -162,47 +175,49 @@
 </head>
 <body>
 
-    <!-- ===================== NAVBAR ===================== -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="../index.html" class="nav-logo">
-        <div class="logo-icon">🍰</div>
-        <div class="logo-text">Our <span>Bakery</span></div>
+      <a href="../pages/index.html" class="nav-logo">
+        <div class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></div>
+        <div class="logo-text">Sweet <span>Delight</span></div>
       </a>
 
       <ul class="nav-links">
         <li class="nav-dropdown">
-          <a href="../index.html">Home ▾</a>
+          <a href="../pages/index.html">Home ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="../index.html">Home 1 (Classic Patisserie)</a>
-            <a href="../home2.html">Home 2 (Artisan Studio)</a>
+            <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+            <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
           </div>
         </li>
+        <li><a href="../pages/about.html" class="">About</a></li>
         <li class="nav-dropdown">
-          <a href="cakes.html" class="">Our Cakes ▾</a>
+          <a href="../pages/cakes.html" class="">Cakes ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="cakes.html" class="">All Cakes Collection</a>
-            <a href="wedding.html" class="">Wedding Tiers 💍</a>
-            <a href="custom.html" class="">Custom 3D Designs 🎨</a>
-            <a href="specials.html" class="">Chef's Specials 🔥</a>
+            <a href="../pages/cakes.html">All Cakes Collection</a>
+            <a href="../pages/wedding.html" class="">Wedding Tiers</a>
+            <a href="../pages/custom.html" class="">Custom 3D Designs</a>
+            <a href="../pages/specials.html" class="">Chef's Specials</a>
           </div>
         </li>
-        <li><a href="about.html" class="">About Us</a></li>
-        <li><a href="gallery.html" class="">Gallery</a></li>
-        <li><a href="services.html" class="">Services</a></li>
+        <li><a href="../pages/services.html" class="">Services</a></li>
+        <li><a href="../pages/gallery.html" class="">Gallery</a></li>
         <li class="nav-dropdown">
-          <a href="faq.html" class="">Info ▾</a>
+          <a href="../pages/contact.html" class="">Contact ▾</a>
           <div class="nav-dropdown-menu">
-            <a href="delivery.html" class="">Delivery & Care 🚚</a>
-            <a href="faq.html" class="">FAQ & Guide ❓</a>
+            <a href="../pages/faq.html" class="active">FAQ & Guide</a>
+            <a href="../pages/delivery.html">Delivery & Care</a>
           </div>
         </li>
-        <li><a href="contact.html" class="">Contact</a></li>
       </ul>
-
+ <div>
+       <button class="dir-toggle-btn" id="dirToggle" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+        <span class="dir-label">LTR</span>
+      </button>
+    </div>
       <div class="nav-cta">
-        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">🌙</button>
-        <a href="booking.html" class="btn-nav">Order Now 🎂</a>
+        <button class="theme-toggle-btn" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
+        <a href="../pages/booking.html" class="btn-nav">Order Now</a>
         <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -214,21 +229,21 @@
   <div class="mobile-menu" id="mobileMenu">
     <div style="display:flex;justify-content:space-between;align-items:center;padding:0 16px 12px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:8px;">
       <span style="font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--pink-dark);">Theme Mode</span>
-      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme">🌙</button>
+      <button class="theme-toggle-btn" style="width:38px;height:38px;font-size:16px;" aria-label="Toggle Light/Dark Theme"><i data-lucide="moon"></i></button>
     </div>
-    <a href="../index.html">Home 1 (Classic Patisserie)</a>
-    <a href="../home2.html">Home 2 (Artisan Studio)</a>
-    <a href="cakes.html" class="">All Cakes Collection</a>
-    <a href="wedding.html" class="">Wedding Cakes 💍</a>
-    <a href="custom.html" class="">Custom 3D Cakes 🎨</a>
-    <a href="specials.html" class="">Chef's Specials 🔥</a>
-    <a href="about.html" class="">About Us</a>
-    <a href="gallery.html" class="">Gallery</a>
-    <a href="services.html" class="">Services & Pricing</a>
-    <a href="delivery.html" class="">Delivery & Care 🚚</a>
-    <a href="faq.html" class="">FAQ Guide ❓</a>
-    <a href="contact.html" class="">Contact Us</a>
-    <a href="booking.html" class="mobile-cta">Order Now 🎂</a>
+    <a href="../pages/index.html">Home 1 (Classic Patisserie)</a>
+    <a href="../pages/home2.html">Home 2 (Artisan Studio)</a>
+    <a href="../pages/about.html" class="">About</a>
+    <a href="../pages/cakes.html">All Cakes Collection</a>
+    <a href="../pages/wedding.html">Wedding Cakes</a>
+    <a href="../pages/custom.html">Custom 3D Cakes</a>
+    <a href="../pages/specials.html">Chef's Specials</a>
+    <a href="../pages/services.html">Services</a>
+    <a href="../pages/gallery.html">Gallery</a>
+    <a href="../pages/delivery.html">Delivery & Care</a>
+    <a href="../pages/faq.html">FAQ Guide</a>
+    <a href="../pages/contact.html">Contact</a>
+    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
@@ -259,222 +274,201 @@
         <div class="progress-step done"><div class="step-dot">1</div><div class="step-label">Details</div></div>
         <div class="progress-step done"><div class="step-dot">2</div><div class="step-label">Cake Design</div></div>
         <div class="progress-step done"><div class="step-dot">3</div><div class="step-label">Delivery</div></div>
-        <div class="progress-step"><div class="step-dot">4</div><div class="step-label">Confirm</div></div>
+        <div class="progress-step done"><div class="step-dot">4</div><div class="step-label">Confirm</div></div>
       </div>
 
       <div class="booking-layout">
 
         <!-- FORM -->
-        <form data-validate id="bookingForm" style="background:white;border-radius:var(--radius-lg);padding:40px;box-shadow:var(--card-shadow);" class="fade-in-up">
+       <form data-validate id="bookingForm" class="booking-form fade-in-up">
 
-          <!-- Section 1: Your Details -->
-          <div class="form-section-title">👤 Your Details</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="bfName">Full Name</label>
-              <input type="text" id="bfName" class="form-control" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="bfPhone">Phone / WhatsApp</label>
-              <input type="tel" id="bfPhone" class="form-control" placeholder="8122932402" required />
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="bfEmail">Email Address</label>
-            <input type="email" id="bfEmail" class="form-control" placeholder="your@email.com" required />
-          </div>
+  <!-- Section 1: Your Details -->
+  <div class="form-section-title">
+  <span class="form-title-icon">
+    <i data-lucide="user"></i>
+  </span>
+  
+</div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="bfName">Full Name</label>
+      <input type="text" id="bfName" class="form-control" placeholder="Your name" required />
+    </div>
+    <div class="form-group">
+      <label for="bfPhone">Phone / WhatsApp</label>
+      <input type="tel" id="bfPhone" class="form-control" placeholder="8122932402" required />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="bfEmail">Email Address</label>
+    <input type="email" id="bfEmail" class="form-control" placeholder="your@email.com" required />
+  </div>
 
-          <!-- Section 2: Occasion -->
-          <div class="form-section-title">🎉 Occasion</div>
-          <div class="form-group">
-            <label for="bfOccasion">Occasion Type</label>
-            <select id="bfOccasion" class="form-control" required>
-              <option value="">Select occasion…</option>
-              <option>Birthday</option>
-              <option>Wedding</option>
-              <option>Anniversary</option>
-              <option>Baby Shower</option>
-              <option>Graduation</option>
-              <option>Festive / Holiday</option>
-              <option>Corporate / Event</option>
-              <option>Just Because 💝</option>
-              <option>Other</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="bfDate">Delivery / Collection Date</label>
-              <input type="date" id="bfDate" class="form-control" required />
-            </div>
-            <div class="form-group">
-              <label for="bfTime">Preferred Time</label>
-              <select id="bfTime" class="form-control">
-                <option>10:00 AM – 12:00 PM</option>
-                <option>12:00 PM – 2:00 PM</option>
-                <option>2:00 PM – 4:00 PM</option>
-                <option>4:00 PM – 6:00 PM</option>
-                <option>6:00 PM – 8:00 PM</option>
-              </select>
-            </div>
-          </div>
+  <!-- Section 2: Occasion -->
+  <div class="form-section-title">
+  <span class="form-title-icon icon-party">
+    <i data-lucide="party-popper"></i>
+  </span>
+  
+</div>
+  <div class="form-group">
+    <label for="bfOccasion">Occasion Type</label>
+    <select id="bfOccasion" class="form-control" required>
+      <option value="">Select occasion…</option>
+      <option>Birthday</option>
+      <option>Wedding</option>
+      <option>Anniversary</option>
+      <option>Baby Shower</option>
+      <option>Graduation</option>
+      <option>Festive / Holiday</option>
+      <option>Corporate / Event</option>
+      <option>Just Because 💝</option>
+      <option>Other</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+  <label for="bfDate" class="form-label">
+    <span class="label-icon"><i data-lucide="calendar"></i></span>
+    Delivery / Collection Date
+  </label>
+  <div class="input-wrapper">
+    <input type="date" id="bfDate" class="form-control" required />
+    <span class="input-focus-bg"></span>
+  </div>
+</div>
+    <div class="form-group">
+      <label for="bfTime">Preferred Time</label>
+      <select id="bfTime" class="form-control">
+        <option>10:00 AM – 12:00 PM</option>
+        <option>12:00 PM – 2:00 PM</option>
+        <option>2:00 PM – 4:00 PM</option>
+        <option>4:00 PM – 6:00 PM</option>
+        <option>6:00 PM – 8:00 PM</option>
+      </select>
+    </div>
+  </div>
 
-          <!-- Section 3: Cake Design -->
-          <div class="form-section-title">🎨 Cake Design</div>
+  <!-- Section 3: Cake Design -->
+  <div class="form-section-title">
+  <span class="form-title-icon icon-design">
+    <i data-lucide="palette"></i>
+  </span>
+  
+</div>
 
-          <div class="form-group">
-            <label>Cake Size</label>
-            <div class="size-cards" id="sizeCards">
-              <div class="size-card selected" data-size="half">
-                <div class="size-icon">🍰</div>
-                <div class="size-name">Half Kg</div>
-                <div class="size-serves">Serves 4–6</div>
-                <div class="size-price">from ₹750</div>
-              </div>
-              <div class="size-card" data-size="one">
-                <div class="size-icon">🎂</div>
-                <div class="size-name">1 Kg</div>
-                <div class="size-serves">Serves 8–12</div>
-                <div class="size-price">from ₹1,500</div>
-              </div>
-              <div class="size-card" data-size="two">
-                <div class="size-icon">🏆</div>
-                <div class="size-name">2 Kg</div>
-                <div class="size-serves">Serves 20–25</div>
-                <div class="size-price">from ₹3,000</div>
-              </div>
-              <div class="size-card" data-size="three">
-                <div class="size-icon">👑</div>
-                <div class="size-name">3 Kg</div>
-                <div class="size-serves">Serves 30–40</div>
-                <div class="size-price">from ₹4,500</div>
-              </div>
-              <div class="size-card" data-size="tier2">
-                <div class="size-icon">🗼</div>
-                <div class="size-name">2-Tier</div>
-                <div class="size-serves">Serves 40–60</div>
-                <div class="size-price">from ₹8,000</div>
-              </div>
-              <div class="size-card" data-size="custom">
-                <div class="size-icon">✨</div>
-                <div class="size-name">Custom</div>
-                <div class="size-serves">Any size</div>
-                <div class="size-price">Quote me</div>
-              </div>
-            </div>
-          </div>
+  <div class="form-group">
+    <label>Cake Size</label>
+    <div class="size-cards" id="sizeCards">
+  <div class="size-card" data-size="three">
+    <div class="size-icon icon-crown">
+      <i data-lucide="crown"></i>
+    </div>
+    <div class="size-name">3 Kg</div>
+    <div class="size-serves">Serves 30–40</div>
+    <div class="size-price">from ₹4,500</div>
+  </div>
 
-          <div class="form-group">
-            <label for="bfFlavour">Cake Flavour</label>
-            <select id="bfFlavour" class="form-control" required>
-              <option value="">Choose flavour…</option>
-              <optgroup label="Classic">
-                <option>Vanilla</option>
-                <option>Chocolate</option>
-                <option>Strawberry</option>
-                <option>Butterscotch</option>
-              </optgroup>
-              <optgroup label="Premium">
-                <option>Red Velvet</option>
-                <option>Blueberry Cheesecake</option>
-                <option>Hazelnut Praline</option>
-                <option>Mango Mousse</option>
-                <option>Lemon Curd</option>
-                <option>Black Forest</option>
-              </optgroup>
-              <optgroup label="Signature">
-                <option>Saffron Rose</option>
-                <option>Pistachio Cardamom</option>
-                <option>Dark Rum Truffle</option>
-                <option>Tell us your idea! →</option>
-              </optgroup>
-            </select>
-          </div>
+  <div class="size-card" data-size="tier2">
+    <div class="size-icon icon-tier">
+      <i data-lucide="layers"></i>
+    </div>
+    <div class="size-name">2-Tier</div>
+    <div class="size-serves">Serves 40–60</div>
+    <div class="size-price">from ₹8,000</div>
+  </div>
 
-          <div class="form-group">
-            <label>Frosting Type</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label"><input type="checkbox"/> Whipped Cream</label>
-              <label class="checkbox-label"><input type="checkbox"/> Buttercream</label>
-              <label class="checkbox-label"><input type="checkbox"/> Fondant</label>
-              <label class="checkbox-label"><input type="checkbox"/> Ganache</label>
-              <label class="checkbox-label"><input type="checkbox"/> Naked (No Frosting)</label>
-            </div>
-          </div>
+  <div class="size-card" data-size="custom">
+    <div class="size-icon icon-sparkles">
+      <i data-lucide="sparkles"></i>
+    </div>
+    <div class="size-name">Custom</div>
+    <div class="size-serves">Any size</div>
+    <div class="size-price">Quote me</div>
+  </div>
+</div>
+  </div>
 
-          <div class="form-group">
-            <label>Add-ons</label>
-            <div class="checkbox-group">
-              <label class="checkbox-label"><input type="checkbox"/> Photo Print (+₹300)</label>
-              <label class="checkbox-label"><input type="checkbox"/> Edible Gold Dust (+₹250)</label>
-              <label class="checkbox-label"><input type="checkbox"/> Fondant Figurine (+₹500)</label>
-              <label class="checkbox-label"><input type="checkbox"/> Sugar Flowers (+₹400)</label>
-              <label class="checkbox-label"><input type="checkbox"/> Candles &amp; Topper</label>
-              <label class="checkbox-label"><input type="checkbox"/> Gift Ribbon &amp; Box</label>
-            </div>
-          </div>
+  <div class="form-group">
+    <label for="bfFlavour">Cake Flavour</label>
+    <select id="bfFlavour" class="form-control" required>
+      <option value="">Choose flavour…</option>
+      <optgroup label="Classic">
+        <option>Vanilla</option>
+        <option>Chocolate</option>
+        <option>Strawberry</option>
+        <option>Butterscotch</option>
+      </optgroup>
+      <optgroup label="Premium">
+        <option>Red Velvet</option>
+        <option>Blueberry Cheesecake</option>
+        <option>Hazelnut Praline</option>
+        <option>Mango Mousse</option>
+        <option>Lemon Curd</option>
+        <option>Black Forest</option>
+      </optgroup>
+      <optgroup label="Signature">
+        <option>Saffron Rose</option>
+        <option>Pistachio Cardamom</option>
+        <option>Dark Rum Truffle</option>
+        <option>Tell us your idea! →</option>
+      </optgroup>
+    </select>
+  </div>
 
-          <div class="form-group">
-            <label for="bfMessage">Cake Message / Text</label>
-            <input type="text" id="bfMessage" class="form-control" placeholder="e.g. Happy Birthday Priya! 🎂 Love, Mum" />
-          </div>
+  <div class="form-group">
+    <label>Frosting Type</label>
+    <div class="checkbox-group">
+      <label class="checkbox-label"><input type="checkbox"/> Whipped Cream</label>
+      <label class="checkbox-label"><input type="checkbox"/> Buttercream</label>
+      <label class="checkbox-label"><input type="checkbox"/> Fondant</label>
+      <label class="checkbox-label"><input type="checkbox"/> Ganache</label>
+      <label class="checkbox-label"><input type="checkbox"/> Naked (No Frosting)</label>
+    </div>
+  </div>
 
-          <!-- Section 4: Design Description -->
-          <div class="form-section-title">🖼 Design Description</div>
-          <div class="form-group">
-            <label for="bfDesign">Describe Your Design</label>
-            <textarea id="bfDesign" class="form-control" placeholder="Describe colours, theme, style, characters or any design references. You can also share a reference image after submitting." style="min-height:140px;"></textarea>
-          </div>
+  <div class="form-group">
+    <label>Add-ons</label>
+    <div class="checkbox-group">
+      <label class="checkbox-label"><input type="checkbox"/> Photo Print (+₹300)</label>
+      <label class="checkbox-label"><input type="checkbox"/> Edible Gold Dust (+₹250)</label>
+      <label class="checkbox-label"><input type="checkbox"/> Fondant Figurine (+₹500)</label>
+      <label class="checkbox-label"><input type="checkbox"/> Sugar Flowers (+₹400)</label>
+      <label class="checkbox-label"><input type="checkbox"/> Candles &amp; Topper</label>
+      <label class="checkbox-label"><input type="checkbox"/> Gift Ribbon &amp; Box</label>
+    </div>
+  </div>
 
-          <!-- Section 5: Delivery -->
-          <div class="form-section-title">🚚 Delivery Details</div>
-          <div class="form-group">
-            <label>How do you want to receive your cake?</label>
-            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
-              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text-mid);">
-                <input type="radio" name="deliveryType" value="delivery" style="accent-color:var(--pink-dark);" checked/> 🚚 Home Delivery
-              </label>
-              <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600;color:var(--text-mid);">
-                <input type="radio" name="deliveryType" value="pickup" style="accent-color:var(--pink-dark);" /> 🏬 Bakehouse Pickup
-              </label>
-            </div>
-          </div>
-          <div class="form-group" id="addressGroup">
-            <label for="bfAddress">Delivery Address</label>
-            <textarea id="bfAddress" class="form-control" placeholder="Full delivery address including flat no, street, area, city and pincode…" style="min-height:90px;"></textarea>
-          </div>
+ <div class="form-group">
+  <label for="bfMessage" class="form-label">
+    <span class="label-icon"><i data-lucide="message-square-quote"></i></span>
+    Cake Message / Text
+  </label>
+  <div class="input-wrapper">
+    <input 
+      type="text" 
+      id="bfMessage" 
+      class="form-control" 
+      placeholder="e.g. Happy Birthday Priya! Love, Mum" 
+    />
+  </div>
+</div>
 
-          <div class="form-group">
-            <label for="bfSpecial">Any Special Instructions?</label>
-            <textarea id="bfSpecial" class="form-control" placeholder="Allergies, gate access codes, or any other notes for our team…" style="min-height:80px;"></textarea>
-          </div>
 
-          <!-- Budget -->
-          <div class="form-group">
-            <label for="bfBudget">Approximate Budget</label>
-            <select id="bfBudget" class="form-control">
-              <option>Under ₹1,500</option>
-              <option>₹1,500 – ₹3,000</option>
-              <option>₹3,000 – ₹6,000</option>
-              <option>₹6,000 – ₹10,000</option>
-              <option>Above ₹10,000</option>
-              <option>No budget limit 👑</option>
-            </select>
-          </div>
+ 
 
-          <div style="background:var(--blue-light);border-radius:var(--radius-sm);padding:14px 16px;font-size:12px;color:var(--text-mid);margin-bottom:24px;">
-            ℹ️ After submitting, our team will contact you within 2 hours to confirm your order, finalise pricing and collect your 50% advance payment.
-          </div>
 
-          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:16px;">
-            Place My Order 🎂
-          </button>
-        </form>
+
+</form>
 
         <!-- SIDEBAR -->
         <div class="fade-in-up delay-2">
 
           <div class="sidebar-widget">
-            <h4>🌟 Why Order With Us?</h4>
+            <h4 class="section-title">
+ 
+ 
+</h4>
             <ul>
               <li>No upfront full payment — 50% advance only</li>
               <li>Free design consultation included</li>
@@ -487,8 +481,9 @@
           </div>
 
           <div class="sidebar-widget">
-            <h4>📋 Order Timeline</h4>
-            <div class="timeline" style="padding-left:24px;">
+<h4 class="section-title">
+ 
+</h4>            <div class="timeline" style="padding-left:24px;">
               <div class="timeline-item">
                 <span class="year">Step 1</span>
                 <h4>Submit This Form</h4>
@@ -513,13 +508,19 @@
           </div>
 
           <div class="sidebar-widget" style="background:linear-gradient(135deg,var(--pink-light),var(--blue-light));border:none;">
-            <h4 style="color:var(--text-dark);">💬 Prefer to Chat First?</h4>
+           <h4 class="section-title">
+ 
+ 
+</h4>
             <p style="font-size:13px;color:var(--text-mid);margin-bottom:14px;">Talk to our bakers directly on WhatsApp — we're friendly, fast and love cake talk!</p>
             <a href="https://wa.me/919876543210" target="_blank" class="btn-primary" style="width:100%;justify-content:center;">WhatsApp Us Now →</a>
           </div>
 
           <div class="sidebar-widget">
-            <h4>⭐ Recent Happy Orders</h4>
+           <h4 class="section-title">
+ 
+  
+</h4>
             <div style="font-size:13px;color:var(--text-mid);line-height:1.8;">
               <p style="margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--blue-light);">
                 <strong>Unicorn Birthday Cake</strong><br/>
@@ -535,41 +536,84 @@
               </p>
             </div>
           </div>
+<div style="font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333;">
 
+ 
+  <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-bottom: 40px;">
+    
+   
+  </div>
+</div>
         </div>
+        
       </div>
     </div>
+    
   </section>
 
-  <!-- FOOTER -->
+     <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="logo-text">🍰 Sweet <span style="color:var(--pink-light);">Delight</span></div>
+        <a href="../pages/index.html" class="logo-text">
+  <span class="logo-icon-box">
+   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+  </span>
+  <span class="brand-name">
+    Sweet <span class="brand-highlight">Delight</span>
+  </span>
+</a>
         <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-socials">
-          <div class="social-btn">📸</div><div class="social-btn">👥</div><div class="social-btn">💬</div><div class="social-btn">▶️</div>
+        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
+          <!-- WhatsApp -->
+          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Phone -->
+          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- Email -->
+          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
+           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          </a>
         </div>
+        
       </div>
       <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="about.html">About Us</a></li>
-        <li><a href="cakes.html">Our Cakes</a></li><li><a href="gallery.html">Gallery</a></li>
-        <li><a href="services.html">Services</a></li><li><a href="contact.html">Contact</a></li>
+        <li><a href="../pages/index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
       </ul></div>
       <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="cakes.html">Birthday Cakes</a></li><li><a href="cakes.html">Wedding Cakes</a></li>
-        <li><a href="cakes.html">Anniversary Cakes</a></li><li><a href="cakes.html">Custom Design</a></li>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
       </ul></div>
       <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
-        <li><span>Sunday</span><span>9am – 8pm</span></li>
-      </ul>
+  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
+  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
+  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
+</ul>
       <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);">📞 8122932402<br/>📧 krams5240@gmail.com</div></div>
     </div>
-    <div class="footer-bottom"><span>© 2026 Our Bakery. All rights reserved.</span><span>Made with 💖 and lots of butter</span></div>
+   <div class="footer-bottom">
+  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
+  <span class="tagline-text">
+    Made with 
+    <span class="heart-icon-box">
+      <i data-lucide="heart"></i>
+    </span> 
+    and lots of butter
+  </span>
+</div>
   </footer>
 
+
+  <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>
   <script>
     // Size card selection
