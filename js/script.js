@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       window.lucide.createIcons();
     }
   }
+  
 
   /* ---- Light / Dark Theme Management ---- */
   const savedTheme = localStorage.getItem('sweet_delight_theme') || 
@@ -288,6 +289,9 @@ document.addEventListener('click', (e) => {
   });
 
 });
+
+
+
 
 
 

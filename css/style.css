@@ -243,7 +243,7 @@ html[dir="rtl"] .nav-links {
   align-items: center;
   gap: 8px;
   margin: 0 auto;
-  list-style: none;
+  /* list-style: none; */
 }
 
 .nav-links a {
@@ -255,7 +255,7 @@ html[dir="rtl"] .nav-links {
   position: relative;
   transition: all 0.3s ease;
   white-space: nowrap;
-  text-decoration: none;
+  /* text-decoration: none; */
 }
 
 .nav-links a::after {
@@ -340,7 +340,7 @@ html[dir="rtl"] .nav-links {
   color: #fff;
   padding: 8px 20px;
   border-radius: 20px;
-  text-decoration: none;
+  /* text-decoration: none; */
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
@@ -348,7 +348,7 @@ html[dir="rtl"] .nav-links {
 }
 
 .nav-hamburger {
-  display: none;
+  /* display: none; */
   flex-direction: column;
   gap: 4px;
   background: none;
@@ -394,24 +394,57 @@ html[dir="rtl"] .nav-links {
     font-size: 12px;
   }
 }
+
 @media (max-width: 992px) {
   .nav-inner {
-    padding: 0 20px !important;
+    padding: 0 8px !important;
+    gap: 4px !important;
   }
 
+  .nav-cta {
+    gap: 3px !important;
+  }
+
+  /* LTR, Theme buttons and Order button size-a innum compact aakkavum */
   .nav-cta .dir-toggle-btn,
   .nav-cta .theme-toggle-btn {
-    display: none !important;
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 9px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
   }
 
+  .nav-cta .btn-nav {
+    display: inline-block !important;
+    padding: 4px 8px !important;
+    font-size: 10px !important;
+    border-radius: 10px !important;
+  }
+
+  /* Sweet Delight text size-a mobile-la chinnadhaakkuthu */
   .nav-logo .logo-text {
-    font-size: 18px !important;
+    font-size: 13px !important;
+    letter-spacing: -0.3px !important;
   }
 
   .nav-logo .logo-icon {
-    width: 36px !important;
-    height: 36px !important;
-    font-size: 18px !important;
+    width: 26px !important;
+    height: 26px !important;
+    border-radius: 6px !important;
+    font-size: 14px !important;
+  }
+  
+  .nav-logo .logo-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+  
+  .nav-logo {
+    gap: 4px !important;
   }
 
   .nav-links {
@@ -436,9 +469,13 @@ html[dir="rtl"] .nav-links {
 
   .nav-hamburger {
     display: flex !important;
+    padding: 2px !important;
+  }
+  
+  .nav-hamburger span {
+    width: 16px !important;
   }
 }
-
 @media (max-width: 480px) {
   .nav-inner {
     padding: 0 16px !important;
@@ -1135,22 +1172,21 @@ html[data-theme="dark"] .hours-list li {
 }
 
 .mobile-menu a {
-  font-family: 'Playfair Display', serif;
-  font-size: 20px;
-  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px; /* Mobile-ku konjam perfect size */
   color: var(--text-dark);
-  padding: 10px 28px;
+  padding: 12px 20px;
   border-radius: var(--radius-md);
-  transition: var(--transition);
+  transition: all 0.25s ease-in-out; /* Smooth transition avoid flashing */
   text-align: center;
   width: 100%;
   max-width: 340px;
   position: relative;
   overflow: hidden;
-  display: inline-flex;
+  display: flex; /* inline-flex-ku badhila flex potta layout stable-a irukkum */
   align-items: center;
   justify-content: center;
-  white-space: nowrap;
+  /* white-space: nowrap; - Ithai remove pannidunga, text wrap aana thaan flash aagathu */
 }
 
 .mobile-menu a::before {
@@ -1159,7 +1195,7 @@ html[data-theme="dark"] .hours-list li {
   inset: 0;
   background: linear-gradient(135deg, var(--blue-light), var(--pink-light));
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.2s ease; /* Fast & smooth fade */
   z-index: -1;
 }
 
@@ -1172,16 +1208,6 @@ html[data-theme="dark"] .hours-list li {
 .mobile-menu a.active::before {
   opacity: 1;
 }
-
-.mobile-menu .mobile-cta {
-  margin-top: 16px;
-  background: linear-gradient(135deg, var(--pink), var(--pink-dark));
-  color: white !important;
-  box-shadow: 0 8px 24px rgba(255, 175, 197, 0.35);
-  font-size: 15px;
-}
-
-
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -1754,7 +1780,7 @@ html[data-theme="dark"] .hours-list li {
 }
 
 .feature-card::before {
-  content: '';
+
   position: absolute;
   top: -50%;
   right: -50%;
@@ -1852,7 +1878,7 @@ html[data-theme="dark"] .hours-list li {
 }
 
 .testimonial-card::after {
-  content: '';
+ 
   position: absolute;
   top: 0;
   left: 0;
@@ -1872,7 +1898,7 @@ html[data-theme="dark"] .hours-list li {
 }
 
 .testimonial-card::before {
-  content: '"';
+ 
   position: absolute;
   top: 8px;
   left: 16px;
@@ -2221,7 +2247,7 @@ select.form-control {
   gap: 40px;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 32px 56px;
+   padding: 0 20px 56px 8px; 
 }
 
 .footer-brand .logo-text {
@@ -2315,7 +2341,7 @@ select.form-control {
 
 .footer-bottom {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 20px 32px;
+  padding: 20px 20px; 
   max-width: 1280px;
   margin: 0 auto;
   display: flex;
@@ -2670,14 +2696,14 @@ select.form-control {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 0 20px 40px;
+    padding: 0 20px 40px 10px;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    padding: 16px 20px;
+    padding: 20px 20px;
   }
 
   .gallery-grid {
@@ -2838,9 +2864,9 @@ select.form-control {
     font-size: 28px;
   }
 
-  .footer-grid {
+  /* .footer-grid {
     padding: 0 16px 32px;
-  }
+  } */
 
   .footer-col h5 {
     font-size: 12px;
@@ -4307,10 +4333,10 @@ body[data-theme="dark"] .emergency-banner {
     justify-content: center;
   }
 
-  .footer-grid {
+  /* .footer-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-  }
+  } */
 }
 
 
@@ -4463,12 +4489,12 @@ body[data-theme="dark"] .emergency-banner {
   .newsletter-form button {
     width: 100%;
   }
-
+/* 
   .footer-grid {
     grid-template-columns: 1fr !important;
     gap: 22px;
     text-align: center;
-  }
+  } */
 
   .footer-bottom {
     flex-direction: column;
@@ -8759,3 +8785,337 @@ body:not(.dark-theme) .nav-links a:hover,
 
 
 
+/* 1. Navbar-la irukra buttons-ku gap varathu (Order Now & Theme button) */
+.nav-cta {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Inga gap set pannalam */
+}
+
+/* 2. Mobile screen menu-la "THEME MODE" text-kum antha button-kum naduvula gap vara */
+/* (Ungaloda mobile menu-la antha text enna tag-la irukko athukku intha margin work aagum) */
+.mobile-menu-container span, 
+.mobile-menu span, 
+.drawer-content span {
+  margin-right: 15px !important; 
+}
+
+@media (max-width: 992px) {
+  .nav-inner {
+    padding: 0 12px !important;
+    gap: 6px !important;
+  }
+
+  .nav-cta {
+    gap: 4px !important;
+  }
+
+  /* Order Now button-a mattum mobile-la hide seyyavum */
+  .nav-cta .btn-nav {
+    display: none !important;
+  }
+
+  /* LTR/RTL button mattum Theme button mobile-la kandippa display aagum */
+  .nav-cta .dir-toggle-btn,
+  .nav-cta .theme-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+  }
+
+ .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100% !important; /* Right side-la veliya nikum */
+    left: auto !important;
+    width: 280px !important; /* Full width pogaathu, chinna sidebar width varum */
+    height: 100vh !important;
+    background: var(--white, #1e1e2d);
+    flex-direction: column;
+    padding: 70px 24px 30px 24px;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out !important; /* Smooth-ah slide aagum */
+    align-items: flex-start;
+    gap: 16px;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    right: 0 !important; /* Active aagum pothu right side-la irunthu ulla varum */
+    left: auto !important;
+  }
+
+  .nav-hamburger {
+    display: flex !important;
+    padding: 4px !important;
+  }
+}
+@media (max-width: 992px) {
+  /* Sweet Delight text size-a innum chinnadhaakkavum */
+  .nav-logo .logo-text {
+    font-size: 14px !important;
+    letter-spacing: -0.3px !important;
+  }
+
+  .nav-logo .logo-icon {
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 8px !important;
+  }
+
+  .nav-logo .logo-icon svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .nav-logo {
+    gap: 6px !important;
+  }
+}
+/* Mobile menu (nav-links) kulla irukra LTR/RTL buttons, Theme buttons matrum extra labels-ai hide seyyavum */
+@media (max-width: 992px) {
+  .nav-links .dir-toggle-btn,
+  .nav-links .theme-toggle-btn,
+  .nav-links span:not(.nav-link-text), /* Or relevant text wrapper */
+  .nav-links div {
+    display: none !important;
+  }
+  
+  /* Menu links mattum azhaga vertical-ah varuthu nu ensure seyyavum */
+  .nav-links {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    position: fixed !important;
+    top: 0 !important;
+    right: -260px !important;
+    left: auto !important;
+    width: 250px !important;
+    height: 100vh !important;
+    background: var(--white, #fff) !important;
+    flex-direction: column !important;
+    padding: 70px 20px 20px 20px !important;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15) !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 9999 !important;
+    align-items: flex-start !important;
+    display: flex !important;
+    overflow-y: auto !important;
+  }
+
+  /* JavaScript .open class-a add panrathunaala itha use panrom */
+  .nav-links.open {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+@media (max-width: 992px) {
+  #mobileMenu {
+    position: fixed !important;
+    top: 0 !important;
+    right: -280px !important;
+    left: auto !important;
+    width: 260px !important;       /* Strict width */
+    max-width: 260px !important;   /* Percentage-la perusaagaathu */
+    height: 100vh !important;
+    background: var(--white, #fff) !important;
+    flex-direction: column !important;
+    padding: 60px 18px 20px 18px !important;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15) !important;
+    transition: right 0.3s ease-in-out !important;
+    z-index: 9999 !important;
+    align-items: stretch !important;
+    display: flex !important;
+    overflow-y: auto !important;
+  }
+
+  #mobileMenu.open {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+@media (max-width: 992px) {
+  /* Mobile drawer menu container layout */
+  #mobileMenu .mobile-drawer-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Ella menu links-um icon-um 260px kulla neat-ah align aaga */
+  #mobileMenu .mobile-drawer-menu a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    width: 100% !important;
+    padding: 8px 12px !important;
+    box-sizing: border-box !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* Icon size-a strict-ah control pannum */
+  #mobileMenu .mobile-drawer-menu a .nav-icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Footer full screen width-ku dark background varum */
+  footer.footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box !important;
+    padding: 30px 16px !important;
+  }
+
+  /* Footer container-um mobile screen-kku full width-ku expand aagum */
+  .footer-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Grid layout single column-ah maarum */
+  /* .footer-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 28px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  } */
+
+  .footer-col {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .footer-bottom {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin-top: 24px !important;
+    padding-top: 16px !important;
+  }
+}
+/* Cakes Dropdown Menu Stay & Smooth Fix */
+.dropdown, .nav-item.dropdown, .dropdown-menu {
+  position: relative !important;
+}
+
+/* Mouse hover panrapo dropdown sthirama nikka */
+.nav-item:hover .dropdown-menu,
+.dropdown:hover .dropdown-menu,
+.dropdown-menu.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* Dropdown menu default state */
+.dropdown-menu {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  min-width: 200px !important;
+  background: #ffffff !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+  padding: 10px 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(10px) !important;
+  transition: all 0.25s ease-in-out !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+}
+@media (max-width: 992px) {
+  /* 1. Mobile navbar container alignment & padding */
+  .navbar .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 8px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. Right-side buttons container spacing */
+  .navbar .nav-cta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin-right: 0 !important;
+  }
+
+  /* 3. Theme toggle & Direction toggle button exact compact sizing */
+  .navbar .nav-cta button,
+  .navbar .nav-cta .dir-toggle-btn,
+  .navbar .nav-cta .theme-theme-toggle-btn,
+  .navbar .nav-cta .theme-toggle-btn {
+    width: 32px !important;
+    height: 32px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar .nav-cta .dir-label {
+    font-size: 10px !important;
+  }
+
+  .navbar .nav-hamburger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 26px !important;
+    height: 20px !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+  }
+}
+
+
+/* Tablet screen-kku footer alignment-ah fix panna */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 0 30px 48px 30px;
+  }
+}
