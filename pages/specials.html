@@ -92,6 +92,75 @@
       .section-title h2 { font-size: clamp(26px, 7vw, 38px); }
     }
     
+   
+  /* MOBILE RESPONSIVE STYLES */
+  @media (max-width: 768px) {
+    .responsive-2col {
+      flex-direction: column !important;
+      gap: 30px !important;
+    }
+
+    .baker-btn-group {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      width: 100% !important;
+    }
+
+    .baker-btn {
+      width: 100% !important;
+      text-align: center !important;
+      justify-content: center !important;
+      box-sizing: border-box !important;
+    }
+
+    .about-story-img {
+      height: 380px !important; /* Mobile-ku image height reduction */
+    }
+
+    .dishes-overlay-grid {
+      position: relative !important; /* Mobile-la overlay aagama keezha varum */
+      bottom: auto !important;
+      left: auto !important;
+      right: auto !important;
+      margin-top: -50px !important;
+      grid-template-columns: 1fr !important; /* Mobile-la 1 column */
+      gap: 8px !important;
+    }
+  }
+
+  /* BUTTON BASE STYLES */
+  .baker-btn-group {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .baker-btn {
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+  }
+
+  .baker-btn-primary {
+    background: #ff7495;
+    color: #ffffff !important;
+    border: 2px solid #ff7495;
+    box-shadow: 0 4px 15px rgba(255, 116, 149, 0.3);
+  }
+
+  .baker-btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-heading, #ffffff) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
   </style>
 </head>
 <body>
@@ -255,96 +324,96 @@
   </div>
 </section>
 <!-- OUR STORY -->
-<section class="section bg-white">
-  <div class="container">
+<section class="section bg-white" style="padding: 40px 15px; overflow: hidden;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
     <div class="responsive-2col" style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
       
-      <!-- 1. Left Side Content (Text & Action Buttons - Idhu ippo munnadi varum) -->
-      <div class="fade-in-up" style="flex: 1; min-width: 320px;">
-        <span class="eyebrow" style="color: var(--pink-dark, #d8436b); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Our Beginning</span>
-        <h2 style="font-size: clamp(28px, 3.5vw, 42px); margin-bottom: 20px; line-height: 1.2;">
-          Baked with Heart<br/>Since <span style="color: var(--pink-dark, #d8436b);">2012</span>
+      <!-- 1. Left Side Content -->
+      <div class="fade-in-up" style="flex: 1; min-width: 280px; width: 100%;">
+        <span class="eyebrow" style="color: #ff7495; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; display: block; margin-bottom: 8px;">Our Beginning</span>
+        <h2 style="font-size: clamp(26px, 3.5vw, 42px); margin-bottom: 16px; line-height: 1.25; color: var(--text-heading, #ffffff);">
+          Baked with Heart<br/>Since <span style="color: #ff7495;">2012</span>
         </h2>
-        <div class="divider divider-left" style="width: 50px; height: 3px; background: #ff79a1; margin-bottom: 20px;"></div>
+        <div class="divider divider-left" style="width: 50px; height: 3px; background: #ff7495; margin-bottom: 20px;"></div>
         
-        <p style="font-size: 15px; color: var(--text-mid, #555); margin-bottom: 16px; line-height: 1.9;">
-          Our bakery was born in 2012 when Executive Chef <strong>Meera Krishnan</strong> started baking custom birthday cakes from her home kitchen in Coimbatore. Armed with a French Pastry diploma from Le Cordon Bleu, she laid the foundation of craftsmanship and passion.
+        <p style="font-size: 14px; color: var(--text-body, #a0aec0); margin-bottom: 16px; line-height: 1.8;">
+          Our bakery was born in 2012 when Executive Chef <strong style="color: var(--text-heading, #fff);">Meera Krishnan</strong> started baking custom birthday cakes from her home kitchen in Coimbatore. Armed with a French Pastry diploma from Le Cordon Bleu, she laid the foundation of craftsmanship and passion.
         </p>
         
-        <p style="font-size: 15px; color: var(--text-mid, #555); margin-bottom: 24px; line-height: 1.9;">
-          In 2018, Head Pastry Chef <strong>Karthik Raja</strong> joined the lead, bringing expertise from Paris and revolutionizing our gourmet artisan menu with signature sourdoughs and delicate choux pastries. Today, our 18-member culinary team crafts over 200 custom creations monthly.
+        <p style="font-size: 14px; color: var(--text-body, #a0aec0); margin-bottom: 24px; line-height: 1.8;">
+          In 2018, Head Pastry Chef <strong style="color: var(--text-heading, #fff);">Karthik Raja</strong> joined the lead, bringing expertise from Paris and revolutionizing our gourmet artisan menu with signature sourdoughs and delicate choux pastries. Today, our 18-member culinary team crafts over 200 custom creations monthly.
         </p>
 
-        <ul class="value-list" style="list-style: none; padding: 0; margin: 0 0 24px 0; display: flex; flex-direction: column; gap: 10px;">
-          <li style="font-size: 14px; color: #444;"><span class="check" style="color: #ff5286; font-weight: bold; margin-right: 8px;">✓</span> Fresh ingredients sourced locally every morning</li>
-          <li style="font-size: 14px; color: #444;"><span class="check" style="color: #ff5286; font-weight: bold; margin-right: 8px;">✓</span> No artificial flavours or preservatives</li>
-          <li style="font-size: 14px; color: #444;"><span class="check" style="color: #ff5286; font-weight: bold; margin-right: 8px;">✓</span> Fully custom designs from sketch to sugar art</li>
-          <li style="font-size: 14px; color: #444;"><span class="check" style="color: #ff5286; font-weight: bold; margin-right: 8px;">✓</span> Same-day delivery across Coimbatore</li>
+        <ul class="value-list" style="list-style: none; padding: 0; margin: 0 0 28px 0; display: flex; flex-direction: column; gap: 12px;">
+          <li style="font-size: 14px; color: var(--text-body, #e2e8f0); display: flex; align-items: center;"><span class="check" style="color: #ff7495; font-weight: bold; margin-right: 10px; font-size: 16px;">✓</span> Fresh ingredients sourced locally every morning</li>
+          <li style="font-size: 14px; color: var(--text-body, #e2e8f0); display: flex; align-items: center;"><span class="check" style="color: #ff7495; font-weight: bold; margin-right: 10px; font-size: 16px;">✓</span> No artificial flavours or preservatives</li>
+          <li style="font-size: 14px; color: var(--text-body, #e2e8f0); display: flex; align-items: center;"><span class="check" style="color: #ff7495; font-weight: bold; margin-right: 10px; font-size: 16px;">✓</span> Fully custom designs from sketch to sugar art</li>
+          <li style="font-size: 14px; color: var(--text-body, #e2e8f0); display: flex; align-items: center;"><span class="check" style="color: #ff7495; font-weight: bold; margin-right: 10px; font-size: 16px;">✓</span> Same-day delivery across Coimbatore</li>
         </ul>
 
         <!-- Action Buttons -->
         <div class="baker-btn-group">
-  <!-- Primary Button -->
-  <a href="../pages/booking.html" class="baker-btn baker-btn-primary">
-    <i data-lucide="cake"></i> Meet Our Master Bakers
-  </a>
-  
-  <!-- Secondary Button -->
-  <a href="../pages/contact.html" class="baker-btn baker-btn-secondary">
-    <span>Chat with Us →</span>
-  </a>
-</div>
+          <!-- Primary Button -->
+          <a href="../pages/booking.html" class="baker-btn baker-btn-primary">
+            Meet Our Master Bakers
+          </a>
+          
+          <!-- Secondary Button -->
+          <a href="../pages/contact.html" class="baker-btn baker-btn-secondary">
+            Chat with Us →
+          </a>
+        </div>
       </div>
 
-      <!-- 2. Right Side (Chef Image + 4 Kutty Dishes Grid - Idhu keezha varum) -->
-      <div class="fade-in-up delay-2" style="flex: 1; min-width: 320px; position: relative;">
+      <!-- 2. Right Side -->
+      <div class="fade-in-up delay-2" style="flex: 1; min-width: 280px; width: 100%; position: relative;">
         <!-- Main Image -->
-        <img src="../assets/pexels-angela-chacon-140940805-26598639.jpg" alt="Baker at work" loading="lazy" class="about-story-img" style="width: 100%; height: 500px; object-fit: cover; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.12);" />
+        <img src="../assets/pexels-angela-chacon-140940805-26598639.jpg" alt="Baker at work" loading="lazy" class="about-story-img" style="width: 100%; height: 500px; object-fit: cover; border-radius: 24px; box-shadow: 0 12px 30px rgba(0,0,0,0.3);" />
 
-        <!-- 4 Kutty Dishes Grid Overlay Container -->
-       <div class="dishes-overlay-grid" style="position: absolute; bottom: 15px; left: 15px; right: 15px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: var(--overlay-bg, rgba(255, 255, 255, 0.85)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 12px; border-radius: 16px; border: 1px solid var(--overlay-border, rgba(255, 255, 255, 0.6)); box-shadow: 0 8px 24px rgba(0,0,0,0.15);">
+        <!-- 4 Kutty Dishes Grid -->
+        <div class="dishes-overlay-grid" style="position: absolute; bottom: 15px; left: 15px; right: 15px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; background: rgba(26, 27, 38, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 12px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.15); box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
           
-  <!-- Dish Box 1 -->
-  <div class="dish-card-item" style="background: var(--card-bg, #ffffff); padding: 10px; border-radius: 12px; border: 1px solid var(--card-border, rgba(255, 121, 161, 0.2)); box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-      <span style="font-weight: 700; font-size: 0.82rem; color: var(--text-main, #222222);">Royal Velvet</span>
-      <span style="font-size: 0.75rem; color: var(--accent-price, #d8436b); font-weight: 700;">₹1,200</span>
-    </div>
-    <div style="font-size: 0.72rem; color: #e67e22; margin-bottom: 4px;">★ 4.9 <span style="color: var(--text-muted, #777777);">(120+ reviews)</span></div>
-    <p style="font-size: 0.7rem; color: var(--text-sub, #666666); margin: 0; line-height: 1.2;"><strong style="color: var(--text-main, #333333);">Ing:</strong> Cocoa, Cream Cheese, Vanilla</p>
-  </div>
+          <!-- Dish Box 1 -->
+          <div class="dish-card-item" style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(255, 116, 149, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="font-weight: 700; font-size: 0.82rem; color: #ffffff;">Royal Velvet</span>
+              <span style="font-size: 0.75rem; color: #ff7495; font-weight: 700;">₹1,200</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #f6ad55; margin-bottom: 4px;">★ 4.9 <span style="color: #a0aec0;">(120+ reviews)</span></div>
+            <p style="font-size: 0.7rem; color: #cbd5e0; margin: 0; line-height: 1.2;"><strong style="color: #ffffff;">Ing:</strong> Cocoa, Cream Cheese</p>
+          </div>
 
-  <!-- Dish Box 2 -->
-  <div class="dish-card-item" style="background: var(--card-bg, #ffffff); padding: 10px; border-radius: 12px; border: 1px solid var(--card-border, rgba(255, 121, 161, 0.2)); box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-      <span style="font-weight: 700; font-size: 0.82rem; color: var(--text-main, #222222);">French Éclairs</span>
-      <span style="font-size: 0.75rem; color: var(--accent-price, #d8436b); font-weight: 700;">₹450</span>
-    </div>
-    <div style="font-size: 0.72rem; color: #e67e22; margin-bottom: 4px;">★ 4.8 <span style="color: var(--text-muted, #777777);">(95+ reviews)</span></div>
-    <p style="font-size: 0.7rem; color: var(--text-sub, #666666); margin: 0; line-height: 1.2;"><strong style="color: var(--text-main, #333333);">Ing:</strong> Choux Pastry, Dark Chocolate</p>
-  </div>
+          <!-- Dish Box 2 -->
+          <div class="dish-card-item" style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(255, 116, 149, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="font-weight: 700; font-size: 0.82rem; color: #ffffff;">French Éclairs</span>
+              <span style="font-size: 0.75rem; color: #ff7495; font-weight: 700;">₹450</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #f6ad55; margin-bottom: 4px;">★ 4.8 <span style="color: #a0aec0;">(95+ reviews)</span></div>
+            <p style="font-size: 0.7rem; color: #cbd5e0; margin: 0; line-height: 1.2;"><strong style="color: #ffffff;">Ing:</strong> Choux Pastry, Chocolate</p>
+          </div>
 
-  <!-- Dish Box 3 -->
-  <div class="dish-card-item" style="background: var(--card-bg, #ffffff); padding: 10px; border-radius: 12px; border: 1px solid var(--card-border, rgba(255, 121, 161, 0.2)); box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-      <span style="font-weight: 700; font-size: 0.82rem; color: var(--text-main, #222222);">Berry Tart</span>
-      <span style="font-size: 0.75rem; color: var(--accent-price, #d8436b); font-weight: 700;">₹650</span>
-    </div>
-    <div style="font-size: 0.72rem; color: #e67e22; margin-bottom: 4px;">★ 5.0 <span style="color: var(--text-muted, #777777);">(150+ reviews)</span></div>
-    <p style="font-size: 0.7rem; color: var(--text-sub, #666666); margin: 0; line-height: 1.2;"><strong style="color: var(--text-main, #333333);">Ing:</strong> Fresh Berries, Custard, Butter</p>
-  </div>
+          <!-- Dish Box 3 -->
+          <div class="dish-card-item" style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(255, 116, 149, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="font-weight: 700; font-size: 0.82rem; color: #ffffff;">Berry Tart</span>
+              <span style="font-size: 0.75rem; color: #ff7495; font-weight: 700;">₹650</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #f6ad55; margin-bottom: 4px;">★ 5.0 <span style="color: #a0aec0;">(150+ reviews)</span></div>
+            <p style="font-size: 0.7rem; color: #cbd5e0; margin: 0; line-height: 1.2;"><strong style="color: #ffffff;">Ing:</strong> Fresh Berries, Custard</p>
+          </div>
 
-  <!-- Dish Box 4 -->
-  <div class="dish-card-item" style="background: var(--card-bg, #ffffff); padding: 10px; border-radius: 12px; border: 1px solid var(--card-border, rgba(255, 121, 161, 0.2)); box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-      <span style="font-weight: 700; font-size: 0.82rem; color: var(--text-main, #222222);">Artisan Croissant</span>
-      <span style="font-size: 0.75rem; color: var(--accent-price, #d8436b); font-weight: 700;">₹280</span>
-    </div>
-    <div style="font-size: 0.72rem; color: #e67e22; margin-bottom: 4px;">★ 4.9 <span style="color: var(--text-muted, #777777);">(210+ reviews)</span></div>
-    <p style="font-size: 0.7rem; color: var(--text-sub, #666666); margin: 0; line-height: 1.2;"><strong style="color: var(--text-main, #333333);">Ing:</strong> French Butter, Organic Flour</p>
-  </div>
+          <!-- Dish Box 4 -->
+          <div class="dish-card-item" style="background: rgba(255, 255, 255, 0.05); padding: 10px; border-radius: 12px; border: 1px solid rgba(255, 116, 149, 0.2);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="font-weight: 700; font-size: 0.82rem; color: #ffffff;">Artisan Croissant</span>
+              <span style="font-size: 0.75rem; color: #ff7495; font-weight: 700;">₹280</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #f6ad55; margin-bottom: 4px;">★ 4.9 <span style="color: #a0aec0;">(210+ reviews)</span></div>
+            <p style="font-size: 0.7rem; color: #cbd5e0; margin: 0; line-height: 1.2;"><strong style="color: #ffffff;">Ing:</strong> French Butter, Flour</p>
+          </div>
 
-</div>
+        </div>
 
       </div>
 

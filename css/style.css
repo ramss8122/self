@@ -17884,3 +17884,787 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
 [dir="rtl"] h3 {
   unicode-bidi: plaintext;
 }
+
+  /* LIGHT MODE (Default) */
+  :root {
+    --bg-section: #ffffff;
+    --text-heading: #1a202c;
+    --text-body: #4a5568;
+    --card-bg: #f8fafc;
+    --card-border: rgba(0, 0, 0, 0.08);
+    --sec-btn-bg: #ffffff;
+    --sec-btn-text: #1a202c;
+    --sec-btn-border: rgba(0, 0, 0, 0.15);
+  }
+
+  /* DARK MODE (Triggered via dark class or system theme) */
+  body.dark-theme,
+  .dark,
+  [data-theme="dark"] {
+    --bg-section: #12131c;
+    --text-heading: #ffffff;
+    --text-body: #a0aec0;
+    --card-bg: #1a1b26;
+    --card-border: rgba(255, 255, 255, 0.12);
+    --sec-btn-bg: rgba(255, 255, 255, 0.06);
+    --sec-btn-text: #ffffff;
+    --sec-btn-border: rgba(255, 255, 255, 0.2);
+  }
+/* ==========================================
+   GLOBAL DIRECTION & ALIGNMENT FIX
+   ========================================== */
+
+/* Force all section headers and titles to stay centered regardless of direction */
+.section-head, 
+.section-title, 
+.section-subtitle, 
+.eyebrow, 
+.divider {
+  direction: ltr !important; /* Forces normal left-to-right reading order */
+  text-align: center !important;
+}
+
+/* Flexbox parent level alignment fix */
+.section-head {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Eyebrow badge centering */
+.eyebrow {
+  display: inline-block !important;
+  margin-inline: auto !important;
+  text-align: center !important;
+}
+
+/* Divider line centering */
+.divider {
+  margin-inline: auto !important;
+}
+
+/* General Layout Alignment Reset for All Containers */
+html, body {
+  direction: ltr !important; /* Force overall page direction */
+  text-align: left;
+}
+
+/* Responsive adjustment to keep items centered on mobile too */
+@media (max-width: 768px) {
+  .section-head, .section-title, .section-subtitle {
+    text-align: center !important;
+  }
+}
+/* ==========================================
+   GLOBAL HEADER SECTION ALLIGNMENT FIX
+   ========================================== */
+
+/* 1. Force container to stack elements vertically, NOT side-by-side */
+.section-head, 
+header.section-head, 
+div[class*="section-head"],
+div[class*="header"] {
+  display: flex !important;
+  flex-direction: column !important; /* Forces top-to-bottom layout */
+  align-items: center !important;     /* Centers all children horizontally */
+  justify-content: center !important;
+  text-align: center !important;
+  width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* 2. Reset width & offsets for all header elements */
+.section-head > *,
+.section-head span,
+.section-head h1,
+.section-head h2,
+.section-head h3,
+.section-head h4,
+.section-head p,
+.section-head .divider,
+.section-head .eyebrow,
+.section-head .section-title,
+.section-head .section-subtitle {
+  float: none !important;
+  clear: both !important;
+  position: relative !important;
+  left: 0 !important;
+  right: 0 !important;
+  transform: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+/* 3. Subtitle Paragraph text alignment fix */
+.section-head p,
+.section-subtitle {
+  max-width: 650px !important;
+  margin-top: 12px !important;
+  line-height: 1.6 !important;
+  display: block !important;
+}
+
+/* 4. Divider Line Centering Fix */
+.section-head .divider {
+  display: block !important;
+  margin-top: 15px !important;
+  margin-bottom: 5px !important;
+}
+/* ==========================================
+   BENTO SECTION - SEPARATE LIGHT & DARK CSS
+   ========================================== */
+
+/* Outer Section Layout */
+.bento-section {
+  padding: 60px 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.bento-section .section-header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-bottom: 35px;
+}
+
+.bento-section .subtitle-tag {
+  color: #d8436b !important;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.bento-section .main-title {
+  font-family: serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+  transition: color 0.3s ease;
+}
+
+.bento-section .section-desc {
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+  transition: color 0.3s ease;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.bento-stacked {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bento-card {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 30px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.bento-main {
+  min-height: 480px;
+  height: 100%;
+}
+
+.bento-sub {
+  min-height: 228px;
+}
+
+.bento-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 50px;
+  z-index: 2;
+}
+
+.bento-content {
+  position: relative;
+  z-index: 2;
+}
+
+.bento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 12px;
+}
+
+.bento-title {
+  margin: 0;
+  font-family: serif;
+  font-weight: 700;
+}
+
+.bento-main .bento-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.bento-sub .bento-title {
+  font-size: 1.3rem;
+}
+
+.bento-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+}
+
+.bento-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.bento-btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* ------------------------------------------
+   1. LIGHT THEME (White Background & Dark Text)
+   ------------------------------------------ */
+.bento-section {
+  background-color: #ffffff !important;
+}
+
+.bento-section .main-title {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+.bento-section .section-desc {
+  color: #475569 !important;
+  -webkit-text-fill-color: #475569 !important;
+}
+
+.bento-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(216, 67, 107, 0.2) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+.bento-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.92) 70%, #ffffff 100%) !important;
+  z-index: 1;
+}
+
+.bento-badge {
+  background: #d8436b !important;
+  color: #ffffff !important;
+}
+
+.bento-title, .bento-price {
+  color: #0f172a !important;
+}
+
+.bento-card .bento-desc {
+  color: #475569 !important;
+}
+
+.bento-btn-primary {
+  background: #d8436b !important;
+  color: #ffffff !important;
+}
+
+.bento-btn-primary:hover {
+  background: #b83256 !important;
+}
+
+/* ------------------------------------------
+   2. DARK THEME (Dark Background & Light Text)
+   ------------------------------------------ */
+@media (prefers-color-scheme: dark) {
+  .bento-section {
+    background-color: #0f172a !important;
+  }
+
+  .bento-section .main-title {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  .bento-section .section-desc {
+    color: #cbd5e0 !important;
+    -webkit-text-fill-color: #cbd5e0 !important;
+  }
+
+  .bento-card {
+    background-color: #1e293b;
+    border: 1px solid rgba(216, 67, 107, 0.35) !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .bento-overlay {
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.92) 70%, #0f172a 100%) !important;
+  }
+
+  .bento-badge {
+    background: rgba(216, 67, 107, 0.25) !important;
+    color: #ff7495 !important;
+    border: 1px solid rgba(216, 67, 107, 0.4) !important;
+  }
+
+  .bento-title, .bento-price {
+    color: #ffffff !important;
+  }
+
+  .bento-card .bento-desc {
+    color: #cbd5e0 !important;
+  }
+
+  .bento-btn-primary {
+    background: #d8436b !important;
+    color: #ffffff !important;
+  }
+
+  .bento-btn-primary:hover {
+    background: #ff5284 !important;
+  }
+}
+
+/* Manual Dark Class Switch Support (html.dark / body.dark) */
+html.dark .bento-section,
+body.dark .bento-section,
+[data-theme="dark"] .bento-section {
+  background-color: #0f172a !important;
+}
+
+html.dark .bento-section .main-title,
+body.dark .bento-section .main-title,
+[data-theme="dark"] .bento-section .main-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+html.dark .bento-section .section-desc,
+body.dark .bento-section .section-desc,
+[data-theme="dark"] .bento-section .section-desc {
+  color: #cbd5e0 !important;
+  -webkit-text-fill-color: #cbd5e0 !important;
+}
+
+html.dark .bento-card,
+body.dark .bento-card,
+[data-theme="dark"] .bento-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(216, 67, 107, 0.35) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+}
+
+html.dark .bento-overlay,
+body.dark .bento-overlay,
+[data-theme="dark"] .bento-overlay {
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.2) 0%, rgba(15, 23, 42, 0.92) 70%, #0f172a 100%) !important;
+}
+
+html.dark .bento-badge,
+body.dark .bento-badge,
+[data-theme="dark"] .bento-badge {
+  background: rgba(216, 67, 107, 0.25) !important;
+  color: #ff7495 !important;
+  border: 1px solid rgba(216, 67, 107, 0.4) !important;
+}
+
+html.dark .bento-title, html.dark .bento-price,
+body.dark .bento-title, body.dark .bento-price,
+[data-theme="dark"] .bento-title, [data-theme="dark"] .bento-price {
+  color: #ffffff !important;
+}
+
+html.dark .bento-card .bento-desc,
+body.dark .bento-card .bento-desc,
+[data-theme="dark"] .bento-card .bento-desc {
+  color: #cbd5e0 !important;
+}
+/* ==========================================
+   FULL WIDTH SECTION & NO SIDE GAP FIX
+   ========================================== */
+
+/* 1. Reset Body & HTML Margins globally */
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 2. Stretch Section Background to 100% Edge-to-Edge */
+.bento-section {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* 3. Keep Grid Content Centered inside the Full-Width Section */
+.bento-section .bento-grid,
+.bento-section .section-header {
+  width: 100% !important;
+  max-width: 1200px !important; /* Adjust content width as needed */
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* ==========================================
+   BENTO CARDS TEXT CONTRAST & READABILITY FIX
+   ========================================== */
+
+/* 1. Strong Dark Overlay so text is ALWAYS readable over background images */
+.bento-card .bento-overlay {
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    180deg, 
+    rgba(15, 23, 42, 0.25) 0%, 
+    rgba(15, 23, 42, 0.75) 55%, 
+    rgba(15, 23, 42, 0.95) 100%
+  ) !important;
+  z-index: 1 !important;
+}
+
+/* 2. Force Card Text Colors for High Contrast (Light & Dark Theme) */
+.bento-card .bento-title {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Paragraph Description Text Fix (Bright Light Grey) */
+.bento-card .bento-desc {
+  color: #e2e8f0 !important;
+  -webkit-text-fill-color: #e2e8f0 !important;
+  font-weight: 500 !important;
+  opacity: 0.95 !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Price Tag Fix */
+.bento-card .bento-price {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-size: 1rem !important;
+}
+
+.bento-card .bento-price strong {
+  color: #ff7495 !important;
+  -webkit-text-fill-color: #ff7495 !important;
+  font-size: 1.15rem !important;
+}
+
+/* Top Badge Fix */
+.bento-card .bento-badge {
+  background: rgba(15, 23, 42, 0.65) !important;
+  color: #ff7495 !important;
+  border: 1px solid rgba(255, 116, 149, 0.4) !important;
+  backdrop-filter: blur(4px) !important;
+  font-weight: 700 !important;
+}
+
+/* Button Alignment & Contrast Fix */
+.bento-card .bento-btn-primary {
+  background: #ff7495 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(255, 116, 149, 0.4) !important;
+}
+
+.bento-card .bento-btn-primary:hover {
+  background: #ff5284 !important;
+}
+/* ==========================================
+   ABOUT SECTION - LIGHT & DARK THEME FIX
+   ========================================== */
+
+/* Base Structural Layout */
+.about-section {
+  padding: 60px 15px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.about-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 32px;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.about-card-box {
+  flex: 1 1 500px;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 40px 36px;
+  text-align: start;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.about-subtitle {
+  color: #ff79a1 !important;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.about-title {
+  font-size: clamp(24px, 3.5vw, 34px);
+  font-family: 'Playfair Display', serif, sans-serif;
+  margin: 0 0 16px 0;
+  line-height: 1.25;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.about-divider {
+  width: 50px;
+  height: 3px;
+  background: #ff79a1;
+  margin: 0 0 20px 0;
+  border-radius: 2px;
+}
+
+.about-desc {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0 0 16px 0;
+  transition: color 0.3s ease;
+}
+
+.about-desc:last-of-type {
+  margin-bottom: 28px;
+}
+
+.pink-text {
+  color: #ff79a1 !important;
+}
+
+/* Buttons Group */
+.about-btn-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-btn-primary {
+  background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%);
+  color: #ffffff !important;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(255, 121, 161, 0.35);
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.about-btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+.about-btn-secondary {
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+/* Right Image Box */
+.about-image-box {
+  flex: 1 1 400px;
+  max-width: 520px;
+  width: 100%;
+  height: 420px;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+}
+
+.about-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+}
+
+.about-badge {
+  position: absolute;
+  bottom: 16px;
+  inset-inline-start: 16px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff !important;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  font-family: sans-serif;
+}
+
+
+/* ==========================================
+   1. LIGHT THEME (White Background & Dark Text)
+   ========================================== */
+.about-section {
+  background-color: #ffffff !important;
+}
+
+.about-title {
+  color: #0f172a !important;
+}
+
+.about-desc {
+  color: #475569 !important;
+}
+
+.about-card-box {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.about-btn-secondary {
+  border: 2px solid #ff79a1;
+  color: #ff79a1 !important;
+  background-color: transparent;
+}
+
+.about-btn-secondary:hover {
+  background-color: #ff79a1;
+  color: #ffffff !important;
+}
+
+
+/* ==========================================
+   2. DARK THEME (Dark Background & Light Text)
+   ========================================== */
+@media (prefers-color-scheme: dark) {
+  .about-section {
+    background-color: #0f172a !important;
+  }
+
+  .about-title {
+    color: #ffffff !important;
+  }
+
+  .about-desc {
+    color: #cbd5e0 !important;
+  }
+
+  .about-card-box {
+    background-color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .about-btn-secondary {
+    border: 2px solid #ff79a1;
+    color: #ff79a1 !important;
+    background-color: transparent;
+  }
+
+  .about-btn-secondary:hover {
+    background-color: #ff79a1;
+    color: #ffffff !important;
+  }
+}
+
+/* JS Class Based Dark Mode (.dark / [data-theme="dark"]) */
+html.dark .about-section,
+body.dark .about-section,
+[data-theme="dark"] .about-section {
+  background-color: #0f172a !important;
+}
+
+html.dark .about-title,
+body.dark .about-title,
+[data-theme="dark"] .about-title {
+  color: #ffffff !important;
+}
+
+html.dark .about-desc,
+body.dark .about-desc,
+[data-theme="dark"] .about-desc {
+  color: #cbd5e0 !important;
+}
+
+html.dark .about-card-box,
+body.dark .about-card-box,
+[data-theme="dark"] .about-card-box {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

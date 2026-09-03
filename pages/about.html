@@ -16,6 +16,84 @@
     border-color: transparent !important;
     box-shadow: 0 4px 10px rgba(255, 82, 134, 0.3) !important;
   }
+  
+  /* LIGHT MODE (Default) */
+  .custom-chef-section {
+    background-color: #ffffff !important;
+    color: #1a202c !important;
+  }
+  .custom-chef-card {
+    background-color: #ffffff !important;
+    border: 1px solid rgba(255, 121, 161, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+    color: #1a202c !important;
+  }
+  .custom-chef-title {
+    color: #1a202c !important;
+  }
+  .custom-chef-text {
+    color: #4a5568 !important;
+  }
+  .custom-sticky-header {
+    background-color: #ffffff !important;
+  }
+
+  /* DARK MODE SWITCHING (Auto system or Dark theme class) */
+  @media (prefers-color-scheme: dark) {
+    .custom-chef-section {
+      background-color: #0f172a !important;
+      color: #ffffff !important;
+    }
+    .custom-chef-card {
+      background-color: #1e293b !important;
+      border: 1px solid rgba(255, 121, 161, 0.35) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+      color: #ffffff !important;
+    }
+    .custom-chef-title {
+      color: #ffffff !important;
+    }
+    .custom-chef-text {
+      color: #cbd5e0 !important;
+    }
+    .custom-sticky-header {
+      background-color: #1e293b !important;
+    }
+  }
+
+  /* If website uses 'dark' class on body or html */
+  html.dark .custom-chef-section,
+  body.dark .custom-chef-section,
+  [data-theme="dark"] .custom-chef-section {
+    background-color: #0f172a !important;
+  }
+
+  html.dark .custom-chef-card,
+  body.dark .custom-chef-card,
+  [data-theme="dark"] .custom-chef-card {
+    background-color: #1e293b !important;
+    border: 1px solid rgba(255, 121, 161, 0.35) !important;
+    color: #ffffff !important;
+  }
+
+  html.dark .custom-chef-title,
+  body.dark .custom-chef-title,
+  [data-theme="dark"] .custom-chef-title {
+    color: #ffffff !important;
+  }
+
+  html.dark .custom-chef-text,
+  body.dark .custom-chef-text,
+  [data-theme="dark"] .custom-chef-text {
+    color: #cbd5e0 !important;
+  }
+
+  html.dark .custom-sticky-header,
+  body.dark .custom-sticky-header,
+  [data-theme="dark"] .custom-sticky-header {
+    background-color: #1e293b !important;
+  }
+
 </style>
 </head>
 <body>
@@ -334,103 +412,104 @@
 
 <!-- ===================== 2. STICKY CHEF & SCROLLING DISHES SECTION ===================== -->
 
-<section style="padding: 80px 20px; background: transparent;">
+<section class="custom-chef-section" style="padding: 60px 20px; transition: background 0.3s ease;">
   <div style="max-width: 1100px; margin: 0 auto;">
 
     <!-- Wrapper for Sticky Layout -->
     <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start;">
 
       <!-- LEFT SIDE: STICKY CHEF DETAILS -->
-      <div style="flex: 1 1 360px; position: sticky; top: 90px; background: var(--bg-card, #ffffff); padding: 30px; border-radius: 24px; border: 1px solid rgba(255, 121, 161, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.08); box-sizing: border-box;">
+      <div class="custom-chef-card" style="flex: 1 1 360px; position: sticky; top: 90px; padding: 30px; border-radius: 24px; box-sizing: border-box; transition: all 0.3s ease;">
         <img src="../assets/pexels-angela-chacon-140940805-26598639.jpg" alt="Chef Meera Krishnan" style="width: 100%; height: 320px; object-fit: cover; border-radius: 16px; margin-bottom: 20px; display: block;" />
 
         <span style="color: #ff79a1; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 4px;">Master Pastry Decorator</span>
-        <h2 style="font-size: 1.8rem; margin: 0 0 12px 0; color: var(--text-dark, #1a202c); font-family: serif;">Chef Meera Krishnan</h2>
+        <h2 class="custom-chef-title" style="font-size: 1.8rem; margin: 0 0 12px 0; font-family: serif; font-weight: 700;">Chef Meera Krishnan</h2>
 
-        <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.7; margin: 0 0 15px 0;">
-          Coimbatore-la <strong style="color: var(--text-dark, #1a202c);">French-Asian Fusion Desserts</strong> innovative-ah panna first chef ivangadhan! 16+ years experience oda real butter & Belgian dark chocolate vechu magical creations panranga.
+        <p class="custom-chef-text" style="font-size: 14px; line-height: 1.7; margin: 0 0 15px 0;">
+          Coimbatore-la <strong class="custom-chef-title">French-Asian Fusion Desserts</strong> innovative-ah panna first chef ivangadhan! 16+ years experience oda real butter & Belgian dark chocolate vechu magical creations panranga.
         </p>
 
-        <div style="font-size: 13px; color: var(--text-dark, #2d3748); background: rgba(255, 121, 161, 0.08); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255, 121, 161, 0.2); font-weight: 600;">
-          <strong style="color: var(--text-dark, #1a202c);">Famous For:</strong> 3D Hand-Sculpted Wedding Cakes & Belgian Truffles
+        <div class="custom-chef-text" style="font-size: 13px; background: rgba(255, 121, 161, 0.12); padding: 12px 16px; border-radius: 12px; border: 1px solid rgba(255, 121, 161, 0.25); font-weight: 600;">
+          <strong style="color: #ff79a1;">Famous For:</strong> 3D Hand-Sculpted Wedding Cakes & Belgian Truffles
         </div>
       </div>
 
-      <!-- RIGHT SIDE: SCROLLABLE UNIQUE DISHES (6 ITEMS) -->
-      <div style="flex: 1 1 500px; max-height: 650px; overflow-y: auto; padding-right: 12px; display: flex; flex-direction: column; gap: 24px;">
+      <!-- RIGHT SIDE: SCROLLABLE UNIQUE DISHES -->
+      <div style="flex: 1 1 500px; max-height: 650px; overflow-y: auto; padding-right: 8px; display: flex; flex-direction: column; gap: 24px;">
 
-        <div style="margin-bottom: 10px; position: sticky; top: 0; background: var(--bg-card, #ffffff); z-index: 2; padding-bottom: 10px;">
+        <!-- Sticky Header -->
+        <div class="custom-chef-card custom-sticky-header" style="margin-bottom: 10px; position: sticky; top: 0; z-index: 5; padding: 16px 20px; border-radius: 18px;">
           <span style="color: #ff79a1 !important; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; font-size: 13px; display: block;">✦ Signature Menu ✦</span>
-          <h2 style="font-size: 2.2rem; margin-top: 5px; color: var(--text-dark, #1a202c) !important; font-family: serif;">Chef's Famous Creations</h2>
+          <h2 class="custom-chef-title" style="font-size: 2rem; margin: 4px 0 0 0; font-family: serif; font-weight: 700;">Chef's Famous Creations</h2>
         </div>
 
         <!-- Dish Card 1 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-reneterp-9342983.jpg" alt="Belgian Truffle" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Bestseller</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">Royal Belgian Dark Truffle</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Bestseller</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">Royal Belgian Dark Truffle</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Made with 70% dark Belgian cocoa layers soaked in real vanilla ganache and coated with velvet chocolate glaze.
             </p>
           </div>
         </div>
 
         <!-- Dish Card 2 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-cup-of-couple-8015274.jpg" alt="French Macaron Tower" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">French Special</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">Artisan Macaron Tier Tower</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">French Special</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">Artisan Macaron Tier Tower</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Crisp almond shells filled with handcrafted fruit curds, salted caramel, and organic pistachios.
             </p>
           </div>
         </div>
 
         <!-- Dish Card 3 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-badri-rai-2611465-16113666.jpg" alt="3D Storyboard Cake" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Custom Design</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">3D Storyboard Theme Cake</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Custom Design</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">3D Storyboard Theme Cake</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Entirely edible theme cakes customized down to the smallest detail using hand-painted edible sugar art.
             </p>
           </div>
         </div>
 
         <!-- Dish Card 4 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-feelartfeelant-1028704.jpg" alt="Berry Bavarian Tart" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Seasonal Hit</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">Fresh Berry Bavarian Tart</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Seasonal Hit</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">Fresh Berry Bavarian Tart</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Buttery shortcrust base topped with light Bavarian custard cream and fresh hand-picked berries.
             </p>
           </div>
         </div>
 
         <!-- Dish Card 5 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-filirovska-8250378.jpg" alt="Pistachio Raspberry Opera" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Signature Pastry</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">Pistachio Raspberry Opera</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Signature Pastry</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">Pistachio Raspberry Opera</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Classic French layered sponge cake infused with almond joconde, Sicilian pistachio buttercream, and tangy raspberry glaze.
             </p>
           </div>
         </div>
 
         <!-- Dish Card 6 -->
-        <div style="display: flex; flex-wrap: wrap; gap: 20px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 121, 161, 0.2)); padding: 20px; border-radius: 20px; box-shadow: 0 6px 20px var(--card-shadow, rgba(0,0,0,0.05)); align-items: center; transition: all 0.3s ease;">
+        <div class="custom-chef-card" style="display: flex; flex-wrap: wrap; gap: 20px; padding: 20px; border-radius: 20px; align-items: center; transition: all 0.3s ease;">
           <img src="../assets/pexels-kiril-gruev-2644795-10699891.jpg" alt="Salted Caramel Biscoff Cheesecake" style="width: 130px; height: 130px; border-radius: 14px; object-fit: cover; flex-shrink: 0;" />
           <div style="flex: 1 1 200px;">
-            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.12); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Chef's Pick</span>
-            <h3 style="font-size: 1.25rem; color: var(--text-dark, #1a202c); margin: 0 0 6px 0; font-weight: 700;">Salted Caramel Biscoff Slice</h3>
-            <p style="font-size: 14px; color: var(--text-mid, #4a5568); line-height: 1.6; margin: 0;">
+            <span style="display: inline-block; font-size: 0.75rem; font-weight: 700; color: #ff7495; background: rgba(255, 116, 149, 0.15); padding: 4px 12px; border-radius: 50px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">Chef's Pick</span>
+            <h3 class="custom-chef-title" style="font-size: 1.25rem; margin: 0 0 6px 0; font-weight: 700;">Salted Caramel Biscoff Slice</h3>
+            <p class="custom-chef-text" style="font-size: 14px; line-height: 1.6; margin: 0;">
               Slow-baked creamy Basque cheesecake layer topped with Lotus Biscoff spread and warm house-made salted caramel drip.
             </p>
           </div>
