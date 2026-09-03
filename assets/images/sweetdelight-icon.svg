@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sdPinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF527B"/>
+      <stop offset="50%" stop-color="#FF758C"/>
+      <stop offset="100%" stop-color="#FFAFC5"/>
+    </linearGradient>
+    <linearGradient id="sdGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="50%" stop-color="#FBBF24"/>
+      <stop offset="100%" stop-color="#FDE68A"/>
+    </linearGradient>
+    <linearGradient id="sdBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0F5"/>
+      <stop offset="100%" stop-color="#FFE4EC"/>
+    </linearGradient>
+    <filter id="sdShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#FF527B" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- Background rounded squircle container -->
+  <rect x="6" y="6" width="88" height="88" rx="24" fill="url(#sdBgGrad)" stroke="url(#sdPinkGrad)" stroke-width="2.5" filter="url(#sdShadow)"/>
+
+  <!-- Lower Cake Tier (Base) -->
+  <path d="M 24 70 C 24 66, 30 64, 50 64 C 70 64, 76 66, 76 70 L 74 77 C 74 80, 68 82, 50 82 C 32 82, 26 80, 26 77 Z" fill="url(#sdPinkGrad)"/>
+  
+  <!-- Lower Tier Frosting Drapes -->
+  <path d="M 24 70 C 28 73, 34 73, 38 70 C 42 73, 48 73, 50 70 C 52 73, 58 73, 62 70 C 66 73, 72 73, 76 70" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Middle Cake Tier -->
+  <path d="M 30 52 C 30 48, 36 46, 50 46 C 64 46, 70 48, 70 52 L 68 62 C 68 65, 62 67, 50 67 C 38 67, 32 65, 32 62 Z" fill="#FFFFFF" stroke="url(#sdPinkGrad)" stroke-width="1.5"/>
+
+  <!-- Elegant 'S' Monogram Swirl Ribbon across the tiers -->
+  <path d="M 62 34 C 54 26, 36 28, 36 37 C 36 46, 64 45, 64 56 C 64 66, 44 68, 36 62" fill="none" stroke="url(#sdPinkGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <path d="M 62 34 C 54 26, 36 28, 36 37 C 36 46, 64 45, 64 56 C 64 66, 44 68, 36 62" fill="none" stroke="url(#sdGoldGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Crown / Star Sparkle Top -->
+  <!-- Center Star Sparkle -->
+  <path d="M 50 16 Q 50 24 43 25 Q 50 26 50 33 Q 50 26 57 25 Q 50 24 50 16 Z" fill="url(#sdGoldGrad)"/>
+  
+  <!-- Small Star Sparkles -->
+  <circle cx="33" cy="24" r="2" fill="url(#sdGoldGrad)"/>
+  <circle cx="67" cy="22" r="2.5" fill="url(#sdGoldGrad)"/>
+  <circle cx="72" cy="40" r="1.5" fill="url(#sdGoldGrad)"/>
+</svg>

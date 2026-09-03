@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Grand Luxury Wedding Cakes — Multi-tier bespoke wedding cakes, sugar flower artistry, and wedding tasting consultations." />
   <title>Luxury Wedding Cakes</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="alternate icon" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/sweetdelight-icon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap');
@@ -153,9 +155,7 @@
   <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <div class="logo-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-      </div>
+      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
       <div class="logo-text">Sweet<span>Delight</span></div>
     </a>
 
@@ -180,11 +180,8 @@
       <li><a href="../pages/services.html" class="">Services</a></li>
       <li><a href="../pages/gallery.html" class="">Gallery</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/contact.html" class="">Contact ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="../pages/faq.html" class="">FAQ & Guide</a>
-          <a href="../pages/delivery.html">Delivery & Care</a>
-        </div>
+        <a href="../pages/contact.html" class="">Contact </a>
+        
       </li>
     </ul>
 
@@ -203,26 +200,58 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    
-    <a href="../index.html">Home 1 </a>
-    <a href="../pages/home2.html">Home 2 </a>
-    <a href="../pages/about.html">About</a>
-    <a href="../pages/cakes.html">All Cakes </a>
-    <a href="../pages/wedding.html" class="active">Wedding Cakes</a>
-    <a href="../pages/custom.html">Custom 3D Cakes</a>
-    <a href="../pages/specials.html">Chef's Specials</a>
-    <a href="../pages/services.html">Services</a>
-    <a href="../pages/gallery.html">Gallery</a>
-    <a href="../pages/delivery.html">Delivery & Care</a>
-    <a href="../pages/faq.html">FAQ Guide</a>
-    <a href="../pages/contact.html">Contact</a>
-    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
+    <!-- Sidebar Header -->
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
+        <div class="logo-text">Sweet<span>Delight</span></div>
+      </a>
+      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="mobile-menu-nav">
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>Home</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="../pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+        </div>
+      </div>
+
+      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle active" onclick="toggleDropdown(this)">
+          <span>All Cakes</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="../pages/wedding.html" class="active" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+        </div>
+      </div>
+
+      <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mobile-menu-footer">
+      <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+    </div>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
  <section class="hero">
   <div class="hero-bg"
-    style="background-image: url('https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=1600&auto=format&fit=crop&q=80');">
+    style="background-image: url('../assets/pexels-nilantha-lokunarangodage-2158757744-37289774.jpg');">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -234,21 +263,33 @@
     style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
     Grand Luxury<br /><span style="color:var(--pink-dark);font-style:italic;">Wedding Cakes</span>
   </h1>
-  <p class="fade-in-up delay-2"
-    style="font-size:17px;color:var(--text-mid);margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
-    Handcrafted 3-tier to 7-tier bespoke centerpieces adorned with edible 24k gold leaf, lifelike sugar floral bouquets, and unforgettable gourmet flavors.
-  </p>
- <div class="btn-group fade-in-up delay-3">
-  <a href="../pages/booking.html" class="btn-primary">
-    <span class="btn-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-omega-icon lucide-omega"><path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21"/></svg></span>
-    <span>Book Tasting Consultation</span>
-  </a>
-  <a href="../pages/gallery.html" class="btn-secondary">
-    <span>View Designs</span>
-    <span class="btn-arrow">→</span>
-  </a>
-</div>
+ <p class="fade-in-up delay-2"
+  style="font-size: 17px; color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 480px; line-height: 1.8; text-shadow: none !important; filter: none !important; font-weight: 500;">
+  Handcrafted 3-tier to 7-tier bespoke centerpieces adorned with edible 24k gold leaf, lifelike sugar floral bouquets, and unforgettable gourmet flavors.
+</p>
 
+<div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
+  
+  <!-- 1st Button: Book Tasting Consultation -->
+  <a href="../pages/booking.html" 
+     class="btn-primary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; background: #ff79a1 !important; color: #ffffff !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; border: none !important; box-shadow: 0 6px 20px rgba(255,121,161,0.35) !important; box-sizing: border-box !important; margin: 0 !important;">
+     <span class="btn-emoji" style="display: inline-flex; align-items: center;">
+       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-omega"><path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21"/></svg>
+     </span>
+     <span>Book Tasting Consultation</span>
+  </a>
+
+  <!-- 2nd Button: View Designs -->
+  <a href="../pages/gallery.html" 
+     class="btn-secondary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; box-sizing: border-box !important; margin: 0 !important;" 
+     onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
+     onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
+     <span>View Designs &rarr;</span>
+  </a>
+
+</div>
   <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
     <div>
       <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--text-dark);">
@@ -272,81 +313,134 @@
   </div>
 </section>
   <!-- ===================== WEDDING SHOWCASE ===================== -->
-  <section class="section bg-white">
-    <div class="container">
+  <!-- ===================== WEDDING CAKE TIERS SECTION ===================== -->
+<section class="section" style="padding-top: 60px; padding-bottom: 40px; background: transparent; width: 100%; box-sizing: border-box; overflow-x: hidden;">
+  <div class="container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding-left: 16px; padding-right: 16px; box-sizing: border-box;">
+    
+    <!-- Section Title -->
+    <div class="section-title" style="text-align: center; margin-bottom: 40px; width: 100%; box-sizing: border-box;">
+      <span style="display: block; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #ff758c; margin-bottom: 8px;">Bespoke Bridal Collections</span>
+      <h2 style="font-size: 28px; font-weight: 700; color: var(--text-dark, #1a202c); margin: 0 0 10px 0; line-height: 1.3;">Signature Wedding Cake Tiers</h2>
+      <p style="font-size: 14px; color: var(--text-mid, #718096); margin: 0 auto; line-height: 1.6; max-width: 600px;">Every wedding cake is custom designed to harmonize with your reception theme, bridal florals, and venue aesthetics.</p>
+    </div>
+
+    <!-- Cards Responsive Grid Wrapper -->
+    <div class="wedding-pkg-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; width: 100%; box-sizing: border-box;">
       
-      <div class="section-title">
-        <span>Bespoke Bridal Collections</span>
-        <h2>Signature Wedding Cake Tiers</h2>
-        <p>Every wedding cake is custom designed to harmonize with your reception theme, bridal florals, and venue aesthetics.</p>
+  <!-- Tier 1 -->
+  <div class="wedding-card fade-in-up" style="width: 100%; box-sizing: border-box; background: var(--bg-card, var(--card-bg, #ffffff)); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid var(--border-color, rgba(255, 117, 140, 0.2)); display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="wedding-card-img" style="width: 100%; height: 210px; overflow: hidden; box-sizing: border-box;">
+      <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&auto=format&fit=crop&q=80" alt="The Victorian Sugar Rose 3-Tier" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="wedding-card-body" style="padding: 20px 16px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; box-sizing: border-box; width: 100%;">
+      <div>
+        <div style="font-size: 11.5px; font-weight: 700; color: #ff758c; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Serves 60 – 80 Guests</div>
+        <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">The Victorian Sugar Peony</h3>
+        <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Ivory velvet fondant with cascading blush handcrafted sugar peonies, Madagascan vanilla bean and raspberry champagne curd layers.</p>
+      </div>
+     <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
+  <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">
+    ₹18,500 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span>
+  </div>
+  
+  <a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
+</div>
+    </div>
+  </div>
+
+  <!-- Tier 2 -->
+  <div class="wedding-card fade-in-up delay-1" style="width: 100%; box-sizing: border-box; background: var(--bg-card, var(--card-bg, #ffffff)); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid var(--border-color, rgba(255, 117, 140, 0.2)); display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="wedding-card-img" style="width: 100%; height: 210px; overflow: hidden; box-sizing: border-box;">
+      <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&auto=format&fit=crop&q=80" alt="The Grand 4-Tier Gold Leaf Monogram" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="wedding-card-body" style="padding: 20px 16px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; box-sizing: border-box; width: 100%;">
+      <div>
+        <div style="font-size: 11.5px; font-weight: 700; color: #ff758c; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Serves 120 – 160 Guests</div>
+        <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">Grand 4-Tier 24K Gold Monogram</h3>
+        <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Hand-painted 24 karat edible gold leaf trim, customized initials crest, Belgian dark chocolate truffle and hazelnut praline sponge.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">₹28,000 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span></div>
+     <a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier 3 -->
+  <div class="wedding-card fade-in-up delay-2" style="width: 100%; box-sizing: border-box; background: var(--bg-card, var(--card-bg, #ffffff)); border-radius: 16px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.08); border: 1px solid var(--border-color, rgba(255, 117, 140, 0.2)); display: flex; flex-direction: column; justify-content: space-between;">
+    <div class="wedding-card-img" style="width: 100%; height: 210px; overflow: hidden; box-sizing: border-box;">
+      <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=700&auto=format&fit=crop&q=80" alt="The Royal 5-Tier Crystal Palace" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="wedding-card-body" style="padding: 20px 16px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; box-sizing: border-box; width: 100%;">
+      <div>
+        <div style="font-size: 11.5px; font-weight: 700; color: #ff758c; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Serves 220+ Guests</div>
+        <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">The Royal Crystal Grandeur</h3>
+        <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Showstopper five-tier architectural masterpiece with edible lace embroidery, illuminated crystal tier separator, and 4 custom flavors.</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">₹42,000 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span></div>
+<a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+</section>
+
+
+<section class="section hero-split-section" style="padding: 80px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+    
+    <!-- LEFT SIDE: Text Content & Description -->
+    <div class="hero-content" style="background: transparent;">
+      <span style="display: inline-block; margin-bottom: 12px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
+        ✦ Gourmet Bakery & Cafe ✦
+      </span>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 56px); color: #1b2e3c !important; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; text-shadow: none !important;">
+        Turn Every Celebration Into Something Sweet
+      </h1>
+      <p style="font-size: 16px; color: #5b6c7a !important; line-height: 1.7; margin: 0 0 30px 0; text-shadow: none !important; opacity: 1 !important;">
+        From elegant multi-tier weddings to luxury custom birthday cakes, our handcrafted gourmet treats and premium dessert boxes are designed to impress guests and create unforgettable moments.
+      </p>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="../pages/menu.html" style="background: #ff7495; color: #ffffff; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(255, 116, 149, 0.3); transition: transform 0.2s;">
+          Order Online
+        </a>
+       <a href="../pages/custom.html" 
+   style="background: #ffffff; color: #1b2e3c; border: 1px solid rgba(255, 116, 149, 0.3); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease; display: inline-block;"
+   onmouseover="this.style.background='#ff7495'; this.style.color='#ffffff'; this.style.borderColor='#ff7495';" 
+   onmouseout="this.style.background='#ffffff'; this.style.color='#1b2e3c'; this.style.borderColor='rgba(255, 116, 149, 0.3)';">
+   Custom Orders
+</a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Image Grid Layout -->
+    <div class="hero-image-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+      
+      <!-- Big Main Image Card -->
+      <div style="background: #ffffff; border: 1px solid rgba(255, 116, 149, 0.25); border-radius: 28px; padding: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+        <img src="../assets/pexels-bruno-mattos-2148523065-30233153.jpg" alt="Luxury Cake Box" style="width: 100%; height: 280px; object-fit: cover; border-radius: 20px; display: block;" />
       </div>
 
-      <div class="wedding-pkg-grid">
-        
-        <!-- Tier 1 -->
-        <div class="wedding-card fade-in-up">
-          <div class="wedding-card-img">
-            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=700&auto=format&fit=crop&q=80" alt="The Victorian Sugar Rose 3-Tier" loading="lazy" />
-
-          </div>
-          <div class="wedding-card-body">
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--pink-dark);text-transform:uppercase;margin-bottom:6px;">Serves 60 – 80 Guests</div>
-              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">The Victorian Sugar Peony</h3>
-              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Ivory velvet fondant with cascading blush handcrafted sugar peonies, Madagascan vanilla bean and raspberry champagne curd layers.</p>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
-              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹18,500 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
-            </div>
-          </div>
+      <!-- Two Small Images Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="background: #ffffff; border: 1px solid rgba(255, 116, 149, 0.25); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
+          <img src="../assets/pexels-suju-1228518.jpg" alt="Cupcake Assortment" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
         </div>
-
-        <!-- Tier 2 -->
-        <div class="wedding-card fade-in-up delay-1">
-          <div class="wedding-card-img">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&auto=format&fit=crop&q=80" alt="The Grand 4-Tier Gold Leaf Monogram" loading="lazy" />
-          
-          </div>
-          <div class="wedding-card-body">
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--blue-dark);text-transform:uppercase;margin-bottom:6px;">Serves 120 – 160 Guests</div>
-              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">Grand 4-Tier 24K Gold Monogram</h3>
-              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Hand-painted 24 karat edible gold leaf trim, customized initials crest, Belgian dark chocolate truffle and hazelnut praline sponge.</p>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
-              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹28,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
-            </div>
-          </div>
+        <div style="background: #ffffff; border: 1px solid rgba(255, 116, 149, 0.25); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
+          <img src="../assets/pexels-tim-douglas-6211057.jpg" alt="Artisan Pastries" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
         </div>
-
-        <!-- Tier 3 -->
-        <div class="wedding-card fade-in-up delay-2">
-          <div class="wedding-card-img">
-            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=700&auto=format&fit=crop&q=80" alt="The Royal 5-Tier Crystal Palace" loading="lazy" />
-           
-          </div>
-          <div class="wedding-card-body">
-            <div>
-              <div style="font-size:12px;font-weight:700;color:var(--pink-dark);text-transform:uppercase;margin-bottom:6px;">Serves 220+ Guests</div>
-              <h3 style="font-size:20px;margin-bottom:10px;color:var(--text-dark);">The Royal Crystal Grandeur</h3>
-              <p style="font-size:13px;color:var(--text-mid);line-height:1.7;margin-bottom:18px;">Showstopper five-tier architectural masterpiece with edible lace embroidery, illuminated crystal tier separator, and 4 custom flavors.</p>
-            </div>
-            <div style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;border-top:1px solid rgba(168,216,234,0.3);">
-              <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--text-dark);">₹42,000 <span style="font-size:12px;color:var(--text-light);font-weight:600;">/ complete</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Book Wedding →</a>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </div>
-  </section>
 
-
-
+  </div>
+</section>
   <!-- ===================== WEDDING STYLES GALLERY ===================== -->
   <section class="section bg-white">
     <div class="container">
@@ -359,7 +453,7 @@
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;">
         <div class="wedding-card fade-in-up">
           <div class="wedding-card-img">
-            <img src="../assets/WhatsApp Image 2026-08-16 at 3.58.04 PM.jpeg" alt="Classic Romantic Wedding Cake" loading="lazy" />
+            <img src="../assets/pexels-beyza-555707524-36396234.jpg" alt="Classic Romantic Wedding Cake" loading="lazy" />
            
           </div>
           <div class="wedding-card-body">
@@ -377,7 +471,7 @@
 
         <div class="wedding-card fade-in-up delay-1">
           <div class="wedding-card-img">
-            <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=700&auto=format&fit=crop&q=80" alt="Modern Minimalist Wedding Cake" loading="lazy" />
+            <img src="../assets/pexels-gokceerem-18330310.jpg" alt="Modern Minimalist Wedding Cake" loading="lazy" />
    
           </div>
           <div class="wedding-card-body">
@@ -395,7 +489,7 @@
 
         <div class="wedding-card fade-in-up delay-2">
           <div class="wedding-card-img">
-            <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=700&auto=format&fit=crop&q=80" alt="Rustic Bohemian Wedding Cake" loading="lazy" />
+            <img src="../assets/pexels-gordon-ky-331483739-14612608.jpg" alt="Rustic Bohemian Wedding Cake" loading="lazy" />
           
           </div>
           <div class="wedding-card-body">
@@ -428,37 +522,37 @@
         <div class="fade-in-up" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);text-align:center;">
          <!-- Glassmorphic Silver Medal Icon Badge -->
 <div class="medal-badge medal-silver fade-in-up">
-  <span class="medal-icon">🥈</span>
+  
 </div>
           <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Silver</h3>
           <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">2-Tier • Serves 40-60</div>
           <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--text-dark);margin-bottom:24px;">₹12,500</div>
           <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 2 custom flavours</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Fondant floral decor</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Free tasting session</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Venue delivery & setup</li>
-            <li style="font-size:13px;color:var(--text-light);padding:8px 0;">❌ Gold leaf detailing</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> 2 custom flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Fondant floral decor</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Free tasting session</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Venue delivery & setup</li>
+            <li style="font-size:13px;color:var(--text-light);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x-icon lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> Gold leaf detailing</li>
           </ul>
           <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Silver →</a>
         </div>
 
         <!-- Gold Package -->
         <div class="fade-in-up delay-1" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:2px solid var(--pink);box-shadow:var(--pink-shadow);text-align:center;position:relative;">
-          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--pink),var(--pink-dark));color:white;font-size:11px;font-weight:700;padding:5px 18px;border-radius:50px;letter-spacing:0.1em;">MOST POPULAR</div>
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--pink),var(--pink-dark));color:white;font-size:11px;font-weight:700;padding:5px 18px;border-radius:50px;letter-spacing:0.1em;">POPULAR</div>
          <!-- Glassmorphic Gold Medal Icon Badge -->
 <div class="medal-badge medal-gold fade-in-up">
-  <span class="medal-icon">🥇</span>
+ 
 </div>
           <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Gold</h3>
           <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">3-4 Tier • Serves 80-160</div>
           <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--pink-dark);margin-bottom:24px;">₹24,000</div>
           <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 4 custom flavours</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Sugar flower bouquet</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ 24K gold leaf accent</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Custom monogram topper</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;">✅ Premium venue setup</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> 4 custom flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Sugar flower bouquet</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> 24K gold leaf accent</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Custom monogram topper</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Premium venue setup</li>
           </ul>
           <a href="../pages/booking.html" class="btn-primary" style="width:100%;display:block;text-align:center;">Select Gold →</a>
         </div>
@@ -467,17 +561,17 @@
         <div class="fade-in-up delay-2" style="background:var(--white);border-radius:var(--radius-md);padding:36px 28px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);text-align:center;">
           <!-- Glassmorphic Diamond Tier Icon Badge -->
 <div class="medal-badge medal-diamond fade-in-up">
-  <span class="medal-icon">💎</span>
+  
 </div>
           <h3 style="font-family:'Playfair Display',serif;font-size:22px;color:var(--text-dark);margin-bottom:4px;">Platinum</h3>
           <div style="font-size:12px;color:var(--text-light);margin-bottom:18px;font-weight:600;">5-7 Tier • Serves 200+</div>
           <div style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;color:var(--text-dark);margin-bottom:24px;">₹42,000+</div>
           <ul style="text-align:left;list-style:none;padding:0;margin-bottom:28px;">
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Unlimited flavours</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Crystal tier separators</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Edible lace embroidery</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);">✅ Dedicated pastry chef</li>
-            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;">✅ VIP venue coordination</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Unlimited flavours</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Crystal tier separators</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Edible lace embroidery</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Dedicated pastry chef</li>
+            <li style="font-size:13px;color:var(--text-mid);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> VIP venue coordination</li>
           </ul>
           <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Platinum →</a>
         </div>
@@ -494,107 +588,216 @@
         <p>Real reviews from real weddings. Over 300+ weddings catered across Tamil Nadu and Pondicherry.</p>
       </div>
 </br></br>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;max-width:900px;margin:0 auto;">
-        <div class="fade-in-up" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);">
-         <!-- Glassmorphic Star Rating Component -->
-<div class="star-rating fade-in-up" aria-label="5 out of 5 stars">
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-</div>
-          <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"Our 4-tier gold monogram cake was the highlight of our reception. 300 guests and everyone was raving about the hazelnut praline filling. The gold leaf work was museum-quality. Sweet Delight made our wedding unforgettable!"</p>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--pink),var(--pink-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;">S</div>
-            <div>
-              <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Sneha & Vikram</div>
-              <div style="font-size:12px;color:var(--text-light);">4-Tier Gold Package • Chennai Wedding</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="fade-in-up delay-1" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);">
-      <div class="star-rating fade-in-up" aria-label="5 out of 5 stars">
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-</div>
-          <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"From the tasting session to the venue setup, everything was flawless. Chef personally matched our cake design with our wedding mandap florals. The rose-cardamom sponge was divine — our families are still talking about it!"</p>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--blue-dark));display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:16px;">D</div>
-            <div>
-              <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Deepa & Karthik</div>
-              <div style="font-size:12px;color:var(--text-light);">5-Tier Royal Package • Pondicherry Wedding</div>
-            </div>
-          </div>
-        </div>
+     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:28px;max-width:900px;margin:0 auto;">
+  
+  <!-- Review Card 1 -->
+  <div class="fade-in-up" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);display:flex;flex-direction:column;justify-content:space-between;">
+    <div>
+      <!-- Star Rating -->
+      <div class="star-rating fade-in-up" aria-label="5 out of 5 stars" style="margin-bottom: 12px;">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
       </div>
 
+      <!-- Review Cake Image -->
+      <div style="width: 100%; height: 180px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <img src="../assets/pexels-jdgromov-4841830.jpg" alt="4-tier gold monogram cake" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
+
+      <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"Our 4-tier gold monogram cake was the highlight of our reception. 300 guests and everyone was raving about the hazelnut praline filling. The gold leaf work was museum-quality. Sweet Delight made our wedding unforgettable!"</p>
+    </div>
+
+    <!-- Reviewer Profile with Image Avatar -->
+    <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+      <img src="../assets/pexels-silverkblack-36813442.jpg" alt="Sneha & Vikram" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #ff79a1;" />
+      <div>
+        <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Sneha & Vikram</div>
+        <div style="font-size:12px;color:var(--text-light);">4-Tier Gold Package • Chennai Wedding</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Review Card 2 -->
+  <div class="fade-in-up delay-1" style="background:var(--white);border-radius:var(--radius-md);padding:32px;border:1.5px solid var(--blue-light);box-shadow:var(--card-shadow);display:flex;flex-direction:column;justify-content:space-between;">
+    <div>
+      <!-- Star Rating -->
+      <div class="star-rating fade-in-up" aria-label="5 out of 5 stars" style="margin-bottom: 12px;">
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+        <span class="star">★</span>
+      </div>
+
+      <!-- Review Cake Image -->
+      <div style="width: 100%; height: 180px; border-radius: 12px; overflow: hidden; margin-bottom: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <img src="../assets/pexels-andy-lee-222330306-32476126.jpg" alt="5-tier Royal Wedding Cake" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      </div>
+
+      <p style="color:var(--text-mid);font-size:14px;line-height:1.8;margin-bottom:20px;font-style:italic;">"From the tasting session to the venue setup, everything was flawless. Chef personally matched our cake design with our wedding mandap florals. The rose-cardamom sponge was divine — our families are still talking about it!"</p>
+    </div>
+
+    <!-- Reviewer Profile with Image Avatar -->
+    <div style="display:flex;align-items:center;gap:12px;margin-top:auto;">
+      <img src="../assets/pexels-silverkblack-39219344.jpg" alt="Deepa & Karthik" style="width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid #ff79a1;" />
+      <div>
+        <div style="font-weight:700;color:var(--text-dark);font-size:14px;">Deepa & Karthik</div>
+        <div style="font-size:12px;color:var(--text-light);">5-Tier Royal Package • Pondicherry Wedding</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
       <div style="text-align:center;margin-top:44px;">
-        <a href="../pages/booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-omega-icon lucide-omega"><path d="M3 20h4.5a.5.5 0 0 0 .5-.5v-.282a.52.52 0 0 0-.247-.437 8 8 0 1 1 8.494-.001.52.52 0 0 0-.247.438v.282a.5.5 0 0 0 .5.5H21"/></svg> Start Your Wedding Cake Journey →</a>
+        <a href="../pages/booking.html" class="btn-primary" style="font-size:15px;padding:14px 36px;">Start Your Wedding Cake Journey →</a>
       </div>
     </div>
   </section>
+<!-- ===================== WEDDING CTA SECTION (DARK & LIGHT MODE COMPATIBLE) ===================== -->
+<section class="section cta-banner-section" style="padding: 80px 20px; background-color: var(--bg-main, #fdf8f9); width: 100%; box-sizing: border-box; transition: background-color 0.3s ease;">
+  <div class="container cta-container" style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 50px; flex-wrap: wrap; box-sizing: border-box;">
+    
+    <!-- Left Side: Content & Buttons -->
+    <div class="cta-content" style="flex: 1 1 480px; text-align: left; min-width: 300px; box-sizing: border-box;">
+      <span class="eyebrow" style="color: #ff7495; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 2px; display: block; margin-bottom: 12px;">
+        ✦ Start Planning Your Dream Cake ✦
+      </span>
+      
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 44px); font-weight: 700; color: var(--text-main, #ffffff); margin-top: 0; margin-bottom: 16px; line-height: 1.25;">
+        Ready to Design Your Royal Wedding Centerpiece?
+      </h2>
+      
+      <p style="font-family: 'Inter', sans-serif; color: var(--text-sub, #c4c4dc); font-size: 15px; line-height: 1.8; margin-bottom: 32px; font-weight: 500;">
+        Book a private tasting consultation with our master pastry chefs and sample our signature gourmet flavors tailored just for your special day.
+      </p>
+      
+     <div class="btn-group" style="display: flex !important; justify-content: flex-start !important; align-items: center !important; gap: 12px !important; width: 100% !important; margin-top: 20px !important;">
+  
+  <!-- Primary CTA Button -->
+  <a href="../pages/booking.html" class="btn-primary" style="padding: 10px 20px !important; font-size: 0.88rem !important; font-weight: 700 !important; text-decoration: none !important; border-radius: 50px !important; background: linear-gradient(135deg, #ff7495 0%, #d8436b 100%) !important; color: #ffffff !important; box-shadow: 0 6px 20px rgba(216, 67, 107, 0.35) !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; white-space: nowrap !important; margin: 0 !important;">
+    <span>Book Tasting Session →</span>
+  </a>
+  
+  <!-- Secondary CTA Button -->
+  <a href="https://wa.me/918122932402" 
+     target="_blank" 
+     class="btn-secondary" 
+     style="display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 10px 20px !important; border-radius: 50px !important; border: 1.5px solid #ff7495 !important; background-color: #ffffff !important; color: #d8436b !important; font-size: 0.88rem !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important; white-space: nowrap !important; margin: 0 !important;" 
+     onmouseover="this.style.setProperty('background', 'linear-gradient(135deg, #ff7495 0%, #d8436b 100%)', 'important'); this.style.setProperty('color', '#ffffff', 'important'); this.style.setProperty('border-color', 'transparent', 'important');" 
+     onmouseout="this.style.setProperty('background', '#ffffff', 'important'); this.style.setProperty('color', '#d8436b', 'important'); this.style.setProperty('border-color', '#ff7495', 'important');">
+     <span>WhatsApp Concierge →</span>
+  </a>
 
-   <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo-text">
-  <span class="logo-icon-box">
-    <i data-lucide="cake-slice"></i>
-  </span>
-  <span class="brand-name">
-    Sweet <span class="brand-highlight">Delight</span>
-  </span>
-</a>
-        <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Phone -->
-          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Email -->
-          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </a>
-        </div>
-        
-      </div>
-      <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
-        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
-        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
-        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
-  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
-  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
-</ul>
-      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> 8122932402<br/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> krams5240@gmail.com</div></div>
-    </div>
-   <div class="footer-bottom">
-  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
-  <span class="tagline-text">
-   Made with Love and lots of butter
-  </span>
 </div>
-  </footer>
+    </div>
+
+    <!-- Right Side: Image Card -->
+    <div class="cta-image-wrap" style="flex: 1 1 380px; max-width: 480px; width: 100%; min-width: 300px; box-sizing: border-box;">
+      <div style="border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.25); border: 2px solid rgba(255, 116, 149, 0.3);">
+        <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800&auto=format&fit=crop&q=80" 
+             alt="Luxury Wedding Cake Consultation" 
+             loading="lazy" 
+             style="width: 100%; height: 380px; object-fit: cover; display: block;" />
+      </div>
+    </div>
+
+  </div>
+</section>
+   <!-- FOOTER -->
+ <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+        <span class="brand-name">
+          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
+        </span>
+      </a>
+      <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
+      
+      <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->
+     <div class="footer-social-links" style="display: flex; flex-direction: row; align-items: center; gap: 12px; margin-top: 18px;">
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+  
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+  </a>
+  
+  <!-- Facebook -->
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
+</div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h5>QUICK LINKS</h5>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Cake Categories -->
+    <div class="footer-col">
+      <h5>CAKE CATEGORIES</h5>
+      <ul>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li>
+        <li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li>
+        <li><a href="../pages/cakes.html">Custom Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours & Contact -->
+    <div class="footer-col">
+      <h5>OPENING HOURS</h5>
+      <ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      
+      <div class="footer-contact-info">
+        <a href="tel:8122932402" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8122932402
+        </a>
+        <a href="mailto:krams5240@gmail.com" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          krams5240@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright Bottom -->
+  <div class="footer-bottom">
+    <span class="copyright-text">© 2026 Sweet Delight. All rights reserved.</span>
+    <span class="tagline-text">Made with Love and lots of butter</span>
+  </div>
+</footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>

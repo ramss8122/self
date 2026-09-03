@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Browse our gallery of stunning handcrafted cakes — wedding masterpieces, birthday showstoppers and elegant custom creations." />
   <title>Gallery</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="alternate icon" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/sweetdelight-icon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     .gallery-masonry {
@@ -202,9 +204,7 @@
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <div class="logo-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-      </div>
+      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
       <div class="logo-text">Sweet<span>Delight</span></div>
     </a>
 
@@ -229,11 +229,8 @@
       <li><a href="../pages/services.html" class="">Services</a></li>
       <li><a href="../pages/gallery.html" class="active">Gallery</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/contact.html" class="">Contact ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="../pages/faq.html" class="">FAQ & Guide</a>
-          <a href="../pages/delivery.html">Delivery & Care</a>
-        </div>
+        <a href="../pages/contact.html" class="">Contact </a>
+       
       </li>
     </ul>
 
@@ -252,460 +249,612 @@
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-   
-    <a href="../index.html">Home 1 </a>
-    <a href="../pages/home2.html">Home 2 </a>
-    <a href="../pages/about.html" class="">About</a>
-    <a href="../pages/cakes.html">All Cakes </a>
-    <a href="../pages/wedding.html">Wedding Cakes</a>
-    <a href="../pages/custom.html">Custom 3D Cakes</a>
-    <a href="../pages/specials.html">Chef's Specials</a>
-    <a href="../pages/services.html">Services</a>
-    <a href="../pages/gallery.html" class="active">Gallery</a>
-    <a href="../pages/delivery.html">Delivery & Care</a>
-    <a href="../pages/faq.html">FAQ Guide</a>
-    <a href="../pages/contact.html">Contact</a>
-    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
+    <!-- Sidebar Header -->
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
+        <div class="logo-text">Sweet<span>Delight</span></div>
+      </a>
+      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="mobile-menu-nav">
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>Home</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="../pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+        </div>
+      </div>
+
+      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>All Cakes</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="../pages/wedding.html" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+        </div>
+      </div>
+
+      <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="../pages/gallery.html" class="active" onclick="closeMobileMenu()">Gallery</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mobile-menu-footer">
+      <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+    </div>
   </div>
 
   <!-- ===================== PAGE HERO ===================== -->
- <!-- ===================== GALLERY PAGE HERO (CENTERED & LARGER) ===================== -->
-<section class="hero" style="display:flex;align-items:center;justify-content:center;text-align:center;">
-  <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1579372786545-d24232daf58c?w=1600&auto=format&fit=crop&q=80');"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content" style="display:flex;justify-content:center;width:100%;">
-    <div class="hero-content-inner" style="max-width:800px;margin:0 auto;text-align:center;">
-      <span style="font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:16px;display:block;" class="fade-in-up">✦ Edible Art ✦</span>
-      <h1 class="fade-in-up delay-1" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;">
-        Our Cake Gallery
-      </h1>
-      <div class="divider" style="margin:0 auto 24px auto;"></div>
-      <p class="fade-in-up delay-2" style="font-size:clamp(18px,2vw,22px);color:rgb(253, 252, 252);margin:0 auto;max-width:680px;line-height:1.7;font-weight:500;">
-        Every image here is a real cake we created. Click any photo to view it up close.
-      </p>
+ <section class="hero">
+    <div class="hero-bg" style="background-image: url('../assets/pexels-filirovska-8250843.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-content-inner" style="max-width:680px; margin: 0 auto; text-align: center;">
+        <span style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;" class="fade-in-up">✦ Edible Art ✦</span>
+        <h1 class="fade-in-up delay-1" style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
+         Our Cake <br /><span style="color:var(--pink-dark);font-style:italic;">Gallery</span>
+        </h1>
+       <p class="fade-in-up delay-2" 
+   style="font-size: 17px; color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 540px; line-height: 1.8; font-weight: 500; text-shadow: none !important; filter: none !important;">
+   Every image here is a real cake we created. Click any photo to view it up close.
+</p>
+      <div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
+  
+  <!-- 1st Button: Send Message -->
+  <a href="../pages/contact.html" 
+     class="btn-primary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; background: #ff79a1 !important; color: #ffffff !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; border: none !important; box-shadow: 0 6px 20px rgba(255,121,161,0.35) !important; box-sizing: border-box !important; margin: 0 !important;">
+     <i data-lucide="mail" style="width: 16px; height: 16px;"></i>
+     Send Message
+  </a>
+
+  <!-- 2nd Button: Book Now -->
+  <a href="https://wa.me/918122932402" 
+     target="_blank" 
+     class="btn-secondary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; box-sizing: border-box !important; margin: 0 !important;" 
+     onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
+     onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
+     Book Now &rarr;
+  </a>
+
+</div>
+
+       
+      </div>
     </div>
+  </section>
+  <!-- ===================== WHY CHOOSE US SECTION ===================== -->
+<section class="section-sm" style="padding: 60px 20px; background: transparent; box-sizing: border-box;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto; box-sizing: border-box;">
+    
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 40px; box-sizing: border-box;">
+      
+      <!-- Left Side: Content Area -->
+      <div style="flex: 1 1 420px; text-align: left; box-sizing: border-box;">
+        <span class="eyebrow" style="display: inline-block; margin-bottom: 10px; font-weight: 700; font-size: 13px; color: #ff79a1; text-transform: uppercase; letter-spacing: 2px;">
+          ✦ Why Choose Us ✦
+        </span>
+        
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4vw, 42px); color: var(--text-dark, #ffffff); margin: 0 0 16px 0; line-height: 1.25; font-weight: 700;">
+          Baking Your Dreams into Edible Reality
+        </h2>
+        
+        <p style="margin: 0 0 24px 0; color: var(--text-mid, #a0aec0); font-size: 15px; line-height: 1.7;">
+          We don't just bake cakes; we craft sweet memories. Every single creation is a blend of premium ingredients, artistic skill, and pure love tailored specifically for your special day.
+        </p>
+
+        <!-- Feature Points -->
+        <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 28px;">
+          
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="color: #ff79a1; font-size: 18px; line-height: 1;">✦</span>
+            <div>
+              <h4 style="margin: 0 0 4px 0; font-size: 16px; color: var(--text-dark, #ffffff); font-weight: 700;">100% Fresh & Premium Ingredients</h4>
+              <p style="margin: 0; font-size: 13px; color: var(--text-mid, #a0aec0); line-height: 1.5;">Made with Belgian chocolate, real butter, and zero artificial preservatives.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="color: #ff79a1; font-size: 18px; line-height: 1;">✦</span>
+            <div>
+              <h4 style="margin: 0 0 4px 0; font-size: 16px; color: var(--text-dark, #ffffff); font-weight: 700;">Tailored Customization</h4>
+              <p style="margin: 0; font-size: 13px; color: var(--text-mid, #a0aec0); line-height: 1.5;">Your vision, our artistry. Custom flavours, theme designs, and dietary options.</p>
+            </div>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; gap: 12px;">
+            <span style="color: #ff79a1; font-size: 18px; line-height: 1;">✦</span>
+            <div>
+              <h4 style="margin: 0 0 4px 0; font-size: 16px; color: var(--text-dark, #ffffff); font-weight: 700;">On-Time Safe Delivery</h4>
+              <p style="margin: 0; font-size: 13px; color: var(--text-mid, #a0aec0); line-height: 1.5;">Temperature-controlled delivery ensuring your cake arrives flawless.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Action Button -->
+        <a href="../pages/booking.html" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; font-size: 14px; padding: 12px 28px; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); color: #ffffff !important; font-weight: 700; box-shadow: 0 4px 14px rgba(255, 82, 134, 0.4);">
+          Book Your Cake Now
+        </a>
+      </div>
+
+      <!-- Right Side: 4 Grid Image Box Container -->
+      <div style="flex: 1 1 380px; max-width: 480px; width: 100%; box-sizing: border-box;">
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; background: var(--bg-card, rgba(255, 255, 255, 0.03)); padding: 12px; border-radius: 20px; border: 1px solid rgba(255, 121, 161, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+          
+          <!-- Image 1 -->
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 12px; overflow: hidden;">
+            <img src="../assets/pexels-leticiacurveloph-28954461.jpg" alt="Fresh Baking" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+           <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.85); color: #ffffff !important; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 0.3px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">Fresh Baked</span>
+          </div>
+
+          <!-- Image 2 -->
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 12px; overflow: hidden;">
+            <img src="../assets/pexels-kiril-gruev-2644795-10699891.jpg" alt="Handcrafted Artistry" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+           <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.85); color: #ffffff !important; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 0.3px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">Fresh Baked</span>Custom Art</span>
+          </div>
+
+          <!-- Image 3 -->
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 12px; overflow: hidden;">
+            <img src="../assets/pexels-cup-of-couple-8015274.jpg" alt="Quality Ingredients" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.85); color: #ffffff !important; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 0.3px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">Fresh Baked</span>Custom Art</span>
+          </div>
+
+          <!-- Image 4 -->
+          <div style="position: relative; width: 100%; height: 160px; border-radius: 12px; overflow: hidden;">
+            <img src="../assets/pexels-tim-douglas-6211057.jpg" alt="Special Moments" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            <span style="position: absolute; bottom: 8px; left: 8px; background: rgba(15, 23, 42, 0.85); color: #ffffff !important; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 600; backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.2); letter-spacing: 0.3px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);">Fresh Baked</span>Custom Art</span>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section bento-grid-section" style="padding: 80px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Bento Grid Container (2 Columns: Left Big Card, Right Stacked Cards) -->
+  <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; align-items: stretch;">
+      
+  <!-- LEFT BIG CARD: Wedding Luxe Catering Box -->
+  <div style="position: relative; border-radius: 32px; overflow: hidden; min-height: 500px; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; box-shadow: 0 20px 40px rgba(0,0,0,0.08);">
+    
+    <!-- Background Image with Darker Overlay -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+      <img src="../assets/pexels-jdgromov-4841830.jpg" alt="Wedding Luxe Catering Box" style="width: 100%; height: 100%; object-fit: cover;" />
+      <!-- Strong Dark Gradient Overlay for Maximum Readability -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(10, 18, 26, 0.92) 100%);"></div>
+    </div>
+
+    <!-- Content inside Left Card -->
+    <div style="position: relative; z-index: 2; color: #ffffff !important;">
+      
+      <!-- Badge -->
+      <span style="display: inline-flex; align-items: center; gap: 6px; background: rgba(255, 255, 255, 0.25); backdrop-filter: blur(8px); padding: 6px 14px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; color: #ffffff !important;">
+        Most Requested Collection
+      </span>
+
+      <!-- Heading -->
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 3.5vw, 42px); font-weight: 700; line-height: 1.15; margin: 0 0 12px 0; color: #ffffff !important;">
+        Wedding Luxe Catering Box
+      </h3>
+
+      <!-- Description -->
+      <p style="font-size: 14px; color: #f1ebd7 !important; line-height: 1.6; margin: 0 0 24px 0; max-width: 450px;">
+        Elegant handcrafted donuts designed for luxury weddings, engagement parties, and unforgettable celebrations.
+      </p>
+
+      <!-- Starting Price / Action Link -->
+      <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.25); padding-top: 16px;">
+        <span style="font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9) !important;">
+          Starting From <strong style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: #ffffff !important; margin-left: 4px;">$150</strong>
+        </span>
+        <a href="../pages/wedding-box.html" style="background: #ffffff !important; color: #1b2e3c !important; text-decoration: none; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.2s;">
+          Explore Box
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RIGHT COLUMN: 2 Stacked Cards -->
+  <div style="display: flex; flex-direction: column; gap: 24px;">
+    
+    <!-- RIGHT TOP CARD: Corporate Gifting Box -->
+    <div style="position: relative; border-radius: 28px; overflow: hidden; height: 238px; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; box-shadow: 0 15px 30px rgba(0,0,0,0.06);">
+      
+      <!-- Background Image with Overlay -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+        <img src="../assets/pexels-ivan-s-8104140.jpg" alt="Corporate Gifting Box" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(10,18,26,0.9) 100%);"></div>
+      </div>
+
+      <!-- Content -->
+      <div style="position: relative; z-index: 2; color: #ffffff !important; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin: 0 0 6px 0; color: #ffffff !important;">
+            Corporate Gifting Box
+          </h4>
+          <p style="font-size: 13px; color: #f1ebd7 !important; margin: 0; line-height: 1.5; max-width: 280px;">
+            Premium gifting experience for teams, clients, and luxury office events.
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #ff8ca3 !important; display: block; margin-bottom: 8px;">
+            $59
+          </span>
+          <a href="../pages/corporate.html" style="width: 38px; height: 38px; background: rgba(255,255,255,0.3) !important; backdrop-filter: blur(5px); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #ffffff !important; text-decoration: none; font-size: 16px;">
+            →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT BOTTOM CARD: Birthday Celebration Box -->
+    <div style="position: relative; border-radius: 28px; overflow: hidden; height: 238px; display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; box-shadow: 0 15px 30px rgba(0,0,0,0.06);">
+      
+      <!-- Background Image with Overlay -->
+      <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+        <img src="../assets/pexels-andy-lee-222330306-32476126.jpg" alt="Birthday Celebration Box" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(10,18,26,0.9) 100%);"></div>
+      </div>
+
+      <!-- Content -->
+      <div style="position: relative; z-index: 2; color: #ffffff !important; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin: 0 0 6px 0; color: #ffffff !important;">
+            Birthday Celebration Box
+          </h4>
+          <p style="font-size: 13px; color: #f1ebd7 !important; margin: 0; line-height: 1.5; max-width: 280px;">
+            Colorful gourmet assortments curated for joyful birthdays & family events.
+          </p>
+        </div>
+        <div style="text-align: right;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #ff8ca3 !important; display: block; margin-bottom: 8px;">
+            $69
+          </span>
+          <a href="../pages/specials.html" style="width: 38px; height: 38px; background: rgba(255,255,255,0.3) !important; backdrop-filter: blur(5px); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; color: #ffffff !important; text-decoration: none; font-size: 16px;">
+            →
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
   </div>
 </section>
   <!-- GALLERY -->
-  <section class="section bg-blush">
-    <div class="container">
+  <section class="section bg-blush" style="padding: 40px 15px; box-sizing: border-box;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; box-sizing: border-box;">
 
-      <div class="cat-tabs fade-in-up">
-        <button class="cat-tab active">All Creations</button>
-       
+    <!-- Category Filter Tabs -->
+    <div class="cat-tabs fade-in-up" style="display: flex; justify-content: center; margin-bottom: 24px;">
+      <button class="cat-tab active" style="padding: 10px 24px; border-radius: 50px; background-color: #87ceeb; border: none; font-weight: 600; cursor: pointer; color: #111;">All Creations</button>
+    </div>
+
+    <!-- Responsive Grid Gallery -->
+    <div class="gallery-masonry fade-in-up" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; width: 100%; box-sizing: border-box;">
+
+      <!-- Wedding Elegance -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-mosslens-13914951.jpg" alt="Wedding cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Wedding Elegance</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;">3-Tier Vanilla Sponge with handcrafted fresh floral design.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹2,400</span>
+            </div>
+          </details>
+        </div>
       </div>
 
-    <div class="gallery-masonry fade-in-up">
-
-        <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/WhatsApp Image 2026-08-16 at 6.17.35 PM.jpeg" alt="Wedding cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Wedding Elegance</span>
-      </summary>
-      
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;">3-Tier Vanilla Sponge with handcrafted fresh floral design.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹2,400</span>
+      <!-- Confetti Birthday -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-badri-rai-2611465-16113666.jpg" alt="Confetti Birthday" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Confetti Birthday</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;">Fun sprinkles cake with rich vanilla buttercream frosting.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,200</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
 
-  </div>
-</div>
-        <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1557925923-cd4648e211a0?w=600&auto=format&fit=crop&q=80" alt="Confetti Birthday" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Confetti Birthday</span>
-      </summary>
-      
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;">Fun sprinkles cake with rich vanilla buttercream frosting.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,200</span>
+      <!-- Gold Drip Luxury -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-jdgromov-4841830.jpg" alt="Drip cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Gold Drip Luxury</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Rich Belgian chocolate cake topped with handcrafted edible gold drip accents.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,850</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
 
-  </div>
-</div>
-        <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=600&auto=format&fit=crop&q=80" alt="Drip cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Gold Drip Luxury</span>
-      </summary>
-      
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Rich Belgian chocolate cake topped with handcrafted edible gold drip accents.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,850</span>
+      <!-- Strawberry Bliss -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-disha-478508385-15835725.jpg" alt="Strawberry cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Strawberry Bliss</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Fresh strawberry layers layered with organic berry compote & whipped cream.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,450</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
 
-  </div>
-</div>
-       <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&auto=format&fit=crop&q=80" alt="Strawberry cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Strawberry Bliss</span>
-      </summary>
-      
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Fresh strawberry layers layered with organic berry compote & whipped cream.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,450</span>
+      <!-- Pink Dream Cake -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-farook-feroz-274131126-12936056.jpg" alt="Birthday cake pink" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Pink Dream Cake</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Soft vanilla sponge layered with strawberry buttercream and topped with pastel pearls.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,350</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
 
-  </div>
-</div>
-        <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/image copy 4.png" alt="Birthday cake pink" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Pink Dream Cake</span>
-      </summary>
-      
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Soft vanilla sponge layered with strawberry buttercream and topped with pastel pearls.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,350</span>
-      </div>
-    </details>
-
-  </div>
-</div>
       <!-- Gourmet Cupcakes -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&auto=format&fit=crop&q=80" alt="Cupcakes" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Gourmet Cupcakes</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Assorted set of handcrafted gourmet cupcakes with rich buttercream frosting.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹650</span>
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-feelartfeelant-1028704.jpg" alt="Cupcakes" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Gourmet Cupcakes</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Assorted set of handcrafted gourmet cupcakes with rich buttercream frosting.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹650</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Vanilla Bean Delight -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1519869325930-281384150729?w=500&auto=format&fit=crop&q=80" alt="Vanilla Buttercream Cupcake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Vanilla Bean Delight</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Classic Madagascar vanilla sponge topped with light whipped buttercream.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹120</span>
+      <!-- Vanilla Bean Delight -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-minchephoto-7491913.jpg" alt="Vanilla Buttercream Cupcake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Vanilla Bean Delight</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Classic Madagascar vanilla sponge topped with light whipped buttercream.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹120</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Fresh Berry Tartlet -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?w=500&auto=format&fit=crop&q=80" alt="Mini Strawberry Tart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Fresh Berry Tartlet</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Crisp pastry shell filled with vanilla pastry cream and topped with fresh berries.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹180</span>
+      <!-- Fresh Berry Tartlet -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-suju-1228518.jpg" alt="Mini Strawberry Tart" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Fresh Berry Tartlet</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Crisp pastry shell filled with vanilla pastry cream and topped with fresh berries.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹180</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Vanilla Cloud -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/image copy 3.png" alt="Vanilla cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Vanilla Cloud</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Soft and fluffy vanilla sponge cake filled with velvety sweet whipped cream.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,100</span>
+      <!-- Vanilla Cloud -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-filirovska-8250378.jpg" alt="Vanilla cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Vanilla Cloud</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Soft and fluffy vanilla sponge cake filled with velvety sweet whipped cream.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,100</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Blueberry Cheesecake -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=600&auto=format&fit=crop&q=80" alt="Blueberry cheesecake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Blueberry Cheesecake</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Creamy classic cheesecake with a graham cracker crust and wild blueberry topping.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,600</span>
+      <!-- Blueberry Cheesecake -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-valeriya-827513.jpg" alt="Blueberry cheesecake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Blueberry Cheesecake</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Creamy classic cheesecake with a graham cracker crust and wild blueberry topping.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,600</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Chocolate Velvet -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&auto=format&fit=crop&q=80" alt="Chocolate cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Chocolate Velvet</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Indulgent dark chocolate sponge with rich chocolate ganache layering.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,500</span>
+      <!-- Chocolate Velvet -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-heyronmar-806363.jpg" alt="Chocolate cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Chocolate Velvet</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Indulgent dark chocolate sponge with rich chocolate ganache layering.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,500</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Rainbow Layer Cake -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/WhatsApp Image 2026-08-16 at 6.17.20 PM.jpeg" alt="Layered cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Rainbow Layer Cake</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Bright colorful vanilla sponges layered with smooth white chocolate frosting.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,750</span>
+      <!-- Rainbow Layer Cake -->
+      <div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif; box-sizing: border-box;">
+        <img src="../assets/pexels-ray-suarez-624980841-34837785.jpg" alt="Layered cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+        <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
+          <details style="cursor: pointer; width: 100%;">
+            <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
+              <span style="color: #ffffff !important;">Rainbow Layer Cake</span>
+            </summary>
+            <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
+              <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Bright colorful vanilla sponges layered with smooth white chocolate frosting.</p>
+              <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,750</span>
+            </div>
+          </details>
+        </div>
       </div>
-    </details>
-  </div>
-</div>
 
-<!-- Chocolate Ganache Delight -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&auto=format&fit=crop&q=80" alt="Chocolate Fudge Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Chocolate Ganache Delight</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Heavy cocoa chocolate fudge cake covered with glossy rich ganache drip.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,400</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Wild Berry Sponge -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&auto=format&fit=crop&q=80" alt="Berry Vanilla Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Wild Berry Sponge</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Soft vanilla cake layered with freshly crushed wild berries and cream.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,300</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Artisan Pastry Box -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500&auto=format&fit=crop&q=80" alt="Pastry Assortment" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Artisan Pastry Box</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Assorted box of freshly baked gourmet French pastries and rolls.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹850</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- White Petal Wedding -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/image copy 5.png" alt="White cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">White Petal Wedding</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Elegant tiered cake adorned with delicate handcrafted sugar petals.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹3,200</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Festive Celebration -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337bb?w=600&auto=format&fit=crop&q=80" alt="Festive cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Festive Celebration</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Special festive cake topped with colorful handcrafted edible decorations.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,450</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Christmas Magic -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="../assets/image copy 4.png" alt="Christmas cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Christmas Magic</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Traditional holiday cake enriched with warm spices and festive cream.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,550</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Luxury Floral Tier Cake -->
-<div class="gallery-brick gallery-brick-large" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=600&auto=format&fit=crop&q=80" alt="Floral Tier Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Luxury Floral Tier Cake</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Multi-tiered custom cake layered with fresh cream and edible floral arrangements.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹4,500</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Golden Chocolate Drip -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1587241321921-91a834d6d191?w=500&auto=format&fit=crop&q=80" alt="Chocolate Drip Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Golden Chocolate Drip</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Dark chocolate cake finished with edible shimmering gold accents.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹1,900</span>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- Velvet Mousse Slice -->
-<div class="gallery-brick" style="position: relative; overflow: hidden; border-radius: 12px; height: 320px; font-family: sans-serif;">
-  <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&auto=format&fit=crop&q=80" alt="Chocolate Mousse Slice" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
-  <div class="gallery-item-overlay" style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2)); color: #ffffff; display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; box-sizing: border-box;">
-    <details style="cursor: pointer; width: 100%;">
-      <summary style="font-size: 18px; font-weight: bold; outline: none; list-style: none; color: #ffffff !important;">
-        <span style="color: #ffffff !important;">Velvet Mousse Slice</span>
-      </summary>
-      <div style="margin-top: 8px; border-top: 1px solid rgba(255, 255, 255, 0.4); padding-top: 8px;">
-        <p style="margin: 0 0 6px 0; font-size: 13px; color: #f1f5f9 !important; line-height: 1.4; font-weight: 500;"><strong style="color: #ffffff;">Note:</strong> Smooth layered chocolate mousse pastry slice with shiny cocoa glaze.</p>
-        <span style="font-size: 15px; font-weight: bold; color: #ffb703 !important;">₹220</span>
-      </div>
-    </details>
-  </div>
-</div>
-</div>
-
-
+      
 
     </div>
-  </section>
 
-  <section class="section-sm bg-white">
-    <div class="container">
-      <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Crafted for Memories ✦</span>
-        <h2>Made to Feel Personal, Sweet, and Unforgettable</h2>
-        <div class="divider"></div>
-        <p>From elegant wedding statements to playful party favourites, every cake is designed to match your story, your event, and your sweetest moments.</p>
+  </div>
+</section>
+<section class="section-sm bg-white" style="padding: 60px 20px; background: transparent;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    
+    <!-- Section Header -->
+    <div class="section-head fade-in-up" style="text-align: center; max-width: 700px; margin: 0 auto 40px auto;">
+      <span class="eyebrow" style="display: inline-block; font-weight: 700; font-size: 13px; color: #ff79a1; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;">✦ Crafted for Memories ✦</span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 4.5vw, 40px); color: var(--text-dark, #ffffff); margin-bottom: 16px; font-weight: 700;">Made to Feel Personal, Sweet, and Unforgettable</h2>
+      <div class="divider" style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); margin: 0 auto 16px auto; border-radius: 2px;"></div>
+      <p style="color: var(--text-mid, #a0aec0); font-size: 15px; line-height: 1.7; margin: 0;">From elegant wedding statements to playful party favourites, every cake is designed to match your story, your event, and your sweetest moments.</p>
+    </div>
+
+  <!-- Cards Grid with Images -->
+<div class="gallery-highlight-grid fade-in-up" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; justify-content: center;">
+  
+  <!-- Card 1 -->
+  <div class="gallery-highlight-card" style="background: var(--bg-card, #1d1b26); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; display: flex; flex-direction: column;">
+    <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+      <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=600&auto=format&fit=crop&q=80" alt="Celebration Cakes" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #ffffff);">Celebration Cakes</h3>
+        <p style="margin: 0 0 20px 0; font-size: 0.9rem; line-height: 1.6; color: var(--text-mid, #a0aec0);">Birthdays, anniversaries, and family milestones made extra special with rich flavours and handcrafted details.</p>
       </div>
-
-      <div class="gallery-highlight-grid fade-in-up">
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="cake"></i></div>
-          <h3>Celebration Cakes</h3>
-          <p>Birthdays, anniversaries, and family milestones made extra special with rich flavours and handcrafted details.</p>
-        </div>
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="gem"></i></div>
-          <h3>Wedding Statements</h3>
-          <p>Floral textures, statement tiers, and timeless finishing touches that bring your dream wedding cake to life.</p>
-        </div>
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="palette"></i></div>
-          <h3>Custom Design</h3>
-          <p>From colours and toppers to sculpted motifs, we create cakes that feel personal, unique, and completely yours.</p>
-        </div>
+      
+      <!-- Buttons Group -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        <!-- Button 1: Primary -->
+        <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 14px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+          Book Now
+        </a>
+        <!-- Button 2: Secondary (Hover Pink) -->
+        <a href="../pages/gallery.html" style="flex: 1; text-align: center; padding: 10px 14px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+           onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+          View More &rarr;
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <section class="section-sm bg-blush">
-    <div class="container">
-      <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ How We Create ✦</span>
-        <h2>From Inspiration to the Final Slice</h2>
-        <div class="divider"></div>
-        <p>We combine artistry, flavour, and attention to detail to create cakes that are as beautiful as they are delicious.</p>
+  <!-- Card 2 -->
+  <div class="gallery-highlight-card" style="background: var(--bg-card, #1d1b26); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; display: flex; flex-direction: column;">
+    <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+      <img src="../assets/pexels-mosslens-13914951.jpg" alt="Wedding Statements" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #ffffff);">Wedding Statements</h3>
+        <p style="margin: 0 0 20px 0; font-size: 0.9rem; line-height: 1.6; color: var(--text-mid, #a0aec0);">Floral textures, statement tiers, and timeless finishing touches that bring your dream wedding cake to life.</p>
       </div>
 
-      <div class="gallery-highlight-grid fade-in-up">
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="lightbulb"></i></div>
-          <h3>1. Share Your Idea</h3>
-          <p>Send us your inspiration, colour preferences, and occasion details so we can shape the perfect concept.</p>
-        </div>
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="sparkles"></i></div>
-          <h3>2. We Design It</h3>
-          <p>Our team creates a design that balances elegance, creativity, and the perfect flavour combination for your event.</p>
-        </div>
-        <div class="gallery-highlight-card">
-          <div class="mini-icon"><i data-lucide="party-popper"></i></div>
-          <h3>3. Enjoy the Moment</h3>
-          <p>We deliver a memorable centrepiece that looks stunning on display and tastes even better with every slice.</p>
-        </div>
+      <!-- Buttons Group -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        <!-- Button 1: Primary -->
+        <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 14px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+          Book Now
+        </a>
+        <!-- Button 2: Secondary (Hover Pink) -->
+        <a href="../pages/gallery.html" style="flex: 1; text-align: center; padding: 10px 14px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+           onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+          View More &rarr;
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="gallery-highlight-card" style="background: var(--bg-card, #1d1b26); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.2); box-shadow: 0 6px 20px rgba(0,0,0,0.15); transition: transform 0.3s ease; display: flex; flex-direction: column;">
+    <div style="width: 100%; height: 200px; overflow: hidden; position: relative;">
+      <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Custom Design" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <h3 style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #ffffff);">Custom Design</h3>
+        <p style="margin: 0 0 20px 0; font-size: 0.9rem; line-height: 1.6; color: var(--text-mid, #a0aec0);">From colours and toppers to sculpted motifs, we create cakes that feel personal, unique, and completely yours.</p>
+      </div>
+
+      <!-- Buttons Group -->
+      <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+        <!-- Button 1: Primary -->
+        <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 14px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+          Book Now
+        </a>
+        <!-- Button 2: Secondary (Hover Pink) -->
+        <a href="../pages/gallery.html" style="flex: 1; text-align: center; padding: 10px 14px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+           onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+           onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+          View More &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+ 
 
   <section class="section bg-white">
     <div class="container">
@@ -716,108 +865,210 @@
         <p>From intimate family celebrations to grand statement pieces, every category in our gallery is crafted for a different kind of sweet memory.</p>
       </div>
 
-      <div class="collection-grid fade-in-up">
-        <div class="collection-card">
-          <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=600&auto=format&fit=crop&q=80" alt="Birthday cake collection" loading="lazy" />
-          <div class="collection-card-body">
-           
-            <h3>Birthday Cake Collection</h3>
-            <p>Colorful, fun and unforgettable cakes for every age — designed to turn celebrations into storybook moments.</p>
-          </div>
-        </div>
-
-  
-<div class="collection-card">
-    <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Custom 3D cake designs" loading="lazy" />
-    <div class="collection-card-body">
-      <h3>Custom 3D Cake Designs</h3>
-      <p>Detailed sculpted cakes inspired by your favourite themes, characters, hobbies and personal milestones.</p>
+    <div class="collection-grid fade-in-up" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; max-width: 950px; margin: 0 auto;">
+ 
+  <!-- Kutty Card 1 -->
+  <div class="collection-card" style="flex: 1 1 260px; max-width: 300px; background: var(--bg-card, #1d1b26); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.25); box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+    <!-- Image Box (Kutty Height 150px) -->
+    <div style="position: relative; width: 100%; height: 150px; overflow: hidden;">
+      <img src="https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=600&auto=format&fit=crop&q=80" alt="Birthday cake collection" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      <!-- Price Badge -->
+      <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); color: #ffffff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">₹850 onwards</span>
+    </div>
+    
+    <!-- Content Below Image -->
+    <div class="collection-card-body" style="padding: 14px;">
+      <h3 style="margin: 0 0 6px 0; font-size: 1rem; font-weight: 700; color: var(--text-dark, #ffffff);">Birthday Cake Collection</h3>
+      <p style="margin: 0 0 10px 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-mid, #a0aec0);">Colorful and fun cakes designed to turn celebrations into storybook moments.</p>
+      
+      <!-- Dark Mode Friendly Ingredients Section -->
+      <div style="font-size: 0.75rem; color: var(--text-mid, #e2e8f0); background: rgba(255, 121, 161, 0.1); padding: 8px 10px; border-radius: 6px; border: 1px dashed rgba(255, 121, 161, 0.4);">
+        <strong style="color: #ff79a1;">Ingredients:</strong> Buttercream, Vanilla Extract, Belgian Cocoa, Fresh Berries
+      </div>
     </div>
   </div>
 
-       
+  <!-- Kutty Card 2 -->
+  <div class="collection-card" style="flex: 1 1 260px; max-width: 300px; background: var(--bg-card, #1d1b26); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.25); box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+    <!-- Image Box (Kutty Height 150px) -->
+    <div style="position: relative; width: 100%; height: 150px; overflow: hidden;">
+      <img src="https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=600&auto=format&fit=crop&q=80" alt="Custom 3D cake designs" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      <!-- Price Badge -->
+      <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); color: #ffffff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">₹1,500 onwards</span>
+    </div>
+    
+    <!-- Content Below Image -->
+    <div class="collection-card-body" style="padding: 14px;">
+      <h3 style="margin: 0 0 6px 0; font-size: 1rem; font-weight: 700; color: var(--text-dark, #ffffff);">Custom 3D Cake Designs</h3>
+      <p style="margin: 0 0 10px 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-mid, #a0aec0);">Detailed sculpted cakes inspired by your favorite themes and hobbies.</p>
+      
+      <!-- Dark Mode Friendly Ingredients Section -->
+      <div style="font-size: 0.75rem; color: var(--text-mid, #e2e8f0); background: rgba(255, 121, 161, 0.1); padding: 8px 10px; border-radius: 6px; border: 1px dashed rgba(255, 121, 161, 0.4);">
+        <strong style="color: #ff79a1;">Ingredients:</strong> Marshmallow Fondant, Ganache, Almond Sponge, Food Colors
       </div>
+    </div>
+  </div>
 
-      <div class="mini-cta fade-in-up">
-        <div>
-          <h3>Need a custom design that feels uniquely yours?</h3>
-          <p>Tell us your dream cake concept and we’ll help shape it into a beautiful centrepiece made for your special moment.</p>
-        </div>
-        <a href="../pages/booking.html" class="btn-primary">Order Your Custom Cake</a>
+  <!-- Kutty Card 3 (Newly Added) -->
+  <div class="collection-card" style="flex: 1 1 260px; max-width: 300px; background: var(--bg-card, #1d1b26); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255, 121, 161, 0.25); box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.3s ease;">
+    <!-- Image Box (Kutty Height 150px) -->
+    <div style="position: relative; width: 100%; height: 150px; overflow: hidden;">
+      <img src="../assets/pexels-badri-rai-2611465-16113666.jpg" alt="Royal Wedding Tiers" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+      <!-- Price Badge -->
+      <span style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); color: #ffffff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">₹2,800 onwards</span>
+    </div>
+    
+    <!-- Content Below Image -->
+    <div class="collection-card-body" style="padding: 14px;">
+      <h3 style="margin: 0 0 6px 0; font-size: 1rem; font-weight: 700; color: var(--text-dark, #ffffff);">Royal Wedding Tiers</h3>
+      <p style="margin: 0 0 10px 0; font-size: 0.8rem; line-height: 1.4; color: var(--text-mid, #a0aec0);">Elegant multi-tiered cakes crafted with edible gold leaf and sugar flowers.</p>
+      
+      <!-- Dark Mode Friendly Ingredients Section -->
+      <div style="font-size: 0.75rem; color: var(--text-mid, #e2e8f0); background: rgba(255, 121, 161, 0.1); padding: 8px 10px; border-radius: 6px; border: 1px dashed rgba(255, 121, 161, 0.4);">
+        <strong style="color: #ff79a1;">Ingredients:</strong> Swiss Meringue, Gold Leaf, Hazelnut Praline, Rose Sponge
       </div>
+    </div>
+  </div>
+
+</div>
+
+     
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section-sm bg-white">
-    <div class="container">
-      <div class="offer-banner fade-in-up">
-        <div class="offer-banner-content">
-          <span class="eyebrow">Love What You See?</span>
-          <h2>Order a Cake Just<br/>Like This — or Better!</h2>
-          <p>Share a photo of your favourite design and we'll recreate it with your personal touches.</p>
-        </div>
-        <a href="../pages/booking.html" class="btn-primary"><i data-lucide="cake"></i>Start Your Order </a>
+<!-- ===================== CUSTOM ORDER BANNER SECTION ===================== -->
+<!-- ===================== CUSTOM ORDER BANNER SECTION ===================== -->
+<!-- ===================== CUSTOM ORDER BANNER SECTION ===================== -->
+<section class="section-sm" style="padding: 40px 15px; background: transparent; width: 100%; box-sizing: border-box;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto; box-sizing: border-box;">
+    
+    <!-- Dynamic Banner Card -->
+    <div class="banner-card-box">
+      
+      <!-- Content Area (Left Side) -->
+      <div class="banner-content-left">
+        <span class="banner-eyebrow">Love What You See?</span>
+        <h2 class="banner-title">Order a Cake Just Like This — or Better!</h2>
+        <p class="banner-desc">Share a photo of your favourite design and we'll recreate it with your personal touches.</p>
+        
+       <!-- Button Container -->
+<div class="banner-btn-group">
+  <!-- Primary Button -->
+  <a href="../pages/booking.html" class="banner-btn banner-btn-primary">
+    <i data-lucide="cake"></i><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg> Start Order
+  </a>
+
+  <!-- Secondary Button -->
+  <a href="../pages/contact.html" class="banner-btn banner-btn-secondary">
+    Chat Us →
+  </a>
+</div>
       </div>
+
+      <!-- Image Area (Right Side) -->
+      <div class="banner-img-right">
+        <div style="position: relative; width: 100%; max-width: 480px; box-sizing: border-box;">
+          <img src="../assets/pexels-gustavo-fring-3983583.jpg" alt="Custom Design Cake Order" style="width: 100%; height: 260px; object-fit: cover; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); display: block;" />
+        </div>
+      </div>
+
     </div>
-  </section>
+
+  </div>
+</section>
 
      <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo-text">
-  <span class="logo-icon-box">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-  </span>
-  <span class="brand-name">
-    Sweet <span class="brand-highlight">Delight</span>
-  </span>
-</a>
-        <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Phone -->
-          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Email -->
-          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </a>
-        </div>
-        
-      </div>
-      <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
-        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
-        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
-        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
-  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
-  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
-</ul>
-      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> 8122932402<br/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> krams5240@gmail.com</div></div>
-    </div>
-   <div class="footer-bottom">
-  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
-  <span class="tagline-text">
-    Made with Love and lots of butter
-  </span>
+ <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+        <span class="brand-name">
+          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
+        </span>
+      </a>
+      <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
+      
+      <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->
+     <div class="footer-social-links" style="display: flex; flex-direction: row; align-items: center; gap: 12px; margin-top: 18px;">
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+  
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+  </a>
+  
+  <!-- Facebook -->
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
 </div>
-  </footer>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h5>QUICK LINKS</h5>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Cake Categories -->
+    <div class="footer-col">
+      <h5>CAKE CATEGORIES</h5>
+      <ul>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li>
+        <li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li>
+        <li><a href="../pages/cakes.html">Custom Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours & Contact -->
+    <div class="footer-col">
+      <h5>OPENING HOURS</h5>
+      <ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      
+      <div class="footer-contact-info">
+        <a href="tel:8122932402" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8122932402
+        </a>
+        <a href="mailto:krams5240@gmail.com" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          krams5240@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright Bottom -->
+  <div class="footer-bottom">
+    <span class="copyright-text">© 2026 Sweet Delight. All rights reserved.</span>
+    <span class="tagline-text">Made with Love and lots of butter</span>
+  </div>
+</footer>
 
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>

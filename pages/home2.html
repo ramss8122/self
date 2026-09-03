@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Artisan Studio — Handcrafted celebration cakes, bespoke wedding tiers, and same-day delivery. Sweet moments start here." />
   <title>Artisan Cakes & Custom Studio</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧁</text></svg>" />
+  <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+  <link rel="alternate icon" href="../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../assets/images/sweetdelight-icon.svg" />
   <link rel="stylesheet" href="../css/style.css" />
   <style>
     /* Specific Home 2 Hero & Card Enhancements */
@@ -544,14 +546,26 @@
 }
 
 .btn-claim {
-  padding: 10px 20px;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 22px;
+  font-size: 13px;
   font-weight: 700;
-  background: #e05275;
-  color: #ffffff;
-  border-radius: 8px;
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  color: #ffffff !important;
+  border-radius: 50px;
   text-decoration: none;
-  transition: 0.3s;
+  box-shadow: 0 4px 15px rgba(255, 117, 140, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-claim:hover {
+  background: linear-gradient(135deg, #ff607b 0%, #ff6b9d 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 117, 140, 0.45);
 }
 
 /* CTA Section Theme Variables */
@@ -642,48 +656,60 @@
 }
 
 .cta-btn-primary {
-background: pink;
-  color: #ffffff;
+  background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+  color: #ffffff !important;
   font-size: 15px;
   font-weight: 700;
-  padding: 14px 34px;
+  padding: 12px 28px;
+  min-height: 48px;
   border-radius: 50px;
   text-decoration: none;
-  /* box-shadow: 0 8px 25px rgba(255, 64, 129, 0.35);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  box-shadow: 0 8px 24px rgba(255, 117, 140, 0.35);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-   border-color: #e0527509;
+  border: 2px solid transparent;
 }
 
 .cta-btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 64, 128, 0.096);
-    background: pink;
+  background: linear-gradient(135deg, #ff607b 0%, #ff6b9d 100%);
+  color: #ffffff !important;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255, 117, 140, 0.5);
+}
+
+.cta-btn-primary svg,
+.cta-btn-primary i {
+  color: #ffffff !important;
+  stroke: #ffffff !important;
 }
 
 .cta-btn-whatsapp {
-  background: white;
-  border: 1px solid #25d3650a;
-  color: rgba(206, 87, 107, 0.938);
+  background: #ffffff;
+  border: 2px solid #f9a8d4;
+  color: #db2777 !important;
   font-size: 15px;
   font-weight: 700;
-  padding: 14px 30px;
+  padding: 12px 28px;
+  min-height: 48px;
   border-radius: 50px;
   text-decoration: none;
-  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(255, 117, 140, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  border-color: pink;
 }
 
 .cta-btn-whatsapp:hover {
-  background: pink;
-  color: #ffffff;
-  transform: translateY(-3px);
- 
+  background: #fff0f7;
+  color: #be185d !important;
+  border-color: #f472b6;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(255, 117, 140, 0.22);
 }
   </style>
 </head>
@@ -693,9 +719,7 @@ background: pink;
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
     <a href="../index.html" class="nav-logo">
-      <div class="logo-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-      </div>
+      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
       <div class="logo-text">Sweet<span>Delight</span></div>
     </a>
 
@@ -720,11 +744,8 @@ background: pink;
       <li><a href="../pages/services.html" class="">Services</a></li>
       <li><a href="../pages/gallery.html" class="">Gallery</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/contact.html" class="">Contact ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="../pages/faq.html" class="">FAQ & Guide</a>
-          <a href="../pages/delivery.html">Delivery & Care</a>
-        </div>
+        <a href="../pages/contact.html" class="">Contact </a>
+       
       </li>
     </ul>
 
@@ -743,105 +764,298 @@ background: pink;
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-   
-    <a href="../index.html" class="">Home 1 </a>
-    <a href="../pages/home2.html" class="active">Home 2 </a>
-    <a href="../pages/about.html">About</a>
-    <a href="../pages/cakes.html">All Cakes </a>
-    <a href="../pages/wedding.html">Wedding Cakes</a>
-    <a href="../pages/custom.html">Custom 3D Cakes</a>
-    <a href="../pages/specials.html">Chef's Specials</a>
-    <a href="../pages/services.html">Services</a>
-    <a href="../pages/gallery.html">Gallery</a>
-    <a href="../pages/delivery.html">Delivery & Care</a>
-    <a href="../pages/faq.html">FAQ Guide</a>
-    <a href="../pages/contact.html">Contact</a>
-    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
+    <!-- Sidebar Header -->
+    <div class="mobile-menu-header">
+      <a href="../index.html" class="mobile-logo">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
+        <div class="logo-text">Sweet<span>Delight</span></div>
+      </a>
+      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="mobile-menu-nav">
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle active" onclick="toggleDropdown(this)">
+          <span>Home</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="../pages/home2.html" class="active" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+        </div>
+      </div>
+
+      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>All Cakes</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="../pages/wedding.html" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+        </div>
+      </div>
+
+      <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mobile-menu-footer">
+      <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+    </div>
   </div>
 
   <!-- ===================== FULL-WIDTH HERO SECTION ===================== -->
-  <section class="hero-home2">
-    <div class="hero-home2-bg"></div>
-    <div class="hero-home2-overlay"></div>
+<section class="hero-home2" style="padding-top: 100px !important; padding-bottom: 60px !important; min-height: 85vh !important; display: flex !important; justify-content: center !important; align-items: center !important; box-sizing: border-box !important;">
+  <div class="hero-home2-bg"></div>
+  <div class="hero-home2-overlay"></div>
 
-    <div class="hero-home2-inner">
-      <div class="hero-home2-text fade-in-up">
+  <div class="hero-home2-inner" style="display: flex !important; align-items: center !important; justify-content: center !important; width: 100% !important; margin: 0 !important; padding: 0 !important;">
+    <div class="hero-home2-text fade-in-up" style=" display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; width: 100% !important; max-width: 800px !important; margin: 0 auto !important; padding: 0 !important;">
+      
+      <!-- Badge Pill -->
+      <div class="hero-badge-pill" style=" margin-top:80px;  margin-bottom: 16px !important; display: inline-block !important; margin-left: auto !important; margin-right: auto !important;">
+        <span>✦ MADE WITH LOVE ✦</span>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="hero-home2-h1" style="margin-top: 0 !important; margin-bottom: 16px !important; text-align: center !important; width: 100% !important; line-height: 1.2 !important;">
+        Sweet Moments<br/>
+        <span class="hero-gradient-text">Start Right Here</span>
+      </h1>
+
+      <!-- Description -->
+      <p class="hero-home2-desc" 
+         style="text-shadow: none !important; color: var(--text-mid, #283c5a) !important; margin-top: 0 !important; margin-bottom: 24px !important; text-align: center !important; max-width: 600px !important; margin-left: auto !important; margin-right: auto !important;">
+        Welcome to our artisan confectionery studio. We blend French patisserie heritage with modern cake artistry to craft mouthwatering centerpieces for every milestone celebration.
+      </p>
+
+      <!-- Buttons Container -->
+    <div class="btn-group hero-home2-btns" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 0 auto !important; flex-wrap: wrap !important;">
         
-        <div class="hero-badge-pill">
-          <span>✦ MADE FRESH WITH LOVE ✦</span>
-        </div>
+  <!-- 1st Button: Book Your Creation -->
+  <a href="../pages/booking.html" 
+     class="btn-primary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; background: #ff79a1 !important; color: #ffffff !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; border: none !important; box-shadow: 0 6px 20px rgba(255,121,161,0.35) !important; box-sizing: border-box !important; margin: 0 !important;">
+     <i data-lucide="cake" style="width: 16px; height: 16px;"></i>
+     <span>Book Your Creation</span>
+  </a
 
-        <h1 class="hero-home2-h1">
-          Sweet Moments<br/>
-          <span class="hero-gradient-text">Start Right Here</span>
-        </h1>
+  <!-- 2nd Button: Design Your Cake -->
+  <a href="../pages/gallery.html" 
+     class="btn-secondary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; box-sizing: border-box !important; margin: 0 !important;" 
+     onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
+     onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
+     <span>Design Your Cake</span>
+     <span class="btn-arrow" style="display: inline-block !important;">&rarr;</span>
+  </a>
 
-        <p class="hero-home2-desc">
-          Welcome to our artisan confectionery studio. We blend French patisserie heritage with modern cake artistry to craft mouthwatering centerpieces for every milestone celebration.
-        </p>
-
-        <div class="btn-group hero-home2-btns">
-          <a href="../pages/booking.html" class="btn-primary"><i data-lucide="cake"></i> Order Your Cake</a>
-          <a href="../pages/cakes.html" class="btn-secondary">Explore Our Cakes →</a>
-        </div>
-
-      
-
-      </div>
+</div>
     </div>
-  </section>
-
+  </div>
+</section>
   <!-- ===================== CAKE CATEGORIES SECTION ===================== -->
-  <section class="section" style="background:var(--blush);">
-    <div class="container">
+<section class="section category-showcase-section" style="padding: 80px 0 !important;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+    
+    <!-- Section Header -->
+    <div class="section-title" style="text-align: center; margin-bottom: 40px;">
+      <span style="display: block; font-size: 14px; font-weight: 700; letter-spacing: 2px; color: #ff7495; text-transform: uppercase; margin-bottom: 8px;">Handcrafted Varieties</span>
+      <h2 style="font-size: 36px; font-weight: 800; color: var(--text-dark, #283c5a); margin-bottom: 12px;">Explore By Cake Category</h2>
+      <p style="color: var(--text-muted, #667085); max-width: 600px; margin: 0 auto; line-height: 1.6;">From whimsical birthday bento boxes to majestic 3-tier wedding centerpieces, find your ideal treat.</p>
+    </div>
+
+    <!-- Big Feature Container Box (Adapts to Light/Dark Mode) -->
+    <div class="category-showcase-box" style="display: flex; flex-wrap: wrap; background: var(--card-bg, #ffffff); border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px var(--card-shadow, rgba(0,0,0,0.08)); border: 1px solid var(--border-color, rgba(255,116,149,0.15)); margin-top: 30px; transition: all 0.3s ease;">
       
-      <div class="section-title">
-        <span>Handcrafted Varieties</span>
-        <h2>Explore By Cake Category</h2>
-        <p>From whimsical birthday bento boxes to majestic 3-tier wedding centerpieces, find your ideal treat.</p>
+      <!-- Left Column: Large Image Showcase -->
+      <div class="showcase-img-col" style="flex: 1 1 450px; position: relative; min-height: 420px; overflow: hidden;">
+        <img src="../assets/pexels-gustavo-fring-3983575.jpg" alt="Master Chef Signature Cake" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'"/>
+        
+        <!-- Chef Overlay Tag (Glassmorphism Effect) -->
+        <div style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: var(--overlay-bg, rgba(255, 255, 255, 0.88)); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 16px 20px; border-radius: 16px; display: flex; align-items: center; gap: 14px; box-shadow: 0 8px 24px rgba(0,0,0,0.15); border: 1px solid var(--overlay-border, rgba(255,255,255,0.2));">
+        
+          <div>
+            <h5 style="margin: 0; font-size: 16px; color: var(--text-dark, #283c5a); font-weight: 700;">Chef's Special Selection</h5>
+            <p style="margin: 2px 0 0 0; font-size: 13px; color: var(--text-muted, #667085);">Handcrafted daily with premium French ingredients</p>
+          </div>
+        </div>
       </div>
 
-      <div class="cat-circle-grid">
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></div>
-          <h4>Birthday Cakes</h4>
-          <p>Custom Themes</p>
-        </a>
+      <!-- Right Column: Details & Scrollable Dish Grid -->
+      <div class="showcase-details-col" style="flex: 1 1 500px; padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+        
+        <!-- Chef Intro -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 24px; color: var(--text-dark, #283c5a); margin-top: 0; margin-bottom: 8px;">Artisan Confectionery</h3>
+          <p style="color: var(--text-muted, #475467); font-size: 15px; line-height: 1.6; margin: 0;">Scroll through our signature creations carefully curated by our master pastry chefs for every special occasion.</p>
+        </div>
 
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-1">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem-icon lucide-gem"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/></svg></div>
-          <h4>Wedding Tiers</h4>
-          <p>Multi-Tier Masterpieces</p>
-        </a>
+        <!-- Scrollable Category List Container -->
+        <div class="cat-circle-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; max-height: 320px; overflow-y: auto; padding-right: 8px;">
+          
+          <!-- Card 1 -->
+          <a href="../pages/cakes.html" class="cat-circle-card fade-in-up" style="display: flex; align-items: center; gap: 14px; padding: 16px; background: var(--item-bg, #fff5f7); border-radius: 16px; text-decoration: none; border: 1px solid var(--item-border, transparent); transition: all 0.3s ease;">
+            <div class="icon-wrap" style="width: 44px; height: 44px; border-radius: 12px; background: #ff79a1; color: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-dark, #283c5a); font-weight: 700;">Birthday Cakes</h4>
+              <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--text-muted, #667085);"> Themes</p>
+            </div>
+          </a>
 
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-2">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-traffic-cone-icon lucide-traffic-cone"><path d="M16.05 10.966a5 2.5 0 0 1-8.1 0"/><path d="m16.923 14.049 4.48 2.04a1 1 0 0 1 .001 1.831l-8.574 3.9a2 2 0 0 1-1.66 0l-8.574-3.91a1 1 0 0 1 0-1.83l4.484-2.04"/><path d="M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z"/><path d="M9.194 6.57a5 2.5 0 0 0 5.61 0"/></svg></div>
-          <h4>Belgian Truffle</h4>
-          <p>70% Dark Cocoa Ganache</p>
-        </a>
+          <!-- Card 2 -->
+          <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-1" style="display: flex; align-items: center; gap: 14px; padding: 16px; background: var(--item-bg, #fff5f7); border-radius: 16px; text-decoration: none; border: 1px solid var(--item-border, transparent); transition: all 0.3s ease;">
+            <div class="icon-wrap" style="width: 44px; height: 44px; border-radius: 12px; background: #ff79a1; color: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 3 8 9l4 13 4-13-2.5-6"/><path d="M17 3a2 2 0 0 1 1.6.8l3 4a2 2 0 0 1 .013 2.382l-7.99 10.986a2 2 0 0 1-3.247 0l-7.99-10.986A2 2 0 0 1 2.4 7.8l2.998-3.997A2 2 0 0 1 7 3z"/><path d="M2 9h20"/></svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-dark, #283c5a); font-weight: 700;">Wedding Tiers</h4>
+              <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--text-muted, #667085);">Masterpieces</p>
+            </div>
+          </a>
 
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-3">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cherry-icon lucide-cherry"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/></svg></div>
-          <h4>Fresh Berry Fruit</h4>
-          <p>Orchard Fresh Medley</p>
-        </a>
+          <!-- Card 3 -->
+          <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-2" style="display: flex; align-items: center; gap: 14px; padding: 16px; background: var(--item-bg, #fff5f7); border-radius: 16px; text-decoration: none; border: 1px solid var(--item-border, transparent); transition: all 0.3s ease;">
+            <div class="icon-wrap" style="width: 44px; height: 44px; border-radius: 12px; background: #ff79a1; color: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.05 10.966a5 2.5 0 0 1-8.1 0"/><path d="m16.923 14.049 4.48 2.04a1 1 0 0 1 .001 1.831l-8.574 3.9a2 2 0 0 1-1.66 0l-8.574-3.91a1 1 0 0 1 0-1.83l4.484-2.04"/><path d="M16.949 14.14a5 2.5 0 1 1-9.9 0L10.063 3.5a2 2 0 0 1 3.874 0z"/><path d="M9.194 6.57a5 2.5 0 0 0 5.61 0"/></svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-dark, #283c5a); font-weight: 700;">Belgian Truffle</h4>
+              <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--text-muted, #667085);"> Ganache</p>
+            </div>
+          </a>
 
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-4">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cookie-icon lucide-cookie"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg></div>
-          <h4>Korean Bento</h4>
-          <p>Pocket Aesthetic Treats</p>
-        </a>
+          <!-- Card 4 -->
+          <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-3" style="display: flex; align-items: center; gap: 14px; padding: 16px; background: var(--item-bg, #fff5f7); border-radius: 16px; text-decoration: none; border: 1px solid var(--item-border, transparent); transition: all 0.3s ease;">
+            <div class="icon-wrap" style="width: 44px; height: 44px; border-radius: 12px; background: #ff79a1; color: #ffffff; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 14c3.22-2.91 4.29-8.75 5-12 1.66 2.38 4.94 9 5 12"/><path d="M22 9c-4.29 0-7.14-2.33-10-7 5.71 0 10 4.67 10 7Z"/></svg>
+            </div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: var(--text-dark, #283c5a); font-weight: 700;">Fresh Berry</h4>
+              <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--text-muted, #667085);"> Medley</p>
+            </div>
+          </a>
 
-        <a href="../pages/cakes.html" class="cat-circle-card fade-in-up delay-4">
-          <div class="icon-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cup-soda-icon lucide-cup-soda"><path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8"/><path d="M5 8h14"/><path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0"/><path d="m12 8 1-6h2"/></svg></div>
-          <h4>Party Cupcakes</h4>
-          <p>Assorted Box Sets</p>
-        </a>
+        </div>
+
       </div>
 
     </div>
-  </section>
 
+  </div>
+</section>
+<section class="section product-grid-section" style="padding: 70px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <!-- Section Header (Optional) -->
+    <div style="margin-bottom: 40px; text-align: left;">
+      <span style="display: inline-block; margin-bottom: 8px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
+        ✦ Handcrafted Specials ✦
+      </span>
+      <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 3.5vw, 40px); color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0;">
+        Our Signature Boxes & Offers
+      </h2>
+    </div>
+
+    <!-- 3-Column Grid Container -->
+    <div class="product-cards-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch;">
+      
+      <!-- CARD 1: Signature Luxe Box -->
+      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <div>
+          <!-- Badge -->
+          <span style="position: absolute; top: 32px; left: 32px; z-index: 2; background: #ff7495; color: #ffffff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 4px 10px rgba(255,116,149,0.3);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg> Best Selling
+          </span>
+          <!-- Image Container -->
+          <div style="width: 100%; height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; background: #f9f9f9;">
+            <img src="../assets/pexels-marceloverfe-19552397.jpg" alt="Signature Luxe Box" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <!-- Title & Description -->
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 10px 0;">
+            Signature Luxe Box
+          </h3>
+          <p style="font-size: 14px; color: var(--text-mid, #5b6c7a); line-height: 1.6; margin: 0 0 20px 0;">
+            12 handcrafted gourmet cupcakes & pastries featuring pistachio, strawberry, chocolate and vanilla.
+          </p>
+        </div>
+        <!-- Price & Button Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color, rgba(0,0,0,0.06)); padding-top: 16px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #ff7495;">
+            $48
+          </span>
+           <a href="../pages/cakes.html" class="add-to-cart-btn" style="background: #ff7495; color: #ffffff; text-decoration: none; display: inline-block; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 12px rgba(255,116,149,0.3); transition: transform 0.2s;">
+        Order Now
+      </a>
+        </div>
+      </div>
+
+      <!-- CARD 2: Celebration Collection -->
+      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
+        <div>
+          <!-- Badge -->
+          <span style="position: absolute; top: 32px; left: 32px; z-index: 2; background: #ff7495; color: #ffffff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; box-shadow: 0 4px 10px rgba(243,156,18,0.3);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame-icon lucide-flame"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"/></svg> Most Bought
+          </span>
+          <!-- Image Container -->
+          <div style="width: 100%; height: 220px; border-radius: 20px; overflow: hidden; margin-bottom: 20px; background: #f9f9f9;">
+            <img src="../assets/pexels-lebele-11883323.jpg" alt="Celebration Collection" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+          <!-- Title & Description -->
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 10px 0;">
+            Celebration Collection
+          </h3>
+          <p style="font-size: 14px; color: var(--text-mid, #5b6c7a); line-height: 1.6; margin: 0 0 20px 0;">
+            24 premium treats perfect for parties, birthdays, celebrations and grand gifting experiences.
+          </p>
+        </div>
+        <!-- Price & Button Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border-color, rgba(0,0,0,0.06)); padding-top: 16px;">
+          <span style="font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: #ff7495;">
+            $95
+          </span>
+          <a href="../pages/cakes.html" class="add-to-cart-btn" style="background: #ff7495; color: #ffffff; text-decoration: none; display: inline-block; padding: 10px 22px; border-radius: 50px; font-weight: 700; font-size: 13px; box-shadow: 0 4px 12px rgba(255,116,149,0.3); transition: transform 0.2s;">
+        Order Now
+      </a>
+        </div>
+      </div>
+
+      <!-- CARD 3: Pink Promo Offer Card -->
+      <div style="background: linear-gradient(135deg, #e5859b 0%, #e298ac 100%); border-radius: 28px; padding: 30px; box-shadow: 0 15px 35px rgba(216, 67, 107, 0.25); display: flex; flex-direction: column; justify-content: space-between; position: relative; color: #ffffff;">
+        <div>
+          <!-- Badge -->
+          <span style="display: inline-block; background: rgba(255,255,255,0.25); color: #ffffff; font-size: 11px; font-weight: 700; padding: 5px 14px; border-radius: 20px; margin-bottom: 24px; backdrop-filter: blur(5px);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg> Limited Offer
+          </span>
+          <!-- Heading & Description -->
+          <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 2.5vw, 36px); font-weight: 700; line-height: 1.2; margin: 0 0 16px 0;">
+            Buy 2 Boxes Get 1 Free
+          </h3>
+          <p style="font-size: 15px; color: rgba(255,255,255,0.9); line-height: 1.6; margin: 0;">
+            Order any two Signature Luxe Boxes and receive a complimentary mini gourmet box instantly added to your package.
+          </p>
+        </div>
+        <!-- Claim Offer Button -->
+        <div style="padding-top: 30px;">
+          <a href="../pages/booking.html" style="display: block; text-align: center; background: #ffffff; color: #1b2e3c; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.2s;">
+            Claim Offer
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
   <!-- ===================== FEATURED CAKES SECTION ===================== -->
   <section class="section bg-white">
     <div class="container">
@@ -852,83 +1066,129 @@ background: pink;
         <p>Each cake is baked to order using 100% pure organic dairy butter, Belgian chocolates, and Madagascar bourbon vanilla.</p>
       </div>
 
-      <div class="cakes-grid">
+    <div class="cakes-grid">
         
-        <!-- Card 1 -->
-        <div class="cake-card fade-in-up">
-          <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=600&auto=format&fit=crop&q=80" alt="Royal Velvet Dream Cake" loading="lazy" />
-          
-          </div>
-          <div class="cake-card-body">
-            <div class="cake-category">Signature Special</div>
-            <h3 class="cake-title">Royal Velvet & Mascarpone</h3>
-            <p class="cake-desc">Moist crimson cocoa sponge layered with whipped Italian mascarpone and raspberry dust.</p>
-            <div class="cake-footer">
-              <div class="cake-price">$44.00 <span>/ 1kg</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="cake-card fade-in-up delay-1">
-          <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&auto=format&fit=crop&q=80" alt="Strawberry Chantilly Cloud Cake" loading="lazy" />
-            
-          </div>
-          <div class="cake-card-body">
-            <div class="cake-category">Fruit Patisserie</div>
-            <h3 class="cake-title">Strawberry Chantilly Cloud</h3>
-            <p class="cake-desc">Featherlight vanilla chiffon layered with fresh mountain strawberries and vanilla chantilly.</p>
-            <div class="cake-footer">
-              <div class="cake-price">$39.00 <span>/ 1kg</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="cake-card fade-in-up delay-2">
-          <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=600&auto=format&fit=crop&q=80" alt="Nutella Hazelnut Rocher Cake" loading="lazy" />
-           
-          </div>
-          <div class="cake-card-body">
-            <div class="cake-category">Chocolate Luxe</div>
-            <h3 class="cake-title">Nutella Hazelnut Rocher</h3>
-            <p class="cake-desc">Crispy wafer hazelnut praline, roasted Texas nuts, and melted dark hazelnut ganache.</p>
-            <div class="cake-footer">
-              <div class="cake-price">$52.00 <span>/ 1kg</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="cake-card fade-in-up delay-3">
-          <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=600&auto=format&fit=crop&q=80" alt="Grand Floral 3-Tier Wedding Cake" loading="lazy" />
-           
-          </div>
-          <div class="cake-card-body">
-            <div class="cake-category">Grand Wedding</div>
-            <h3 class="cake-title">Grand Floral 3-Tier Luxury</h3>
-            <p class="cake-desc">Opulent triple-tier wedding centerpiece adorned with handmade sugar peonies and lace.</p>
-            <div class="cake-footer">
-              <div class="cake-price">$180.00 <span>/ 4kg+</span></div>
-              <a href="../pages/booking.html" class="btn-primary" style="padding:8px 18px;font-size:12px;">Order Now </a>
-            </div>
-          </div>
-        </div>
-
-     
-
-      
-        
-
-
+  <!-- Card 1 -->
+  <div class="cake-card fade-in-up" style="background: var(--card-bg, #ffffff); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color, rgba(255, 116, 149, 0.2)); box-shadow: 0 10px 25px var(--card-shadow, rgba(0,0,0,0.08)); transition: all 0.3s ease; display: flex; flex-direction: column;">
+    <div class="cake-card-img" style="width: 100%; height: 220px; overflow: hidden; position: relative;">
+      <img src="../assets/pexels-shameel-mukkath-3421394-5112676.jpg" alt="Royal Velvet Dream Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cake-card-body" style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="cake-category" style="font-size: 0.75rem; font-weight: 700; color: #ff7495; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Signature Special</div>
+        <h3 class="cake-title" style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #283c5a);">Royal Velvet & Mascarpone</h3>
+        <p class="cake-desc" style="margin: 0 0 16px 0; font-size: 0.88rem; line-height: 1.6; color: var(--text-muted, #667085);">Moist crimson cocoa sponge layered with whipped Italian mascarpone and dust.</p>
       </div>
+
+      <div class="cake-footer" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="cake-price" style="font-size: 1.3rem; font-weight: 800; color: var(--text-dark, #283c5a);"><span style="color: #ff7495;">$44.00</span> <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted, #667085);">/ 1kg</span></div>
+        
+        <!-- Buttons Group -->
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 12px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+            Order Now
+          </a>
+          <a href="../pages/cakes.html" style="flex: 1; text-align: center; padding: 10px 12px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+             onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+            Details &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="cake-card fade-in-up delay-1" style="background: var(--card-bg, #ffffff); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color, rgba(255, 116, 149, 0.2)); box-shadow: 0 10px 25px var(--card-shadow, rgba(0,0,0,0.08)); transition: all 0.3s ease; display: flex; flex-direction: column;">
+    <div class="cake-card-img" style="width: 100%; height: 220px; overflow: hidden; position: relative;">
+      <img src="../assets/pexels-disha-478508385-15835725.jpg" alt="Strawberry Chantilly Cloud Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cake-card-body" style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="cake-category" style="font-size: 0.75rem; font-weight: 700; color: #ff7495; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Fruit Patisserie</div>
+        <h3 class="cake-title" style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #283c5a);">Strawberry Chantilly Cloud</h3>
+        <p class="cake-desc" style="margin: 0 0 16px 0; font-size: 0.88rem; line-height: 1.6; color: var(--text-muted, #667085);">Featherlight vanilla chiffon with fresh mountain strawberries and vanilla chantilly.</p>
+      </div>
+
+      <div class="cake-footer" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="cake-price" style="font-size: 1.3rem; font-weight: 800; color: var(--text-dark, #283c5a);"><span style="color: #ff7495;">$39.00</span> <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted, #667085);">/ 1kg</span></div>
+        
+        <!-- Buttons Group -->
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 12px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+            Order Now
+          </a>
+          <a href="../pages/cakes.html" style="flex: 1; text-align: center; padding: 10px 12px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+             onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+            Details &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="cake-card fade-in-up delay-2" style="background: var(--card-bg, #ffffff); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color, rgba(255, 116, 149, 0.2)); box-shadow: 0 10px 25px var(--card-shadow, rgba(0,0,0,0.08)); transition: all 0.3s ease; display: flex; flex-direction: column;">
+    <div class="cake-card-img" style="width: 100%; height: 220px; overflow: hidden; position: relative;">
+      <img src="../assets/pexels-gordon-ky-331483739-14612608.jpg" alt="Nutella Hazelnut Rocher Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cake-card-body" style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="cake-category" style="font-size: 0.75rem; font-weight: 700; color: #ff7495; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Chocolate Luxe</div>
+        <h3 class="cake-title" style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #283c5a);">Nutella Hazelnut Rocher</h3>
+        <p class="cake-desc" style="margin: 0 0 16px 0; font-size: 0.88rem; line-height: 1.6; color: var(--text-muted, #667085);">Crispy wafer hazelnut praline, roasted Texas nuts, and melted dark hazelnut ganache.</p>
+      </div>
+
+      <div class="cake-footer" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="cake-price" style="font-size: 1.3rem; font-weight: 800; color: var(--text-dark, #283c5a);"><span style="color: #ff7495;">$52.00</span> <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted, #667085);">/ 1kg</span></div>
+        
+        <!-- Buttons Group -->
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 12px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+            Order Now
+          </a>
+          <a href="../pages/cakes.html" style="flex: 1; text-align: center; padding: 10px 12px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+             onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+            Details &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="cake-card fade-in-up delay-3" style="background: var(--card-bg, #ffffff); border-radius: 16px; overflow: hidden; border: 1px solid var(--border-color, rgba(255, 116, 149, 0.2)); box-shadow: 0 10px 25px var(--card-shadow, rgba(0,0,0,0.08)); transition: all 0.3s ease; display: flex; flex-direction: column;">
+    <div class="cake-card-img" style="width: 100%; height: 220px; overflow: hidden; position: relative;">
+      <img src="../assets/pexels-michal-ufniak-9754476-37459897.jpg" alt="Grand Floral 3-Tier Wedding Cake" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+    </div>
+    <div class="cake-card-body" style="padding: 20px; text-align: left; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div>
+        <div class="cake-category" style="font-size: 0.75rem; font-weight: 700; color: #ff7495; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;">Grand Wedding</div>
+        <h3 class="cake-title" style="margin: 0 0 8px 0; font-size: 1.2rem; font-weight: 700; color: var(--text-dark, #283c5a);">Grand Floral 3-Tier Luxury</h3>
+        <p class="cake-desc" style="margin: 0 0 16px 0; font-size: 0.88rem; line-height: 1.6; color: var(--text-muted, #667085);">Opulent triple-tier wedding adorned with handmade sugar peonies and lace.</p>
+      </div>
+
+      <div class="cake-footer" style="display: flex; flex-direction: column; gap: 14px;">
+        <div class="cake-price" style="font-size: 1.3rem; font-weight: 800; color: var(--text-dark, #283c5a);"><span style="color: #ff7495;">$180.00</span> <span style="font-size: 0.8rem; font-weight: 500; color: var(--text-muted, #667085);">/ 4kg+</span></div>
+        
+        <!-- Buttons Group -->
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <a href="../pages/booking.html" style="flex: 1; text-align: center; padding: 10px 12px; background: #ff79a1; color: #ffffff; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; box-shadow: 0 4px 12px rgba(255,121,161,0.3); transition: all 0.3s ease;">
+            Order Now
+          </a>
+          <a href="../pages/cakes.html" style="flex: 1; text-align: center; padding: 10px 12px; background: transparent; color: #ff7495; border-radius: 50px; font-size: 0.85rem; font-weight: 700; text-decoration: none; border: 2px solid #ff7495; transition: all 0.3s ease;"
+             onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+             onmouseout="this.style.backgroundColor='transparent'; this.style.color='#ff7495';">
+            Details &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
       <div style="text-align:center;margin-top:48px;">
         <a href="../pages/cakes.html" class="btn-primary" style="font-size:15px;padding:14px 38px;">View Full 30+ Cake Menu →</a>
@@ -938,7 +1198,7 @@ background: pink;
   </section>
 
   <!-- ===================== WHY CHOOSE US ===================== -->
-  <section class="section" style="background:linear-gradient(135deg,var(--blue-light),var(--pink-light));">
+<section class="section" style="background:linear-gradient(135deg,var(--blue-light),var(--pink-light));">
     <div class="container">
       
       <div class="section-title">
@@ -949,66 +1209,74 @@ background: pink;
 
       <div class="feature-grid">
         
+        <!-- Card 1 -->
         <div class="feature-card fade-in-up">
-          <div class="feature-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cuboid-icon lucide-cuboid"><path d="M10 22v-8"/><path d="M2.336 8.89 10 14l11.715-7.029"/><path d="M22 14a2 2 0 0 1-.971 1.715l-10 6a2 2 0 0 1-2.138-.05l-6-4A2 2 0 0 1 2 16v-6a2 2 0 0 1 .971-1.715l10-6a2 2 0 0 1 2.138.05l6 4A2 2 0 0 1 22 8z"/></svg></div>
-          <h3>100% Pure Organic Butter</h3>
+          <div class="feature-img-wrap">
+            <img src="../assets/pexels-felicity-tai-7965940.jpg" alt="Pure Organic Butter" />
+          </div>
+          
+                   <h3>100% Pure Organic Butter</h3>
           <p>Zero hydrogenated vegetable oils or artificial preservatives. We use only pure dairy butter and European cocoa.</p>
         </div>
 
+        <!-- Card 2 -->
         <div class="feature-card fade-in-up delay-1">
-          <div class="feature-icon icon-pink"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></div>
+          <div class="feature-img-wrap">
+            <img src="../assets/pexels-kampus-6721907.jpg" alt="Express Delivery" />
+          </div>
+          
           <h3>2-Hour Express Delivery</h3>
           <p>Last-minute celebration? Our climate-controlled delivery vans bring freshly baked cakes in perfect shape.</p>
         </div>
 
+        <!-- Card 3 -->
         <div class="feature-card fade-in-up delay-2">
-          <div class="feature-icon icon-blue"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sprout-icon lucide-sprout"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg></div>
+          <div class="feature-img-wrap">
+            <img src="../assets/pexels-rahibyaqubov-17939219.jpg" alt="Eggless and Vegan" />
+          </div>
+
           <h3>100% Eggless & Vegan</h3>
           <p>Enjoy our entire menu baked eggless with identical ultra-soft texture, plus gluten-free and sugar-free options.</p>
         </div>
 
-        <div class="feature-card fade-in-up delay-3">
-          <div class="feature-icon icon-pink"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chef-hat-icon lucide-chef-hat"><path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z"/><path d="M6 17h12"/></svg></div>
-          <h3>Award-Winning Pastry Chefs</h3>
-          <p>Confectionery artists trained in classical French baking with over 15 years of artisan cake sculpting expertise.</p>
-        </div>
+       
 
       </div>
 
     </div>
   </section>
 
-  <!-- ===================== SPECIAL OFFERS & DEALS ===================== -->
-  <section class="section offer-section">
-  <div class="container">
+<!-- ===================== SPECIAL OFFERS & DEALS ===================== -->
+<section class="section offer-section">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
     
-    <div class="section-title">
-      <span>Limited-Time Promotions</span>
-      <h2>Special Monthly Bakery Deals</h2>
-      <p>Save on your celebration cakes with our exclusive packages and limited-time discounts.</p>
+    <!-- Section Title -->
+    <div class="section-title" style="text-align: center; margin-bottom: 35px;">
+      <span class="offer-subtitle">Limited-Time Promotions</span>
+      <h2 class="offer-heading">Special Monthly Bakery Deals</h2>
+      <p class="offer-desc">Save on your celebration cakes with our exclusive packages and limited-time discounts.</p>
     </div>
 
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;">
+    <!-- Cards Grid -->
+    <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
       
-      <!-- Offer 1 -->
-      <div class="offer-card card-pink fade-in-up">
+      <!-- Card 1 -->
+      <div class="offer-card fade-in-up">
         <div>
-         
-          <h3>Gourmet Cupcake Fiesta</h3>
-          <p>Order any two 6-pack assorted cupcake boxes and get a third box absolutely complimentary for your party!</p>
+          <h3 class="offer-card-title">Gourmet Cupcake Fiesta</h3>
+          <p class="offer-card-text">Order any two 6-pack assorted cupcake boxes and get a third box absolutely complimentary for your party!</p>
         </div>
         <div class="offer-card-footer">
           <span class="promo-code">CODE: SWEET15</span>
-          <a href="../pages/booking.html" class="btn-claim">Claim Offer </a>
+          <a href="../pages/booking.html" class="btn-claim">Claim Offer</a>
         </div>
       </div>
 
-      <!-- Offer 2 -->
-      <div class="offer-card card-pink fade-in-up">
+      <!-- Card 2 -->
+      <div class="offer-card fade-in-up">
         <div>
-      
-          <h3>First Time Customer Treat</h3>
-          <p>Enjoy 15% off your first custom cake booking with complimentary candles and personalized cake inscription plaque.</p>
+          <h3 class="offer-card-title">First Time Customer Treat</h3>
+          <p class="offer-card-text">Enjoy 15% off your first custom cake booking with complimentary candles and personalized cake inscription plaque.</p>
         </div>
         <div class="offer-card-footer">
           <span class="promo-code">CODE: FIRST15</span>
@@ -1016,16 +1284,15 @@ background: pink;
         </div>
       </div>
 
-      <!-- Offer 3 -->
-      <div class="offer-card card-pink fade-in-up">
+      <!-- Card 3 -->
+      <div class="offer-card fade-in-up">
         <div>
-       
-          <h3>Wedding Tasting & Stand</h3>
-          <p>Book your wedding cake consultation and receive a complimentary 5-flavor cake tasting flight plus luxury cake stand hire.</p>
+          <h3 class="offer-card-title">Wedding Tasting & Stand</h3>
+          <p class="offer-card-text">Book your wedding cake consultation and receive a complimentary 5-flavor cake tasting flight plus luxury cake stand hire.</p>
         </div>
         <div class="offer-card-footer">
           <span class="promo-code">CODE: WEDLUXE</span>
-          <a href="../pages/booking.html" class="btn-claim">Book Tasting </a>
+          <a href="../pages/booking.html" class="btn-claim">Book Tasting</a>
         </div>
       </div>
 
@@ -1044,52 +1311,81 @@ background: pink;
         <p>Read what our happy clients say about our taste, artistic detailing, and punctual delivery.</p>
       </div>
 
-      <div class="testimonial-grid">
+     <div class="testimonial-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center; max-width: 1100px; margin: 0 auto; font-family: sans-serif;">
+      
+  <!-- Testimonial 1 -->
+  <div class="testimonial-card" style="display: flex; flex-direction: column; flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+    <p class="testi-text" style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0 0 25px 0;">
+      "Our bakery created our 3-tier floral wedding cake and it was the crown jewel of our reception! The Belgian chocolate truffle flavor was heavenly. All guests asked for seconds!"
+    </p>
+    
+    <!-- Chef / Profile Details -->
+    <div class="testi-author" style="margin-top: auto; display: flex; align-items: center; gap: 15px;">
+      <img src="../assets/pexels-gustavo-fring-3983575.jpg" alt="Ananya" style="width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid #f0f0f0;">
+      <div class="testi-info" style="display: flex; flex-direction: column;">
+        <div class="name" style="font-size: 1.05rem; font-weight: 700; color: #333;">ANANYA</div>
         
-        <div class="testimonial-card fade-in-up">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Our bakery created our 3-tier floral wedding cake and it was the crown jewel of our reception! The Belgian chocolate truffle flavor was heavenly. All guests asked for seconds!"</p>
-          <div class="testi-author">
-           <!-- Glassmorphic Testimonial Avatar Badge -->
-
-            <div class="testi-info">
-              <div class="name">Ananya & Karthik R.</div>
-              <div class="role">Grand Wedding Couple • 3-Tier Luxury</div>
-            </div>
-          </div>
+       
+        
+        <div class="role" style="font-size: 0.8rem; color: #666; margin-top: 2px;">
+          10+ Yrs Exp •Tier Floral Specialist
         </div>
-
-        <div class="testimonial-card fade-in-up delay-1">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"Ordered a custom car theme cake for my son's 6th birthday. Arrived in 2 hours flat in pristine condition. The sponge was super soft and 100% eggless. Highly recommended!"</p>
-          <div class="testi-author">
-           
-            <div class="testi-info">
-              <div class="name">Vikramaditya Sharma</div>
-              <div class="role">Birthday Celebration • Custom Theme Cake</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in-up delay-2">
-          <div class="testi-stars">★★★★★</div>
-          <p class="testi-text">"We ordered 120 personalized cupcake boxes for our corporate annual gala. Each box was beautifully ribboned with our logo. Delicious, on-time, and top-tier professionalism!"</p>
-          <div class="testi-author">
-            
-            <div class="testi-info">
-              <div class="name">Meera Nair</div>
-              <div class="role">HR Director • Corporate Event Catering</div>
-            </div>
-          </div>
-        </div>
-
+        <div style="font-size: 0.75rem; color: #888; font-style: italic;">For: Ananya &amp; Karthik R.</div>
       </div>
+    </div>
+  </div>
+
+  <!-- Testimonial 2 -->
+  <div class="testimonial-card" style="display: flex; flex-direction: column; flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+    <p class="testi-text" style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0 0 25px 0;">
+      "Ordered a custom car theme cake for my son's 6th birthday. Arrived in 2 hours flat in pristine condition. The sponge was super soft and 100% eggless. Highly recommended!"
+    </p>
+    
+    <!-- Chef / Profile Details -->
+    <div class="testi-author" style="margin-top: auto; display: flex; align-items: center; gap: 15px;">
+      <img src="../assets/pexels-willians-huerta-2157111846-36430088.jpg" alt="Chef Name" style="width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid #f0f0f0;">
+      <div class="testi-info" style="display: flex; flex-direction: column;">
+        <div class="name" style="font-size: 1.05rem; font-weight: 700; color: #333;">VIKRAM SHARMA</div>
+        
+       
+        
+        <div class="role" style="font-size: 0.8rem; color: #666; margin-top: 2px;">
+          3D Fondant &amp; Eggless Baking Expert
+        </div>
+        <div style="font-size: 0.75rem; color: #888; font-style: italic;">For: Vikramaditya Sharma</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial 3 -->
+  <div class="testimonial-card" style="display: flex; flex-direction: column; flex: 1; min-width: 300px; max-width: 350px; background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); transition: all 0.3s ease;">
+    <p class="testi-text" style="font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0 0 25px 0;">
+      "We ordered 120 personalized cupcake boxes for our corporate annual gala. Each box was beautifully ribboned with our logo. Delicious, on-time, and top-tier professionalism!"
+    </p>
+    
+    <!-- Chef / Profile Details -->
+    <div class="testi-author" style="margin-top: auto; display: flex; align-items: center; gap: 15px;">
+      <img src="../assets/pexels-arthousestudio-4590943.jpg" alt="Chef Name" style="width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid #f0f0f0;">
+      <div class="testi-info" style="display: flex; flex-direction: column;">
+        <div class="name" style="font-size: 1.05rem; font-weight: 700; color: #333;">MEERA NAIR</div>
+        
+      
+        
+        <div class="role" style="font-size: 0.8rem; color: #666; margin-top: 2px;">
+          Master Pastry Chef • Corporate Desserts
+        </div>
+        <div style="font-size: 0.75rem; color: #888; font-style: italic;">For: Meera Nair (HR)</div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
     </div>
   </section>
 
   <!-- ===================== FAQ ACCORDION SECTION ===================== -->
-  <section class="section bg-white">
+  <section class="section bg-white" >
     <div class="container">
       
       <div class="section-title">
@@ -1156,79 +1452,161 @@ background: pink;
   </section>
 
   <!-- ===================== FINAL CALL TO ACTION ===================== -->
- <section class="cta-section">
-  <div class="cta-content">
-    <span class="cta-badge">✦ LET'S BAKE YOUR DREAM CAKE ✦</span>
-    <h2 class="cta-heading">
+<section class="cta-section" style="padding: 80px 20px; background: linear-gradient(135deg, rgba(255, 235, 242, 0.92), rgba(235, 245, 255, 0.92)), url('./assets/pexels-taylor-mora-82666836-8820960 (2).jpg'); background-size: cover; background-position: center; background-blend-mode: overlay; text-align: center; font-family: 'Poppins', sans-serif;">
+  
+  <div class="cta-content" style="max-width: 1000px; margin: 0 auto;">
+    
+ <span class="cta-badge" style="display: inline-block !important; background:  #df9fb0 !important; color: #fffefe !important; padding: 8px 18px !important; border-radius: 50px !important; font-size: 13px !important; font-weight: 700 !important; letter-spacing: 1px !important; margin-bottom: 20px !important; text-transform: uppercase !important; box-shadow: 0 4px 10px rgba(216, 67, 107, 0.35) !important;">
+    ✦ LET'S BAKE YOUR DREAM CAKE ✦
+</span>
+    
+    <!-- Heading -->
+    <h2 class="cta-heading" style="font-size: 36px; color: #2d1522; margin-bottom: 15px; font-weight: 700;">
       Ready to Make Your Celebration Sweet?
     </h2>
-    <p class="cta-desc">
+    
+    <!-- Description -->
+    <p class="cta-desc" style="font-size: 16px; color: #6c5863; max-width: 600px; margin: 0 auto 45px auto; line-height: 1.6;">
       Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp.
     </p>
     
-    <div class="cta-btn-group">
-      <a href="../pages/booking.html" class="cta-btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg> Order Online Now</a>
-      <a href="https://wa.me/919876543210?text=Hello%20Sweet%20Delight!%20I%20would%20like%20to%20order%20a%20cake." target="_blank" class="cta-btn-whatsapp">💬 WhatsApp Inquiry</a>
+    <!-- Circular Images Showcase Grid -->
+    <div class="circular-showcase" style="display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap; margin-bottom: 45px;">
+      
+      <!-- Circle Item 1 -->
+      <div style="text-align: center;">
+        <div style="width: 130px; height: 130px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(216, 67, 107, 0.2); border: 4px solid #ffffff;">
+          <img src="../assets/pexels-filirovska-8250843.jpg" alt="Custom Cake" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <span style="display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: #4a333f;">Custom Cakes</span>
+      </div>
+
+      <!-- Circle Item 2 (Featured Center Circle) -->
+      <div style="text-align: center;">
+        <div style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; box-shadow: 0 12px 30px rgba(216, 67, 107, 0.3); border: 5px solid #ffffff;">
+          <img src="../assets/pexels-beyza-555707524-36396234.jpg" alt="Gourmet Cupcakes" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <span style="display: block; margin-top: 10px; font-size: 15px; font-weight: 600; color: #d8436b;">Weekend Specials</span>
+      </div>
+
+      <!-- Circle Item 3 -->
+      <div style="text-align: center;">
+        <div style="width: 130px; height: 130px; border-radius: 50%; overflow: hidden; box-shadow: 0 10px 25px rgba(216, 67, 107, 0.2); border: 4px solid #ffffff;">
+          <img src="../assets/pexels-harold-productions-74516182-12889987.jpg" alt="Delights" style="width: 100%; height: 100%; object-fit: cover;" />
+        </div>
+        <span style="display: block; margin-top: 10px; font-size: 14px; font-weight: 600; color: #4a333f;">Freshly Baked</span>
+      </div>
+
+    </div>
+
+    <!-- Buttons Group -->
+    <div class="cta-btn-group" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+      
+      <!-- Order Online Button -->
+      <a href="../pages/booking.html" class="cta-btn-primary" style="display: inline-flex; align-items: center; gap: 10px; background: #d8436b; color: #ffffff; padding: 14px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 6px 20px rgba(216, 67, 107, 0.35);">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg> 
+        Order Online Now
+      </a>
+
+      <!-- WhatsApp Inquiry Button -->
+      <a href="https://wa.me/919876543210?text=Hello%20Sweet%20Delight!%20I%20would%20like%20to%20order%20a%20cake." target="_blank" class="cta-btn-whatsapp" style="display: inline-flex; align-items: center; gap: 10px; background: #25d366; color: #ffffff; padding: 14px 28px; border-radius: 50px; font-weight: 600; text-decoration: none; box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);">
+         WhatsApp Inquiry
+      </a>
+
     </div>
   </div>
 </section>
     <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo-text">
-  <span class="logo-icon-box">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-  </span>
-  <span class="brand-name">
-    Sweet <span class="brand-highlight">Delight</span>
-  </span>
-</a>
-        <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Phone -->
-          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Email -->
-          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </a>
-        </div>
-        
-      </div>
-      <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
-        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
-        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
-        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-  <li><span class="day-text">Mon – Fri</span><span class="time-text">8am – 9pm</span></li>
-  <li><span class="day-text">Saturday</span><span class="time-text">8am – 10pm</span></li>
-  <li><span class="day-text">Sunday</span><span class="time-text">9am – 8pm</span></li>
-</ul>
-      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg> 8122932402<br/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> krams5240@gmail.com</div></div>
-    </div>
-   <div class="footer-bottom">
-  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
-  <span class="tagline-text">
-    Made with Love and lots of butter
-  </span>
+   <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+        <span class="brand-name">
+          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
+        </span>
+      </a>
+      <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
+      
+      <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->
+     <div class="footer-social-links" style="display: flex; flex-direction: row; align-items: center; gap: 12px; margin-top: 18px;">
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+  
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+  </a>
+  
+  <!-- Facebook -->
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
 </div>
-  </footer>
+    </div>
 
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h5>QUICK LINKS</h5>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Cake Categories -->
+    <div class="footer-col">
+      <h5>CAKE CATEGORIES</h5>
+      <ul>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li>
+        <li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li>
+        <li><a href="../pages/cakes.html">Custom Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours & Contact -->
+    <div class="footer-col">
+      <h5>OPENING HOURS</h5>
+      <ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      
+      <div class="footer-contact-info">
+        <a href="tel:8122932402" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8122932402
+        </a>
+        <a href="mailto:krams5240@gmail.com" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          krams5240@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright Bottom -->
+  <div class="footer-bottom">
+    <span class="copyright-text">© 2026 Sweet Delight. All rights reserved.</span>
+    <span class="tagline-text">Made with Love and lots of butter</span>
+  </div>
+</footer>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="../js/script.js"></script>
   <script>

@@ -1,6 +1,31 @@
 /* ============================================================
    Sweet Delight Bakery — Shared JavaScript
    ============================================================ */
+// Filter Button Click Handler Example
+const filterBtns = document.querySelectorAll('[data-filter]'); // Unga filter btn selector
+const cakeCards = document.querySelectorAll('.cake-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const filterValue = btn.getAttribute('data-filter');
+
+    cakeCards.forEach(card => {
+      const category = card.getAttribute('data-category');
+      
+      if (filterValue === 'all' || category === filterValue) {
+        card.style.display = 'block'; // Show card
+      } else {
+        card.style.display = 'none';  // Completely hide from DOM flow
+      }
+    });
+  });
+});
+
+/* ---- Immediate Direction Setup (Prevents FOUC) ---- */
+(function () {
+  const initialDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'rtl';
+  document.documentElement.setAttribute('dir', initialDir);
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -10,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
       window.lucide.createIcons();
     }
   }
-  
 
   /* ---- Light / Dark Theme Management ---- */
   const savedTheme = localStorage.getItem('sweet_delight_theme') || 
@@ -40,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  /* ---- LTR / RTL Direction Management ---- */
- const savedDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'ltr';
+/* ---- LTR / RTL Direction Management ---- */
+const savedDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'rtl';
 
 function applyDirection(dir) {
-  const validDir = dir === 'rtl' ? 'rtl' : 'ltr';
+  const validDir = dir === 'ltr' ? 'ltr' : 'rtl';
   document.documentElement.setAttribute('dir', validDir);
   if (document.body) {
     document.body.setAttribute('dir', validDir);
@@ -52,31 +76,120 @@ function applyDirection(dir) {
   localStorage.setItem('sweet_delight_dir', validDir);
   localStorage.setItem('siteDir', validDir);
 
+  // Ensure text spans keep correct word reading without reversing
+  document.querySelectorAll('.brand-name, .nav-logo-text, .nav-logo .logo-text').forEach(el => {
+    el.style.direction = 'ltr';
+    el.style.unicodeBidi = 'isolate';
+  });
+
+  // Ensure button groups follow the document direction (overriding any inline style)
+  document.querySelectorAll('.btn-group, .cta-btn-group, .hero-home2-btns').forEach(el => {
+    el.style.setProperty('direction', validDir, 'important');
+  });
+
+  // Update Explore Menu arrow according to direction
+  document.querySelectorAll('.btn-secondary').forEach(btn => {
+    if (btn.innerHTML.includes('Explore Menu')) {
+      if (validDir === 'rtl') {
+        btn.innerHTML = 'Explore Menu &larr;';
+      } else {
+        btn.innerHTML = 'Explore Menu &rarr;';
+      }
+    }
+  });
+
   document.querySelectorAll('.dir-toggle-btn').forEach(btn => {
     btn.setAttribute('data-dir', validDir);
     btn.setAttribute('title', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
     btn.setAttribute('aria-label', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
-    // Keeps the icon persistent instead of overriding with text
-    if (!btn.querySelector('i')) {
-      btn.innerHTML = '<i data-lucide="arrow-left-right"></i>';
+    const label = btn.querySelector('.dir-label');
+    if (label) {
+      label.textContent = validDir.toUpperCase();
+    } else if (!btn.querySelector('i') && !btn.querySelector('svg')) {
+      btn.innerHTML = '<span class="dir-label">' + validDir.toUpperCase() + '</span>';
     }
   });
 
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    window.lucide.createIcons();
-  }
+  initIcons();
 }
 
 applyDirection(savedDir);
 
-document.addEventListener('click', (e) => {
-  const btn = e.target.closest('.dir-toggle-btn');
-  if (btn) {
-    const current = document.documentElement.getAttribute('dir') || 'ltr';
-    const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
-    applyDirection(nextDir);
-  }
-});
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.dir-toggle-btn');
+    if (btn) {
+      const current = document.documentElement.getAttribute('dir') || 'rtl';
+      const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
+      applyDirection(nextDir);
+    }
+  });
+
+  /* ---- Desktop Dropdowns (Click & Hover interaction) ---- */
+  const desktopDropdowns = document.querySelectorAll('.nav-dropdown');
+
+  desktopDropdowns.forEach(dropdown => {
+    const toggleLink = dropdown.querySelector(':scope > a');
+    if (toggleLink) {
+      toggleLink.addEventListener('click', (e) => {
+        // Only intercept when acting as dropdown toggle
+        const isOpen = dropdown.classList.contains('open');
+        // Close all other dropdowns
+        desktopDropdowns.forEach(d => {
+          if (d !== dropdown) d.classList.remove('open');
+        });
+
+        if (isOpen) {
+          dropdown.classList.remove('open');
+        } else {
+          e.preventDefault();
+          dropdown.classList.add('open');
+        }
+      });
+    }
+  });
+
+  // Close desktop dropdowns when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-dropdown')) {
+      desktopDropdowns.forEach(d => d.classList.remove('open'));
+    }
+  });
+
+  /* ---- Mobile Accordion / Dropdowns ---- */
+  const mobileDropdowns = document.querySelectorAll('.mobile-dropdown, .mobile-menu .dropdown');
+
+  mobileDropdowns.forEach(dropdown => {
+    const toggleBtn = dropdown.querySelector('.dropdown-toggle, .mobile-dropdown-toggle, :scope > a');
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', (e) => {
+        // Only trigger accordion if there is a sub menu present
+        const subMenu = dropdown.querySelector('.dropdown-menu, ul, .sub-menu, .submenu');
+        if (subMenu) {
+          e.preventDefault();
+          e.stopPropagation();
+          const isOpen = dropdown.classList.contains('open') || dropdown.classList.contains('active');
+          
+          // Close other mobile dropdowns for accordion effect
+          mobileDropdowns.forEach(d => {
+            if (d !== dropdown) {
+              d.classList.remove('open', 'active');
+              const otherSub = d.querySelector('.dropdown-menu, ul, .sub-menu, .submenu');
+              if (otherSub) otherSub.style.display = 'none';
+            }
+          });
+
+          if (isOpen) {
+            dropdown.classList.remove('open', 'active');
+            subMenu.style.display = 'none';
+          } else {
+            dropdown.classList.add('open', 'active');
+            subMenu.style.display = 'block';
+          }
+        }
+      });
+    }
+  });
+
   /* ---- Navbar scroll behaviour ---- */
   const navbar = document.querySelector('.navbar');
   if (navbar) {
@@ -94,26 +207,35 @@ document.addEventListener('click', (e) => {
   /* ---- Hamburger / Mobile menu ---- */
   const hamburger   = document.getElementById('hamburger');
   const mobileMenu  = document.getElementById('mobileMenu');
-  const mobileLinks = document.querySelectorAll('.mobile-menu a');
+
+  // Ensure backdrop exists
+  let backdrop = document.getElementById('mobileBackdrop');
+  if (!backdrop) {
+    backdrop = document.createElement('div');
+    backdrop.id = 'mobileBackdrop';
+    backdrop.className = 'mobile-backdrop';
+    document.body.appendChild(backdrop);
+  }
 
   function closeMenu() {
-    if (!hamburger || !mobileMenu) return;
-    hamburger.classList.remove('active');
-    mobileMenu.classList.remove('open');
+    if (hamburger) hamburger.classList.remove('active');
+    if (mobileMenu) mobileMenu.classList.remove('open');
+    if (backdrop) backdrop.classList.remove('open');
     document.body.style.overflow = '';
     document.documentElement.style.overflow = '';
   }
 
   function openMenu() {
-    if (!hamburger || !mobileMenu) return;
-    hamburger.classList.add('active');
-    mobileMenu.classList.add('open');
+    if (hamburger) hamburger.classList.add('active');
+    if (mobileMenu) mobileMenu.classList.add('open');
+    if (backdrop) backdrop.classList.add('open');
     document.body.style.overflow = 'hidden';
     document.documentElement.style.overflow = 'hidden';
   }
 
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       if (mobileMenu.classList.contains('open')) {
         closeMenu();
       } else {
@@ -121,35 +243,126 @@ document.addEventListener('click', (e) => {
       }
     });
 
-    // Close on any link click inside mobile menu
-    mobileLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
+    // Close on close button click
+    const closeBtn = document.getElementById('navClose') || mobileMenu.querySelector('.mobile-close-btn, .nav-close-btn');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
+
+    // Close on any navigation link click inside mobile menu (excluding dropdown toggles)
+    mobileMenu.addEventListener('click', (e) => {
+      const closeTarget = e.target.closest('#navClose, .mobile-close-btn, .nav-close-btn');
+      if (closeTarget) {
+        e.preventDefault();
+        closeMenu();
+        return;
+      }
+      const toggle = e.target.closest('.dropdown-toggle, .mobile-dropdown-toggle, .dropdown > a');
+      const hasSub = toggle && toggle.closest('.dropdown, .mobile-dropdown')?.querySelector('.dropdown-menu, ul, .sub-menu, .submenu, .dropdown-submenu');
+      if (hasSub) {
+        // Dropdown toggle clicked -> do NOT close mobile menu drawer
+        return;
+      }
+      const link = e.target.closest('a');
+      if (link) {
+        closeMenu();
+      }
+    });
+
+    // Close when tapping the overlay backdrop
+    backdrop.addEventListener('click', () => {
+      closeMenu();
     });
 
     // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
-
-    // Close when tapping the overlay background (not the links)
-    mobileMenu.addEventListener('click', (e) => {
-      if (e.target === mobileMenu) closeMenu();
-    });
   }
 
-
   /* ---- Active nav link detection ---- */
-  const currentPath = window.location.pathname.split('/').pop() || '../index.html';
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
     const href = link.getAttribute('href');
     if (!href) return;
     const hrefFile = href.split('/').pop();
     if (hrefFile === currentPath ||
-       (currentPath === '' && hrefFile === '../index.html') ||
-       (currentPath === '../index.html' && hrefFile === '../index.html')) {
+       ((currentPath === '' || currentPath === 'index.html') && (hrefFile === 'index.html' || hrefFile === '../index.html'))) {
       link.classList.add('active');
     }
   });
+
+  /* ---- Cake Modal (Products & Gallery) ---- */
+  const modal = document.getElementById("cakeModal");
+  if (modal) {
+    const closeBtn = modal.querySelector(".close-btn");
+    const modalImg = document.getElementById("modalImg");
+    const modalTitle = document.getElementById("modalTitle");
+    const modalDesc = document.getElementById("modalDesc");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalRating = document.getElementById("modalRating");
+
+    // Product cards click
+    const cakeImages = document.querySelectorAll(".cake-card-img img");
+    cakeImages.forEach(img => {
+      img.addEventListener("click", () => {
+        const card = img.closest(".cake-card");
+        if (!card) return;
+
+        if (modalImg) modalImg.src = img.src;
+        if (modalTitle) modalTitle.innerText = card.querySelector("h3")?.innerText || "";
+        if (modalDesc) modalDesc.innerText = card.querySelector("p")?.innerText || "";
+        if (modalPrice) modalPrice.innerHTML = card.querySelector(".cake-price")?.innerHTML || "";
+        if (modalRating) modalRating.innerHTML = card.querySelector(".cake-card-rating")?.innerHTML || "";
+
+        modal.style.display = "flex";
+      });
+    });
+
+    // Gallery items click
+    const galleryItemsWithData = document.querySelectorAll(".gallery-item[data-title]");
+    galleryItemsWithData.forEach(item => {
+      item.addEventListener("click", () => {
+        const img = item.querySelector("img");
+        if (!img) return;
+
+        const title = item.getAttribute("data-title") || "Our Creation";
+        const desc = item.getAttribute("data-desc") || "Freshly baked with premium quality ingredients.";
+        const price = item.getAttribute("data-price") || "₹2,000 <span>per kg</span>";
+        const reviewText = item.getAttribute("data-reviews") || "(100 reviews)";
+
+        if (modalImg) modalImg.src = img.src;
+        if (modalTitle) modalTitle.innerText = title;
+        if (modalDesc) modalDesc.innerText = desc;
+        if (modalPrice) modalPrice.innerHTML = price;
+        if (modalRating) {
+          modalRating.innerHTML = `
+            <i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i>
+            <span class="rating-count">${reviewText}</span>
+          `;
+          initIcons();
+        }
+
+        modal.style.display = "flex";
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+    }
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
 
   /* ---- Intersection Observer (fade-in-up) ---- */
   const observer = new IntersectionObserver((entries) => {
@@ -210,30 +423,40 @@ document.addEventListener('click', (e) => {
 
       if (valid) {
         const btn = form.querySelector('[type="submit"]');
-        const original = btn.textContent;
-        btn.textContent = '✓ Sent!';
-        btn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
-        setTimeout(() => {
-          btn.textContent = original;
-          btn.style.background = '';
-          form.reset();
-        }, 3000);
+        if (btn) {
+          const original = btn.textContent;
+          btn.textContent = '✓ Sent!';
+          btn.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.style.background = '';
+            form.reset();
+          }, 3000);
+        }
       }
     });
   });
 
-  /* ---- Gallery lightbox (simple) ---- */
-  const galleryItems = document.querySelectorAll('.gallery-item');
+  /* ---- Gallery lightbox ---- */
+  const galleryItems = document.querySelectorAll('.gallery-item:not([data-title])');
   if (galleryItems.length > 0) {
-    const lightbox = document.createElement('div');
-    lightbox.id = 'lightbox';
-    lightbox.style.cssText = `
-      position:fixed;inset:0;background:rgba(0,0,0,0.88);
-      z-index:9999;display:none;align-items:center;justify-content:center;
-      cursor:pointer;padding:20px;
-    `;
-    lightbox.innerHTML = '<img id="lb-img" style="max-height:90vh;max-width:90vw;border-radius:16px;object-fit:contain;"/>';
-    document.body.appendChild(lightbox);
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+      lightbox = document.createElement('div');
+      lightbox.id = 'lightbox';
+      lightbox.style.cssText = `
+        position:fixed;inset:0;background:rgba(0,0,0,0.88);
+        z-index:9999;display:none;align-items:center;justify-content:center;
+        cursor:pointer;padding:20px;
+      `;
+      lightbox.innerHTML = '<img id="lb-img" style="max-height:90vh;max-width:90vw;border-radius:16px;object-fit:contain;"/>';
+      document.body.appendChild(lightbox);
+
+      lightbox.addEventListener('click', () => {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+      });
+    }
 
     galleryItems.forEach(item => {
       item.addEventListener('click', () => {
@@ -244,12 +467,6 @@ document.addEventListener('click', (e) => {
           document.body.style.overflow = 'hidden';
         }
       });
-    });
-    
-
-    lightbox.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = '';
     });
   }
 
@@ -280,22 +497,103 @@ document.addEventListener('click', (e) => {
   /* ---- Smooth scroll for anchor links ---- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      const target = document.querySelector(link.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const targetId = link.getAttribute('href');
+      if (targetId && targetId !== '#') {
+        const target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
       }
     });
   });
 
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.2 
+  };
 
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+         entry.target.classList.add("appear");
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, observerOptions);
 
+  const banners = document.querySelectorAll(".offer-banner");
+  banners.forEach(banner => {
+    observer.observe(banner);
+  });
+});
 
+function toggleDropdown(element) {
+  if (!element) return;
+  const parentDropdown = element.closest('.mobile-dropdown, .dropdown');
+  if (!parentDropdown) return;
 
+  const allDropdowns = document.querySelectorAll('.mobile-dropdown, .mobile-menu .dropdown');
+  const isOpen = parentDropdown.classList.contains('open') || parentDropdown.classList.contains('active');
 
+  // Close all other dropdowns
+  allDropdowns.forEach(item => {
+    if (item !== parentDropdown) {
+      item.classList.remove('open', 'active');
+      const sub = item.querySelector('.dropdown-menu, ul, .sub-menu, .submenu, .dropdown-submenu');
+      if (sub) sub.style.display = '';
+    }
+  });
 
+  // Toggle current dropdown
+  const subMenu = parentDropdown.querySelector('.dropdown-menu, ul, .sub-menu, .submenu, .dropdown-submenu');
+  if (isOpen) {
+    parentDropdown.classList.remove('open', 'active');
+    if (subMenu) subMenu.style.display = '';
+  } else {
+    parentDropdown.classList.add('open', 'active');
+    if (subMenu) subMenu.style.display = '';
+  }
+}
 
+function closeMobileMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const backdrop = document.getElementById('mobileBackdrop');
 
+  if (hamburger) hamburger.classList.remove('active');
+  if (mobileMenu) mobileMenu.classList.remove('open');
+  if (backdrop) backdrop.classList.remove('open');
+  document.body.style.overflow = '';
+  document.documentElement.style.overflow = '';
+}
 
+window.toggleDropdown = toggleDropdown;
+window.closeMobileMenu = closeMobileMenu;
+document.addEventListener("DOMContentLoaded", function () {
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // User login state
+
+  // Profile Icon Click Handler
+  document.getElementById("profile-icon").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!isLoggedIn) {
+      window.location.href = "../pages/login.html"; // Login page-ku redirect aagum
+    } else {
+      window.location.href = "../pages/account.html"; // Already logged in-na account page-ku pogum
+    }
+  });
+
+  // Cart Icon Click Handler
+  document.getElementById("cart-icon").addEventListener("click", function (e) {
+    e.preventDefault();
+    if (!isLoggedIn) {
+      window.location.href = "../pages/login.html"; // Login pannala na login page-ku pogum
+    } else {
+      window.location.href = "../pages/cart.html"; // Cart page-ku pogum
+    }
+  });
+});

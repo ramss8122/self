@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Premium handcrafted cakes, custom orders and same-day delivery. Celebrating every sweet moment." />
   <title>Premium Handcrafted Cakes</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>" />
-  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
+  <link rel="alternate icon" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/images/sweetdelight-icon.svg" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
     
-<nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <div class="logo-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-      </div>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
       <div class="logo-text">Sweet<span>Delight</span></div>
     </a>
 
@@ -40,16 +40,13 @@
       <li><a href="../pages/services.html" class="">Services</a></li>
       <li><a href="../pages/gallery.html" class="">Gallery</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/contact.html" class="">Contact ▾</a>
-        <div class="nav-dropdown-menu">
-          <a href="../pages/faq.html" class="active">FAQ & Guide</a>
-          <a href="../pages/delivery.html">Delivery & Care</a>
-        </div>
+        <a href="../pages/contact.html" class="">Contact </a>
+        
       </li>
     </ul>
 
  <div class="nav-cta">
-  <button class="dir-toggle-btn" id="dirToggle" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+    <button class="dir-toggle-btn" id="dirToggle" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
@@ -60,45 +57,98 @@
 </div>
   </div>
 </nav>
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
-    
-    <a href="../index.html" class="active">Home 1</a>
-    <a href="../pages/home2.html" class="">Home 2</a>
-    <a href="../pages/about.html">About</a>
-    <a href="../pages/cakes.html">All Cakes </a>
-    <a href="../pages/wedding.html">Wedding Cakes</a>
-    <a href="../pages/custom.html">Custom 3D Cakes</a>
-    <a href="../pages/specials.html">Chef's Specials</a>
-    <a href="../pages/services.html">Services</a>
-    <a href="../pages/gallery.html">Gallery</a>
-    <a href="../pages/delivery.html">Delivery & Care</a>
-    <a href="../pages/faq.html">FAQ Guide</a>
-    <a href="../pages/contact.html">Contact</a>
-    <a href="../pages/booking.html" class="mobile-cta">Order Now</a>
+    <!-- Sidebar Header -->
+    <div class="mobile-menu-header">
+      <a href="index.html" class="mobile-logo">
+        <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
+        <div class="logo-text">Sweet<span>Delight</span></div>
+      </a>
+      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div class="mobile-menu-nav">
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>Home</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+        </div>
+      </div>
+
+      <a href="pages/about.html" onclick="closeMobileMenu()">About</a>
+
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>All Cakes</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="pages/wedding.html" onclick="closeMobileMenu()">Wedding Tiers</a>
+          <a href="pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+        </div>
+      </div>
+
+      <a href="pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
+      <a href="pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mobile-menu-footer">
+      <a href="pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+    </div>
   </div>
-  <!-- ===================== HERO ===================== -->
+
+
+    <!-- ===================== HERO ===================== -->
   <section class="hero">
-    <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1400&auto=format&fit=crop&q=80');"></div>
+    <div class="hero-bg" style="background-image: url('./assets/pexels-pixabay-265801.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
   <span
-    style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
-    class="fade-in-up">✦ Handcrafted with Love ✦</span>
-  <h1 class="fade-in-up delay-1"
-    style="font-size:clamp(38px,6vw,72px);color:var(--text-dark);margin-bottom:20px;line-height:1.15;">
-    Every Slice Tells<br />a <span style="color:var(--pink-dark);font-style:italic;">Sweet Story</span>
-  </h1>
-  <p class="fade-in-up delay-2"
-    style="font-size:17px;color:white;margin:0 auto 36px auto;max-width:480px;line-height:1.8;">
-    Premium custom cakes crafted with the finest ingredients. From birthday celebrations to wedding masterpieces —
-    we bake dreams into reality.
-  </p>
-  <div class="btn-group fade-in-up delay-3" style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
-    <a href="../pages/booking.html" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>Order Your Cake</a>
-    <a href="../pages/cakes.html" class="btn-secondary">Explore Menu →</a>
-  </div>
+  style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
+  class="fade-in-up">✦ Handcrafted with Love ✦</span>
+
+<h1 class="fade-in-up delay-1"
+  style="font-size:clamp(38px,6vw,72px);color:var(--text-dark, #ffffff);margin-bottom:20px;line-height:1.15;">
+  Every Slice Tells<br />a <span style="color:var(--pink-dark);font-style:italic;">Sweet Story</span>
+</h1>
+
+<p class="fade-in-up delay-2"
+  style="font-size: 17px; color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 480px; line-height: 1.8; text-shadow: none !important;">
+  Premium custom cakes crafted with the finest ingredients. From birthday celebrations to wedding masterpieces —
+  we bake dreams into reality.
+</p>
+<div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 10px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important;">
+  
+  <!-- 1st Button: Order Your Cake (Exact Old Style) -->
+  <a href="../pages/booking.html" 
+     class="btn-primary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; background: linear-gradient(135deg, #ff527b, #ff758c) !important; color: #ffffff !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; border: none !important; box-shadow: 0 4px 15px rgba(255, 82, 123, 0.4) !important; box-sizing: border-box !important; margin: 0 !important;">
+     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
+     Order Your Cake
+  </a>
+
+  <!-- 2nd Button: Explore Menu (Exact Old Style) -->
+  <a href="../pages/cakes.html" 
+     class="btn-secondary" 
+     style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important; box-sizing: border-box !important; margin: 0 !important;" 
+     onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
+     onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
+     Explore Menu &rarr;
+  </a>
+
+</div>
 
   <div class="fade-in-up delay-4" style="margin-top:48px;display:flex;gap:32px;flex-wrap:wrap;justify-content:center;">
     <div>
@@ -122,6 +172,130 @@
 </div>
     </div>
   </section>
+<section class="section hero-split-section" style="padding: 80px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+    
+    <!-- LEFT SIDE: Text Content & Description -->
+    <div class="hero-content" style="background: transparent;">
+      <span style="display: inline-block; margin-bottom: 12px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
+        ✦ Artisanal Celebration Cakes ✦
+      </span>
+      
+      <!-- Heading: Fixed with high-contrast text color -->
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 56px); color: var(--text-dark, #1b2e3c) !important; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; text-shadow: none !important;">
+        Crafting Sweet Memories for Every Special Day
+      </h1>
+      
+      <!-- Paragraph: Fixed with high-contrast mid text color -->
+      <p style="font-size: 16px; color: var(--text-mid, #5b6c7a) !important; line-height: 1.7; margin: 0 0 30px 0; text-shadow: none !important; opacity: 1 !important;">
+        Discover freshly baked designer cakes, rich Belgian chocolates, and same-day morning delivery across Coimbatore to make your loved ones feel truly extraordinary.
+      </p>
+
+      <!-- Action Buttons -->
+      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+        <!-- Button 1: Order Online -->
+        <a href="../pages/menu.html" style="background: #ff7495; color: #ffffff; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(255, 116, 149, 0.3); transition: transform 0.2s;">
+          Explore Menu
+        </a>
+        
+        <!-- Button 2: Custom Orders with Pink Hover Effect -->
+        <a href="../pages/custom.html" class="custom-hover-btn" style="background: var(--bg-card, #ffffff); color: var(--text-dark, #1b2e3c); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.3)); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease;">
+          Book Consultation
+        </a>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: Image Grid Layout -->
+    <div class="hero-image-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+      
+      <!-- Big Main Image Card -->
+      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
+        <img src="./assets/pexels-hebertsantos-11712500.jpg" alt="Luxury Wedding Cake" style="width: 100%; height: 280px; object-fit: cover; border-radius: 20px; display: block;" />
+      </div>
+
+      <!-- Two Small Images Grid -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
+          <img src="./assets/pexels-alameenng-31333909.jpg" alt="Bento Cakes" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
+        </div>
+        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
+          <img src="./assets/pexels-tim-douglas-6211057.jpg" alt="Birthday Special" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- ===================== BUDGET PACKAGES ===================== -->
+  <section class="section" style="padding: 60px 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+      
+     <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 40px;">
+  <span class="eyebrow" style="color: #ff7495; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">✦ Pocket-Friendly Delights ✦</span>
+  <h2 class="section-title">Quick Celebration Packages</h2>
+<div class="divider" style="width: 50px; height: 3px; background: #ff7495; margin: 15px auto 0 auto; border-radius: 2px;"></div>
+<p class="section-subtitle">Delicious cakes and treats tailored perfectly for every budget.</p>
+</div>
+
+      <div class="packages-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
+        
+        <!-- Package 1: ₹500 Mini Box -->
+        <div class="cake-card fade-in-up" style="flex: 1; min-width: 280px; max-width: 350px; background: #1e2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
+          <div class="cake-card-body" style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Mini Treat Box</h3>
+            <p style="color: #b0bac5; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">Ideal for small surprises, mini get-togethers celebrations.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #d0d7de;">
+              <li style="margin-bottom: 8px;">✓ 500g Fresh Cream Cake</li>
+              <li style="margin-bottom: 8px;">✓ 1 Birthday Candle Included</li>
+              <li>✓ Classic Flavor (Vanilla / Choco)</li>
+            </ul>
+            <div class="cake-card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+              <div class="cake-price" style="font-size: 1.4rem; font-weight: 800; color: #ff3366;">₹500</div>
+              <a href="../pages/booking.html" class="btn-sm" style="background: #ff3366; color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Order Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 2: ₹1,000 Party Pack -->
+        <div class="cake-card fade-in-up delay-1" style="flex: 1; min-width: 280px; max-width: 350px; background: #1e2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
+          <div class="cake-card-body" style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Birthday Special Pack</h3>
+            <p style="color: #b0bac5; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">Our best-selling bundle for standard birthday parties with extra treats.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #d0d7de;">
+              <li style="margin-bottom: 8px;">✓ 1kg Rich Chocolate / Red Velvet Cake</li>
+              <li style="margin-bottom: 8px;">✓ Party Popper & Designer Cap</li>
+              <li>✓ Premium Flavor Choices</li>
+            </ul>
+            <div class="cake-card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+              <div class="cake-price" style="font-size: 1.4rem; font-weight: 800; color: #ff3366;">₹1,000</div>
+              <a href="../pages/booking.html" class="btn-sm" style="background: #ff3366; color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Order Now →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Package 3: ₹1,500 Grand Bundle -->
+        <div class="cake-card fade-in-up delay-2" style="flex: 1; min-width: 280px; max-width: 350px; background: #1e2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
+          <div class="cake-card-body" style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
+            <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Grand Celebration Box</h3>
+            <p style="color: #b0bac5; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">Complete package with a heavy designer cake and free snack add-ons.</p>
+            <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #d0d7de;">
+              <li style="margin-bottom: 8px;">✓ 1.2kg Premium Designer Cake</li>
+              <li style="margin-bottom: 8px;">✓ 4 Free Cupcakes Included</li>
+              <li>✓ Free Home Delivery Support</li>
+            </ul>
+            <div class="cake-card-footer" style="display: flex; justify-content: space-between; align-items: center; margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+              <div class="cake-price" style="font-size: 1.4rem; font-weight: 800; color: #ff3366;">₹1,500</div>
+              <a href="../pages/booking.html" class="btn-sm" style="background: #ff3366; color: #fff; padding: 8px 16px; border-radius: 20px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Order Now →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
   <!-- ===================== BESTSELLERS ===================== -->
   <section class="section bg-blush">
     <div class="container">
@@ -136,24 +310,30 @@
 
         <div class="cake-card fade-in-up">
           <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=500&auto=format&fit=crop&q=80" alt="Chocolate Velvet Cake" loading="lazy" />
+            <img src="./assets/pexels-rahibyaqubov-17939215.jpg" alt="Chocolate Velvet Cake" loading="lazy" />
             
           </div>
           <div class="cake-card-body">
             <div class="cake-card-rating">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+            
               
            <span class="rating-count">(248 reviews)</span>
             </div>
             <h3>Chocolate Velvet Dream</h3>
             <p>Rich Belgian chocolate layers with velvety ganache and gold-dust finish.</p>
-            <div class="cake-card-footer">
-              <div class="cake-price">₹2,200 <span>per kg</span></div>
-              <a href="../pages/booking.html" class="btn-sm">Order →</a>
-            </div>
+           <div class="card-footer">
+  <!-- Price Block -->
+  <div class="price-box">
+    <span class="price">₹2,200</span>
+    <small class="unit">per kg</small>
+  </div>
+
+  <!-- Button Block -->
+  <a href="#" class="order-btn">
+    <span>Order</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
           </div>
         </div>
 
@@ -162,22 +342,28 @@
 
         <div class="cake-card fade-in-up delay-1">
           <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1562777717-dc6984f65a63?w=500&auto=format&fit=crop&q=80" alt="Strawberry Bliss Cake" loading="lazy" />
+            <img src="./assets/pexels-mariia-stepanova-2152382414-38131832.jpg" alt="Strawberry Bliss Cake" loading="lazy" />
             
           </div>
           <div class="cake-card-body">
             <div class="cake-card-rating">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>      <span class="rating-count">(193 reviews)</span>
+      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>      <span class="rating-count">(193 reviews)</span>
             </div>
             <h3>Strawberry Bliss</h3>
             <p>Fresh strawberry cream layers with a delicate chiffon base. Pure summer joy.</p>
-            <div class="cake-card-footer">
-              <div class="cake-price">₹1,950 <span>per kg</span></div>
-              <a href="../pages/booking.html" class="btn-sm">Order →</a>
-            </div>
+           <div class="card-footer">
+  <!-- Price Block -->
+  <div class="price-box">
+    <span class="price">₹2,200</span>
+    <small class="unit">per kg</small>
+  </div>
+
+  <!-- Button Block -->
+  <a href="#" class="order-btn">
+    <span>Order</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
           </div>
         </div>
 
@@ -185,30 +371,37 @@
 
         <div class="cake-card fade-in-up delay-3">
           <div class="cake-card-img">
-            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?w=500&auto=format&fit=crop&q=80" alt="Blueberry Cheesecake" loading="lazy" />
+            <img src="./assets/pexels-ahmetyuksek-35121846.jpg" alt="Blueberry Cheesecake" loading="lazy" />
            
           </div>
           <div class="cake-card-body">
             <div class="cake-card-rating">
-       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <span class="rating-count">(89 reviews)</span>
+       <div class="cake-card-rating">
+      <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>      <span class="rating-count">(193 reviews)</span>
+            </div>
             </div>
             <h3>Blueberry Cheesecake</h3>
             <p>NY-style creamy cheesecake crowned with a luscious blueberry compote.</p>
-            <div class="cake-card-footer">
-              <div class="cake-price">₹2,100 <span>per kg</span></div>
-              <a href="../pages/booking.html" class="btn-sm">Order →</a>
-            </div>
+           <div class="card-footer">
+  <!-- Price Block -->
+  <div class="price-box">
+    <span class="price">₹2,200</span>
+    <small class="unit">per kg</small>
+  </div>
+
+  <!-- Button Block -->
+  <a href="#" class="order-btn">
+    <span>Order</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
           </div>
         </div>
 
         <div class="cake-card fade-in-up delay-3">
   <div class="cake-card-img">
     <img
-      src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&auto=format&fit=crop&q=80"
+      src="./assets/pexels-filirovska-8250843.jpg"
       alt="Chocolate Celebration Cake"
       loading="lazy"
     />
@@ -217,10 +410,7 @@
 
   <div class="cake-card-body">
     <div class="cake-card-rating">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>
+   
       <span class="rating-count">(124 reviews)</span>
     </div>
 
@@ -231,17 +421,24 @@
       delicious chocolate ganache.
     </p>
 
-    <div class="cake-card-footer">
-      <div class="cake-price">
-        ₹1,800 <span>per kg</span>
-      </div>
+   <div class="card-footer">
+  <!-- Price Block -->
+  <div class="price-box">
+    <span class="price">₹2,200</span>
+    <small class="unit">per kg</small>
+  </div>
 
-      <a href="../pages/booking.html" class="btn-sm">Order →</a>
-    </div>
+  <!-- Button Block -->
+  <a href="#" class="order-btn">
+    <span>Order</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
   </div>
 </div>
 
       </div>
+      
 
       <div class="text-center mt-48 fade-in-up">
         <a href="../pages/cakes.html" class="btn-blue">View Full Menu →</a>
@@ -249,22 +446,92 @@
     </div>
   </section>
   <!-- ===================== SPECIAL OFFER ===================== -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="offer-banner fade-in-up">
-        <div class="offer-banner-content">
-          <span class="eyebrow">Limited Time Offer</span>
-          <h2>Get 15% Off Your First<br/>Custom Cake Order!</h2>
-          <p>Use code <strong>SWEET15</strong> at checkout. Valid on all custom orders above ₹1,500.</p>
+ 
+
+
+<section class="section bg-white" style="padding: 80px 20px;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto;">
+    
+    <div class="responsive-2col cake-inquiry-grid" style="display: flex; gap: 50px; align-items: center; justify-content: space-between; flex-wrap: wrap;">
+      
+      <!-- Left Side: Content & Highlights -->
+      <div class="inquiry-text-content" style="flex: 1 1 420px; text-align: left;">
+        <span style="display: inline-block; margin-bottom: 12px; font-weight: 700; font-size: 13px; color: #d8436b; text-transform: uppercase; letter-spacing: 2px;">
+          SECURE YOUR DATE
+        </span>
+        
+        <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4.5vw, 48px); color: var(--text-dark, #1b2e3c); margin-bottom: 20px; line-height: 1.15; font-weight: 700;">
+          Let’s Make Your Celebration Unforgettable.
+        </h2>
+        
+        <p style="margin: 0 0 28px 0; color: var(--text-mid, #5b6c7a); font-size: 15px; line-height: 1.8;">
+          Weekend slots and custom multi-tier wedding cakes fill up fast. Send us your celebration date and preferences to check availability and get a custom quote within 12 hours.
+        </p>
+        
+        <div style="border-top: 1px solid rgba(216, 67, 107, 0.15); padding-top: 24px; display: flex; flex-direction: column; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
+            <span style="color: #ff5286; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span> Average response time: Under 4 hours
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
+            <span style="color: #ff5286; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></span> Free tasting box available for wedding bookings
+          </div>
         </div>
-       <!-- Clean HTML Component -->
-<a href="../pages/booking.html" class="btn-primary">
-  <span>Claim Offer</span>
-  <span class="btn-emoji"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gift-icon lucide-gift"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg></span>
-</a>
       </div>
+
+      <!-- Right Side: Form Card -->
+      <div class="inquiry-form-card" style="flex: 1 1 520px; background: #ffffff; border: 1px solid rgba(255, 116, 149, 0.2); border-radius: 24px; padding: 40px 32px; box-shadow: 0 15px 40px rgba(0,0,0,0.06); box-sizing: border-box;">
+        <form action="../pages/booking.html" method="GET">
+          
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+            <!-- Full Name -->
+            <div>
+              <label style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #777; margin-bottom: 8px; letter-spacing: 1px;">Full Name</label>
+              <input type="text" name="name" placeholder="John Doe" required style="width: 100%; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 12px; font-size: 14px; background: #fafafa; outline: none; box-sizing: border-box;" />
+            </div>
+            <!-- Phone / Email -->
+            <div>
+              <label style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #777; margin-bottom: 8px; letter-spacing: 1px;">Phone Number</label>
+              <input type="tel" name="phone" placeholder="+91 98765 43210" required style="width: 100%; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 12px; font-size: 14px; background: #fafafa; outline: none; box-sizing: border-box;" />
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+            <!-- Cake Occasion Type -->
+            <div>
+              <label style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #777; margin-bottom: 8px; letter-spacing: 1px;">Occasion Type</label>
+              <select name="occasion" style="width: 100%; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 12px; font-size: 14px; background: #fafafa; outline: none; box-sizing: border-box; color: #444;">
+                <option value="wedding">Wedding / Reception</option>
+                <option value="birthday">Birthday Celebration</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="corporate">Corporate Event</option>
+              </select>
+            </div>
+            <!-- Target Date -->
+            <div>
+  <label style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #ffffff; margin-bottom: 8px; letter-spacing: 1px;">Target Date</label>
+  <input type="date" name="date" required style="width: 100%; padding: 12px 16px; border: 1px solid#e0e0e0; border-radius: 12px; font-size: 14px; background: #fafafa; color: #222222; color-scheme: light; outline: none; box-sizing: border-box;" />
+</div>
+          </div>
+
+          <!-- Message / Scope -->
+          <div style="margin-bottom: 24px;">
+            <label style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: #777; margin-bottom: 8px; letter-spacing: 1px;">Cake Vision & Guest Count</label>
+            <textarea name="message" rows="3" placeholder="Tell us about your guest count, preferred flavors, theme, or design ideas..." style="width: 100%; padding: 12px 16px; border: 1px solid #e0e0e0; border-radius: 12px; font-size: 14px; background: #fafafa; outline: none; box-sizing: border-box; resize: vertical;"></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" style="width: 100%; background: linear-gradient(135deg, #ff7495 0%, #d8436b 100%); color: #ffffff; padding: 15px; border: none; border-radius: 50px; font-weight: 700; font-size: 15px; cursor: pointer; box-shadow: 0 6px 20px rgba(216, 67, 107, 0.35); transition: opacity 0.3s ease;">
+            Check Availability & Rates
+          </button>
+
+        </form>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
+
   <!-- ===================== GALLERY PREVIEW ===================== -->
   <section class="section bg-blush">
     <div class="container">
@@ -275,21 +542,58 @@
         <p>Every cake is a work of art. Browse a small selection of our finest creations.</p>
       </div>
 
-      <div class="gallery-grid fade-in-up">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&auto=format&fit=crop&q=80" alt="Wedding cake" loading="lazy" />
-          <div class="gallery-item-overlay"><span>Wedding Elegance</span></div>
-        </div>
-        <div class="gallery-item">
-          <img src="../assets/WhatsApp Image 2026-08-16 at 4.16.30 PM.jpeg" alt="Birthday cake" loading="lazy" />
-          <div class="gallery-item-overlay"><span>Birthday Magic</span></div>
-        </div>
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&auto=format&fit=crop&q=80" alt="Cupcakes" loading="lazy" />
-          <div class="gallery-item-overlay"><span>Mini Delights</span></div>
-        </div>
-        
+ <div class="gallery-grid fade-in-up">
+  
+  <!-- Gallery Item 1 -->
+  <div class="gallery-item" onclick="openCakeModal('Wedding Elegance', 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&auto=format&fit=crop&q=80', 'Multi-tier handcrafted wedding cake with edible floral decorations and rich vanilla butter cream flavor.', '₹4,500', 'Vanilla & White Chocolate')">
+    <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&auto=format&fit=crop&q=80" alt="Wedding cake" loading="lazy" />
+    <div class="gallery-item-overlay">
+      <span style="color: #ffffff !important; font-weight: 700;">Wedding Elegance</span>
+    </div>
+  </div>
+
+  <!-- Gallery Item 2 -->
+  <div class="gallery-item" onclick="openCakeModal('Birthday Magic', '../assets/WhatsApp Image 2026-08-16 at 4.16.30 PM.jpeg', 'Custom colorful birthday cake loaded with sprinkles, premium chocolate layers, and custom topper support.', '₹2,200', 'Rich Belgian Chocolate')">
+    <img src="./assets/pexels-filirovska-8250697.jpg" alt="Birthday cake" loading="lazy" />
+    <div class="gallery-item-overlay">
+      <span style="color: #ffffff !important; font-weight: 700;">Birthday Magic</span>
+    </div>
+  </div>
+
+  <!-- Gallery Item 3 -->
+  <div class="gallery-item" onclick="openCakeModal('Mini Delights', 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&auto=format&fit=crop&q=80', 'Assorted box of freshly baked mini cupcakes topped with soft strawberry frosting and velvet crumbs.', '₹850 (Box of 6)', 'Strawberry & Red Velvet')">
+    <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=400&auto=format&fit=crop&q=80" alt="Cupcakes" loading="lazy" />
+    <div class="gallery-item-overlay">
+      <span style="color: #ffffff !important; font-weight: 700;">Mini Delights</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Popup Modal Container (Image Perusa varum podhu details kaatta) -->
+<div id="cakeModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+  <div style="background: #ffffff; border-radius: 20px; max-width: 600px; width: 100%; overflow: hidden; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.3); display: flex; flex-direction: column; animation: scaleUp 0.3s ease;">
+    
+    <!-- Close Button -->
+    <button onclick="closeCakeModal()" style="position: absolute; top: 15px; right: 15px; background: #ff3366; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;">&times;</button>
+    
+    <!-- Modal Image -->
+    <img id="modalImg" src="" alt="Cake Details" style="width: 100%; height: 280px; object-fit: cover;" />
+    
+    <!-- Modal Details Content -->
+    <div style="padding: 30px; text-align: left;">
+      <h2 id="modalTitle" style="font-size: 1.8rem; color: #1a1a1a; margin-bottom: 10px; font-weight: 700;"></h2>
+      <p id="modalDesc" style="color: #666; font-size: 0.95rem; line-height: 1.6; margin-bottom: 15px;"></p>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; background: #fff0f5; padding: 12px 20px; border-radius: 12px; margin-bottom: 20px;">
+        <div><strong style="color: #333;">Flavor:</strong> <span id="modalFlavor" style="color: #ff3366;"></span></div>
+        <div><strong style="color: #333;">Price:</strong> <span id="modalPrice" style="font-size: 1.2rem; font-weight: 800; color: #28a745;"></span></div>
       </div>
+
+      <a href="pages/booking.html" style="display: block; text-align: center; background: linear-gradient(135deg, #ff416c, #ff4b2b); color: #fff; padding: 12px; border-radius: 50px; text-decoration: none; font-weight: 600; box-shadow: 0 5px 15px rgba(255, 65, 108, 0.3);">Order This Cake Now</a>
+    </div>
+  </div>
+</div>
 
       <div class="text-center mt-48 fade-in-up">
         <a href="../pages/gallery.html" class="btn-secondary">View Full Gallery →</a>
@@ -297,136 +601,308 @@
     </div>
   </section>
   <!-- ===================== TESTIMONIALS ===================== -->
-  <section class="section bg-white">
-    <div class="container">
-      <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ What Our Customers Say ✦</span>
-        <h2>Sweet Words from Sweet People</h2>
-        <div class="divider"></div>
-      </div>
-
-      <div class="testimonial-grid">
-        <div class="testimonial-card fade-in-up">
-   
-<div class="testimonial-stars" aria-label="5 out of 5 stars rating">
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-</div>
-          <p class="testimonial-text">The wedding cake was absolutely breathtaking! Our guests couldn't stop talking about how beautiful and delicious it was. The bakery truly exceeded our expectations.</p>
-              
-       <div class="testimonial-author">
-
-            <div class="author-info"><h4>sopna kalyan</h4><p>birthday Event — June 2025</p></div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in-up delay-1">
-         <!-- Accessibility-Friendly Glassmorphic Star Component -->
-<div class="testimonial-stars" aria-label="5 out of 5 stars rating">
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-</div>
-          <p class="testimonial-text">Ordered a custom unicorn cake for my daughter's birthday and she was over the moon! The design was spot-on and the vanilla sponge was incredibly moist. Will order again!</p>
-          <div class="testimonial-author">
-            
-            <div class="author-info"><h4>Rahul Mehta</h4><p>Birthday — January 2025</p></div>
-          </div>
-        </div>
-
-        <div class="testimonial-card fade-in-up delay-2">
-   
-<div class="testimonial-stars" aria-label="5 out of 5 stars rating">
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-  <span class="star">★</span>
-</div>
-          <p class="testimonial-text">Same-day delivery was a lifesaver for our office party. The chocolate cake arrived perfectly tasty and hygienically packaged and tasted like heaven. Highly recommended!</p>
-          <div class="testimonial-author">
-            <div class="author-info"><h4>susmit rahul</h4><p>corparate Event — January 2024</p></div>
-          </div>
-        </div>
-      </div>
+ <section class="section" style="padding: 60px 0;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
+    
+    <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 40px;">
+      <span class="eyebrow" style="color: #ff3366; font-weight: 600; text-transform: uppercase; font-size: 14px;">✦ What Our Customers Say ✦</span>
+      <h2 style="font-size: 2.3rem; font-weight: 800; margin-top: 10px;">Sweet Words from Sweet People</h2>
+      <div class="divider" style="width: 50px; height: 3px; background: #ff3366; margin: 15px auto 0 auto; border-radius: 2px;"></div>
     </div>
-  </section>
-  <!-- ===================== NEWSLETTER ===================== -->
-  <section class="section-sm bg-blush">
-    <div class="container">
-      <div class="newsletter-strip fade-in-up">
-        <div style="font-size:40px;margin-bottom:12px;"><i data-lucide="cake"></i></div>
-        <h3>Get Sweet Deals in Your Inbox</h3>
-        <p>Subscribe for exclusive offers, new flavours, and seasonal specials delivered fresh to you.</p>
-        <form class="newsletter-form" data-validate>
-          <input type="email" class="form-control"  style="border-radius:50px;background:pink"/>
-          <button type="submit" class="btn-primary">Subscribe <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></button>
-        </form>
+
+   <div class="testimonial-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
+      
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card-box fade-in-up" style="padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); flex: 1; min-width: 280px; max-width: 350px; transition: all 0.3s ease;">
+        <div class="testimonial-stars" style="color: #ffc107; margin-bottom: 15px; font-size: 18px;">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">The wedding cake was absolutely breathtaking! Our guests couldn't stop talking about how beautiful and delicious it was. The bakery truly exceeded our expectations.</p>
+        
+        <!-- Profile Header with Image -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="./assets/pexels-qaarif-14853538.jpg" alt="sopna kalyan" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+          <div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 2px; font-weight: 700;">sopna kalyan</h4>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">birthday Event — June 2025</p>
+          </div>
+        </div>
       </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card-box fade-in-up delay-1" style="padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); flex: 1; min-width: 280px; max-width: 350px; transition: all 0.3s ease;">
+        <div class="testimonial-stars" style="color: #ffc107; margin-bottom: 15px; font-size: 18px;">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Ordered a custom unicorn cake for my daughter's birthday and she was over the moon! The design was spot-on and the vanilla sponge was incredibly moist. Will order again!</p>
+        
+        <!-- Profile Header with Image -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="./assets/pexels-willians-huerta-2157111846-36430088.jpg" alt="Rahul Mehta" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+          <div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 2px; font-weight: 700;">Rahul Mehta</h4>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">Birthday — January 2025</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card-box fade-in-up delay-2" style="padding: 30px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08); flex: 1; min-width: 280px; max-width: 350px; transition: all 0.3s ease;">
+        <div class="testimonial-stars" style="color: #ffc107; margin-bottom: 15px; font-size: 18px;">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p style="font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;">Same-day delivery was a lifesaver for our office party. The chocolate cake arrived perfectly tasty and hygienically packaged and tasted like heaven. Highly recommended!</p>
+        
+        <!-- Profile Header with Image -->
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="./assets/pexels-arthousestudio-4590943.jpg" alt="susmit rahul" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+          <div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 2px; font-weight: 700;">susmit rahul</h4>
+            <p style="font-size: 0.85rem; opacity: 0.8; margin: 0;">corporate Event — January 2024</p>
+          </div>
+        </div>
+      </div>
+
+</div>
+  </div>
+</section>
+<!-- ===================== WHY CHOOSE US SECTION ===================== -->
+<section class="why-us-section">
+  <div class="why-us-container">
+    
+    <!-- Section Header -->
+    <div class="why-us-header">
+      <span class="why-us-tagline">✦ Craftsmanship & Passion ✦</span>
+      <h2 class="why-us-title">Why Dessert Lovers Choose Us</h2>
+      <p class="why-us-desc">Ordinary-ah edhum panradhilla! Pure ingredients, custom art, and fresh delivery thaan namma special identity.</p>
     </div>
-  </section>
-     <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="../index.html" class="logo-text">
-  <span class="logo-icon-box">
-   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg>
-  </span>
-  <span class="brand-name">
-    Sweet <span class="brand-highlight">Delight</span>
-  </span>
-</a>
-        <p>Crafting memories one slice at a time since 2012.</p>
-        <div class="footer-social-links" style="display: flex; gap: 14px; margin-top: 18px;">
-          <!-- WhatsApp -->
-          <a href="https://wa.me/918122932402" target="_blank" aria-label="WhatsApp" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="message-circle" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Phone -->
-          <a href="tel:8122932402" aria-label="Phone" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- Email -->
-          <a href="mailto:krams5240@gmail.com" aria-label="Email" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-            <i data-lucide="mail" style="width: 18px; height: 18px;"></i>
-          </a>
-          <!-- LinkedIn -->
-          <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255,255,255,0.08); color: #fff; transition: 0.3s;">
-           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-link-icon lucide-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-          </a>
+
+    <!-- Responsive Card Grid -->
+    <div class="why-us-grid">
+      
+      <!-- Feature Card 1 -->
+      <div class="why-us-card">
+        <div class="why-us-img-box">
+          <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRUkOPmkTYi0QoS2GI02KOzH5ihfjZsD-Ut3rAZSj6GirwufeQetq9P0EQdCuhZ0F5Z9N_Tz1gFK_h3OyU" alt="100% Pure & Organic Ingredients" />
+          <span class="why-us-badge badge-pink">01. Pure Craft</span>
+        </div>
+        <div class="why-us-card-body">
+          <h3 class="why-us-card-title">100% Pure Belgian Cocoa</h3>
+          <p class="why-us-card-desc">Artificial flavor or compound chocolate use panradhe illa. Pure Belgian dark chocolate & real French butter dhan namma secret!</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 2 -->
+      <div class="why-us-card">
+        <div class="why-us-img-box">
+          <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQneVw04H-s-X6h0IsYYB27muczWfnkjdPP71pnVBnFD1cSIAwf9CwpfbZ0HlkJKuqILaFRiN1TKxDINf8" alt="Custom 3D Sugar Artistry" />
+          <span class="why-us-badge badge-pink">02. Bespoke Art</span>
+        </div>
+        <div class="why-us-card-body">
+          <h3 class="why-us-card-title">Tailor-Made 3D Designs</h3>
+          <p class="why-us-card-desc">Unga dream theme-ah exact-ah edible sugar art-ah kondu varuvom. Ovvoru cake-um individual hand-sculpted masterpiece.</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 3 -->
+      <div class="why-us-card">
+        <div class="why-us-img-box">
+          <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRV_LvSDOkDTmx2l7FOVnG2OUUaDTHqJKQPcmP-fTLkYiI--L7vTr8eYLXgWajV1lTi2oipAC-8dAAdXyc" alt="Freshly Baked Daily" />
+          <span class="why-us-badge badge-pink">03. Zero Stale</span>
+        </div>
+        <div class="why-us-card-body">
+          <h3 class="why-us-card-title">Baked Fresh On Order</h3>
+          <p class="why-us-card-desc">Pre-made stock vachurukka maattom! Order receive aanadhum fresh-ah bake panni deliver panradhala taste ultra-soft-ah irukum.</p>
+        </div>
+      </div>
+
+      <!-- Feature Card 4 -->
+      <div class="why-us-card">
+        <div class="why-us-img-box">
+          <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcQYJV3KBvf06rA-fhtHCZI4pNG0zkzgjUCFPFnbHy9Hbk21TDXWNpJOyc8eOLhY85lK1PFAIqdBRdecfPc" alt="Temperature Controlled Delivery" />
+          <span class="why-us-badge badge-pink">04. Safe Transit</span>
+        </div>
+        <div class="why-us-card-body">
+          <h3 class="why-us-card-title">Chilled Safe Delivery</h3>
+          <p class="why-us-card-desc">Special customized boxes & temperature-controlled delivery moolama namma cakes shape marama exact aesthetic perfection-oda vandhu serum.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== NEWSLETTER SECTION ===================== -->
+<section class="newsletter-section">
+  <div class="newsletter-container">
+    
+    <!-- Main Card Box -->
+    <div class="newsletter-strip fade-in-up">
+      
+      <!-- Left Side: Content & Form -->
+      <div class="newsletter-content">
+        <div class="newsletter-icon">
+          <i data-lucide="cake"></i>
         </div>
         
+        <h3 class="newsletter-title">
+          Get Sweet Deals in Your Inbox
+        </h3>
+        
+        <p class="newsletter-desc">
+          Subscribe for exclusive offers, new flavours, and seasonal specials delivered fresh to you.
+        </p>
+        
+       <!-- Form -->
+<form class="newsletter-form" data-validate style="display: flex !important; flex-direction: row !important; gap: 8px !important; width: 100% !important; align-items: center !important;">
+  <input 
+    type="email" 
+    class="form-control newsletter-input" 
+    placeholder="Enter your email address" 
+    required 
+    style="flex: 1 !important; width: auto !important; min-width: 0 !important; margin: 0 !important;"
+  />
+  
+  <button type="submit" class="btn-primary newsletter-btn" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; width: auto !important; margin: 0 !important;">
+    Subscribe 
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart">
+      <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/>
+    </svg>
+  </button>
+</form>
       </div>
-      <div class="footer-col"><h5>Quick Links</h5><ul>
-        <li><a href="../index.html">Home</a></li><li><a href="../pages/about.html">About Us</a></li>
-        <li><a href="../pages/cakes.html">Our Cakes</a></li><li><a href="../pages/gallery.html">Gallery</a></li>
-        <li><a href="../pages/services.html">Services</a></li><li><a href="../pages/contact.html">Contact</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Cake Categories</h5><ul>
-        <li><a href="../pages/cakes.html">Birthday Cakes</a></li><li><a href="../pages/cakes.html">Wedding Cakes</a></li>
-        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li><li><a href="../pages/cakes.html">Custom Design</a></li>
-      </ul></div>
-      <div class="footer-col"><h5>Opening Hours</h5><ul class="hours-list">
-          <li><span>Mon – Fri</span><span style="color: #ffffff;">8am – 9pm</span></li>
-        <li><span>Saturday</span><span style="color: #ffffff;">8am – 10pm</span></li>
-        <li><span>Sunday</span><span style="color: #ffffff;">9am – 8pm</span></li>
-      </ul>
-      <div style="margin-top:16px;font-size:13px;color:rgba(255,255,255,0.6);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-icon lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>8122932402<br/><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> krams5240@gmail.com</div></div>
+
+      <!-- Right Side: Cake Image -->
+      <div class="newsletter-image-wrapper">
+        <div class="newsletter-image-box">
+          <img 
+            src="./assets/pexels-pavel-danilyuk-7180762.jpg" 
+            alt="Delicious Cake" 
+            class="newsletter-img"
+          />
+
+          <!-- Badge -->
+          <a href="./pages/faq.html" class="newsletter-badge">
+            <div class="badge-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone-incoming-icon lucide-phone-incoming"><path d="M16 2v6h6"/><path d="m22 2-6 6"/><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/></svg>
+            </div>
+          </a>
+        </div>
+      </div>
+
     </div>
-   <div class="footer-bottom">
-  <span class="copyright-text">© 2026 Our Bakery. All rights reserved.</span>
-  <span class="tagline-text">
-  Made with Love and lots of butter
-  </span>
+
+  </div>
+</section>
+     <!-- FOOTER -->
+ <footer class="footer">
+  <div class="footer-grid">
+    
+    <!-- Brand Info -->
+    <div class="footer-brand">
+      <a href="index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+        <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+        <span class="brand-name">
+          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
+        </span>
+      </a>
+      <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
+      
+      <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->
+     <div class="footer-social-links" style="display: flex; flex-direction: row; align-items: center; gap: 12px; margin-top: 18px;">
+  <!-- Instagram -->
+  <a href="https://instagram.com" target="_blank" aria-label="Instagram" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+  </a>
+  
+  <!-- YouTube -->
+  <a href="https://youtube.com" target="_blank" aria-label="YouTube" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.56 49.56 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9 10 15"/></svg>
+  </a>
+  
+  <!-- Facebook -->
+  <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+  </a>
+  
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" class="social-btn" style="display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 50%; background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); text-decoration: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+  </a>
 </div>
-  </footer>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h5>QUICK LINKS</h5>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../pages/about.html">About Us</a></li>
+        <li><a href="../pages/cakes.html">Our Cakes</a></li>
+        <li><a href="../pages/gallery.html">Gallery</a></li>
+        <li><a href="../pages/services.html">Services</a></li>
+        <li><a href="../pages/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Cake Categories -->
+    <div class="footer-col">
+      <h5>CAKE CATEGORIES</h5>
+      <ul>
+        <li><a href="../pages/cakes.html">Birthday Cakes</a></li>
+        <li><a href="../pages/cakes.html">Wedding Cakes</a></li>
+        <li><a href="../pages/cakes.html">Anniversary Cakes</a></li>
+        <li><a href="../pages/cakes.html">Custom Design</a></li>
+      </ul>
+    </div>
+
+    <!-- Opening Hours & Contact -->
+    <div class="footer-col">
+      <h5>OPENING HOURS</h5>
+      <ul class="hours-list">
+        <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
+        <li><span>Saturday</span><span>8am – 10pm</span></li>
+        <li><span>Sunday</span><span>9am – 8pm</span></li>
+      </ul>
+      
+      <div class="footer-contact-info">
+        <a href="tel:8122932402" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          8122932402
+        </a>
+        <a href="mailto:krams5240@gmail.com" class="contact-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          krams5240@gmail.com
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Copyright Bottom -->
+  <div class="footer-bottom">
+    <span class="copyright-text">© 2026 Sweet Delight. All rights reserved.</span>
+    <span class="tagline-text">Made with Love and lots of butter</span>
+  </div>
+</footer>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="../js/script.js"></script>
+  <script src="js/hero-config.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+  function openCakeModal(title, imgSrc, desc, price, flavor) {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalImg').src = imgSrc;
+    document.getElementById('modalDesc').innerText = desc;
+    document.getElementById('modalPrice').innerText = price;
+    document.getElementById('modalFlavor').innerText = flavor;
+    document.getElementById('cakeModal').style.display = 'flex';
+  }
+
+  function closeCakeModal() {
+    document.getElementById('cakeModal').style.display = 'none';
+  }
+</script>
 </body>
 </html>
