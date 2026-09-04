@@ -1,4 +1,31 @@
-/* ============================================================
+
+
+/* 1. Main Headings & Dark Text */
+h1, h2, h3, h4, h5, h6 {
+  color: #1a202c !important; /* Pure/Dark Black */
+}
+
+/* 2. Subtitles & Paragraph Text Fix (SECURE YOUR DATE, description text) */
+p, .subtitle, .brand-desc, label {
+  color: #374151 !important; /* Dark Slate Gray - all screens-லும் தெளிவாகத் தெரியும் */
+  font-weight: 500; /* Font தடிமனை லேசாக அதிகரிக்கலாம் */
+}
+
+/* 3. Form Labels & Placeholder Text Fix */
+label, .form-label {
+  color: #4b5563 !important; /* Darker gray for form labels */
+  font-weight: 600;
+}
+
+::placeholder {
+  color: #6b7280 !important; /* Form inputs-க்குள் இருக்கும் text தெளிவாக தெரிய */
+  opacity: 1;
+}
+
+/* 4. Small Muted Text (Average response time...) */
+.muted-text, small {
+  color: #4b5563 !important;
+}/* ============================================================
    Sweet Delight Bakery — Global Design System
    Theme: Light Blue + White + Soft Pink
    ============================================================ */
