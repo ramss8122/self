@@ -12,22 +12,29 @@
 </head>
 <body>
     
-    <nav class="navbar" id="navbar">
+ <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <a href="../index.html" class="active">Home ▾</a>
+        <a href="../index.html" class="">Home ▾</a>
         <div class="nav-dropdown-menu">
           <a href="../index.html" class="active">Home 1 (Classic Patisserie)</a>
           <a href="../pages/home2.html" class="">Home 2 (Artisan Studio)</a>
         </div>
       </li>
-      <li><a href="../pages/about.html" class="">About</a></li>
+      <li><a href="../pages/about.html" >About</a></li>
       <li class="nav-dropdown">
         <a href="../pages/cakes.html" class="">Cakes ▾</a>
         <div class="nav-dropdown-menu">
@@ -46,11 +53,11 @@
     </ul>
 
  <div class="nav-cta">
-    <button class="dir-toggle-btn" id="dirToggle" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+  <button class="dir-toggle-btn" id="dirToggle" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
-  <a href="../pages/booking.html" class="btn-nav">Order Now</a>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -58,16 +65,17 @@
   </div>
 </nav>
 
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
     <div class="mobile-menu-header">
-      <a href="index.html" class="mobile-logo">
-        <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
-        <div class="logo-text">Sweet<span>Delight</span></div>
-      </a>
-      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-    </div>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+</div>
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
@@ -77,12 +85,12 @@
           <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
         <div class="dropdown-submenu">
-          <a href="index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
-          <a href="pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+          <a href="../index.html" class="active" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="../pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
         </div>
       </div>
 
-      <a href="pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
@@ -90,24 +98,23 @@
           <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
         <div class="dropdown-submenu">
-          <a href="pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
-          <a href="pages/wedding.html" onclick="closeMobileMenu()">Wedding Tiers</a>
-          <a href="pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
-          <a href="pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+          <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="../pages/wedding.html" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
         </div>
       </div>
 
-      <a href="pages/services.html" onclick="closeMobileMenu()">Services</a>
-      <a href="pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
-      <a href="pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+      <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
     </div>
 
     <!-- Sidebar Footer -->
     <div class="mobile-menu-footer">
-      <a href="pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+      <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
     </div>
   </div>
-
 
     <!-- ===================== HERO ===================== -->
   <section class="hero">
@@ -244,7 +251,7 @@
         <div class="cake-card fade-in-up" style="flex: 1; min-width: 280px; max-width: 350px; background: #1e2530; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.15); display: flex; flex-direction: column;">
           <div class="cake-card-body" style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
             <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 10px; color: #ffffff;">Mini Treat Box</h3>
-            <p style="color: #b0bac5; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">Ideal for small surprises, mini get-togethers celebrations.</p>
+            <p style="color: #b0bac5; font-size: 0.95rem; line-height: 1.5; margin-bottom: 20px;">Ideal for small surprises, mini get-togethers celebrations. to the cake celebration</p>
             <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; font-size: 0.9rem; color: #d0d7de;">
               <li style="margin-bottom: 8px;">✓ 500g Fresh Cream Cake</li>
               <li style="margin-bottom: 8px;">✓ 1 Birthday Candle Included</li>
@@ -469,10 +476,10 @@
         </p>
         
         <div style="border-top: 1px solid rgba(216, 67, 107, 0.15); padding-top: 24px; display: flex; flex-direction: column; gap: 12px;">
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #ffffff;">
             <span style="color: #ff5286; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star-icon lucide-star"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></span> Average response time: Under 4 hours
           </div>
-          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #555;">
+          <div style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #fffefe;">
             <span style="color: #ff5286; font-weight: bold;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake-icon lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg></span> Free tasting box available for wedding bookings
           </div>
         </div>
@@ -801,12 +808,22 @@
     
     <!-- Brand Info -->
     <div class="footer-brand">
-      <a href="index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->

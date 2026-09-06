@@ -171,12 +171,19 @@
 <body>
 
     <!-- ===================== NAVBAR ===================== -->
-  <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
@@ -186,7 +193,7 @@
           <a href="../pages/home2.html" class="">Home 2 (Artisan Studio)</a>
         </div>
       </li>
-      <li><a href="../pages/about.html" class="">About</a></li>
+      <li><a href="../pages/about.html" >About</a></li>
       <li class="nav-dropdown">
         <a href="../pages/cakes.html" class="">Cakes ▾</a>
         <div class="nav-dropdown-menu">
@@ -209,7 +216,7 @@
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
- <a href="../pages/booking.html" class="btn-nav">Order Now</a>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -217,16 +224,17 @@
   </div>
 </nav>
 
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
     <div class="mobile-menu-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
-        <div class="logo-text">Sweet<span>Delight</span></div>
-      </a>
-      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-    </div>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+</div>
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
@@ -241,7 +249,7 @@
         </div>
       </div>
 
-      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
@@ -434,27 +442,27 @@
     </div>
 
     <!-- RIGHT SIDE: Big Image with Floating Card Overlay -->
-    <div class="seasonal-image-container" style="position: relative;">
+   <div class="seasonal-image-container" style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); width: 100%; box-sizing: border-box;">
       
-      <!-- Main Featured Image Wrapper -->
-      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 32px; padding: 14px; box-shadow: 0 20px 40px rgba(0,0,0,0.06);">
-        <img src="../assets/pexels-sougeovanesouza-16153973.jpg" alt="Seasonal Donut" style="width: 100%; height: 420px; object-fit: cover; border-radius: 22px; display: block;" />
-      </div>
+  <!-- Main Featured Image Wrapper -->
+  <div style="width: 100%; height: 220px; border-radius: 20px; overflow: hidden; background: #f9f9f9;">
+    <img src="../assets/pexels-sougeovanesouza-16153973.jpg" alt="Seasonal Donut" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+  </div>
 
-      <!-- Floating Bottom Overlay Card (Like Reference Image) -->
-      <div style="position: absolute; bottom: -20px; left: 30px; right: 30px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.3)); border-radius: 22px; padding: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
-        <span style="display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #ff7495; margin-bottom: 6px;">
-          Seasonal Bestseller
-        </span>
-        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 6px 0;">
-          Cinnamon Caramel Bliss
-        </h4>
-        <p style="font-size: 13px; color: var(--text-mid, #5b6c7a); margin: 0; line-height: 1.5;">
-          Soft brioche donut topped with silky caramel glaze, cinnamon cream, and roasted almond crunch.
-        </p>
-      </div>
+  <!-- Bottom Content Card (Clean & Fully Visible Below Image) -->
+  <div style="background: var(--bg-card, #ffffff); border-radius: 18px; padding: 16px 8px 6px 8px;">
+    <span style="display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #ff7495; margin-bottom: 6px;">
+      Seasonal Bestseller
+    </span>
+    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 6px 0; line-height: 1.2;">
+      Cinnamon Caramel Bliss
+    </h4>
+    <p style="font-size: 13px; color: var(--text-mid, #5b6c7a); margin: 0; line-height: 1.5;">
+      Soft brioche donut topped with silky caramel glaze, cinnamon cream, and roasted almond crunch.
+    </p>
+  </div>
 
-    </div>
+</div>
 
   </div>
 </section>
@@ -532,27 +540,27 @@
     </div>
 
     <!-- RIGHT SIDE: Big Image with Floating Card Overlay -->
-    <div class="seasonal-image-container" style="position: relative;">
+   <div class="seasonal-image-container" style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.06); width: 100%; box-sizing: border-box;">
       
-      <!-- Main Featured Image Wrapper -->
-      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 32px; padding: 14px; box-shadow: 0 20px 40px rgba(0,0,0,0.06);">
-        <img src="../assets/pexels-dplainer-17321239.jpg" alt="Artisanal Masterpiece Cake" style="width: 100%; height: 420px; object-fit: cover; border-radius: 22px; display: block;" />
-      </div>
+  <!-- Main Featured Image Wrapper -->
+  <div style="width: 100%; height: 220px; border-radius: 20px; overflow: hidden; background: #f9f9f9;">
+    <img src="../assets/pexels-dplainer-17321239.jpg" alt="Artisanal Masterpiece Cake" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+  </div>
 
-      <!-- Floating Bottom Overlay Card -->
-      <div style="position: absolute; bottom: -20px; left: 30px; right: 30px; background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.3)); border-radius: 22px; padding: 20px; box-shadow: 0 15px 30px rgba(0,0,0,0.08);">
-        <span style="display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #ff7495; margin-bottom: 6px;">
-          Chef's Special Pick
-        </span>
-        <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 6px 0;">
-          Velvet Truffle Ganache
-        </h4>
-        <p style="font-size: 13px; color: var(--text-mid, #5b6c7a); margin: 0; line-height: 1.5;">
-          Layers of moist chocolate sponge infused with rich dark truffle and glossy mirror glaze.
-        </p>
-      </div>
+  <!-- Bottom Content Card (Clean & Fully Visible Below Image) -->
+  <div style="background: var(--bg-card, #ffffff); border-radius: 18px; padding: 16px 8px 6px 8px;">
+    <span style="display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #ff7495; margin-bottom: 6px;">
+      Chef's Special Pick
+    </span>
+    <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0 0 6px 0; line-height: 1.2;">
+      Velvet Truffle Ganache
+    </h4>
+    <p style="font-size: 13px; color: var(--text-mid, #5b6c7a); margin: 0; line-height: 1.5;">
+      Layers of moist chocolate sponge infused with rich dark truffle and glossy mirror glaze.
+    </p>
+  </div>
 
-    </div>
+</div>
 
   </div>
 </section>
@@ -921,11 +929,21 @@
     <!-- Brand Info -->
     <div class="footer-brand">
       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->

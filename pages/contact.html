@@ -307,12 +307,19 @@
 </head>
 <body>
 
- <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
@@ -322,7 +329,7 @@
           <a href="../pages/home2.html" class="">Home 2 (Artisan Studio)</a>
         </div>
       </li>
-      <li><a href="../pages/about.html" class="">About</a></li>
+      <li><a href="../pages/about.html" >About</a></li>
       <li class="nav-dropdown">
         <a href="../pages/cakes.html" class="">Cakes ▾</a>
         <div class="nav-dropdown-menu">
@@ -345,7 +352,7 @@
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
- <a href="../pages/booking.html" class="btn-nav">Order Now</a>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -353,16 +360,17 @@
   </div>
 </nav>
 
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
     <div class="mobile-menu-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
-        <div class="logo-text">Sweet<span>Delight</span></div>
-      </a>
-      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-    </div>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+</div>
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
@@ -377,7 +385,7 @@
         </div>
       </div>
 
-      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
@@ -394,7 +402,7 @@
 
       <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
       <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
-      <a href="../pages/contact.html" class="active" onclick="closeMobileMenu()">Contact</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()" class="active">Contact</a>
     </div>
 
     <!-- Sidebar Footer -->
@@ -402,7 +410,6 @@
       <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
     </div>
   </div>
-
   <!-- ===================== PAGE HERO ===================== -->
   <section class="hero">
     <div class="hero-bg" style="background-image: url('../assets/pexels-cup-of-couple-8015274.jpg');"></div>
@@ -920,19 +927,79 @@
       </div>
     </div>
   </section>
+<section class="section-sm contact-banner-section" style="padding: 40px 15px; background: transparent;">
+  <div class="container" style="max-width: 1100px; margin: 0 auto;">
+    
+    <!-- Outer Banner Box -->
+    <div class="contact-banner fade-in-up" style="border-radius: 24px; padding: 35px 25px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); border: 1px solid rgba(255, 121, 161, 0.2); box-sizing: border-box; overflow: hidden;">
+      
+      <!-- Content (Left Side) -->
+      <div class="contact-banner-text" style="flex: 1 1 320px; display: flex; flex-direction: column; align-items: flex-start; box-sizing: border-box;">
+        <div class="contact-banner-content" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%;">
+          
+          <!-- Eyebrow Badge -->
+          <span class="eyebrow" style="display: inline-block; background: linear-gradient(135deg, #ff6584 0%, #d8436b 100%); color: #ffffff; padding: 8px 18px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(216, 67, 107, 0.35);">
+            ✦ WE'RE HERE TO HELP YOU ✦
+          </span>
+          
+          <!-- Heading -->
+          <h2 class="contact-heading" style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-family: serif; font-weight: 700; margin: 0 0 15px 0; line-height: 1.25;">
+            Have a Question or Custom Order Idea?
+          </h2>
+          
+          <!-- Paragraph -->
+          <p class="contact-desc" style="font-size: 0.95rem; line-height: 1.6; margin: 0 0 25px 0; max-width: 480px;">
+            Get in touch with our friendly team for customized cake designs, dietary queries, or instant party orders.
+          </p>
+        </div>
 
+        <!-- Button Group Container -->
+        <div class="btn-group" style="width: auto; display: inline-flex; gap: 12px; margin: 0; align-items: center; flex-wrap: wrap;">
+          
+          <!-- Primary Button (WhatsApp / Direct Call) -->
+          <a href="https://wa.me/yournumber" class="btn-contact-pink" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; box-sizing: border-box; white-space: nowrap; transition: all 0.3s ease;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> 
+            Chat on WhatsApp
+          </a>
+
+          <!-- Secondary Button (View FAQ / Booking) -->
+          <a href="../pages/faq.html" class="btn-contact-outline" style="display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 20px; border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-decoration: none; box-sizing: border-box; transition: all 0.3s ease; white-space: nowrap;">
+            Frequently Asked Questions →
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Image (Right Side) -->
+      <div class="contact-banner-image" style="flex: 1 1 300px; max-width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+        <img src="../assets/pexels-qaarif-14853538 (1).jpg" alt="Contact Sweet Delight" style="width: 100%; height: 340px; display: block; object-fit: cover; border-radius: 16px;">
+      </div>
+
+    </div>
+  </div>
+</section>
    <!-- FOOTER -->
   <footer class="footer">
   <div class="footer-grid">
     
     <!-- Brand Info -->
     <div class="footer-brand">
-      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->

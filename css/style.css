@@ -17967,6 +17967,7 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
   display: inline-block !important;
   margin-inline: auto !important;
   text-align: center !important;
+  margin: 0 !important;
 }
 
 /* Divider line centering */
@@ -18605,7 +18606,7 @@ html, body {
 }
 
 
-/* ==========================================
+/* /* ==========================================
    1. LIGHT THEME (White Background & Dark Text)
    ========================================== */
 .about-section {
@@ -18694,4 +18695,575 @@ body.dark .about-card-box,
 [data-theme="dark"] .about-card-box {
   background-color: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.08);
+} 
+/* ==========================================
+   NAVBAR ALIGNMENT & RESPONSIVE FIX
+========================================== */
+.navbar {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 12px 32px !important; /* Left & Right padding to prevent logo cut */
+}
+
+.nav-inner {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+
+.nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important; /* Prevents logo from shrinking or breaking */
+}
+
+
+/* ==========================================
+   FOOTER ALIGNMENT & GRID FIX
+========================================== */
+.footer {
+  width: 100% !important;
+  background-color: #0d111d !important; /* Theme Dark Background */
+  padding: 60px 32px 24px 32px !important;
+  box-sizing: border-box !important;
+  color: #a0aec0 !important;
+}
+
+.footer-grid {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important; /* Clean 4-column layout */
+  gap: 40px !important;
+  align-items: start !important;
+}
+
+/* Footer Headings */
+.footer-col h5 {
+  color: #ff527b !important; /* Pink Highlight Color */
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1.2px !important;
+  margin-bottom: 20px !important;
+  text-transform: uppercase !important;
+}
+
+/* Footer List Links */
+.footer-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.footer-col ul li {
+  margin-bottom: 12px !important;
+}
+
+.footer-col ul li a {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: color 0.2s ease !important;
+  display: inline-block !important;
+}
+
+.footer-col ul li a:hover {
+  color: #ff79a1 !important;
+}
+
+/* Opening Hours Formatting */
+.hours-list li {
+  display: flex !important;
+  justify-content: space-between !important;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1) !important;
+  padding-bottom: 8px !important;
+  margin-bottom: 10px !important;
+  font-size: 14px !important;
+}
+
+.footer-contact-info {
+  margin-top: 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.contact-item {
+  color: #cbd5e1 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+
+.contact-item:hover {
+  color: #ff79a1 !important;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+  max-width: 1280px !important;
+  margin: 40px auto 0 auto !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-size: 13px !important;
+  color: #64748b !important;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 30px !important;
+  }
+}
+
+@media (max-width: 580px) {
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+}
+/* ==========================================
+   MOBILE HEADER CLEAN TEXT & LAYOUT FIX
+========================================== */
+@media (max-width: 600px) {
+  /* 1. Mobile-la LTR button-a header-la irundhu hide panrom */
+  .dir-toggle-btn {
+    display: none !important;
+  }
+
+  /* 2. Logo full name theriya font size & flex settings */
+  .logo-text {
+    font-size: 16px !important;
+    white-space: nowrap !important;
+    overflow: visible !important;
+  }
+
+  .nav-inner {
+    padding: 10px 12px !important;
+    justify-content: space-between !important;
+  }
+
+  .nav-cta {
+    gap: 8px !important;
+  }
+}
+/* ==========================================
+   MOBILE TEXT SIZE & COMPACT FIT FIX
+========================================== */
+@media screen and (max-width: 600px) {
+  /* Logo text size decrease */
+  .logo-text,
+  .nav-logo .logo-text {
+    font-size: 13px !important;
+    letter-spacing: -0.2px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Logo icon size decrease */
+  .logo-icon-img {
+    width: 26px !important;
+    height: 26px !important;
+  }
+
+  /* Reduce gap between logo icon and text */
+  .nav-logo {
+    gap: 5px !important;
+  }
+
+  /* Make buttons more compact to save space */
+  .dir-toggle-btn,
+  .theme-toggle-btn {
+    width: 26px !important;
+    height: 26px !important;
+    padding: 0 !important;
+    min-width: 26px !important;
+  }
+
+  .dir-label {
+    font-size: 9px !important;
+  }
+
+  /* Compact controls layout */
+  .nav-cta {
+    gap: 4px !important;
+  }
+
+  .nav-inner {
+    padding: 8px 12px !important;
+  }
+}
+/* ==========================================
+   ALIGN NAVBAR LOGO DIRECTLY WITH FOOTER
+========================================== */
+
+/* Equal container padding for both Header & Footer */
+.navbar,
+.footer {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.nav-inner,
+.footer-grid,
+.footer-bottom {
+  max-width: 1280px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+/* Mobile specific alignment & overlap fix */
+@media screen and (max-width: 600px) {
+  /* Hides LTR button on mobile so Navbar Logo aligns perfectly with Footer */
+  #dirToggle,
+  .dir-toggle-btn {
+    display: none !important;
+  }
+
+  .nav-inner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Reset margin/padding for logo */
+  .nav-logo,
+  .footer-brand .logo-text {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  /* Font size match for both logos */
+  .logo-text {
+    font-size: 15px !important;
+    white-space: nowrap !important;
+  }
+
+  .logo-icon-img {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  .nav-cta {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+}
+/* ==========================================
+   FORCE PUSH NAVBAR LOGO TO MATCH FOOTER
+========================================== */
+@media screen and (max-width: 768px) {
+  /* Reduce navbar left padding to absolute minimum */
+  .navbar {
+    padding-left: 0px !important;
+    padding-right: 12px !important;
+  }
+
+  .nav-inner {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+  }
+
+  /* Pull logo further left using negative margin */
+  .nav-logo {
+    margin-left: -4px !important;
+    padding-left: 0px !important;
+  }
+
+  /* Match Footer alignment */
+  .footer {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .footer-brand {
+    padding-left: 0px !important;
+    margin-left: 0px !important;
+  }
+}
+
+/* Mobile view-il header-il irundhu Order Now button-ai hide seiya */
+@media (max-width: 768px) {
+  .nav-cta .btn-nav,
+  .navbar .btn-nav {
+    display: none !important;
+  }
+}
+
+/* Mobile Menu Footer Order Now Button Styling */
+.mobile-menu-footer {
+  padding: 16px;
+  margin-top: auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.mobile-menu-footer .mobile-cta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 40px !important;
+  background: #ff527b !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  border-radius: 20px !important;
+  box-shadow: 0 4px 12px rgba(255, 82, 123, 0.3) !important;
+  transition: background 0.2s ease !important;
+}
+
+.mobile-menu-footer .mobile-cta:hover {
+  background: #e04369 !important;
+}
+/* Order Now button height fix for Desktop (Mobile view unaffected) */
+.btn-nav {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  line-height: 1 !important;
+  padding: 0 16px !important;
+  box-sizing: border-box !important;
+}
+
+
+/* Mobile Menu Header Padding & Left Alignment Fix */
+.mobile-menu-header {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  padding: 16px 12px !important;
+  min-height: 50px !important;
+  box-sizing: border-box !important;
+}
+
+.mobile-menu-header {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+.mobile-menu-header .mobile-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-left: -40px !important;
+}
+
+
+.mobile-menu-header .brand-name {
+  background: linear-gradient(135deg, #00d2ff 0%, #ff527b 55%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  font-weight: 700 !important;
+  display: inline-block !important;
+}
+
+/* Position Close Button Perfectly to Right */
+.mobile-menu-header .mobile-close-btn {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  right: 12px !important;
+  margin: 0 !important;
+}
+
+.social-btn {
+    transition: all 0.2s ease-in-out !important;
+    -webkit-tap-highlight-color: transparent; /* Mobile blue highlight remover */
+  }
+
+  /* 1. Desktop Hover Only (Mobile-ல் Sticky Hover ஆகாது) */
+  @media (hover: hover) and (pointer: fine) {
+    .social-btn[aria-label="Instagram"]:hover {
+      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+      border-color: transparent !important;
+      color: #ffffff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+    }
+
+    .social-btn[aria-label="YouTube"]:hover {
+      background: #ff0000 !important;
+      border-color: #ff0000 !important;
+      color: #ffffff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+    }
+
+    .social-btn[aria-label="Facebook"]:hover {
+      background: #1877f2 !important;
+      border-color: #1877f2 !important;
+      color: #ffffff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+    }
+
+    .social-btn[aria-label="LinkedIn"]:hover {
+      background: #0a66c2 !important;
+      border-color: #0a66c2 !important;
+      color: #ffffff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
+    }
+  }
+
+  .social-btn[aria-label="Instagram"]:hover {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+    border-color: transparent !important;
+    color: #ffffff !important;
+    transform: scale(0.92) !important;
+  }
+
+  .social-btn[aria-label="YouTube"]:hover {
+    background: #ff0000 !important;
+    border-color: #ff0000 !important;
+    color: #ffffff !important;
+    transform: scale(0.92) !important;
+  }
+
+  .social-btn[aria-label="Facebook"]:hover {
+    background: #1877f2 !important;
+    border-color: #1877f2 !important;
+    color: #ffffff !important;
+    transform: scale(0.92) !important;
+  }
+
+  .social-btn[aria-label="LinkedIn"]:hover {
+    background: #0a66c2 !important;
+    border-color: #0a66c2 !important;
+    color: #ffffff !important;
+    transform: scale(0.92) !important;
+  }
+
+  .footer-col ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .footer-col ul li {
+    margin-bottom: 10px !important;
+  }
+
+  /* Link with Arrow & Gap */
+  .footer-col ul li a {
+    display: inline-flex !important;
+    align-items: center !important;
+    color: #a0aec0 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Automatic Arrow Addition with Proper Gap */
+  .footer-col ul li a::before {
+    content: "→";
+    margin-right: 10px !important; /* Arrow மற்றும் Text இடையே உள்ள இடைவெளி */
+    color: #ff7495 !important;
+    font-size: 14px !important;
+    transition: transform 0.3s ease !important;
+  }
+
+  /* Hover Effect */
+  .footer-col ul li a:hover {
+    color: #ffffff !important;
+  }
+
+  .footer-col ul li a:hover::before {
+    transform: translateX(4px) !important; /* Hover செய்யும்போது அம்பு லேசாக வலப்பக்கம் நகரும் */
+  }
+  /* --- Light Mode (Default) --- */
+.contact-banner {
+  background: #ffffff;
+}
+
+.contact-heading {
+  color: #1b2e3c;
+}
+
+.contact-desc {
+  color: #5b6c7a;
+}
+
+/* Primary Button Light Mode */
+.btn-contact-pink {
+  background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%);
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3);
+}
+
+.btn-contact-pink:hover {
+  background: linear-gradient(135deg, #d8436b 0%, #ff5286 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(216, 67, 107, 0.4);
+}
+
+/* Secondary Button Light Mode */
+.btn-contact-outline {
+  background: #ffffff;
+  color: #d8436b;
+  border: 1.5px solid #ff79a1;
+}
+
+.btn-contact-outline:hover {
+  background: #ff5286;
+  color: #ffffff;
+  border-color: #ff5286;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3);
+}
+
+/* --- Dark Mode Theme Overrides --- */
+body.dark-mode .contact-banner,
+[data-theme="dark"] .contact-banner {
+  background: #212936 !important;
+  border-color: rgba(255, 116, 149, 0.3) !important;
+}
+
+body.dark-mode .contact-heading,
+[data-theme="dark"] .contact-heading {
+  color: #ffffff !important;
+}
+
+body.dark-mode .contact-desc,
+[data-theme="dark"] .contact-desc {
+  color: #a0aec0 !important;
+}
+
+body.dark-mode .btn-contact-outline,
+[data-theme="dark"] .btn-contact-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ff79a1;
+  border-color: #ff79a1;
+}
+
+body.dark-mode .btn-contact-outline:hover,
+[data-theme="dark"] .btn-contact-outline:hover {
+  background: #ff5286;
+  color: #ffffff;
+  border-color: #ff5286;
 }

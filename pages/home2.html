@@ -718,10 +718,17 @@
     <!-- ===================== NAVBAR ===================== -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
@@ -744,42 +751,40 @@
       <li><a href="../pages/services.html" class="">Services</a></li>
       <li><a href="../pages/gallery.html" class="">Gallery</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/contact.html" class="">Contact</a>
+        <a href="../pages/contact.html" class="">Contact </a>
+        
       </li>
     </ul>
 
-    <div class="nav-cta">
-      <!-- Theme Toggle Button -->
-      <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
-        <i data-lucide="moon"></i>
-      </button>
-
-      <!-- Order Now Button -->
-      <a href="../pages/booking.html" class="btn-nav">Order Now</a>
-
-      <!-- Mobile Hamburger Menu -->
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+ <div class="nav-cta">
+  <button class="dir-toggle-btn" id="dirToggle" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Text Direction" title="Toggle RTL/LTR">
+    <span class="dir-label" style="font-size: 10px !important;">LTR</span>
+  </button>
+  <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
+  <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
   </div>
 </nav>
+
 
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
     <div class="mobile-menu-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
-        <div class="logo-text">Sweet<span>Delight</span></div>
-      </a>
-      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-    </div>
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+</div>
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
       <div class="mobile-dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle active" onclick="toggleDropdown(this)">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
           <span>Home</span>
           <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
@@ -789,7 +794,7 @@
         </div>
       </div>
 
-      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
@@ -1036,44 +1041,34 @@
       </div>
 
       <!-- CARD 3: Pink Promo Offer Card -->
-     <div style="background: #fff0f3; 
-            border-radius: 28px; 
-            padding: 30px; 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
-            border: 2px solid #ff7495; 
-            display: flex; 
-            flex-direction: column; 
-            justify-content: space-between; 
-            position: relative; 
-            color: #1a1d20;">
+    <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between; position: relative;">
 
   <div>
     <!-- Badge -->
-    <span style="display: inline-flex; align-items: center; gap: 6px; background: #ff7495; color: #ffffff !important; font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px; box-shadow: 0 4px 10px rgba(255, 116, 149, 0.3);">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg> 
+    <span style="position: absolute; top: 32px; left: 32px; z-index: 2; background: #ffffff; color: #ff7495 !important; font-size: 11px; font-weight: 700; padding: 6px 14px; border-radius: 20px; border: 1.5px solid #ff7495; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); display: inline-flex; align-items: center; gap: 6px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ff7495" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14"/><path d="M20 11v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8"/><path d="M7.5 7a1 1 0 0 1 0-5A4.8 8 0 0 1 12 7a4.8 8 0 0 1 4.5-5 1 1 0 0 1 0 5"/><rect x="3" y="7" width="18" height="4" rx="1"/></svg> 
       Limited Offer
     </span>
-
-    <!-- Heading (Dark Color Fix) -->
-    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(28px, 2.5vw, 36px); font-weight: 700; line-height: 1.2; margin: 0 0 16px 0; color: #1a1d20 !important;">
+ <br><br>
+    <!-- Heading -->
+    <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 40px 0 10px 0;">
       Buy 2 Boxes Get 1 Free
     </h3>
-    
-    <!-- Paragraph (Dark Sub-text Fix) -->
-    <p style="font-size: 15px; color: #4a5568 !important; line-height: 1.6; margin: 0; font-weight: 600;">
+    <br>
+    <!-- Paragraph -->
+    <p style="font-size: 14px; color: var(--text-mid, #5b6c7a); line-height: 1.6; margin: 0 0 20px 0;">
       Order any two Signature Luxe Boxes and receive a complimentary mini gourmet box instantly added to your package.
     </p>
   </div>
 
   <!-- Button -->
-  <div style="padding-top: 30px;">
-    <a href="../pages/booking.html" 
-       style="display: block; text-align: center; background: #ff7495; color: #ffffff !important; padding: 14px 20px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 8px 20px rgba(255, 116, 149, 0.4); border: 2px solid #ff7495; transition: all 0.3s ease;"
-       onmouseover="this.style.backgroundColor='#d8436b'; this.style.borderColor='#d8436b';" 
-       onmouseout="this.style.backgroundColor='#ff7495'; this.style.borderColor='#ff7495';">
-      Claim Offer
-    </a>
-  </div>
+  <div style="border-top: 1px solid var(--border-color, rgba(0,0,0,0.06)); padding-top: 16px; display: flex; justify-content: center;">
+  <a href="../pages/booking.html" class="add-to-cart-btn" style="background: #ffffff; color: #ff7495 !important; border: 2px solid #ff7495; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; text-align: center; padding: 6px 16px; width: auto; max-width: 130px; border-radius: 50px; font-weight: 700; font-size: 12px; box-shadow: 0 4px 12px rgba(255,116,149,0.2); transition: all 0.3s ease; box-sizing: border-box;"
+     onmouseover="this.style.backgroundColor='#ff7495'; this.style.color='#ffffff';" 
+     onmouseout="this.style.backgroundColor='#ffffff'; this.style.color='#ff7495';">
+    Claim Offer
+  </a>
+</div>
 
 </div>
 
@@ -1480,8 +1475,8 @@
   
   <div class="cta-content" style="max-width: 1000px; margin: 0 auto;">
     
- <span class="cta-badge" style="display: inline-block !important; background:  #df9fb0 !important; color: #fffefe !important; padding: 8px 18px !important; border-radius: 50px !important; font-size: 13px !important; font-weight: 700 !important; letter-spacing: 1px !important; margin-bottom: 20px !important; text-transform: uppercase !important; box-shadow: 0 4px 10px rgba(216, 67, 107, 0.35) !important;">
-    ✦ LET'S BAKE YOUR DREAM CAKE ✦
+<span class="cta-badge" style="display: inline-block !important; background: #d8436b !important; color: #ffffff !important; padding: 14px 28px !important; border-radius: 50px !important; font-size: 13px !important; font-weight: 600 !important; margin-bottom: 20px !important; box-shadow: 0 6px 20px rgba(216, 67, 107, 0.35) !important;">
+  ✦ LET'S BAKE YOUR DREAM CAKE ✦
 </span>
     
     <!-- Heading -->
@@ -1546,12 +1541,22 @@
     
     <!-- Brand Info -->
     <div class="footer-brand">
-      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->

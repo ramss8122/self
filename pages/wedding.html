@@ -152,12 +152,19 @@
 </head>
 <body>
 
-  <nav class="navbar" id="navbar">
+<nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
@@ -167,12 +174,12 @@
           <a href="../pages/home2.html" class="">Home 2 (Artisan Studio)</a>
         </div>
       </li>
-      <li><a href="../pages/about.html" class="">About</a></li>
+      <li><a href="../pages/about.html" >About</a></li>
       <li class="nav-dropdown">
-        <a href="../pages/cakes.html" class="active">Cakes ▾</a>
+        <a href="../pages/cakes.html" class="">Cakes ▾</a>
         <div class="nav-dropdown-menu">
           <a href="../pages/cakes.html">All Cakes Collection</a>
-          <a href="../pages/wedding.html">Wedding Tiers</a>
+          <a href="../pages/wedding.html"class="active">Wedding Tiers</a>
           <a href="../pages/custom.html">Custom 3D Designs</a>
           <a href="../pages/specials.html">Chef's Specials</a>
         </div>
@@ -190,7 +197,7 @@
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
-<a href="../pages/booking.html" class="btn-nav">Order Now</a>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -198,16 +205,17 @@
   </div>
 </nav>
 
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
-    <div class="mobile-menu-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
-        <div class="logo-text">Sweet<span>Delight</span></div>
-      </a>
-      <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-    </div>
+     <div class="mobile-menu-header">
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
+</div>
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
@@ -222,16 +230,16 @@
         </div>
       </div>
 
-      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
-        <a href="javascript:void(0);" class="dropdown-toggle active" onclick="toggleDropdown(this)">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
           <span>All Cakes</span>
           <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </a>
         <div class="dropdown-submenu">
           <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
-          <a href="../pages/wedding.html" class="active" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/wedding.html"class="active" onclick="closeMobileMenu()">Wedding Cakes</a>
           <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
           <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
         </div>
@@ -338,12 +346,16 @@
         <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">The Victorian Sugar Peony</h3>
         <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Ivory velvet fondant with cascading blush handcrafted sugar peonies, Madagascan vanilla bean and raspberry champagne curd layers.</p>
       </div>
-     <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
-  <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">
-    ₹18,500 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 14px; border-top: 1px solid rgba(255, 117, 140, 0.15); width: 100%; box-sizing: border-box;">
+  
+  <!-- Price Container -->
+  <div style="font-family: 'Playfair Display', serif; font-size: clamp(14px, 2.5vw, 18px); font-weight: 700; color: #1a202c; display: flex; align-items: baseline; gap: 4px; min-width: 0; flex-shrink: 1;">
+    ₹18,500 <span style="font-size: clamp(9px, 1.5vw, 11px); color: #718096; font-weight: 500; white-space: nowrap;">/ complete</span>
   </div>
   
-  <a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
+  <!-- Responsive Button using clamp() for font & padding -->
+  <a href="../pages/booking.html" class="btn-primary" style="padding: clamp(4px, 1vw, 8px) clamp(8px, 1.5vw, 16px); font-size: clamp(10px, 1.5vw, 12px); font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap; flex-shrink: 0;">Book Now →</a>
+
 </div>
     </div>
   </div>
@@ -359,10 +371,17 @@
         <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">Grand 4-Tier 24K Gold Monogram</h3>
         <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Hand-painted 24 karat edible gold leaf trim, customized initials crest, Belgian dark chocolate truffle and hazelnut praline sponge.</p>
       </div>
-      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">₹28,000 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span></div>
-     <a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
-      </div>
+     <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 14px; border-top: 1px solid rgba(255, 117, 140, 0.15); width: 100%; box-sizing: border-box;">
+  
+  <!-- Price Container -->
+  <div style="font-family: 'Playfair Display', serif; font-size: clamp(14px, 2.5vw, 18px); font-weight: 700; color: #1a202c; display: flex; align-items: baseline; gap: 4px; min-width: 0; flex-shrink: 1;">
+    ₹28,000 <span style="font-size: clamp(9px, 1.5vw, 11px); color: #718096; font-weight: 500; white-space: nowrap;">/ complete</span>
+  </div>
+  
+  <!-- Responsive Button using clamp() for font & padding -->
+  <a href="../pages/booking.html" class="btn-primary" style="padding: clamp(4px, 1vw, 8px) clamp(8px, 1.5vw, 16px); font-size: clamp(10px, 1.5vw, 12px); font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap; flex-shrink: 0;">Book Now →</a>
+
+</div>
     </div>
   </div>
 
@@ -377,10 +396,17 @@
         <h3 style="font-size: 18px; margin-bottom: 10px; color: var(--text-main, var(--text-dark, #1a202c)); font-weight: 700; line-height: 1.3;">The Royal Crystal Grandeur</h3>
         <p style="font-size: 13px; color: var(--text-sub, var(--text-mid, #4a5568)); line-height: 1.6; margin-bottom: 20px;">Showstopper five-tier architectural masterpiece with edible lace embroidery, illuminated crystal tier separator, and 4 custom flavors.</p>
       </div>
-      <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-color, rgba(255, 117, 140, 0.15)); width: 100%; box-sizing: border-box;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--text-main, var(--text-dark, #1a202c));">₹42,000 <span style="font-size: 11px; color: var(--text-sub, var(--text-mid, #718096)); font-weight: 500;">/ complete</span></div>
-<a href="../pages/booking.html" class="btn-primary" style="padding: 8px 16px; font-size: 12px; font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center;">Book Wedding →</a>
-      </div>
+     <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; padding-top: 14px; border-top: 1px solid rgba(255, 117, 140, 0.15); width: 100%; box-sizing: border-box;">
+  
+  <!-- Price Container -->
+  <div style="font-family: 'Playfair Display', serif; font-size: clamp(14px, 2.5vw, 18px); font-weight: 700; color: #1a202c; display: flex; align-items: baseline; gap: 4px; min-width: 0; flex-shrink: 1;">
+    ₹45,500 <span style="font-size: clamp(9px, 1.5vw, 11px); color: #718096; font-weight: 500; white-space: nowrap;">/ complete</span>
+  </div>
+  
+  <!-- Responsive Button using clamp() for font & padding -->
+  <a href="../pages/booking.html" class="btn-primary" style="padding: clamp(4px, 1vw, 8px) clamp(8px, 1.5vw, 16px); font-size: clamp(10px, 1.5vw, 12px); font-weight: 600; text-decoration: none; border-radius: 50px; background: linear-gradient(135deg, #ff758c 0%, #ff5286 100%); color: #ffffff !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.3); display: inline-flex; align-items: center; justify-content: center; text-align: center; white-space: nowrap; flex-shrink: 0;">Book Now →</a>
+
+</div>
     </div>
   </div>
 
@@ -398,9 +424,9 @@
       <span style="display: inline-block; margin-bottom: 12px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
         ✦ Gourmet Bakery & Cafe ✦
       </span>
-      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 56px); color: #1b2e3c !important; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; text-shadow: none !important;">
-        Turn Every Celebration Into Something Sweet
-      </h1>
+      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 56px); color: var(--text-dark, #1b2e3c) !important; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; text-shadow: none !important;">
+  Turn Every Celebration Into Something Sweet
+</h1>
       <p style="font-size: 16px; color: #5b6c7a !important; line-height: 1.7; margin: 0 0 30px 0; text-shadow: none !important; opacity: 1 !important;">
         From elegant multi-tier weddings to luxury custom birthday cakes, our handcrafted gourmet treats and premium dessert boxes are designed to impress guests and create unforgettable moments.
       </p>
@@ -534,7 +560,7 @@
             <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Venue delivery & setup</li>
             <li style="font-size:13px;color:var(--text-light);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-x-icon lucide-circle-x"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg> Gold leaf detailing</li>
           </ul>
-          <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Silver →</a>
+          <a href="../pages/booking.html" class="btn-secondary" style="width: 100%; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center; padding: 12px 16px; min-height: 44px; line-height: 1; box-sizing: border-box;">Select Silver →</a>
         </div>
 
         <!-- Gold Package -->
@@ -554,7 +580,7 @@
             <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Custom monogram topper</li>
             <li style="font-size:13px;color:var(--text-mid);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Premium venue setup</li>
           </ul>
-          <a href="../pages/booking.html" class="btn-primary" style="width:100%;display:block;text-align:center;">Select Gold →</a>
+          <a href="../pages/booking.html" class="btn-primary" style="width: 100%; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center; padding: 12px 16px; min-height: 44px; line-height: 1; box-sizing: border-box;">Select Gold →</a>
         </div>
 
         <!-- Platinum Package -->
@@ -573,7 +599,7 @@
             <li style="font-size:13px;color:var(--text-mid);padding:8px 0;border-bottom:1px solid var(--blue-light);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> Dedicated pastry chef</li>
             <li style="font-size:13px;color:var(--text-mid);padding:8px 0;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-square-check-big-icon lucide-square-check-big"><path d="M21 10.656V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h12.344"/><path d="m9 11 3 3L22 4"/></svg> VIP venue coordination</li>
           </ul>
-          <a href="../pages/booking.html" class="btn-secondary" style="width:100%;display:block;text-align:center;">Select Platinum →</a>
+          <a href="../pages/booking.html" class="btn-secondary" style="width: 100%; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center; padding: 12px 16px; min-height: 44px; line-height: 1; box-sizing: border-box;">Select Platinum →</a>
         </div>
       </div>
     </div>
@@ -713,12 +739,22 @@
     
     <!-- Brand Info -->
     <div class="footer-brand">
-      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->

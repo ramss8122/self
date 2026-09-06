@@ -11,6 +11,141 @@
   <link rel="stylesheet" href="../css/style.css" />
   <style>
    
+   /* Checkbox Tag / Badge Base Style */
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  /* Light Mode Default Color */
+  background: #f1f5f9 !important;
+  color: #1b2e3c !important;
+  border: 1px solid rgba(27, 46, 60, 0.2) !important;
+}
+
+/* Dark Mode Color Fix */
+body.dark-mode .checkbox-label,
+[data-theme="dark"] .checkbox-label {
+  background: #2a3447 !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 116, 149, 0.3) !important;
+}
+
+/* Heading / Title Color Fix */
+.form-group label {
+  color: #1b2e3c;
+  font-weight: 700;
+}
+
+body.dark-mode .form-group label,
+[data-theme="dark"] .form-group label {
+  color: #ffffff !important;
+}
+   .sidebar-widget {
+    background: #17202a;
+    border: 1px solid rgba(255, 116, 149, 0.15);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    box-sizing: border-box;
+  }
+
+  .sidebar-widget:first-child {
+    margin-top: 0;
+  }
+
+  /* List Widget Styling */
+  .sidebar-widget-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .sidebar-widget-list li {
+    font-size: 13px;
+    color: #e2e8f0;
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .sidebar-widget-list li:last-child {
+    border-bottom: none;
+  }
+
+  .sidebar-widget-list li::before {
+    content: "✓";
+    color: #ff7495;
+    font-weight: bold;
+  }
+
+  /* Timeline Fixing (Removing Double Line Issue) */
+  .custom-timeline {
+    position: relative;
+    padding-left: 24px;
+    margin: 0;
+  }
+
+  /* Single Continuous Vertical Line */
+  .custom-timeline::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: #ff7495;
+  }
+
+  .custom-timeline-item {
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .custom-timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Perfectly Centered Circle Node */
+  .custom-timeline-node {
+    position: absolute;
+    left: -24px;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #17202a;
+    border: 3px solid #ff7495;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+
+  /* Review Box Hover Effect */
+  .review-item {
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .review-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+
+  .star-rating {
+    color: #ffb703;
+    font-size: 12px;
+  }
   /* GENERAL RESPONSIVE FIXES */
   .booking-layout {
     display: flex;
@@ -260,10 +395,17 @@
 
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="../index.html" class="nav-logo">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="42" height="42" />
-      <div class="logo-text">Sweet<span>Delight</span></div>
-    </a>
+<a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #00d2ff 0%, #ff527b 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+  ">
+    Sweet Delight
+  </span>
+</a>
 
     <ul class="nav-links">
       <li class="nav-dropdown">
@@ -273,7 +415,7 @@
           <a href="../pages/home2.html" class="">Home 2 (Artisan Studio)</a>
         </div>
       </li>
-      <li><a href="../pages/about.html" class="">About</a></li>
+      <li><a href="../pages/about.html" >About</a></li>
       <li class="nav-dropdown">
         <a href="../pages/cakes.html" class="">Cakes ▾</a>
         <div class="nav-dropdown-menu">
@@ -287,7 +429,7 @@
       <li><a href="../pages/gallery.html" class="">Gallery</a></li>
       <li class="nav-dropdown">
         <a href="../pages/contact.html" class="">Contact </a>
-       
+        
       </li>
     </ul>
 
@@ -296,7 +438,7 @@
     <span class="dir-label" style="font-size: 10px !important;">LTR</span>
   </button>
   <button class="theme-toggle-btn" style="display: inline-flex !important; width: 32px !important; height: 32px !important;" aria-label="Toggle Light/Dark Theme" title="Toggle Theme"><i data-lucide="moon"></i></button>
-  <a href="../pages/booking.html" class="btn-nav">Order Now</a>
+<a href="../pages/booking.html" class="btn-nav"  style="height: 32px !important;">Order Now</a>
   <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
     <span></span><span></span><span></span>
   </button>
@@ -304,12 +446,13 @@
   </div>
 </nav>
 
+
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
     <div class="mobile-menu-header">
-      <a href="../index.html" class="mobile-logo">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
+      <a href="index.html" class="mobile-logo">
+        <img src="..assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="36" height="36" />
         <div class="logo-text">Sweet<span>Delight</span></div>
       </a>
       <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
@@ -328,7 +471,7 @@
         </div>
       </div>
 
-      <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
+      <a href="../pages/about.html"  onclick="closeMobileMenu()">About</a>
 
       <div class="mobile-dropdown">
         <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
@@ -345,7 +488,6 @@
 
       <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
       <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
-      <a href="../pages/faq.html" onclick="closeMobileMenu()">FAQ Guide</a>
       <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
     </div>
 
@@ -354,7 +496,6 @@
       <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
     </div>
   </div>
-
   <!-- ===================== PAGE HERO ===================== -->
 <!-- ===================== BOOKING PAGE HERO (CENTERED & LARGER) ===================== -->
 <section class="hero" style="display:flex;align-items:center;justify-content:center;text-align:center;">
@@ -401,44 +542,43 @@
     <!-- LEFT SIDE: TEXT CONTENT & BUTTONS -->
     <div style="flex: 1 1 480px;">
       
-      <!-- Subtitle -->
-      <span style="color: #ff7495; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 14px;">
-        ✦ Premium Gourmet Creations 
-      </span>
+  <!-- Subtitle -->
+  <span style="color: #ff7495; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 14px;">
+    ✦ Premium Gourmet Creations 
+  </span>
 
-      <!-- Main Title -->
-      <h2 style="font-size: 2.8rem; line-height: 1.25; font-family: serif; font-weight: 700; color: var(--text-heading); margin: 0 0 20px 0; transition: color 0.3s ease;">
-        Pure Belgian Flavors Crafted to Perfection
-      </h2>
+  <!-- Main Title -->
+  <h2 style="font-size: 2.8rem; line-height: 1.25; font-family: serif; font-weight: 700; color: var(--text-heading); margin: 0 0 20px 0; transition: color 0.3s ease;">
+    Pure Belgian Flavors Crafted to Perfection
+  </h2>
 
-      <!-- Description Paragraph -->
-      <p style="font-size: 15px; line-height: 1.7; color: var(--text-body); margin-bottom: 35px; max-width: 500px; transition: color 0.3s ease;">
-        Indulge in our handcrafted Belgian truffles, melt-in-mouth French macarons, and custom dessert towers. Made daily with 100% natural ingredients and real butter.
-      </p>
+  <!-- Description Paragraph -->
+  <p style="font-size: 15px; line-height: 1.7; color: var(--text-body); margin-bottom: 35px; max-width: 500px; transition: color 0.3s ease;">
+    Indulge in our handcrafted Belgian truffles, melt-in-mouth French macarons, and custom dessert towers. Made daily with 100% natural ingredients and real butter.
+  </p>
 
-      <!-- Action Buttons -->
-      <div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center;">
-        
-        <!-- Primary Button -->
-        <a href="../pages/cakes.html" 
-           style="padding: 12px 30px; background: #ff7495; color: #ffffff !important; border-radius: 50px; font-weight: 700; font-size: 14px; text-decoration: none; border: 2px solid #ff7495; box-shadow: 0 6px 18px rgba(255, 116, 149, 0.35); transition: all 0.3s ease; display: inline-block;"
-           onmouseover="this.style.backgroundColor='#e05375'; this.style.borderColor='#e05375';" 
-           onmouseout="this.style.backgroundColor='#ff7495'; this.style.borderColor='#ff7495';">
-          Order Desserts
-        </a>
+  <!-- Action Buttons (Laptop & Mobile Responsive Container) -->
+  <div style="display: flex; gap: 12px; flex-wrap: nowrap; align-items: center;">
+    
+    <!-- Primary Button -->
+    <a href="../pages/cakes.html" 
+       style="padding: 12px 24px; background: #ff7495; color: #ffffff !important; border-radius: 50px; font-weight: 700; font-size: 14px; text-decoration: none; border: 2px solid #ff7495; box-shadow: 0 6px 18px rgba(255, 116, 149, 0.35); transition: all 0.3s ease; display: inline-flex; justify-content: center; align-items: center; white-space: nowrap; text-align: center; flex: 0 0 auto;"
+       onmouseover="this.style.backgroundColor='#e05375'; this.style.borderColor='#e05375';" 
+       onmouseout="this.style.backgroundColor='#ff7495'; this.style.borderColor='#ff7495';">
+      Order Desserts
+    </a>
 
-        <!-- Secondary Adaptive Button -->
-        <a href="../pages/contact.html" 
-           style="padding: 12px 28px; background: var(--sec-btn-bg); color: var(--sec-btn-text); border-radius: 50px; font-weight: 700; font-size: 14px; text-decoration: none; border: 1px solid var(--sec-btn-border); transition: all 0.3s ease; display: inline-block;"
-           onmouseover="this.style.backgroundColor='#ff7495'; this.style.borderColor='#ff7495'; this.style.color='#ffffff';" 
-           onmouseout="this.style.backgroundColor='var(--sec-btn-bg)'; this.style.borderColor='var(--sec-btn-border)'; this.style.color='var(--sec-btn-text)';">
-          Custom Orders
-        </a>
+    <!-- Secondary Adaptive Button -->
+    <a href="../pages/contact.html" 
+       style="padding: 12px 24px; background: var(--sec-btn-bg); color: var(--sec-btn-text); border-radius: 50px; font-weight: 700; font-size: 14px; text-decoration: none; border: 1px solid var(--sec-btn-border); transition: all 0.3s ease; display: inline-flex; justify-content: center; align-items: center; white-space: nowrap; text-align: center; flex: 0 0 auto;"
+       onmouseover="this.style.backgroundColor='#ff7495'; this.style.borderColor='#ff7495'; this.style.color='#ffffff';" 
+       onmouseout="this.style.backgroundColor='var(--sec-btn-bg)'; this.style.borderColor='var(--sec-btn-border)'; this.style.color='var(--sec-btn-text)';">
+      Custom Orders
+    </a>
 
-      </div>
+  </div>
 
-    </div>
-
+</div>
     <!-- RIGHT SIDE: 3-IMAGE COLLAGE GRID -->
     <div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 16px;">
       
@@ -605,28 +745,28 @@
           </select>
         </div>
 
-        <div class="form-group" style="margin-top: 16px;">
-          <label style="display: block; margin-bottom: 8px;">Frosting Type</label>
-          <div class="checkbox-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <label class="checkbox-label"><input type="checkbox"/> Whipped Cream</label>
-            <label class="checkbox-label"><input type="checkbox"/> Buttercream</label>
-            <label class="checkbox-label"><input type="checkbox"/> Fondant</label>
-            <label class="checkbox-label"><input type="checkbox"/> Ganache</label>
-            <label class="checkbox-label"><input type="checkbox"/> Naked (No Frosting)</label>
-          </div>
-        </div>
+ <div class="form-group" style="margin-top: 16px;">
+  <label style="display: block; margin-bottom: 8px; color: var(--text-dark, #ffffff); font-weight: 600;">Frosting Type</label>
+  <div class="checkbox-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Whipped Cream</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Buttercream</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Fondant</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Ganache</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Naked (No Frosting)</label>
+  </div>
+</div>
 
-        <div class="form-group" style="margin-top: 16px;">
-          <label style="display: block; margin-bottom: 8px;">Add-ons</label>
-          <div class="checkbox-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
-            <label class="checkbox-label"><input type="checkbox"/> Photo Print (+₹300)</label>
-            <label class="checkbox-label"><input type="checkbox"/> Edible Gold Dust (+₹250)</label>
-            <label class="checkbox-label"><input type="checkbox"/> Fondant Figurine (+₹500)</label>
-            <label class="checkbox-label"><input type="checkbox"/> Sugar Flowers (+₹400)</label>
-            <label class="checkbox-label"><input type="checkbox"/> Candles &amp; Topper</label>
-            <label class="checkbox-label"><input type="checkbox"/> Gift Ribbon &amp; Box</label>
-          </div>
-        </div>
+<div class="form-group" style="margin-top: 16px;">
+  <label style="display: block; margin-bottom: 8px; color: var(--text-dark, #ffffff); font-weight: 600;">Add-ons</label>
+  <div class="checkbox-group" style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Photo Print (+₹300)</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Edible Gold Dust (+₹250)</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Fondant Figurine (+₹500)</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Sugar Flowers (+₹400)</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Candles &amp; Topper</label>
+    <label class="checkbox-label" style="color: var(--text-dark, #ffffff);"><input type="checkbox"/> Gift Ribbon &amp; Box</label>
+  </div>
+</div>
 
         <!-- Submit Button Fix -->
         <div class="submit-btn-wrapper">
@@ -652,30 +792,43 @@
           </ul>
         </div>
 
-        <div class="sidebar-widget" style="margin-top: 20px;">
-          <div class="timeline" style="padding-left:15px;">
-            <div class="timeline-item">
-              <span class="year">Step 1</span>
-              <h4>Submit This Form</h4>
-              <p>Fill in all details — takes less than 3 minutes.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="year">Step 2</span>
-              <h4>Team Confirms (2 hrs)</h4>
-              <p>We call/WhatsApp to finalise design and pricing.</p>
-            </div>
-            <div class="timeline-item">
-              <span class="year">Step 3</span>
-              <h4>Pay 50% Advance</h4>
-              <p>Secure your order slot with a 50% advance via UPI.</p>
-            </div>
-            <div class="timeline-item" style="margin-bottom:0;">
-              <span class="year">Step 4</span>
-              <h4>Enjoy Your Cake!</h4>
-              <p>We deliver fresh. Balance payment on delivery.</p>
-            </div>
-          </div>
-        </div>
+       <div class="sidebar-widget">
+    <div class="custom-timeline">
+      
+      <!-- Step 1 -->
+      <div class="custom-timeline-item">
+        <span class="custom-timeline-node"></span>
+        <span class="year" style="font-size: 11px; font-weight: 700; color: #ff7495; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px;">Step 1</span>
+        <h4 style="margin: 0 0 4px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #ffffff;">Submit This Form</h4>
+        <p style="margin: 0; font-size: 13px; color: #a0aec0; line-height: 1.5;">Fill in all details — takes less than 3 minutes.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="custom-timeline-item">
+        <span class="custom-timeline-node"></span>
+        <span class="year" style="font-size: 11px; font-weight: 700; color: #ff7495; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px;">Step 2</span>
+        <h4 style="margin: 0 0 4px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #ffffff;">Team Confirms (2 hrs)</h4>
+        <p style="margin: 0; font-size: 13px; color: #a0aec0; line-height: 1.5;">We call/WhatsApp to finalise design and pricing.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="custom-timeline-item">
+        <span class="custom-timeline-node"></span>
+        <span class="year" style="font-size: 11px; font-weight: 700; color: #ff7495; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px;">Step 3</span>
+        <h4 style="margin: 0 0 4px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #ffffff;">Pay 50% Advance</h4>
+        <p style="margin: 0; font-size: 13px; color: #a0aec0; line-height: 1.5;">Secure your order slot with a 50% advance via UPI.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="custom-timeline-item">
+        <span class="custom-timeline-node"></span>
+        <span class="year" style="font-size: 11px; font-weight: 700; color: #ff7495; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 2px;">Step 4</span>
+        <h4 style="margin: 0 0 4px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #ffffff;">Enjoy Your Cake!</h4>
+        <p style="margin: 0; font-size: 13px; color: #a0aec0; line-height: 1.5;">We deliver fresh. Balance payment on delivery.</p>
+      </div>
+
+    </div>
+  </div>
 
         <div class="sidebar-widget" style="background:linear-gradient(135deg, var(--pink-light, #fff0f5), var(--blue-light, #e6f0fa)); border:none; margin-top: 20px; padding: 20px; border-radius: 12px;">
           <p style="font-size:13px; color:var(--text-mid, #555); margin-bottom:14px;">Talk to our bakers directly on WhatsApp — we're friendly, fast and love cake talk!</p>
@@ -716,7 +869,7 @@
           
           <!-- Eyebrow Badge -->
           <span class="eyebrow" style="display: inline-block; background: linear-gradient(135deg, #ff6584 0%, #d8436b 100%); color: #ffffff; padding: 8px 18px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(216, 67, 107, 0.25);">
-            ✦ EASY & FAST RESERVATION ✦
+            ✦  FAST RESERVATION ✦
           </span>
           
           <!-- Heading -->
@@ -761,12 +914,22 @@
     
     <!-- Brand Info -->
     <div class="footer-brand">
-      <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
-        <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
-        <span class="brand-name">
-          Sweet <span class="brand-highlight" style="color: var(--pink-dark, #ff527b);">Delight</span>
-        </span>
-      </a>
+       <a href="../index.html" class="logo-text" style="display: inline-flex; align-items: center; gap: 10px; text-decoration: none;">
+  <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="38" height="38" />
+  <span class="brand-name" style="
+    background: linear-gradient(135deg, #33d9ff 0%, #ff6b8b 55%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 1.3;
+    padding-bottom: 4px;
+    display: inline-block;
+  ">
+    Sweet Delight
+  </span>
+</a>
       <p class="brand-desc">Crafting memories one slice at a time since 2012.</p>
       
       <!-- Social Media Links (Instagram, YouTube, Facebook, LinkedIn) -->
