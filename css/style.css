@@ -1,50 +1,3 @@
-/* 1. Main Headings & Dark Text */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #1a202c !important;
-  /* Pure/Dark Black */
-}
-
-/* 2. Subtitles & Paragraph Text Fix (SECURE YOUR DATE, description text) */
-p,
-.subtitle,
-.brand-desc,
-label {
-  color: #374151 !important;
-  /* Dark Slate Gray - all screens-லும் தெளிவாகத் தெரியும் */
-  font-weight: 500;
-  /* Font தடிமனை லேசாக அதிகரிக்கலாம் */
-}
-
-/* 3. Form Labels & Placeholder Text Fix */
-label,
-.form-label {
-  color: #4b5563 !important;
-  /* Darker gray for form labels */
-  font-weight: 600;
-}
-
-::placeholder {
-  color: #6b7280 !important;
-  /* Form inputs-க்குள் இருக்கும் text தெளிவாக தெரிய */
-  opacity: 1;
-}
-
-/* 4. Small Muted Text (Average response time...) */
-.muted-text,
-small {
-  color: #4b5563 !important;
-}
-
-/* ============================================================
-   Sweet Delight Bakery — Global Design System
-   Theme: Light Blue + White + Soft Pink
-   ============================================================ */
-
 /* ---- Google Fonts ---- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
@@ -110,13 +63,13 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-
 h1,
 h2,
 h3,
 h4 {
   font-family: 'Playfair Display', serif;
   line-height: 1.3;
+  color: var(--text-dark); /* variables மூலம் Color அமைப்பது தான் சரி */
 }
 
 a {
@@ -145,7 +98,6 @@ select {
   outline: none;
   font-family: 'Nunito', sans-serif;
 }
-
 
 /* ============================================================
    NAVBAR
@@ -1492,7 +1444,7 @@ html[data-theme='dark'] .mobile-logo .logo-text {
 }
 
 /* Close Button in Header */
-.mobile-close-btn,
+
 #mobileMenu .nav-close-btn,
 .nav-close-btn {
   position: static !important;
@@ -5676,13 +5628,7 @@ body[data-theme="dark"] .emergency-banner {
   box-shadow: 0 6px 18px rgba(255, 117, 140, 0.3);
 }
 
-/* "Sweet" Gradient Accent */
-.brand-name {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: -0.3px;
-}
+
 
 /* "Delight" Contrast Highlight */
 .brand-highlight {
@@ -18213,10 +18159,9 @@ body.dark .about-card-box,
     white-space: nowrap !important;
   }
 
-  /* Logo icon size decrease */
   .logo-icon-img {
-    width: 26px !important;
-    height: 26px !important;
+    width: 30px !important;
+    height: 30px !important;
   }
 
   /* Reduce gap between logo icon and text */
@@ -18267,16 +18212,14 @@ body.dark .about-card-box,
   padding: 0 !important;
 }
 
-/* Mobile specific alignment & overlap fix */
-@media screen and (max-width: 600px) {
 
+@media screen and (max-width: 600px) {
   .nav-inner {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
   }
 
-  /* Reset margin/padding for logo */
   .nav-logo,
   .footer-brand .logo-text {
     margin-left: 0 !important;
@@ -18286,16 +18229,11 @@ body.dark .about-card-box,
     gap: 8px !important;
   }
 
-  /* Font size match for both logos */
   .logo-text {
     font-size: 15px !important;
     white-space: nowrap !important;
   }
 
-  .logo-icon-img {
-    width: 30px !important;
-    height: 30px !important;
-  }
 
   .nav-cta {
     display: flex !important;
@@ -18309,7 +18247,6 @@ body.dark .about-card-box,
 ========================================== */
 @media screen and (max-width: 768px) {
 
-  /* Reduce navbar left padding to absolute minimum */
   .navbar {
     padding-left: 0px !important;
     padding-right: 12px !important;
@@ -18320,13 +18257,11 @@ body.dark .about-card-box,
     margin-left: 0px !important;
   }
 
-  /* Pull logo further left using negative margin */
   .nav-logo {
     margin-left: -4px !important;
     padding-left: 0px !important;
   }
 
-  /* Match Footer alignment */
   .footer {
     padding-left: 12px !important;
     padding-right: 12px !important;
@@ -18338,7 +18273,6 @@ body.dark .about-card-box,
   }
 }
 
-/* Mobile view-il header-il irundhu Order Now button-ai hide seiya */
 @media (max-width: 768px) {
 
   .nav-cta .btn-nav,
@@ -18417,7 +18351,7 @@ body.dark .about-card-box,
 }
 
 /* Position Close Button Perfectly */
-.mobile-menu-header .mobile-close-btn {
+.mobile-menu-header {
   position: static !important;
   transform: none !important;
   margin: 0 !important;
@@ -21981,28 +21915,8 @@ html[dir="ltr"] .navbar .nav-cta {
   text-decoration: none !important;
 }
 
-.mobile-close-btn {
-  background: transparent !important;
-  border: none !important;
-  font-size: 28px !important;
-  font-weight: 300 !important;
-  color: #333 !important;
-  cursor: pointer !important;
-  line-height: 1 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
 
-/* Fix RTL Direction Mirroring Issues */
-[dir="rtl"] .mobile-menu {
-  left: auto !important;
-  right: -100% !important;
-}
 
-[dir="rtl"] .mobile-menu.open {
-  right: 0 !important;
-  left: auto !important;
-}
 
 [dir="rtl"] .nav-inner {
   flex-direction: row-reverse !important;
@@ -22248,6 +22162,80 @@ body, html {
   overflow-x: hidden !important;
 }
 
+/* ============================================================
+   FINAL NAVBAR FLEX / RTL SPACING
+   Keep the header balanced when the document direction changes.
+   ============================================================ */
+/* Default Styles (LTR Mode) */
+.navbar .nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+  box-sizing: border-box !important;
+  flex-direction: row !important; /* Normal LTR layout */
+}
+
+.navbar .nav-cta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .navbar .nav-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .nav-inner {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
+/* RTL Mode Fixes */
+html[dir="rtl"] .navbar .nav-inner,
+html:lang(ar) .navbar .nav-inner {
+  direction: rtl !important;
+  /* flex-direction: row-reverse நீக்கப்பட்டது! Default flex layout-ஏ RTL-ல automatic-ஆ Logo-வை வலது பக்கமும் Buttons-ஐ இடது பக்கமும் மாற்றிவிடும். */
+  padding-left: 24px !important;
+  padding-right: 24px !important;
+}
+
+html[dir="rtl"] .navbar .nav-cta,
+html:lang(ar) .navbar .nav-cta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  flex-direction: row !important;
+}
+
+@media (max-width: 992px) {
+  html[dir="rtl"] .navbar .nav-inner,
+  html:lang(ar) .navbar .nav-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  html[dir="rtl"] .navbar .nav-inner,
+  html:lang(ar) .navbar .nav-inner {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+
 /* ==========================================
    MOBILE MENU HEADER STRAIGHT LINE FIX
    ========================================== */
@@ -22279,6 +22267,10 @@ body, html {
 
 /* Close Button Styling */
 .mobile-close-btn {
+  position: absolute !important;
+  top: 10px !important;       /* Top positioning */
+  right: 10px !important;     /* Right side positioning */
+  left: auto !important;     /* Left override reset */
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -22292,9 +22284,255 @@ body, html {
   margin: 0 !important;
   height: auto !important;
   width: auto !important;
+  z-index: 99 !important;
 }
 
-/* Stop RTL from breaking header layout */
-html[dir="rtl"] .mobile-menu-header {
-  direction: ltr !important; /* LTR & RTL rendilum identical inline alignment moolam fix aagum */
+/* Parent container (கண்டிப்பாக இருக்க வேண்டும்) */
+.mobile-menu-header {
+  position: relative !important;
+  width: 100% !important;
+}
+
+/* Sweet Delight Text Spacing & Alignment Fix */
+.mobile-menu-header .logo-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;  
+  gap: 10px !important;                  
+  width: auto !important;                  
+}
+
+.mobile-menu-header .brand-name {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/* Force RTL Direction Swapping across Desktop Navbar */
+[dir="rtl"] header,
+[dir="rtl"] nav,
+[dir="rtl"] .navbar,
+[dir="rtl"] .header-container,
+[dir="rtl"] .nav-wrapper,
+[dir="rtl"] .site-header .container {
+  direction: rtl !important;
+  flex-direction: row-reverse !important;
+}
+
+/* Swap Logo to Right & Buttons to Left in RTL */
+html[dir="rtl"] .site-header .container,
+html[dir="rtl"] .nav-wrapper {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+/* Logo placement in RTL */
+[dir="rtl"] .mobile-logo,
+[dir="rtl"] .brand-logo,
+[dir="rtl"] .logo-wrapper,
+[dir="rtl"] .navbar-brand {
+  margin-left: 0 !important;
+  margin-right: auto !important; /* Moves logo to far right in RTL */
+}
+/* Nav Links & Right Button Group Normal Order for RTL */
+[dir="rtl"] .nav-links,
+[dir="rtl"] .nav-menu,
+[dir="rtl"] .navbar-nav {
+  display: flex !important;
+  flex-direction: row !important; 
+}
+
+/* Action Buttons Group (LTR/RTL Switch, Dark Mode, Hamburger Menu) */
+[dir="rtl"] .header-actions,
+[dir="rtl"] .nav-controls,
+[dir="rtl"] .header-right {
+  display: flex !important;
+  flex-direction: row !important; 
+  margin-left: 0 !important;
+  margin-right: auto !important; 
+  gap: 12px !important;
+}
+
+/* Mobile view-il Hero Section Buttons */
+@media (max-width: 767px) {
+  .hero-btn-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+  }
+  
+  .hero-btn-group a {
+    width: 100% !important;
+    max-width: 240px !important;
+  }
+}
+/* ==========================================
+   BASE / LTR STYLES (Default View)
+   ========================================== */
+
+.navbar .nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 0 24px !important;
+  box-sizing: border-box !important;
+  flex-direction: row !important;
+  direction: ltr !important;
+}
+
+.navbar .nav-cta,
+.header-actions,
+.nav-controls,
+.header-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-direction: row !important;
+}
+
+/* ==========================================
+   RTL STYLES (Arabic / RTL Mode)
+   Applies to both Desktop & Mobile Views
+   ========================================== */
+
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .navbar .nav-inner,
+[dir="rtl"] .navbar,
+[dir="rtl"] .nav-inner {
+  direction: rtl !important;
+  flex-direction: row !important; /* Do NOT use row-reverse */
+  justify-content: space-between !important;
+}
+
+/* Forces Logo to Right and Buttons/Hamburger Menu to Left */
+html[dir="rtl"] .navbar .nav-brand,
+html[dir="rtl"] .navbar .logo,
+[dir="rtl"] .navbar .nav-brand,
+[dir="rtl"] .navbar .logo {
+  order: 1 !important;
+}
+
+html[dir="rtl"] .navbar .nav-cta,
+html[dir="rtl"] .header-actions,
+html[dir="rtl"] .nav-controls,
+html[dir="rtl"] .header-right,
+[dir="rtl"] .nav-cta,
+[dir="rtl"] .header-actions,
+[dir="rtl"] .nav-controls,
+[dir="rtl"] .header-right {
+  order: 2 !important;
+  direction: ltr !important; /* Keeps action buttons (LTR/Theme/Hamburger) ordered left-to-right inside their box */
+  flex-direction: row !important;
+}
+
+/* Navigation Links / Menu in RTL */
+[dir="rtl"] .nav-links,
+[dir="rtl"] .nav-menu,
+[dir="rtl"] .navbar-nav {
+  direction: rtl !important;
+  flex-direction: row !important;
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ========================================== */
+
+@media (max-width: 992px) {
+  .navbar .nav-inner,
+  [dir="rtl"] .navbar .nav-inner {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Hero Section Buttons below header */
+  .hero-btn-group {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+  }
+
+  .hero-btn-group a {
+    width: 100% !important;
+    max-width: 240px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .nav-inner,
+  [dir="rtl"] .navbar .nav-inner {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+}
+/* Mobile Menu Header Layout */
+.mobile-menu-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 16px 20px !important;
+  box-sizing: border-box !important;
+}
+/* High-specificity override for mobile menu header */
+div.mobile-menu-header {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  width: 100% !important;
+  padding: 12px 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* Fix gap between Icon and Text */
+div.mobile-menu-header a.mobile-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important; /* Space between logo image and text */
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+div.mobile-menu-header a.mobile-logo img.logo-icon-img {
+  display: block !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+div.mobile-menu-header a.mobile-logo div.logo-text {
+  display: block !important;
+  margin: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* Position Close Button (X) to the Right & Centered Vertically */
+div.mobile-menu-header button.mobile-close-btn {
+  position: absolute !important;
+  top: 50% !important;
+  right: 16px !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  color: #333333 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  z-index: 999 !important;
+}
+
+/* RTL positioning adjustment */
+[dir="rtl"] div.mobile-menu-header button.mobile-close-btn {
+  right: auto !important;
+  left: 16px !important;
 }
