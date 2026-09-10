@@ -1,0 +1,147 @@
+/*
+ * Sweet Delight - Dark theme overrides
+ * Loaded after css/style.css on every page.
+ */
+
+:root,
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --white: #1c1a26;
+  --blush: #121118;
+  --text-dark: #f3f4f8;
+  --text-mid: #b8b5c8;
+  --text-light: #8a869a;
+  --blue: #7ecae6;
+  --blue-dark: #4ea8cc;
+  --blue-light: #1b2b3a;
+  --pink: #ffa5be;
+  --pink-dark: #ff658a;
+  --pink-light: #341926;
+  --card-bg: #1d1b26;
+  --bg-card: #1d1b26;
+  --bg-page: #121118;
+  --text-heading: #f8fafc;
+  --text-body: #cbd5e1;
+  --text-muted: #a0aec0;
+  --border-color: rgba(255, 121, 161, 0.3);
+  --border-card: rgba(255, 121, 161, 0.3);
+  --card-shadow: rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --overlay-bg: rgba(30, 41, 59, 0.85);
+  --overlay-border: rgba(255, 255, 255, 0.1);
+  --item-bg: #0f172a;
+  --item-border: rgba(255, 116, 149, 0.2);
+  --bg-btn-sec: #242235;
+  --text-btn-sec: #ff79a1;
+}
+
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    color-scheme: dark;
+  }
+}
+
+html[data-theme="dark"] body,
+body.dark,
+body.dark-mode {
+  background: var(--blush);
+  color: var(--text-dark);
+}
+
+html[data-theme="dark"] .navbar.scrolled {
+  background: rgba(28, 26, 38, 0.92);
+}
+
+html[data-theme="dark"] .navbar .nav-links a,
+html[data-theme="dark"] .navbar .nav-links li a,
+html[data-theme="dark"] .nav-links a {
+  color: var(--text-dark) !important;
+  text-shadow: none;
+}
+
+html[data-theme="dark"] .navbar .nav-links a:hover,
+html[data-theme="dark"] .navbar .nav-links a.active {
+  color: var(--pink-dark) !important;
+}
+
+html[data-theme="dark"] .nav-hamburger span {
+  background: var(--text-dark);
+}
+
+html[data-theme="dark"] .mobile-menu,
+html[data-theme="dark"] #mobileMenu {
+  background: #181818 !important;
+  color: var(--text-dark);
+}
+
+html[data-theme="dark"] .mobile-menu-header {
+  border-color: #292929 !important;
+}
+
+html[data-theme="dark"] .mobile-menu-nav a,
+html[data-theme="dark"] .mobile-menu-nav .dropdown-toggle {
+  color: #e0e0e0 !important;
+}
+
+html[data-theme="dark"] .mobile-menu-nav a:hover,
+html[data-theme="dark"] .mobile-menu-nav a.active,
+html[data-theme="dark"] .mobile-menu-nav .dropdown-toggle:hover {
+  color: var(--pink-dark) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+html[data-theme="dark"] .theme-toggle-btn,
+html[data-theme="dark"] .dir-toggle-btn,
+html[data-theme="dark"] #dirToggle {
+  background: #252232 !important;
+  border-color: rgba(255, 165, 190, 0.3) !important;
+  color: var(--text-dark) !important;
+}
+
+html[data-theme="dark"] .theme-toggle-btn:hover,
+html[data-theme="dark"] .dir-toggle-btn:hover,
+html[data-theme="dark"] #dirToggle:hover {
+  border-color: var(--pink) !important;
+  color: var(--pink) !important;
+}
+
+html[data-theme="dark"] .about-card-box,
+html[data-theme="dark"] .cake-card,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .testimonial-card {
+  background: var(--card-bg) !important;
+  color: var(--text-body) !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="dark"] .cake-card-body h3,
+html[data-theme="dark"] .cake-card-body h4,
+html[data-theme="dark"] .about-card-heading,
+html[data-theme="dark"] .contact-heading {
+  color: var(--text-heading) !important;
+}
+
+html[data-theme="dark"] .cake-card-body p,
+html[data-theme="dark"] .contact-desc {
+  color: var(--text-body) !important;
+}
+
+html[data-theme="dark"] .contact-banner {
+  background: #212936 !important;
+  border-color: var(--border-color) !important;
+}
+
+html[data-theme="dark"] .btn-contact-outline {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--pink) !important;
+  border-color: var(--pink) !important;
+}
+
+html[data-theme="dark"] .btn-contact-outline:hover {
+  background: #ff5286;
+  color: #fff !important;
+}

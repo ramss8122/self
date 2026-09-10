@@ -520,3 +520,62 @@ document.addEventListener("DOMContentLoaded", function () {
 function setPageDirection(direction) {
   document.documentElement.setAttribute("dir", direction);
 }
+// Ensure dir toggle button only changes HTML direction attribute
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.dir-toggle-btn, #dirToggle');
+  if (btn) {
+    e.preventDefault();
+    const current = document.documentElement.getAttribute('dir') || 'ltr';
+    const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
+    
+    document.documentElement.setAttribute('dir', nextDir);
+    localStorage.setItem('sweet_delight_dir', nextDir);
+    
+    const label = btn.querySelector('.dir-label');
+    if (label) label.textContent = nextDir.toUpperCase();
+  }
+});
+/* ---- LTR / RTL Direction Management ---- */
+function applyDirection(dir) {
+  const validDir = dir === 'rtl' ? 'rtl' : 'ltr';
+  
+  // HTML tag & Body tag rendilum direction set seidhal CSS smooth-a work aagum
+  document.documentElement.setAttribute('dir', validDir);
+  if (document.body) {
+    document.body.setAttribute('dir', validDir);
+  }
+  
+  localStorage.setItem('sweet_delight_dir', validDir);
+
+  // Toggle button label text & attribute change
+  document.querySelectorAll('.dir-toggle-btn, #dirToggle').forEach(btn => {
+    btn.setAttribute('data-dir', validDir);
+    const label = btn.querySelector('.dir-label');
+    if (label) {
+      label.textContent = validDir === 'rtl' ? 'RTL' : 'LTR';
+    } else {
+      btn.innerText = validDir === 'rtl' ? 'RTL' : 'LTR';
+    }
+  });
+}
+
+// Global Click Event for Direction Toggle Button
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('#dirToggle, .dir-toggle-btn');
+  if (btn) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    // Check current direction and toggle
+    const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+    const newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+    
+    applyDirection(newDir);
+  }
+});
+
+// Load Saved Direction on Page Load
+document.addEventListener('DOMContentLoaded', () => {
+  const savedDir = localStorage.getItem('sweet_delight_dir') || 'ltr';
+  applyDirection(savedDir);
+});

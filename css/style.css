@@ -71,44 +71,6 @@ small {
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ---- Dark Theme Variables ---- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --white: #1c1a26;
-    --blush: #121118;
-    --text-dark: #f3f4f8;
-    --text-mid: #b8b5c8;
-    --text-light: #8a869a;
-    --blue: #7ecae6;
-    --blue-dark: #4ea8cc;
-    --blue-light: #1b2b3a;
-    --pink: #ffa5be;
-    --pink-dark: #ff658a;
-    --pink-light: #341926;
-    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-    --hover-shadow: 0 16px 48px rgba(0, 0, 0, 0.65);
-    --pink-shadow: 0 8px 32px rgba(255, 101, 138, 0.25);
-  }
-}
-
-/* Dark theme toggle class */
-html[data-theme="dark"] {
-  --white: #1c1a26;
-  --blush: #121118;
-  --text-dark: #f3f4f8;
-  --text-mid: #b8b5c8;
-  --text-light: #8a869a;
-  --blue: #7ecae6;
-  --blue-dark: #4ea8cc;
-  --blue-light: #1b2b3a;
-  --pink: #ffa5be;
-  --pink-dark: #ff658a;
-  --pink-light: #341926;
-  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
-  --hover-shadow: 0 16px 48px rgba(0, 0, 0, 0.65);
-  --pink-shadow: 0 8px 32px rgba(255, 101, 138, 0.25);
-}
-
 html[data-theme="light"] {
   --blue: #A8D8EA;
   --blue-dark: #7EC8E3;
@@ -21980,4 +21942,359 @@ html[dir="ltr"] .navbar .nav-cta {
   color: #1a202c;
   text-decoration: none;
   font-weight: 600;
+}
+/* Mobile Sidebar Core Layout */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 280px;
+  max-width: 85vw;
+  height: 100vh;
+  background-color: #ffffff;
+  z-index: 10000;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 15px rgba(0,0,0,0.15);
+}
+
+.mobile-menu.open {
+  left: 0 !important;
+}
+
+/* Header Inside Mobile Sidebar */
+.mobile-menu-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.mobile-menu-header .logo-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+}
+
+.mobile-close-btn {
+  background: transparent !important;
+  border: none !important;
+  font-size: 28px !important;
+  font-weight: 300 !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Fix RTL Direction Mirroring Issues */
+[dir="rtl"] .mobile-menu {
+  left: auto !important;
+  right: -100% !important;
+}
+
+[dir="rtl"] .mobile-menu.open {
+  right: 0 !important;
+  left: auto !important;
+}
+
+[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse !important;
+}
+
+[dir="rtl"] .nav-links {
+  flex-direction: row-reverse !important;
+}
+/* Enable CSS Direction Flip */
+html[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+html[dir="ltr"] {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL Layout Changes for Navbar Inner Elements */
+html[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-cta {
+  flex-direction: row-reverse;
+}
+
+html[dir="rtl"] .nav-links {
+  flex-direction: row-reverse;
+}
+
+/* Fix for Brand Name in RTL mode so it aligns nicely */
+html[dir="rtl"] .logo-text {
+  flex-direction: row-reverse;
+}
+/* Mobile view-il desktop menu nav-links-a strictly hide seiyavum */
+@media screen and (max-width: 991px) {
+  .navbar .nav-links {
+    display: none !important;
+  }
+  
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+}
+
+/* RTL Mode Fix for Navbar Header */
+html[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse !important;
+}
+
+html[dir="rtl"] .nav-cta {
+  flex-direction: row-reverse !important;
+}
+
+/* Screen outer overflow-ai thadukka */
+body, html {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+/* ==========================================
+   MOBILE & RTL OVERRIDE FIX (Paste at bottom)
+   ========================================== */
+
+/* 1. Mobile screen-il Desktop Nav Links-a strictly hide panna */
+@media screen and (max-width: 991px) {
+  /* Desktop menu links-ai complete-a hide seiyum */
+  .navbar .nav-links,
+  .nav-inner .nav-links,
+  html[dir="rtl"] .nav-links,
+  html[dir="ltr"] .nav-links {
+    display: none !important;
+  }
+
+  /* Header-ai align panna */
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Logo text overflow thadukka */
+  .brand-name {
+    font-size: 16px !important;
+    white-space: nowrap !important;
+  }
+}
+
+/* 2. RTL Mode Direction Alignment */
+html[dir="rtl"] .nav-inner,
+html[dir="rtl"] .nav-cta {
+  flex-direction: row-reverse !important;
+}
+
+/* 3. Screen horizontal scroll/cut-ai thadukka */
+html, body {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+/* ==========================================
+   NAVBAR RTL/LTR LAYOUT & GAP FIX
+   ========================================== */
+
+/* Outer Navbar Container Fix */
+.navbar .nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Right side action buttons spacing */
+.nav-cta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important; /* Buttons-ukku naduvil ulla gap */
+}
+
+/* LTR / RTL Mode Layout Alignments */
+html[dir="rtl"] .nav-inner {
+  flex-direction: row-reverse !important; /* RTL mode-il logo-vai edathu pakkamum buttons-ai valathu pakkamum nirkavaikka */
+}
+
+html[dir="rtl"] .nav-cta {
+  flex-direction: row !important; /* Buttons order maaramal irukka */
+}
+
+html[dir="rtl"] .logo-text {
+  flex-direction: row !important; /* Logo icon & name order maaramal irukka */
+}
+
+/* Fix spacing issue inside logo */
+.logo-text {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+/* ==========================================
+   DESKTOP & MOBILE COMPLETE RTL FLIP FIX
+   ========================================== */
+
+/* 1. Normal Layout (LTR) */
+.nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  direction: ltr !important;
+}
+
+/* 2. RTL Mode Full Layout Flip */
+html[dir="rtl"] .nav-inner {
+  direction: rtl !important;
+  flex-direction: row !important;
+}
+
+/* RTL Mode-il Nav links and Buttons Alignment */
+html[dir="rtl"] .nav-links {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px !important;
+}
+
+html[dir="rtl"] .nav-cta {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* Fix dropdown arrow orientation in RTL */
+html[dir="rtl"] .dropdown-chevron,
+html[dir="rtl"] .nav-links .dropdown-toggle span {
+  direction: rtl !important;
+}
+
+/* ==========================================
+   PERFECT LTR/RTL RESPONSIVE FIX
+   ========================================== */
+
+/* 1. Mobile Screen-il (Below 992px) Desktop Links strictly Hide seiyavum */
+@media screen and (max-width: 991px) {
+  .navbar .nav-links,
+  .nav-inner .nav-links,
+  html[dir="rtl"] .nav-links,
+  html[dir="ltr"] .nav-links {
+    display: none !important;
+  }
+
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+  }
+
+  /* Mobile RTL Alignments */
+  html[dir="rtl"] .nav-inner {
+    flex-direction: row-reverse !important;
+  }
+}
+
+/* 2. Desktop Screen-il (992px and above) LTR & RTL Layout Flip */
+@media screen and (min-width: 992px) {
+  /* LTR Standard */
+  .nav-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+    direction: ltr !important;
+  }
+
+  /* RTL Mode Flip for Desktop */
+  html[dir="rtl"] .nav-inner {
+    direction: rtl !important;
+  }
+
+  html[dir="rtl"] .nav-links {
+    display: flex !important;
+    direction: rtl !important;
+  }
+
+  html[dir="rtl"] .nav-cta {
+    display: flex !important;
+    direction: rtl !important;
+  }
+}
+
+/* 3. Common fixes */
+html[dir="rtl"] .logo-text {
+  direction: ltr !important; /* Logo icon-um text-um eppodhum pakkathil irukka */
+}
+
+body, html {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+/* ==========================================
+   MOBILE MENU HEADER STRAIGHT LINE FIX
+   ========================================== */
+
+/* Outer Header Container */
+.mobile-menu-header {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  padding: 14px 18px !important;
+  box-sizing: border-box !important;
+  direction: ltr !important; /* Forces LTR order everywhere */
+}
+
+/* Logo Styling */
+.mobile-menu-header .logo-text {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  text-decoration: none !important;
+  margin: 0 !important;
+  padding: 8px 12px !important;
+  background: #fff0f3 !important; /* Logo background pink box */
+  border-radius: 12px !important;
+}
+
+/* Close Button Styling */
+.mobile-close-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 26px !important;
+  line-height: 1 !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  margin: 0 !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+/* Stop RTL from breaking header layout */
+html[dir="rtl"] .mobile-menu-header {
+  direction: ltr !important; /* LTR & RTL rendilum identical inline alignment moolam fix aagum */
 }
