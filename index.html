@@ -1,15 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Premium handcrafted cakes, custom orders and same-day delivery. Celebrating every sweet moment." />
   <title>Premium Handcrafted Cakes</title>
+
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg" />
   <link rel="alternate icon" href="assets/favicon.svg" />
   <link rel="apple-touch-icon" href="assets/images/sweetdelight-icon.svg" />
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
+
+<style>
+.custom-handcrafted-text {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--pink-dark, #ff527b);
+  margin-bottom: 14px;
+  display: block;
+}
+
+[dir="ltr"] .custom-handcrafted-text::before {
+  content: "✦ Handcrafted with Love ✦";
+}
+
+[dir="rtl"] .custom-handcrafted-text::before {
+  content: "✦ Love with Handcrafted ✦";
+}
+
+/* Base Styles for H1 */
+.custom-hero-title {
+  font-size: clamp(38px, 6vw, 72px);
+  color: var(--text-dark, #ffffff);
+  margin-bottom: 20px;
+  line-height: 1.15;
+  display: block;
+}
+
+/* Highlight Span (Sweet Story / Story Sweet Style) */
+.custom-hero-title .highlight-text {
+  color: var(--pink-dark, #ff527b);
+  font-style: italic;
+  display: inline-block;
+}
+
+/* LTR Direction (Original Text: Every Slice Tells a Sweet Story) */
+[dir="ltr"] .custom-hero-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-hero-title::before {
+  content: "Every Slice Tells \A a ";
+  white-space: pre-wrap;
+}
+
+[dir="ltr"] .custom-hero-title .highlight-text::before {
+  content: "Sweet Story";
+}
+
+[dir="rtl"] .custom-hero-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-hero-title::before {
+  content: "Tells Slice Every \A a ";
+  white-space: pre-wrap;
+}
+
+[dir="rtl"] .custom-hero-title .highlight-text::before {
+  content: "Story Sweet";
+}
+
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .section-head {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-eyebrow::before {
+  content: "✦ Pocket-Friendly Delights ✦";
+}
+
+[dir="ltr"] .custom-title::before {
+  content: "Quick Celebration Packages";
+}
+
+[dir="ltr"] .custom-subtitle::before {
+  content: "Delicious cakes and treats tailored perfectly for every budget.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .section-head {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-eyebrow::before {
+  content: "✦ Delights Pocket-Friendly ✦";
+}
+
+[dir="rtl"] .custom-title::before {
+  content: "Packages Celebration Quick";
+}
+
+[dir="rtl"] .custom-subtitle::before {
+  content: "Budget every for perfectly tailored treats and cakes delicious.";
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .section-head {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-bestseller-eyebrow::before {
+  content: "✦ Customer Favourites ✦";
+}
+
+[dir="ltr"] .custom-bestseller-title::before {
+  content: "Our Bestselling Cakes";
+}
+
+[dir="ltr"] .custom-bestseller-desc::before {
+  content: "Each cake is a masterpiece — rich, moist, beautifully decorated and utterly irresistible.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .section-head {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-bestseller-eyebrow::before {
+  content: "✦ Favourites Customer ✦";
+}
+
+[dir="rtl"] .custom-bestseller-title::before {
+  content: "Cakes Bestselling Our";
+}
+
+[dir="rtl"] .custom-bestseller-desc::before {
+  content: "Irresistible utterly and decorated beautifully ,moist ,rich — masterpiece a is cake Each.";
+}
+
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .section-head {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-gallery-eyebrow::before {
+  content: "✦ Our Creations ✦";
+}
+
+[dir="ltr"] .custom-gallery-title::before {
+  content: "A Taste of Our Gallery";
+}
+
+[dir="ltr"] .custom-gallery-desc::before {
+  content: "Every cake is a work of art. Browse a small selection of our finest creations.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .section-head {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-gallery-eyebrow::before {
+  content: "✦ Creations Our ✦";
+}
+
+[dir="rtl"] .custom-gallery-title::before {
+  content: "Gallery Our of Taste A";
+}
+
+[dir="rtl"] .custom-gallery-desc::before {
+  content: ".creations finest our of selection small a Browse .art of work a is cake Every";
+}
+</style>
+
 <body>
     
  <nav class="navbar" id="navbar">
@@ -21,7 +198,7 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: bold;
-  ">
+    ">
     Sweet Delight
   </span>
 </a>
@@ -69,13 +246,7 @@
   <!-- Mobile Menu -->
   <div class="mobile-menu" id="mobileMenu">
     <!-- Sidebar Header -->
-    <div class="mobile-menu-header">
-  <a href="../index.html" class="mobile-logo">
-    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
-    <span class="brand-name">Sweet Delight</span>
-  </a>
-  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
-</div>
+   
 
     <!-- Navigation Menu -->
     <div class="mobile-menu-nav">
@@ -121,22 +292,31 @@
     <div class="hero-bg" style="background-image: url('./assets/pexels-pixabay-265801.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <div class="hero-content-inner" style="max-width:640px; margin: 0 auto; text-align: center;">
-  <span
-  style="font-size:12px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--pink-dark);margin-bottom:14px;display:block;"
-  class="fade-in-up">✦ Handcrafted with Love ✦</span>
 
-<h1 class="fade-in-up delay-1"
-  style="font-size:clamp(38px,6vw,72px);color:var(--text-dark, #ffffff);margin-bottom:20px;line-height:1.15;">
-  Every Slice Tells<br />a <span style="color:var(--pink-dark);font-style:italic;">Sweet Story</span>
+ <div class="hero-content-inner rtl-text-container"
+     style="max-width:640px; margin:0 auto; text-align:center;">
+
+<span class="custom-handcrafted-text fade-in-up"></span>
+
+ <h1 class="custom-hero-title fade-in-up delay-1">
+  <span class="highlight-text"></span>
 </h1>
 
-<p class="fade-in-up delay-2"
-  style="font-size: 17px; color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 480px; line-height: 1.8; text-shadow: none !important;">
-  Premium custom cakes crafted with the finest ingredients. From birthday celebrations to wedding masterpieces —
-  we bake dreams into reality.
-</p>
-<div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 10px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important;">
+  <p
+    class="fade-in-up delay-2"
+    style="font-size:17px;
+           color:var(--text-mid,#283c5a) !important;
+           margin:0 auto 36px auto;
+           max-width:480px;
+           line-height:1.8;
+           text-shadow:none !important;">
+    Premium custom cakes crafted with the finest ingredients.
+    From birthday celebrations to wedding masterpieces —
+    we bake dreams into reality.
+  </p>
+
+</div>
+<div class="btn-group fade-in-up delay-3" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 10px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important;">
   
   <!-- 1st Button: Order Your Cake (Exact Old Style) -->
   <a href="../pages/booking.html" 
@@ -152,7 +332,7 @@
      style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 4px 15px rgba(0,0,0,0.08) !important; box-sizing: border-box !important; margin: 0 !important;" 
      onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
      onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
-     Explore Menu &rarr;
+     Explore Menu <span class="btn-arrow">&rarr;</span>
   </a>
 
 </div>
@@ -179,54 +359,62 @@
 </div>
     </div>
   </section>
-<section class="section hero-split-section" style="padding: 80px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease;">
-  <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;">
+
+<section class="section hero-split-section" style="padding: 60px 20px; background: var(--bg-main, #fff8fa); transition: background 0.3s ease; width: 100%; box-sizing: border-box;">
+  <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
     
-    <!-- LEFT SIDE: Text Content & Description -->
-    <div class="hero-content" style="background: transparent;">
-      <span style="display: inline-block; margin-bottom: 12px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
-        ✦ Artisanal Celebration Cakes ✦
-      </span>
+    <!-- LEFT SIDE: Text Content (Forced Left Align & Margin Reset) -->
+    <div class="hero-content" style="background: transparent; text-align: left !important; margin: 0 !important; padding: 0 !important;">
       
-      <!-- Heading: Fixed with high-contrast text color -->
-      <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 4.5vw, 56px); color: var(--text-dark, #1b2e3c) !important; font-weight: 700; line-height: 1.15; margin: 0 0 20px 0; text-shadow: none !important;">
-        Crafting Sweet Memories for Every Special Day
-      </h1>
+      <!-- Parent Wrapper Container -->
+<div style="display: flex; flex-direction: column; align-items: flex-start !important; text-align: left !important; width: 100%;">
+
+  <!-- Eyebrow Tag -->
+  <span style="display: block; text-align: left !important; margin: 0 0 12px 0 !important; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
+    ✦ Artisanal Celebration Cakes ✦
+  </span>
+  
+  <!-- Heading -->
+  <h1 class="custom-memories-title" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(34px, 4vw, 52px); color: var(--text-dark, #1b2e3c) !important; font-weight: 700; line-height: 1.15; margin: 0 0 18px 0 !important; text-shadow: none !important; display: block;"></h1>
+
+  
+
+</div>
       
-      <!-- Paragraph: Fixed with high-contrast mid text color -->
-      <p style="font-size: 16px; color: var(--text-mid, #5b6c7a) !important; line-height: 1.7; margin: 0 0 30px 0; text-shadow: none !important; opacity: 1 !important;">
+      <!-- Paragraph -->
+      <p style="font-size: 16px; color: var(--text-mid, #5b6c7a) !important; line-height: 1.7; margin: 0 0 28px 0 !important; text-shadow: none !important; opacity: 1 !important; text-align: left !important; max-width: 520px;">
         Discover freshly baked designer cakes, rich Belgian chocolates, and same-day morning delivery across Coimbatore to make your loved ones feel truly extraordinary.
       </p>
 
       <!-- Action Buttons -->
-      <div style="display: flex; gap: 16px; flex-wrap: wrap;">
-        <!-- Button 1: Order Online -->
-        <a href="../pages/menu.html" style="background: #ff7495; color: #ffffff; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(255, 116, 149, 0.3); transition: transform 0.2s;">
+      <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: flex-start !important; align-items: center;">
+        <!-- Button 1: Explore Menu -->
+        <a href="../pages/menu.html" style="background: #ff7495; color: #ffffff !important; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; box-shadow: 0 8px 20px rgba(255, 116, 149, 0.3); display: inline-block;">
           Explore Menu
         </a>
         
-        <!-- Button 2: Custom Orders with Pink Hover Effect -->
-        <a href="../pages/custom.html" class="custom-hover-btn" style="background: var(--bg-card, #ffffff); color: var(--text-dark, #1b2e3c); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.3)); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; transition: all 0.3s ease;">
+        <!-- Button 2: Book Consultation -->
+        <a href="../pages/custom.html" class="custom-hover-btn" style="background: var(--bg-card, #ffffff); color: var(--text-dark, #1b2e3c) !important; border: 1.5px solid var(--border-color, rgba(255, 116, 149, 0.4)); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; display: inline-block;">
           Book Consultation
         </a>
       </div>
     </div>
 
     <!-- RIGHT SIDE: Image Grid Layout -->
-    <div class="hero-image-grid" style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+    <div class="hero-image-grid" style="display: grid; grid-template-columns: 1fr; gap: 14px; width: 100%;">
       
       <!-- Big Main Image Card -->
-      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 28px; padding: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.06);">
-        <img src="./assets/pexels-hebertsantos-11712500.jpg" alt="Luxury Wedding Cake" style="width: 100%; height: 280px; object-fit: cover; border-radius: 20px; display: block;" />
+      <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 24px; padding: 10px; box-shadow: 0 12px 30px rgba(0,0,0,0.05);">
+        <img src="./assets/pexels-hebertsantos-11712500.jpg" alt="Luxury Wedding Cake" style="width: 100%; height: 260px; object-fit: cover; border-radius: 16px; display: block;" />
       </div>
 
       <!-- Two Small Images Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
-          <img src="./assets/pexels-alameenng-31333909.jpg" alt="Bento Cakes" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 20px; padding: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.04);">
+          <img src="./assets/pexels-alameenng-31333909.jpg" alt="Bento Cakes" style="width: 100%; height: 130px; object-fit: cover; border-radius: 14px; display: block;" />
         </div>
-        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 22px; padding: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.04);">
-          <img src="./assets/pexels-tim-douglas-6211057.jpg" alt="Birthday Special" style="width: 100%; height: 140px; object-fit: cover; border-radius: 16px; display: block;" />
+        <div style="background: var(--bg-card, #ffffff); border: 1px solid var(--border-color, rgba(255, 116, 149, 0.25)); border-radius: 20px; padding: 8px; box-shadow: 0 8px 20px rgba(0,0,0,0.04);">
+          <img src="./assets/pexels-tim-douglas-6211057.jpg" alt="Birthday Special" style="width: 100%; height: 130px; object-fit: cover; border-radius: 14px; display: block;" />
         </div>
       </div>
 
@@ -238,11 +426,11 @@
   <section class="section" style="padding: 60px 0;">
     <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
       
-     <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 40px;">
-  <span class="eyebrow" style="color: #ff7495; font-weight: 600; text-transform: uppercase; font-size: 14px; letter-spacing: 1px;">✦ Pocket-Friendly Delights ✦</span>
-  <h2 class="section-title">Quick Celebration Packages</h2>
-<div class="divider" style="width: 50px; height: 3px; background: #ff7495; margin: 15px auto 0 auto; border-radius: 2px;"></div>
-<p class="section-subtitle">Delicious cakes and treats tailored perfectly for every budget.</p>
+  <div class="section-head fade-in-up">
+  <span class="eyebrow custom-eyebrow"></span>
+  <h2 class="section-title custom-title"></h2>
+  <div class="divider"></div>
+  <p class="section-subtitle custom-subtitle"></p>
 </div>
 
       <div class="packages-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
@@ -307,11 +495,11 @@
   <section class="section bg-blush">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Customer Favourites ✦</span>
-        <h2>Our Bestselling Cakes</h2>
-        <div class="divider"></div>
-        <p>Each cake is a masterpiece — rich, moist, beautifully decorated and utterly irresistible.</p>
-      </div>
+  <span class="eyebrow custom-bestseller-eyebrow"></span>
+  <h2 class="custom-bestseller-title"></h2>
+  <div class="divider"></div>
+  <p class="custom-bestseller-desc"></p>
+</div>
 
       <div class="cake-grid">
 
@@ -592,12 +780,13 @@
   <!-- ===================== GALLERY PREVIEW ===================== -->
   <section class="section bg-blush">
     <div class="container">
-      <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Our Creations ✦</span>
-        <h2>A Taste of Our Gallery</h2>
-        <div class="divider"></div>
-        <p>Every cake is a work of art. Browse a small selection of our finest creations.</p>
-      </div>
+  <div class="section-head fade-in-up">
+    <span class="eyebrow custom-gallery-eyebrow"></span>
+    <h2 class="custom-gallery-title"></h2>
+    <div class="divider"></div>
+    <p class="custom-gallery-desc"></p>
+  </div>
+</div>
 
  <div class="gallery-grid fade-in-up">
   
@@ -657,15 +846,16 @@
       </div>
     </div>
   </section>
+  
   <!-- ===================== TESTIMONIALS ===================== -->
  <section class="section" style="padding: 60px 0;">
   <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 15px;">
     
-    <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 40px;">
-      <span class="eyebrow" style="color: #ff3366; font-weight: 600; text-transform: uppercase; font-size: 14px;">✦ What Our Customers Say ✦</span>
-      <h2 style="font-size: 2.3rem; font-weight: 800; margin-top: 10px;">Sweet Words from Sweet People</h2>
-      <div class="divider" style="width: 50px; height: 3px; background: #ff3366; margin: 15px auto 0 auto; border-radius: 2px;"></div>
-    </div>
+   <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 40px;">
+  <span class="eyebrow custom-testimonials-eyebrow" style="color: #ff3366; font-weight: 600; text-transform: uppercase; font-size: 14px; display: block;"></span>
+  <h2 class="custom-testimonials-title" style="font-size: 2.3rem; font-weight: 800; margin-top: 10px; display: block;"></h2>
+  <div class="divider" style="width: 50px; height: 3px; background: #ff3366; margin: 15px auto 0 auto; border-radius: 2px;"></div>
+</div>
 
    <div class="testimonial-grid" style="display: flex; gap: 25px; flex-wrap: wrap; justify-content: center;">
       
@@ -729,11 +919,10 @@
     
     <!-- Section Header -->
     <div class="why-us-header">
-      <span class="why-us-tagline">✦ Craftsmanship & Passion ✦</span>
-      <h2 class="why-us-title">Why Dessert Lovers Choose Us</h2>
-      <p class="why-us-desc">Ordinary-ah edhum panradhilla! Pure ingredients, custom art, and fresh delivery thaan namma special identity.</p>
-    </div>
-
+  <span class="why-us-tagline custom-whyus-tagline"></span>
+  <h2 class="why-us-title custom-whyus-title"></h2>
+  <p class="why-us-desc custom-whyus-desc"></p>
+</div>
     <!-- Responsive Card Grid -->
     <div class="why-us-grid">
       
@@ -929,8 +1118,8 @@
       <h5>OPENING HOURS</h5>
       <ul class="hours-list">
         <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
-        <li><span>Sunday</span><span>9am – 8pm</span></li>
+        <li><span>sat – sun</span><span> 8am – 9pm</span></li>
+        <li><span>Sunday</span><span>   9am – 8pm</span></li>
       </ul>
       
       <div class="footer-contact-info">
@@ -954,8 +1143,6 @@
   </div>
 </footer>
   <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="js/hero-config.js"></script>
-  <script src="js/hero.js"></script>
   <script src="js/script.js"></script>
   <script>
   function openCakeModal(title, imgSrc, desc, price, flavor) {

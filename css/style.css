@@ -1,31 +1,46 @@
-
-
 /* 1. Main Headings & Dark Text */
-h1, h2, h3, h4, h5, h6 {
-  color: #1a202c !important; /* Pure/Dark Black */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #1a202c !important;
+  /* Pure/Dark Black */
 }
 
 /* 2. Subtitles & Paragraph Text Fix (SECURE YOUR DATE, description text) */
-p, .subtitle, .brand-desc, label {
-  color: #374151 !important; /* Dark Slate Gray - all screens-லும் தெளிவாகத் தெரியும் */
-  font-weight: 500; /* Font தடிமனை லேசாக அதிகரிக்கலாம் */
+p,
+.subtitle,
+.brand-desc,
+label {
+  color: #374151 !important;
+  /* Dark Slate Gray - all screens-லும் தெளிவாகத் தெரியும் */
+  font-weight: 500;
+  /* Font தடிமனை லேசாக அதிகரிக்கலாம் */
 }
 
 /* 3. Form Labels & Placeholder Text Fix */
-label, .form-label {
-  color: #4b5563 !important; /* Darker gray for form labels */
+label,
+.form-label {
+  color: #4b5563 !important;
+  /* Darker gray for form labels */
   font-weight: 600;
 }
 
 ::placeholder {
-  color: #6b7280 !important; /* Form inputs-க்குள் இருக்கும் text தெளிவாக தெரிய */
+  color: #6b7280 !important;
+  /* Form inputs-க்குள் இருக்கும் text தெளிவாக தெரிய */
   opacity: 1;
 }
 
 /* 4. Small Muted Text (Average response time...) */
-.muted-text, small {
+.muted-text,
+small {
   color: #4b5563 !important;
-}/* ============================================================
+}
+
+/* ============================================================
    Sweet Delight Bakery — Global Design System
    Theme: Light Blue + White + Soft Pink
    ============================================================ */
@@ -133,19 +148,6 @@ body {
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* RTL Support */
-html[dir="rtl"] {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] body {
-  text-align: right;
-}
-
-html[dir="ltr"] body {
-  text-align: left;
-}
 
 h1,
 h2,
@@ -438,28 +440,6 @@ select {
 .nav-dropdown-menu a.active {
   background: var(--blush, #fff4f8);
   color: var(--pink-dark, #ff8fad) !important;
-}
-
-
-/* ============================================================
-   RTL DROPDOWN
-   ============================================================ */
-
-html[dir="rtl"] .nav-dropdown-menu {
-  left: auto;
-  right: 50%;
-
-  transform: translateX(50%) translateY(8px);
-}
-
-html[dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu,
-html[dir="rtl"] .nav-dropdown.open .nav-dropdown-menu,
-html[dir="rtl"] .nav-dropdown:focus-within .nav-dropdown-menu {
-  transform: translateX(50%) translateY(0);
-}
-
-html[dir="rtl"] .nav-dropdown-menu a {
-  text-align: right;
 }
 
 
@@ -4692,36 +4672,14 @@ body[data-theme="dark"] .emergency-banner {
   display: inline-block;
 }
 
-/* Whole Page Text Alignment Fix */
-[dir="rtl"] body,
-[dir="rtl"] section,
-[dir="rtl"] div,
-[dir="rtl"] p,
-[dir="rtl"] h1,
-[dir="rtl"] h2,
-[dir="rtl"] h3,
-[dir="rtl"] h4,
-[dir="rtl"] h5,
-[dir="rtl"] h6,
-[dir="rtl"] ul,
-[dir="rtl"] li {
-  text-align: right !important;
-}
 
-/* Flexbox Containers Auto Flip */
-[dir="rtl"] .container,
-[dir="rtl"] .row,
-[dir="rtl"] section>div,
-[dir="rtl"] nav,
-[dir="rtl"] footer {
+/* Whole Page Direction */
+[dir="rtl"] {
   direction: rtl;
 }
 
-/* Hardcoded Left/Right Margins & Paddings Fix */
-[dir="rtl"] * {
-  /* Physical left/right properties-a auto reset pannum */
-  margin-right: auto;
-  margin-left: initial;
+[dir="ltr"] {
+  direction: ltr;
 }
 
 
@@ -5161,13 +5119,8 @@ body[data-theme="dark"] .emergency-banner {
 
 @media (max-width: 992px) {
 
-  /* Top Header-il LTR/RTL button matrum Theme button-a Hide panrom */
-  .nav-direction,
-  .dir-toggle-btn,
-  #dirToggle,
-  .nav-cta .dir-toggle-btn,
-  .nav-cta .theme-toggle-btn {
-    display: none !important;
+  .nav-direction {
+    display: inline-flex;
   }
 
   /* Logo-va Card Edge-ukku sariyaga 16px veliye kondu varom */
@@ -11319,255 +11272,8 @@ body.dark-mode .navbar .nav-links,
   }
 }
 
-/* Dark Theme Compatibility for Cart Buttons */
-html[data-theme="dark"] .cart button,
-html[data-theme="dark"] .cart .btn,
-html[data-theme="dark"] .cart-btn,
-html[data-theme="dark"] .cart-button,
-html[data-theme="dark"] .cart a.btn,
-html[data-theme="dark"] .cart-section button,
-html[data-theme="dark"] .cart-section .btn,
-html[data-theme="dark"] .cart-section a.btn,
-html[data-theme="dark"] .cart-actions button,
-html[data-theme="dark"] .cart-actions .btn,
-html[data-theme="dark"] .cart-actions a,
-html[data-theme="dark"] .cart-buttons button,
-html[data-theme="dark"] .cart-buttons .btn,
-html[data-theme="dark"] .cart-buttons a,
-html[data-theme="dark"] .cart-item button,
-html[data-theme="dark"] .cart-item .btn,
-html[data-theme="dark"] .cart-summary button,
-html[data-theme="dark"] .cart-summary .btn,
-html[data-theme="dark"] .cart-checkout-btn,
-html[data-theme="dark"] .cart-clear-btn,
-html[data-theme="dark"] .cart-remove-btn,
-html[data-theme="dark"] .cart-qty-btn,
-html[data-theme="dark"] .cart-quantity-btn,
-html[data-theme="dark"] .btn-cart {
-  background: #ffffff !important;
-  color: #db2777 !important;
-  border: 2px solid #f9a8d4 !important;
-}
 
-html[data-theme="dark"] .cart button:hover,
-html[data-theme="dark"] .cart .btn:hover,
-html[data-theme="dark"] .cart-btn:hover,
-html[data-theme="dark"] .cart-button:hover,
-html[data-theme="dark"] .cart a.btn:hover,
-html[data-theme="dark"] .cart-section button:hover,
-html[data-theme="dark"] .cart-section .btn:hover,
-html[data-theme="dark"] .cart-section a.btn:hover,
-html[data-theme="dark"] .cart-actions button:hover,
-html[data-theme="dark"] .cart-actions .btn:hover,
-html[data-theme="dark"] .cart-actions a:hover,
-html[data-theme="dark"] .cart-buttons button:hover,
-html[data-theme="dark"] .cart-buttons .btn:hover,
-html[data-theme="dark"] .cart-buttons a:hover,
-html[data-theme="dark"] .cart-item button:hover,
-html[data-theme="dark"] .cart-item .btn:hover,
-html[data-theme="dark"] .cart-summary button:hover,
-html[data-theme="dark"] .cart-summary .btn:hover,
-html[data-theme="dark"] .cart-checkout-btn:hover,
-html[data-theme="dark"] .cart-clear-btn:hover,
-html[data-theme="dark"] .cart-remove-btn:hover,
-html[data-theme="dark"] .cart-qty-btn:hover,
-html[data-theme="dark"] .cart-quantity-btn:hover,
-html[data-theme="dark"] .btn-cart:hover {
-  background: #fff0f7 !important;
-  color: #be185d !important;
-  border-color: #f472b6 !important;
-}
 
-/* 3. LTR / RTL Cart Alignment */
-[dir="rtl"] .cart-section,
-[dir="rtl"] #cartSection,
-[dir="rtl"] #cart-section,
-[dir="rtl"] .cart,
-[dir="rtl"] #cart,
-[dir="rtl"] .cart-container,
-[dir="rtl"] .cart-wrapper,
-[dir="rtl"] .cart-box,
-[dir="rtl"] .cart-card,
-[dir="rtl"] .cart-items,
-[dir="rtl"] .cart-item,
-[dir="rtl"] .cart-content,
-[dir="rtl"] .cart-summary,
-[dir="rtl"] .cart-table,
-[dir="rtl"] .cart-totals,
-[dir="rtl"] .cart-footer,
-[dir="rtl"] .cart-header,
-[dir="rtl"] .cart-actions,
-[dir="rtl"] .cart-buttons,
-html[dir="rtl"] .cart-section,
-html[dir="rtl"] #cartSection,
-html[dir="rtl"] #cart-section,
-html[dir="rtl"] .cart,
-html[dir="rtl"] #cart,
-html[dir="rtl"] .cart-container,
-html[dir="rtl"] .cart-wrapper,
-html[dir="rtl"] .cart-box,
-html[dir="rtl"] .cart-card,
-html[dir="rtl"] .cart-items,
-html[dir="rtl"] .cart-item,
-html[dir="rtl"] .cart-content,
-html[dir="rtl"] .cart-summary,
-html[dir="rtl"] .cart-table,
-html[dir="rtl"] .cart-totals,
-html[dir="rtl"] .cart-footer,
-html[dir="rtl"] .cart-header,
-html[dir="rtl"] .cart-actions,
-html[dir="rtl"] .cart-buttons {
-  direction: rtl !important;
-  text-align: right !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-}
-
-[dir="rtl"] .cart-title,
-[dir="rtl"] .cart-header h1,
-[dir="rtl"] .cart-header h2,
-[dir="rtl"] .cart-header h3,
-[dir="rtl"] .cart-empty,
-[dir="rtl"] .cart-empty-message,
-html[dir="rtl"] .cart-title,
-html[dir="rtl"] .cart-header h1,
-html[dir="rtl"] .cart-header h2,
-html[dir="rtl"] .cart-header h3,
-html[dir="rtl"] .cart-empty,
-html[dir="rtl"] .cart-empty-message {
-  text-align: center !important;
-}
-
-[dir="rtl"] .cart button,
-[dir="rtl"] .cart .btn,
-[dir="rtl"] .cart-btn,
-[dir="rtl"] .cart-button,
-[dir="rtl"] .cart a.btn,
-[dir="rtl"] .cart-section button,
-[dir="rtl"] .cart-section .btn,
-[dir="rtl"] .cart-actions button,
-[dir="rtl"] .cart-actions .btn,
-[dir="rtl"] .cart-buttons button,
-[dir="rtl"] .cart-buttons .btn,
-[dir="rtl"] .cart-item button,
-[dir="rtl"] .cart-item .btn,
-[dir="rtl"] .cart-summary button,
-[dir="rtl"] .cart-summary .btn,
-html[dir="rtl"] .cart button,
-html[dir="rtl"] .cart .btn,
-html[dir="rtl"] .cart-btn,
-html[dir="rtl"] .cart-button,
-html[dir="rtl"] .cart a.btn,
-html[dir="rtl"] .cart-section button,
-html[dir="rtl"] .cart-section .btn,
-html[dir="rtl"] .cart-actions button,
-html[dir="rtl"] .cart-actions .btn,
-html[dir="rtl"] .cart-buttons button,
-html[dir="rtl"] .cart-buttons .btn,
-html[dir="rtl"] .cart-item button,
-html[dir="rtl"] .cart-item .btn,
-html[dir="rtl"] .cart-summary button,
-html[dir="rtl"] .cart-summary .btn {
-  direction: rtl !important;
-  justify-content: center !important;
-  text-align: center !important;
-}
-
-[dir="ltr"] .cart-section,
-[dir="ltr"] #cartSection,
-[dir="ltr"] #cart-section,
-[dir="ltr"] .cart,
-[dir="ltr"] #cart,
-[dir="ltr"] .cart-container,
-[dir="ltr"] .cart-wrapper,
-[dir="ltr"] .cart-box,
-[dir="ltr"] .cart-card,
-[dir="ltr"] .cart-items,
-[dir="ltr"] .cart-item,
-[dir="ltr"] .cart-content,
-[dir="ltr"] .cart-summary,
-[dir="ltr"] .cart-table,
-[dir="ltr"] .cart-totals,
-[dir="ltr"] .cart-footer,
-[dir="ltr"] .cart-header,
-[dir="ltr"] .cart-actions,
-[dir="ltr"] .cart-buttons,
-html[dir="ltr"] .cart-section,
-html[dir="ltr"] #cartSection,
-html[dir="ltr"] #cart-section,
-html[dir="ltr"] .cart,
-html[dir="ltr"] #cart,
-html[dir="ltr"] .cart-container,
-html[dir="ltr"] .cart-wrapper,
-html[dir="ltr"] .cart-box,
-html[dir="ltr"] .cart-card,
-html[dir="ltr"] .cart-items,
-html[dir="ltr"] .cart-item,
-html[dir="ltr"] .cart-content,
-html[dir="ltr"] .cart-summary,
-html[dir="ltr"] .cart-table,
-html[dir="ltr"] .cart-totals,
-html[dir="ltr"] .cart-footer,
-html[dir="ltr"] .cart-header,
-html[dir="ltr"] .cart-actions,
-html[dir="ltr"] .cart-buttons {
-  direction: ltr !important;
-  text-align: left !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box !important;
-}
-
-[dir="ltr"] .cart-title,
-[dir="ltr"] .cart-header h1,
-[dir="ltr"] .cart-header h2,
-[dir="ltr"] .cart-header h3,
-[dir="ltr"] .cart-empty,
-[dir="ltr"] .cart-empty-message,
-html[dir="ltr"] .cart-title,
-html[dir="ltr"] .cart-header h1,
-html[dir="ltr"] .cart-header h2,
-html[dir="ltr"] .cart-header h3,
-html[dir="ltr"] .cart-empty,
-html[dir="ltr"] .cart-empty-message {
-  text-align: center !important;
-}
-
-[dir="ltr"] .cart button,
-[dir="ltr"] .cart .btn,
-[dir="ltr"] .cart-btn,
-[dir="ltr"] .cart-button,
-[dir="ltr"] .cart a.btn,
-[dir="ltr"] .cart-section button,
-[dir="ltr"] .cart-section .btn,
-[dir="ltr"] .cart-actions button,
-[dir="ltr"] .cart-actions .btn,
-[dir="ltr"] .cart-buttons button,
-[dir="ltr"] .cart-buttons .btn,
-[dir="ltr"] .cart-item button,
-[dir="ltr"] .cart-item .btn,
-[dir="ltr"] .cart-summary button,
-[dir="ltr"] .cart-summary .btn,
-html[dir="ltr"] .cart button,
-html[dir="ltr"] .cart .btn,
-html[dir="ltr"] .cart-btn,
-html[dir="ltr"] .cart-button,
-html[dir="ltr"] .cart a.btn,
-html[dir="ltr"] .cart-section button,
-html[dir="ltr"] .cart-section .btn,
-html[dir="ltr"] .cart-actions button,
-html[dir="ltr"] .cart-actions .btn,
-html[dir="ltr"] .cart-buttons button,
-html[dir="ltr"] .cart-buttons .btn,
-html[dir="ltr"] .cart-item button,
-html[dir="ltr"] .cart-item .btn,
-html[dir="ltr"] .cart-summary button,
-html[dir="ltr"] .cart-summary .btn {
-  direction: ltr !important;
-  justify-content: center !important;
-  text-align: center !important;
-}
 
 /* ================= BANNER CARD BASE LAYOUT ================= */
 .banner-card-box {
@@ -13975,1054 +13681,758 @@ html[data-theme="dark"] .feature-card p,
   color: #a0aec0 !important;
 }
 
-/* RTL */
 
 /* ============================================================
-   RTL ALIGNMENT FIX
-   Add this at the VERY END of css/style.css
-   LTR DESIGN IS NOT MODIFIED
-   ============================================================ */
-
-html[dir="rtl"] {
-  direction: rtl;
-}
-
-html[dir="rtl"] body {
-  direction: rtl;
-  text-align: right;
-}
-
-/* ---------- Global Box Alignment ---------- */
-
-html[dir="rtl"] .container {
-  direction: rtl;
-}
-
-html[dir="rtl"] section,
-html[dir="rtl"] .section {
-  direction: rtl;
-}
-
-/* ---------- Navbar ---------- */
-
-html[dir="rtl"] .nav-inner {
-  direction: rtl;
-}
-
-html[dir="rtl"] .nav-logo {
-  direction: rtl;
-}
-
-html[dir="rtl"] .nav-links {
-  direction: rtl;
-}
-
-html[dir="rtl"] .nav-cta {
-  direction: rtl;
-}
-
-html[dir="rtl"] .nav-dropdown {
-  direction: rtl;
-}
-
-html[dir="rtl"] .nav-dropdown-menu {
-  direction: rtl;
-  left: auto;
-  right: 50%;
-  transform: translateX(50%) translateY(8px);
-}
-
-html[dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu {
-  transform: translateX(50%) translateY(0);
-}
-
-/* ---------- Navbar Mobile ---------- */
-
-@media (max-width: 992px) {
-
-  html[dir="rtl"] .nav-links {
-    left: auto;
-    right: -100%;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-  }
-
-  html[dir="rtl"] .nav-links.active {
-    left: auto;
-    right: 0;
-  }
-
-  html[dir="rtl"] .nav-inner {
-    direction: rtl;
-  }
-
-  html[dir="rtl"] .nav-hamburger {
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-  }
-}
-
-/* ---------- Hero ---------- */
-
-html[dir="rtl"] .hero {
-  direction: rtl;
-}
-
-html[dir="rtl"] .hero-content {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .hero-content-inner {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .hero-home2-btns {
-  direction: rtl;
-}
-
-html[dir="rtl"] .btn-group {
-  direction: rtl;
-}
-
-/* ---------- Buttons ---------- */
-
-html[dir="rtl"] .btn-primary,
-html[dir="rtl"] .btn-secondary,
-html[dir="rtl"] .btn-nav,
-html[dir="rtl"] .btn-claim {
-  direction: rtl;
-}
-
-/* ---------- Cards ---------- */
-
-html[dir="rtl"] .cake-card,
-html[dir="rtl"] .feature-card,
-html[dir="rtl"] .cat-circle-card,
-html[dir="rtl"] .flavor-card {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .cake-card-body,
-html[dir="rtl"] .cake-card-footer {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .cake-card-rating {
-  direction: rtl;
-}
-
-html[dir="rtl"] .cake-grid,
-html[dir="rtl"] .cakes-grid,
-html[dir="rtl"] .feature-grid,
-html[dir="rtl"] .features-grid,
-html[dir="rtl"] .flavor-grid,
-html[dir="rtl"] .cat-circle-grid {
-  direction: rtl;
-}
-
-/* ---------- Category / Feature Icons ---------- */
-
-html[dir="rtl"] .feature-icon,
-html[dir="rtl"] .flavor-icon,
-html[dir="rtl"] .heart-icon-box {
-  direction: rtl;
-}
-
-/* ---------- Filter Bar ---------- */
-
-html[dir="rtl"] .filter-bar {
-  direction: rtl;
-}
-
-html[dir="rtl"] .filter-btn {
-  direction: rtl;
-}
-
-/* ---------- Forms ---------- */
-
-html[dir="rtl"] form {
-  direction: rtl;
-}
-
-html[dir="rtl"] .form-control {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] input,
-html[dir="rtl"] textarea,
-html[dir="rtl"] select {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] input::placeholder,
-html[dir="rtl"] textarea::placeholder {
-  text-align: right;
-}
-
-/* ---------- FAQ ---------- */
-
-html[dir="rtl"] .faq-list,
-html[dir="rtl"] .faq-item,
-html[dir="rtl"] .faq-question,
-html[dir="rtl"] .faq-answer {
-  direction: rtl;
-  text-align: right;
-}
-
-
-/* ---------- CTA ---------- */
-
-html[dir="rtl"] .cta-section,
-html[dir="rtl"] .cta-content {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .cta-btn-group {
-  direction: rtl;
-}
-
-/* ---------- Footer ---------- */
-
-html[dir="rtl"] .footer {
-  direction: rtl;
-}
-
-html[dir="rtl"] .footer-grid {
-  direction: rtl;
-}
-
-html[dir="rtl"] .footer-col,
-html[dir="rtl"] .footer-brand {
-  direction: rtl;
-  text-align: right;
-}
-
-html[dir="rtl"] .footer-social-links {
-  direction: rtl;
-}
-
-html[dir="rtl"] .footer-bottom {
-  direction: rtl;
-}
-
-/* ---------- Lists ---------- */
-
-html[dir="rtl"] ul,
-html[dir="rtl"] ol {
-  padding-right: 0;
-}
-
-/* ---------- Text Alignment Helpers ---------- */
-
-html[dir="rtl"] .text-left {
-  text-align: right !important;
-}
-
-html[dir="rtl"] .text-right {
-  text-align: left !important;
-}
-
-/* ---------- Direction-safe spacing ---------- */
-
-html[dir="rtl"] [class*="margin-left"] {
-  margin-left: 0;
-}
-
-html[dir="rtl"] [class*="margin-right"] {
-  margin-right: 0;
-}
-
-/* ---------- Icons / Arrows ---------- */
-
-html[dir="rtl"] .arrow,
-html[dir="rtl"] .lucide-arrow-right {
-  transform: scaleX(-1);
-}
-
-/* ---------- RTL Mobile ---------- */
-
-@media (max-width: 768px) {
-
-  html[dir="rtl"] .hero-content,
-  html[dir="rtl"] .hero-content-inner {
-    text-align: right;
-  }
-
-  html[dir="rtl"] .btn-group,
-  html[dir="rtl"] .hero-home2-btns,
-  html[dir="rtl"] .cta-btn-group {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  html[dir="rtl"] .btn-group>*,
-  html[dir="rtl"] .hero-home2-btns>*,
-  html[dir="rtl"] .cta-btn-group>* {
-    width: 100%;
-  }
-
-  html[dir="rtl"] .footer-col {
-    text-align: right;
-  }
-}
-
-  /* ============================================================
    COMPLETE RTL ALIGNMENT FIX (SCOPED STRICTLY TO [dir="rtl"])
    ============================================================ */
 
-  /* 1. Global Document & Layout Reset */
-  [dir="rtl"],
-  html[dir="rtl"],
-  body[dir="rtl"],
-  html[dir="rtl"] body {
-    direction: rtl !important;
-    text-align: right !important;
-  }
+/* 1. Global Document & Layout Reset */
+[dir="rtl"],
+html[dir="rtl"],
+body[dir="rtl"],
+html[dir="rtl"] body {
+  direction: rtl !important;
+  text-align: right !important;
+}
 
-  [dir="rtl"] main,
-  [dir="rtl"] header,
-  [dir="rtl"] section,
-  [dir="rtl"] article,
-  [dir="rtl"] aside,
-  [dir="rtl"] .section,
-  [dir="rtl"] .container {
-    direction: rtl !important;
-  }
+[dir="rtl"] main,
+[dir="rtl"] header,
+[dir="rtl"] section,
+[dir="rtl"] article,
+[dir="rtl"] aside,
+[dir="rtl"] .section,
+[dir="rtl"] .container {
+  direction: rtl !important;
+}
 
-  /* Bi-directional Text Safety for LTR entities (Phone, Email, Currency, Brands) */
-  [dir="rtl"] a[href^="tel:"],
-  [dir="rtl"] a[href^="mailto:"],
-  [dir="rtl"] .phone-number,
-  [dir="rtl"] .contact-phone,
-  [dir="rtl"] .contact-email,
-  [dir="rtl"] .brand-name,
-  [dir="rtl"] .logo-text,
-  [dir="rtl"] .navbar-brand,
-  [dir="rtl"] .price-box,
-  [dir="rtl"] .price-tag,
-  [dir="rtl"] .cake-price,
-  [dir="rtl"] .rating-count,
-  [dir="rtl"] .stars,
-  [dir="rtl"] .testi-stars {
-    direction: ltr !important;
-    unicode-bidi: embed !important;
-    display: inline-flex !important;
-  }
+/* Bi-directional Text Safety for LTR entities (Phone, Email, Currency, Brands) */
+[dir="rtl"] a[href^="tel:"],
+[dir="rtl"] a[href^="mailto:"],
+[dir="rtl"] .phone-number,
+[dir="rtl"] .contact-phone,
+[dir="rtl"] .contact-email,
+[dir="rtl"] .brand-name,
+[dir="rtl"] .logo-text,
+[dir="rtl"] .navbar-brand,
+[dir="rtl"] .price-box,
+[dir="rtl"] .price-tag,
+[dir="rtl"] .cake-price,
+[dir="rtl"] .rating-count,
+[dir="rtl"] .stars,
+[dir="rtl"] .testi-stars {
+  direction: ltr !important;
+  unicode-bidi: embed !important;
+  display: inline-flex !important;
+}
 
-  /* 2. Navbar & Header */
-  [dir="rtl"] .navbar {
-    direction: rtl !important;
-  }
+/* 2. Navbar & Header */
+[dir="rtl"] .navbar {
+  direction: rtl !important;
+}
 
+[dir="rtl"] .nav-inner {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+[dir="rtl"] .nav-logo {
+  direction: rtl !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .nav-links {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+[dir="rtl"] .nav-links>li {
+  list-style: none !important;
+  display: inline-flex !important;
+}
+
+[dir="rtl"] .nav-links a {
+  text-align: right !important;
+}
+
+[dir="rtl"] .nav-dropdown {
+  position: relative !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .nav-dropdown-menu {
+  direction: rtl !important;
+  text-align: right !important;
+  left: auto !important;
+  right: 50% !important;
+  transform: translateX(50%) translateY(8px) !important;
+}
+
+[dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu,
+[dir="rtl"] .nav-dropdown:focus-within .nav-dropdown-menu {
+  transform: translateX(50%) translateY(0) !important;
+}
+
+[dir="rtl"] .nav-dropdown-menu a {
+  text-align: right !important;
+  justify-content: flex-start !important;
+  padding: 9px 14px !important;
+}
+
+[dir="rtl"] .nav-cta {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+/* 3. Hero Sections */
+[dir="rtl"] .hero,
+[dir="rtl"] .page-hero,
+[dir="rtl"] .hero-home2 {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .hero-content,
+[dir="rtl"] .page-hero-content,
+[dir="rtl"] .hero-home2-content,
+[dir="rtl"] .hero-home2-text,
+[dir="rtl"] .hero-content-inner {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .hero-home2-text {
+  text-align: right !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .hero-home2-h1,
+[dir="rtl"] .hero-home2-desc,
+[dir="rtl"] .hero-home2-badge,
+[dir="rtl"] .hero-badge-pill {
+  text-align: right !important;
+}
+
+[dir="rtl"] .hero-home2-btns,
+[dir="rtl"] .hero .btn-group,
+[dir="rtl"] .page-hero .btn-group {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .breadcrumb,
+[dir="rtl"] .hero-breadcrumb {
+  direction: rtl !important;
+  text-align: right !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+}
+
+/* 4. Cards & Grid Systems */
+[dir="rtl"] .cake-grid,
+[dir="rtl"] .cakes-grid,
+[dir="rtl"] .cakes-container,
+[dir="rtl"] .feature-grid,
+[dir="rtl"] .features-grid,
+[dir="rtl"] .testimonial-grid,
+[dir="rtl"] .testimonials-container,
+[dir="rtl"] .contact-cards-container,
+[dir="rtl"] .packages-grid,
+[dir="rtl"] .cat-circle-grid,
+[dir="rtl"] .flavor-grid,
+[dir="rtl"] .steps-grid,
+[dir="rtl"] .dept-grid,
+[dir="rtl"] .responsive-2col,
+[dir="rtl"] .offers-grid {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .cake-card,
+[dir="rtl"] .feature-card,
+[dir="rtl"] .testimonial-card,
+[dir="rtl"] .service-card,
+[dir="rtl"] .package-card,
+[dir="rtl"] .dept-card,
+[dir="rtl"] .contact-card,
+[dir="rtl"] .why-us-card,
+[dir="rtl"] .step-card,
+[dir="rtl"] .flavor-card,
+[dir="rtl"] .cat-circle-card,
+[dir="rtl"] .team-card,
+[dir="rtl"] .outlet-card,
+[dir="rtl"] .offer-card,
+[dir="rtl"] .special-card {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .cake-card-body,
+[dir="rtl"] .feature-card-body,
+[dir="rtl"] .testimonial-card-body,
+[dir="rtl"] .service-card-body,
+[dir="rtl"] .collection-card-body,
+[dir="rtl"] .team-card-body {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .cake-card-body h3,
+[dir="rtl"] .cake-card-body h4,
+[dir="rtl"] .cake-card-body p,
+[dir="rtl"] .feature-card h3,
+[dir="rtl"] .feature-card p,
+[dir="rtl"] .service-card-body h3,
+[dir="rtl"] .service-card-body p,
+[dir="rtl"] .dept-card h4,
+[dir="rtl"] .dept-card p,
+[dir="rtl"] .step-card h4,
+[dir="rtl"] .step-card p,
+[dir="rtl"] .cake-category,
+[dir="rtl"] .cake-title,
+[dir="rtl"] .cake-desc {
+  text-align: right !important;
+}
+
+/* Card badges & discount stickers */
+[dir="rtl"] .cake-card-badge,
+[dir="rtl"] .card-badge,
+[dir="rtl"] .newsletter-badge,
+[dir="rtl"] .offer-badge {
+  left: auto !important;
+  right: 12px !important;
+}
+
+[dir="rtl"] .newsletter-badge {
+  right: 15px !important;
+}
+
+/* Card Footers */
+[dir="rtl"] .cake-card-footer,
+[dir="rtl"] .card-footer,
+[dir="rtl"] .offer-card-footer {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* Card Lists & Checkmarks */
+[dir="rtl"] .cake-card ul,
+[dir="rtl"] .package-card ul,
+[dir="rtl"] .sidebar-widget ul,
+[dir="rtl"] .value-list {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 0 20px 0 !important;
+  list-style: none !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .cake-card ul li,
+[dir="rtl"] .package-card ul li,
+[dir="rtl"] .sidebar-widget ul li,
+[dir="rtl"] .value-list li {
+  text-align: right !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  justify-content: flex-start !important;
+}
+
+/* Specific Card Accent Borders */
+[dir="rtl"] .dept-card {
+  border-left: none !important;
+  border-right: 4px solid var(--pink-dark) !important;
+}
+
+[dir="rtl"] .dept-card:hover {
+  transform: translateX(-6px) !important;
+}
+
+[dir="rtl"] .testimonial-card::after {
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .testimonial-card::before {
+  left: auto !important;
+  right: 16px !important;
+}
+
+[dir="rtl"] .testi-author,
+[dir="rtl"] .testimonial-author {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .testi-info,
+[dir="rtl"] .author-info {
+  text-align: right !important;
+}
+
+/* Timeline & Steps */
+[dir="rtl"] .timeline {
+  padding-left: 0 !important;
+  padding-right: 32px !important;
+}
+
+[dir="rtl"] .timeline::before {
+  left: auto !important;
+  right: 12px !important;
+}
+
+[dir="rtl"] .timeline-item::before {
+  left: auto !important;
+  right: -26px !important;
+}
+
+/* 5. Forms & Inputs */
+[dir="rtl"] form,
+[dir="rtl"] .form-group,
+[dir="rtl"] .form-row,
+[dir="rtl"] .form-col {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] label,
+[dir="rtl"] .form-label,
+[dir="rtl"] .form-group label {
+  display: block !important;
+  text-align: right !important;
+  margin-bottom: 8px !important;
+}
+
+[dir="rtl"] input,
+[dir="rtl"] textarea,
+[dir="rtl"] select,
+[dir="rtl"] .form-control,
+[dir="rtl"] .newsletter-input {
+  direction: rtl !important;
+  text-align: right !important;
+  box-sizing: border-box !important;
+}
+
+[dir="rtl"] input::placeholder,
+[dir="rtl"] textarea::placeholder,
+[dir="rtl"] .form-control::placeholder,
+[dir="rtl"] .newsletter-input::placeholder {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] select.form-control {
+  background-position: left 16px center !important;
+  padding-right: 18px !important;
+  padding-left: 40px !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .form-check,
+[dir="rtl"] .form-radio {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] input[type="checkbox"],
+[dir="rtl"] input[type="radio"] {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .newsletter-form {
+  direction: rtl !important;
+  display: flex !important;
+  gap: 10px !important;
+}
+
+[dir="rtl"] .newsletter-strip {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .newsletter-content {
+  text-align: right !important;
+}
+
+[dir="rtl"] .newsletter-title,
+[dir="rtl"] .newsletter-desc {
+  text-align: right !important;
+}
+
+[dir="rtl"] .size-cards {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .size-card {
+  text-align: center !important;
+}
+
+[dir="rtl"] .filter-bar {
+  direction: rtl !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: center !important;
+}
+
+/* 6. Dropdowns, Accordions & FAQs */
+[dir="rtl"] .faq-list,
+[dir="rtl"] .faq-item,
+[dir="rtl"] .faq-answer {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .faq-question {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .faq-question span,
+[dir="rtl"] .faq-question h4 {
+  text-align: right !important;
+}
+
+[dir="rtl"] .faq-chevron,
+[dir="rtl"] .faq-icon,
+[dir="rtl"] .faq-question svg,
+[dir="rtl"] .faq-question i {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+[dir="rtl"] .custom-select,
+[dir="rtl"] .dropdown-submenu,
+[dir="rtl"] .mobile-dropdown {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* 7. Footer */
+[dir="rtl"] .footer,
+[dir="rtl"] .footer-grid {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-col,
+[dir="rtl"] .footer-brand {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-brand .logo-text {
+  justify-content: flex-start !important;
+}
+
+[dir="rtl"] .footer-brand p,
+[dir="rtl"] .brand-desc {
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-social-links,
+[dir="rtl"] .footer-socials {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  gap: 12px !important;
+  direction: rtl !important;
+}
+
+[dir="rtl"] .footer-col h5 {
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-col ul {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-col ul li {
+  text-align: right !important;
+  margin-bottom: 10px !important;
+}
+
+[dir="rtl"] .footer-col ul li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  text-align: right !important;
+  justify-content: flex-start !important;
+}
+
+[dir="rtl"] .footer-col ul li a:hover {
+  padding-left: 0 !important;
+  padding-right: 4px !important;
+}
+
+[dir="rtl"] .footer-col ul li a::before {
+  content: "←" !important;
+  margin-left: 4px !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .hours-list li {
+  display: flex !important;
+  justify-content: space-between !important;
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] .footer-contact-info {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  align-items: flex-start !important;
+}
+
+[dir="rtl"] .footer-contact-info .contact-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  justify-content: flex-start !important;
+  direction: ltr !important;
+}
+
+[dir="rtl"] .footer-bottom {
+  direction: rtl !important;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  text-align: right !important;
+}
+
+/* 8. Directional Icons, Arrows & Utilities */
+[dir="rtl"] .arrow,
+[dir="rtl"] .order-btn .arrow,
+[dir="rtl"] .lucide-arrow-right,
+[dir="rtl"] i[data-lucide="arrow-right"],
+[dir="rtl"] .lucide-chevron-right,
+[dir="rtl"] i[data-lucide="chevron-right"] {
+  display: inline-block !important;
+  transform: scaleX(-1) !important;
+}
+
+[dir="rtl"] .lucide-arrow-left,
+[dir="rtl"] i[data-lucide="arrow-left"],
+[dir="rtl"] .lucide-chevron-left,
+[dir="rtl"] i[data-lucide="chevron-left"] {
+  display: inline-block !important;
+  transform: scaleX(-1) !important;
+}
+
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+
+/* 9. Mobile Layout & Responsive */
+@media (max-width: 992px) {
   [dir="rtl"] .nav-inner {
     direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
     justify-content: space-between !important;
-  }
-
-  [dir="rtl"] .nav-logo {
-    direction: rtl !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
   }
 
   [dir="rtl"] .nav-links {
-    direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
-  }
-
-  [dir="rtl"] .nav-links>li {
-    list-style: none !important;
-    display: inline-flex !important;
-  }
-
-  [dir="rtl"] .nav-links a {
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .nav-dropdown {
-    position: relative !important;
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .nav-dropdown-menu {
-    direction: rtl !important;
-    text-align: right !important;
     left: auto !important;
-    right: 50% !important;
-    transform: translateX(50%) translateY(8px) !important;
-  }
-
-  [dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu,
-  [dir="rtl"] .nav-dropdown:focus-within .nav-dropdown-menu {
-    transform: translateX(50%) translateY(0) !important;
-  }
-
-  [dir="rtl"] .nav-dropdown-menu a {
-    text-align: right !important;
-    justify-content: flex-start !important;
-    padding: 9px 14px !important;
-  }
-
-  [dir="rtl"] .nav-cta {
-    direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 10px !important;
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-
-  /* 3. Hero Sections */
-  [dir="rtl"] .hero,
-  [dir="rtl"] .page-hero,
-  [dir="rtl"] .hero-home2 {
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .hero-content,
-  [dir="rtl"] .page-hero-content,
-  [dir="rtl"] .hero-home2-content,
-  [dir="rtl"] .hero-home2-text,
-  [dir="rtl"] .hero-content-inner {
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .hero-home2-text {
-    text-align: right !important;
-    margin-left: auto !important;
-    margin-right: 0 !important;
-  }
-
-  [dir="rtl"] .hero-home2-h1,
-  [dir="rtl"] .hero-home2-desc,
-  [dir="rtl"] .hero-home2-badge,
-  [dir="rtl"] .hero-badge-pill {
+    right: -100% !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
     text-align: right !important;
   }
 
-  [dir="rtl"] .hero-home2-btns,
-  [dir="rtl"] .hero .btn-group,
-  [dir="rtl"] .page-hero .btn-group {
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .breadcrumb,
-  [dir="rtl"] .hero-breadcrumb {
-    direction: rtl !important;
-    text-align: right !important;
-    display: flex !important;
-    justify-content: flex-start !important;
-    gap: 8px !important;
-  }
-
-  /* 4. Cards & Grid Systems */
-  [dir="rtl"] .cake-grid,
-  [dir="rtl"] .cakes-grid,
-  [dir="rtl"] .cakes-container,
-  [dir="rtl"] .feature-grid,
-  [dir="rtl"] .features-grid,
-  [dir="rtl"] .testimonial-grid,
-  [dir="rtl"] .testimonials-container,
-  [dir="rtl"] .contact-cards-container,
-  [dir="rtl"] .packages-grid,
-  [dir="rtl"] .cat-circle-grid,
-  [dir="rtl"] .flavor-grid,
-  [dir="rtl"] .steps-grid,
-  [dir="rtl"] .dept-grid,
-  [dir="rtl"] .responsive-2col,
-  [dir="rtl"] .offers-grid {
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .cake-card,
-  [dir="rtl"] .feature-card,
-  [dir="rtl"] .testimonial-card,
-  [dir="rtl"] .service-card,
-  [dir="rtl"] .package-card,
-  [dir="rtl"] .dept-card,
-  [dir="rtl"] .contact-card,
-  [dir="rtl"] .why-us-card,
-  [dir="rtl"] .step-card,
-  [dir="rtl"] .flavor-card,
-  [dir="rtl"] .cat-circle-card,
-  [dir="rtl"] .team-card,
-  [dir="rtl"] .outlet-card,
-  [dir="rtl"] .offer-card,
-  [dir="rtl"] .special-card {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .cake-card-body,
-  [dir="rtl"] .feature-card-body,
-  [dir="rtl"] .testimonial-card-body,
-  [dir="rtl"] .service-card-body,
-  [dir="rtl"] .collection-card-body,
-  [dir="rtl"] .team-card-body {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .cake-card-body h3,
-  [dir="rtl"] .cake-card-body h4,
-  [dir="rtl"] .cake-card-body p,
-  [dir="rtl"] .feature-card h3,
-  [dir="rtl"] .feature-card p,
-  [dir="rtl"] .service-card-body h3,
-  [dir="rtl"] .service-card-body p,
-  [dir="rtl"] .dept-card h4,
-  [dir="rtl"] .dept-card p,
-  [dir="rtl"] .step-card h4,
-  [dir="rtl"] .step-card p,
-  [dir="rtl"] .cake-category,
-  [dir="rtl"] .cake-title,
-  [dir="rtl"] .cake-desc {
-    text-align: right !important;
-  }
-
-  /* Card badges & discount stickers */
-  [dir="rtl"] .cake-card-badge,
-  [dir="rtl"] .card-badge,
-  [dir="rtl"] .newsletter-badge,
-  [dir="rtl"] .offer-badge {
-    left: auto !important;
-    right: 12px !important;
-  }
-
-  [dir="rtl"] .newsletter-badge {
-    right: 15px !important;
-  }
-
-  /* Card Footers */
-  [dir="rtl"] .cake-card-footer,
-  [dir="rtl"] .card-footer,
-  [dir="rtl"] .offer-card-footer {
-    direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    width: 100% !important;
-  }
-
-  /* Card Lists & Checkmarks */
-  [dir="rtl"] .cake-card ul,
-  [dir="rtl"] .package-card ul,
-  [dir="rtl"] .sidebar-widget ul,
-  [dir="rtl"] .value-list {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin: 0 0 20px 0 !important;
-    list-style: none !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .cake-card ul li,
-  [dir="rtl"] .package-card ul li,
-  [dir="rtl"] .sidebar-widget ul li,
-  [dir="rtl"] .value-list li {
-    text-align: right !important;
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 8px !important;
-    justify-content: flex-start !important;
-  }
-
-  /* Specific Card Accent Borders */
-  [dir="rtl"] .dept-card {
-    border-left: none !important;
-    border-right: 4px solid var(--pink-dark) !important;
-  }
-
-  [dir="rtl"] .dept-card:hover {
-    transform: translateX(-6px) !important;
-  }
-
-  [dir="rtl"] .testimonial-card::after {
+  [dir="rtl"] .nav-links.active {
     left: auto !important;
     right: 0 !important;
   }
 
-  [dir="rtl"] .testimonial-card::before {
-    left: auto !important;
-    right: 16px !important;
+  [dir="rtl"] .nav-cta {
+    margin-right: auto !important;
+    margin-left: 0 !important;
   }
 
-  [dir="rtl"] .testi-author,
-  [dir="rtl"] .testimonial-author {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 12px !important;
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .testi-info,
-  [dir="rtl"] .author-info {
-    text-align: right !important;
-  }
-
-  /* Timeline & Steps */
-  [dir="rtl"] .timeline {
-    padding-left: 0 !important;
-    padding-right: 32px !important;
-  }
-
-  [dir="rtl"] .timeline::before {
-    left: auto !important;
-    right: 12px !important;
-  }
-
-  [dir="rtl"] .timeline-item::before {
-    left: auto !important;
-    right: -26px !important;
-  }
-
-  /* 5. Forms & Inputs */
-  [dir="rtl"] form,
-  [dir="rtl"] .form-group,
-  [dir="rtl"] .form-row,
-  [dir="rtl"] .form-col {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] label,
-  [dir="rtl"] .form-label,
-  [dir="rtl"] .form-group label {
-    display: block !important;
-    text-align: right !important;
-    margin-bottom: 8px !important;
-  }
-
-  [dir="rtl"] input,
-  [dir="rtl"] textarea,
-  [dir="rtl"] select,
-  [dir="rtl"] .form-control,
-  [dir="rtl"] .newsletter-input {
-    direction: rtl !important;
-    text-align: right !important;
-    box-sizing: border-box !important;
-  }
-
-  [dir="rtl"] input::placeholder,
-  [dir="rtl"] textarea::placeholder,
-  [dir="rtl"] .form-control::placeholder,
-  [dir="rtl"] .newsletter-input::placeholder {
-    text-align: right !important;
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] select.form-control {
-    background-position: left 16px center !important;
-    padding-right: 18px !important;
-    padding-left: 40px !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .form-check,
-  [dir="rtl"] .form-radio {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] input[type="checkbox"],
-  [dir="rtl"] input[type="radio"] {
-    margin-left: 8px !important;
+  [dir="rtl"] .nav-hamburger {
+    margin-left: 0 !important;
     margin-right: 0 !important;
   }
 
-  [dir="rtl"] .newsletter-form {
-    direction: rtl !important;
-    display: flex !important;
-    gap: 10px !important;
+  [dir="rtl"] .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 32px !important;
   }
+}
 
-  [dir="rtl"] .newsletter-strip {
+@media (max-width: 768px) {
+  [dir="rtl"] .mobile-menu {
     direction: rtl !important;
     text-align: right !important;
   }
 
-  [dir="rtl"] .newsletter-content {
+  [dir="rtl"] .mobile-menu a {
     text-align: right !important;
-  }
-
-  [dir="rtl"] .newsletter-title,
-  [dir="rtl"] .newsletter-desc {
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .size-cards {
+    justify-content: flex-start !important;
     direction: rtl !important;
   }
 
-  [dir="rtl"] .size-card {
+  [dir="rtl"] .mobile-menu-nav .dropdown-toggle {
+    text-align: right !important;
+    justify-content: space-between !important;
+    direction: rtl !important;
+  }
+
+  [dir="rtl"] .mobile-dropdown {
+    width: 100% !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .dropdown-submenu {
+    text-align: right !important;
+    direction: rtl !important;
+  }
+
+  [dir="rtl"] .hero-content-inner,
+  [dir="rtl"] .hero-home2-text,
+  [dir="rtl"] .page-hero-content {
     text-align: center !important;
   }
 
-  [dir="rtl"] .filter-bar {
-    direction: rtl !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
+  [dir="rtl"] .btn-group,
+  [dir="rtl"] .hero-home2-btns,
+  [dir="rtl"] .cta-btn-group {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+  }
+
+  [dir="rtl"] .btn-group>*,
+  [dir="rtl"] .hero-home2-btns>*,
+  [dir="rtl"] .cta-btn-group>* {
+    width: 100% !important;
+    text-align: center !important;
     justify-content: center !important;
   }
 
-  /* 6. Dropdowns, Accordions & FAQs */
-  [dir="rtl"] .faq-list,
-  [dir="rtl"] .faq-item,
-  [dir="rtl"] .faq-answer {
-    direction: rtl !important;
-    text-align: right !important;
+  [dir="rtl"] .cake-card,
+  [dir="rtl"] .feature-card,
+  [dir="rtl"] .testimonial-card {
+    width: 100% !important;
+    max-width: 100% !important;
   }
 
-  [dir="rtl"] .faq-question {
-    direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .faq-question span,
-  [dir="rtl"] .faq-question h4 {
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .faq-chevron,
-  [dir="rtl"] .faq-icon,
-  [dir="rtl"] .faq-question svg,
-  [dir="rtl"] .faq-question i {
-    margin-left: 0 !important;
-    margin-right: auto !important;
-  }
-
-  [dir="rtl"] .custom-select,
-  [dir="rtl"] .dropdown-submenu,
-  [dir="rtl"] .mobile-dropdown {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  /* 7. Footer */
-  [dir="rtl"] .footer,
-  [dir="rtl"] .footer-grid {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-col,
-  [dir="rtl"] .footer-brand {
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-brand .logo-text {
-    justify-content: flex-start !important;
-  }
-
-  [dir="rtl"] .footer-brand p,
-  [dir="rtl"] .brand-desc {
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-social-links,
-  [dir="rtl"] .footer-socials {
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: flex-start !important;
-    gap: 12px !important;
-    direction: rtl !important;
-  }
-
-  [dir="rtl"] .footer-col h5 {
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-col ul {
-    padding-right: 0 !important;
-    padding-left: 0 !important;
-    margin: 0 !important;
-    list-style: none !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-col ul li {
-    text-align: right !important;
-    margin-bottom: 10px !important;
-  }
-
-  [dir="rtl"] .footer-col ul li a {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    text-align: right !important;
-    justify-content: flex-start !important;
-  }
-
-  [dir="rtl"] .footer-col ul li a:hover {
-    padding-left: 0 !important;
-    padding-right: 4px !important;
-  }
-
-  [dir="rtl"] .footer-col ul li a::before {
-    content: "←" !important;
-    margin-left: 4px !important;
-    margin-right: 0 !important;
-  }
-
-  [dir="rtl"] .hours-list li {
-    display: flex !important;
-    justify-content: space-between !important;
-    direction: rtl !important;
-    text-align: right !important;
-  }
-
-  [dir="rtl"] .footer-contact-info {
-    display: flex !important;
+  [dir="rtl"] .offer-card-footer {
     flex-direction: column !important;
+    align-items: stretch !important;
     gap: 8px !important;
-    align-items: flex-start !important;
   }
 
-  [dir="rtl"] .footer-contact-info .contact-item {
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-    justify-content: flex-start !important;
-    direction: ltr !important;
+  [dir="rtl"] .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  [dir="rtl"] .newsletter-input,
+  [dir="rtl"] .newsletter-btn {
+    width: 100% !important;
+  }
+
+  [dir="rtl"] .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+    text-align: right !important;
+  }
+
+  [dir="rtl"] .footer-col {
+    text-align: right !important;
   }
 
   [dir="rtl"] .footer-bottom {
-    direction: rtl !important;
-    display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    text-align: right !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    text-align: center !important;
   }
+}
 
-  /* 8. Directional Icons, Arrows & Utilities */
-  [dir="rtl"] .arrow,
-  [dir="rtl"] .order-btn .arrow,
-  [dir="rtl"] .lucide-arrow-right,
-  [dir="rtl"] i[data-lucide="arrow-right"],
-  [dir="rtl"] .lucide-chevron-right,
-  [dir="rtl"] i[data-lucide="chevron-right"] {
-    display: inline-block !important;
-    transform: scaleX(-1) !important;
-  }
+/* Light Theme Default */
+.about-card-box {
+  background-color: #ffffff !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-  [dir="rtl"] .lucide-arrow-left,
-  [dir="rtl"] i[data-lucide="arrow-left"],
-  [dir="rtl"] .lucide-chevron-left,
-  [dir="rtl"] i[data-lucide="chevron-left"] {
-    display: inline-block !important;
-    transform: scaleX(-1) !important;
-  }
+.about-card-heading {
+  color: #1a202c !important;
+}
 
-  [dir="rtl"] .text-left {
-    text-align: right !important;
-  }
+.about-card-text {
+  color: #475569 !important;
+}
 
-  [dir="rtl"] .text-right {
-    text-align: left !important;
-  }
+/* ================= DARK MODE OVERRIDES (FULL BLACK/DARK BG) ================= */
+/* All possible dark mode selectors included */
+body.dark-mode .about-card-box,
+body.dark .about-card-box,
+[data-theme="dark"] .about-card-box,
+html[data-theme="dark"] .about-card-box,
+:root[data-theme="dark"] .about-card-box {
+  background-color: #0d1117 !important;
+  /* Pure Dark / Black Background */
+  border: 1px solid rgba(255, 121, 161, 0.4) !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
+}
 
-  /* 9. Mobile Layout & Responsive */
-  @media (max-width: 992px) {
-    [dir="rtl"] .nav-inner {
-      direction: rtl !important;
-      justify-content: space-between !important;
-    }
+body.dark-mode .about-card-heading,
+body.dark .about-card-heading,
+[data-theme="dark"] .about-card-heading,
+html[data-theme="dark"] .about-card-heading {
+  color: #ffffff !important;
+  /* Pure White Heading */
+}
 
-    [dir="rtl"] .nav-links {
-      left: auto !important;
-      right: -100% !important;
-      flex-direction: column !important;
-      align-items: flex-end !important;
-      text-align: right !important;
-    }
+body.dark-mode .about-card-text,
+body.dark .about-card-text,
+[data-theme="dark"] .about-card-text,
+html[data-theme="dark"] .about-card-text {
+  color: #e2e8f0 !important;
+  /* Light Grey Body Text */
+}
 
-    [dir="rtl"] .nav-links.active {
-      left: auto !important;
-      right: 0 !important;
-    }
 
-    [dir="rtl"] .nav-cta {
-      margin-right: auto !important;
-      margin-left: 0 !important;
-    }
-
-    [dir="rtl"] .nav-hamburger {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
-
-    [dir="rtl"] .footer-grid {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 32px !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-    [dir="rtl"] .mobile-menu {
-      direction: rtl !important;
-      text-align: right !important;
-    }
-
-    [dir="rtl"] .mobile-menu a {
-      text-align: right !important;
-      justify-content: flex-start !important;
-      direction: rtl !important;
-    }
-
-    [dir="rtl"] .mobile-menu-nav .dropdown-toggle {
-      text-align: right !important;
-      justify-content: space-between !important;
-      direction: rtl !important;
-    }
-
-    [dir="rtl"] .mobile-dropdown {
-      width: 100% !important;
-      text-align: right !important;
-    }
-
-    [dir="rtl"] .dropdown-submenu {
-      text-align: right !important;
-      direction: rtl !important;
-    }
-
-    [dir="rtl"] .hero-content-inner,
-    [dir="rtl"] .hero-home2-text,
-    [dir="rtl"] .page-hero-content {
-      text-align: center !important;
-    }
-
-    [dir="rtl"] .btn-group,
-    [dir="rtl"] .hero-home2-btns,
-    [dir="rtl"] .cta-btn-group {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      width: 100% !important;
-    }
-
-    [dir="rtl"] .btn-group>*,
-    [dir="rtl"] .hero-home2-btns>*,
-    [dir="rtl"] .cta-btn-group>* {
-      width: 100% !important;
-      text-align: center !important;
-      justify-content: center !important;
-    }
-
-    [dir="rtl"] .cake-card,
-    [dir="rtl"] .feature-card,
-    [dir="rtl"] .testimonial-card {
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-
-    [dir="rtl"] .offer-card-footer {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 8px !important;
-    }
-
-    [dir="rtl"] .newsletter-form {
-      flex-direction: column !important;
-      width: 100% !important;
-    }
-
-    [dir="rtl"] .newsletter-input,
-    [dir="rtl"] .newsletter-btn {
-      width: 100% !important;
-    }
-
-    [dir="rtl"] .footer-grid {
-      grid-template-columns: 1fr !important;
-      gap: 24px !important;
-      text-align: right !important;
-    }
-
-    [dir="rtl"] .footer-col {
-      text-align: right !important;
-    }
-
-    [dir="rtl"] .footer-bottom {
-      flex-direction: column !important;
-      gap: 10px !important;
-      text-align: center !important;
-    }
-  }
-
-  /* Light Theme Default */
-  .about-card-box {
-    background-color: #ffffff !important;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-
-  .about-card-heading {
-    color: #1a202c !important;
-  }
-
-  .about-card-text {
-    color: #475569 !important;
-  }
-
-  /* ================= DARK MODE OVERRIDES (FULL BLACK/DARK BG) ================= */
-  /* All possible dark mode selectors included */
-  body.dark-mode .about-card-box,
-  body.dark .about-card-box,
-  [data-theme="dark"] .about-card-box,
-  html[data-theme="dark"] .about-card-box,
-  :root[data-theme="dark"] .about-card-box {
-    background-color: #0d1117 !important;
-    /* Pure Dark / Black Background */
-    border: 1px solid rgba(255, 121, 161, 0.4) !important;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5) !important;
-  }
-
-  body.dark-mode .about-card-heading,
-  body.dark .about-card-heading,
-  [data-theme="dark"] .about-card-heading,
-  html[data-theme="dark"] .about-card-heading {
-    color: #ffffff !important;
-    /* Pure White Heading */
-  }
-
-  body.dark-mode .about-card-text,
-  body.dark .about-card-text,
-  [data-theme="dark"] .about-card-text,
-  html[data-theme="dark"] .about-card-text {
-    color: #e2e8f0 !important;
-    /* Light Grey Body Text */
-  }
 
 /* =========================================
    RTL/LTR TOGGLE + HERO ALIGNMENT FIX ONLY
@@ -15306,75 +14716,6 @@ html[dir="ltr"] .hero-section {
   vertical-align: middle !important;
 }
 
-
-/* =========================================
-   RTL: KEEP ICONS CENTERED
-   ========================================= */
-
-html[dir="rtl"] .dir-toggle-btn,
-html[dir="rtl"] .theme-toggle-btn {
-  direction: ltr !important;
-}
-
-html[dir="rtl"] .footer-social-links {
-  direction: rtl !important;
-  justify-content: flex-start !important;
-}
-
-html[dir="rtl"] .footer-social-links .social-btn {
-  direction: ltr !important;
-}
-
-
-/* Prevent any global RTL rule from moving icons */
-html[dir="rtl"] .navbar svg,
-html[dir="rtl"] .footer svg,
-html[dir="rtl"] .navbar i,
-html[dir="rtl"] .footer i {
-  transform: none !important;
-}
-
-/* =========================================
-   ORDER NOW BUTTON - LTR / RTL FIX ONLY
-   ========================================= */
-
-/* Keep normal LTR Order Now exactly as existing */
-html[dir="ltr"] .nav-cta .btn-nav {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  direction: ltr !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-}
-
-/* RTL: move Order Now correctly */
-html[dir="rtl"] .nav-cta .btn-nav {
-  direction: rtl !important;
-  text-align: center !important;
-  white-space: nowrap !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-}
-
-/* Keep button content centered in both directions */
-.nav-cta .btn-nav {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  line-height: 1 !important;
-  flex-shrink: 0 !important;
-}
-
-/* Do NOT reverse the button itself */
-html[dir="rtl"] .nav-cta {
-  direction: rtl !important;
-}
-
-/* Toggle icons stay unaffected */
-html[dir="rtl"] .dir-toggle-btn,
-html[dir="rtl"] .theme-toggle-btn {
-  direction: ltr !important;
-}
 
 /* Container Fix for Right Side Buttons */
 .nav-cta {
@@ -17708,19 +17049,21 @@ html[data-theme="dark"] .footer-bottom {
 /* ----------------------------------------------------------------
    END OF THEME & RTL VISIBILITY FIXES
    ---------------------------------------------------------------- */
-   /* ==========================================
+/* ==========================================
    FOOTER LTR & RTL COMPLETE FIX
    ========================================== */
 
 /* 1. Global Box-Sizing & Overflow Fix */
-html, body {
+html,
+body {
   max-width: 100% !important;
   overflow-x: hidden !important;
 }
 
 .footer {
   width: 100% !important;
-  background-color: #1e293b; /* அல்லது உங்கள் footer பின்னணி நிறம் */
+  background-color: #1e293b;
+  /* அல்லது உங்கள் footer பின்னணி நிறம் */
   color: #ffffff;
   padding: 40px 20px 20px 20px;
   box-sizing: border-box;
@@ -17822,7 +17165,8 @@ html, body {
 /* Prevent text overflow and dot displacement */
 [dir="rtl"] .copyright-text,
 [dir="rtl"] .tagline-text {
-  direction: ltr; /* Keeps dates, symbols like © 2026 rendering correctly without broken spaces */
+  direction: ltr;
+  /* Keeps dates, symbols like © 2026 rendering correctly without broken spaces */
   display: inline-block;
 }
 
@@ -17841,12 +17185,13 @@ html, body {
   display: inline-block;
   transform: scaleX(-1);
 }
+
 /* ==========================================
    SECTION HEADER GLOBAL FIX (LTR & RTL)
    ========================================== */
 
 /* Header Container-ஐ நடுவில் வைக்க */
-.section-header, 
+.section-header,
 .section-title-wrapper,
 div:has(> h2:contains("Our Bestselling Cakes")) {
   text-align: center !important;
@@ -17879,7 +17224,8 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
 .section-line,
 .section-header .divider,
 .section-header::after {
-  margin: 10px auto !important; /* கோட்டை சரியாக நடுவில் கொண்டு வரும் */
+  margin: 10px auto !important;
+  /* கோட்டை சரியாக நடுவில் கொண்டு வரும் */
   float: none !important;
   display: block !important;
 }
@@ -17890,7 +17236,8 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
   text-align: center !important;
   max-width: 600px !important;
   margin: 0 auto !important;
-  unicode-bidi: plaintext !important; /* ஆங்கில வாக்கியத்தின் புள்ளி தவறான இடத்திற்குச் செல்வதைத் தடுக்கும் */
+  unicode-bidi: plaintext !important;
+  /* ஆங்கில வாக்கியத்தின் புள்ளி தவறான இடத்திற்குச் செல்வதைத் தடுக்கும் */
 }
 
 
@@ -17901,53 +17248,56 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
 [dir="rtl"] .section-header,
 [dir="rtl"] .section-title,
 [dir="rtl"] .section-desc {
-  text-align: center !important; /* RTL வந்தாலும் Heading நடுவிலேயே இருக்கும் */
+  text-align: center !important;
+  /* RTL வந்தாலும் Heading நடுவிலேயே இருக்கும் */
 }
 
 /* ஆங்கில வாக்கியங்கள் RTL-ல் சிதையாமல் இருக்க */
-[dir="rtl"] p, 
-[dir="rtl"] h1, 
-[dir="rtl"] h2, 
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
 [dir="rtl"] h3 {
   unicode-bidi: plaintext;
 }
 
-  /* LIGHT MODE (Default) */
-  :root {
-    --bg-section: #ffffff;
-    --text-heading: #1a202c;
-    --text-body: #4a5568;
-    --card-bg: #f8fafc;
-    --card-border: rgba(0, 0, 0, 0.08);
-    --sec-btn-bg: #ffffff;
-    --sec-btn-text: #1a202c;
-    --sec-btn-border: rgba(0, 0, 0, 0.15);
-  }
+/* LIGHT MODE (Default) */
+:root {
+  --bg-section: #ffffff;
+  --text-heading: #1a202c;
+  --text-body: #4a5568;
+  --card-bg: #f8fafc;
+  --card-border: rgba(0, 0, 0, 0.08);
+  --sec-btn-bg: #ffffff;
+  --sec-btn-text: #1a202c;
+  --sec-btn-border: rgba(0, 0, 0, 0.15);
+}
 
-  /* DARK MODE (Triggered via dark class or system theme) */
-  body.dark-theme,
-  .dark,
-  [data-theme="dark"] {
-    --bg-section: #12131c;
-    --text-heading: #ffffff;
-    --text-body: #a0aec0;
-    --card-bg: #1a1b26;
-    --card-border: rgba(255, 255, 255, 0.12);
-    --sec-btn-bg: rgba(255, 255, 255, 0.06);
-    --sec-btn-text: #ffffff;
-    --sec-btn-border: rgba(255, 255, 255, 0.2);
-  }
+/* DARK MODE (Triggered via dark class or system theme) */
+body.dark-theme,
+.dark,
+[data-theme="dark"] {
+  --bg-section: #12131c;
+  --text-heading: #ffffff;
+  --text-body: #a0aec0;
+  --card-bg: #1a1b26;
+  --card-border: rgba(255, 255, 255, 0.12);
+  --sec-btn-bg: rgba(255, 255, 255, 0.06);
+  --sec-btn-text: #ffffff;
+  --sec-btn-border: rgba(255, 255, 255, 0.2);
+}
+
 /* ==========================================
    GLOBAL DIRECTION & ALIGNMENT FIX
    ========================================== */
 
 /* Force all section headers and titles to stay centered regardless of direction */
-.section-head, 
-.section-title, 
-.section-subtitle, 
-.eyebrow, 
+.section-head,
+.section-title,
+.section-subtitle,
+.eyebrow,
 .divider {
-  direction: ltr !important; /* Forces normal left-to-right reading order */
+  direction: ltr !important;
+  /* Forces normal left-to-right reading order */
   text-align: center !important;
 }
 
@@ -17976,29 +17326,37 @@ div:has(> h2:contains("Our Bestselling Cakes")) {
 }
 
 /* General Layout Alignment Reset for All Containers */
-html, body {
-  direction: ltr !important; /* Force overall page direction */
+html,
+body {
+  direction: ltr !important;
+  /* Force overall page direction */
   text-align: left;
 }
 
 /* Responsive adjustment to keep items centered on mobile too */
 @media (max-width: 768px) {
-  .section-head, .section-title, .section-subtitle {
+
+  .section-head,
+  .section-title,
+  .section-subtitle {
     text-align: center !important;
   }
 }
+
 /* ==========================================
    GLOBAL HEADER SECTION ALLIGNMENT FIX
    ========================================== */
 
 /* 1. Force container to stack elements vertically, NOT side-by-side */
-.section-head, 
-header.section-head, 
+.section-head,
+header.section-head,
 div[class*="section-head"],
 div[class*="header"] {
   display: flex !important;
-  flex-direction: column !important; /* Forces top-to-bottom layout */
-  align-items: center !important;     /* Centers all children horizontally */
+  flex-direction: column !important;
+  /* Forces top-to-bottom layout */
+  align-items: center !important;
+  /* Centers all children horizontally */
   justify-content: center !important;
   text-align: center !important;
   width: 100% !important;
@@ -18008,7 +17366,7 @@ div[class*="header"] {
 }
 
 /* 2. Reset width & offsets for all header elements */
-.section-head > *,
+.section-head>*,
 .section-head span,
 .section-head h1,
 .section-head h2,
@@ -18047,6 +17405,7 @@ div[class*="header"] {
   margin-top: 15px !important;
   margin-bottom: 5px !important;
 }
+
 /* ==========================================
    BENTO SECTION - SEPARATE LIGHT & DARK CSS
    ========================================== */
@@ -18231,7 +17590,8 @@ div[class*="header"] {
   color: #ffffff !important;
 }
 
-.bento-title, .bento-price {
+.bento-title,
+.bento-price {
   color: #0f172a !important;
 }
 
@@ -18282,7 +17642,8 @@ div[class*="header"] {
     border: 1px solid rgba(216, 67, 107, 0.4) !important;
   }
 
-  .bento-title, .bento-price {
+  .bento-title,
+  .bento-price {
     color: #ffffff !important;
   }
 
@@ -18343,9 +17704,12 @@ body.dark .bento-badge,
   border: 1px solid rgba(216, 67, 107, 0.4) !important;
 }
 
-html.dark .bento-title, html.dark .bento-price,
-body.dark .bento-title, body.dark .bento-price,
-[data-theme="dark"] .bento-title, [data-theme="dark"] .bento-price {
+html.dark .bento-title,
+html.dark .bento-price,
+body.dark .bento-title,
+body.dark .bento-price,
+[data-theme="dark"] .bento-title,
+[data-theme="dark"] .bento-price {
   color: #ffffff !important;
 }
 
@@ -18354,12 +17718,14 @@ body.dark .bento-card .bento-desc,
 [data-theme="dark"] .bento-card .bento-desc {
   color: #cbd5e0 !important;
 }
+
 /* ==========================================
    FULL WIDTH SECTION & NO SIDE GAP FIX
    ========================================== */
 
 /* 1. Reset Body & HTML Margins globally */
-html, body {
+html,
+body {
   margin: 0 !important;
   padding: 0 !important;
   width: 100% !important;
@@ -18382,10 +17748,12 @@ html, body {
 .bento-section .bento-grid,
 .bento-section .section-header {
   width: 100% !important;
-  max-width: 1200px !important; /* Adjust content width as needed */
+  max-width: 1200px !important;
+  /* Adjust content width as needed */
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
 /* ==========================================
    BENTO CARDS TEXT CONTRAST & READABILITY FIX
    ========================================== */
@@ -18394,12 +17762,10 @@ html, body {
 .bento-card .bento-overlay {
   position: absolute !important;
   inset: 0 !important;
-  background: linear-gradient(
-    180deg, 
-    rgba(15, 23, 42, 0.25) 0%, 
-    rgba(15, 23, 42, 0.75) 55%, 
-    rgba(15, 23, 42, 0.95) 100%
-  ) !important;
+  background: linear-gradient(180deg,
+      rgba(15, 23, 42, 0.25) 0%,
+      rgba(15, 23, 42, 0.75) 55%,
+      rgba(15, 23, 42, 0.95) 100%) !important;
   z-index: 1 !important;
 }
 
@@ -18453,6 +17819,7 @@ html, body {
 .bento-card .bento-btn-primary:hover {
   background: #ff5284 !important;
 }
+
 /* ==========================================
    ABOUT SECTION - LIGHT & DARK THEME FIX
    ========================================== */
@@ -18601,7 +17968,7 @@ html, body {
   font-weight: 600;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-family: sans-serif;
 }
 
@@ -18695,14 +18062,16 @@ body.dark .about-card-box,
 [data-theme="dark"] .about-card-box {
   background-color: #1e293b;
   border: 1px solid rgba(255, 255, 255, 0.08);
-} 
+}
+
 /* ==========================================
    NAVBAR ALIGNMENT & RESPONSIVE FIX
 ========================================== */
 .navbar {
   width: 100% !important;
   box-sizing: border-box !important;
-  padding: 12px 32px !important; /* Left & Right padding to prevent logo cut */
+  padding: 12px 32px !important;
+  /* Left & Right padding to prevent logo cut */
 }
 
 .nav-inner {
@@ -18718,7 +18087,8 @@ body.dark .about-card-box,
   display: flex !important;
   align-items: center !important;
   gap: 10px !important;
-  flex-shrink: 0 !important; /* Prevents logo from shrinking or breaking */
+  flex-shrink: 0 !important;
+  /* Prevents logo from shrinking or breaking */
 }
 
 
@@ -18727,7 +18097,8 @@ body.dark .about-card-box,
 ========================================== */
 .footer {
   width: 100% !important;
-  background-color: #0d111d !important; /* Theme Dark Background */
+  background-color: #0d111d !important;
+  /* Theme Dark Background */
   padding: 60px 32px 24px 32px !important;
   box-sizing: border-box !important;
   color: #a0aec0 !important;
@@ -18737,14 +18108,16 @@ body.dark .about-card-box,
   max-width: 1280px !important;
   margin: 0 auto !important;
   display: grid !important;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important; /* Clean 4-column layout */
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr !important;
+  /* Clean 4-column layout */
   gap: 40px !important;
   align-items: start !important;
 }
 
 /* Footer Headings */
 .footer-col h5 {
-  color: #ff527b !important; /* Pink Highlight Color */
+  color: #ff527b !important;
+  /* Pink Highlight Color */
   font-size: 14px !important;
   font-weight: 700 !important;
   letter-spacing: 1.2px !important;
@@ -18830,16 +18203,19 @@ body.dark .about-card-box,
   .footer-grid {
     grid-template-columns: 1fr !important;
   }
+
   .footer-bottom {
     flex-direction: column !important;
     gap: 10px !important;
     text-align: center !important;
   }
 }
+
 /* ==========================================
    MOBILE HEADER CLEAN TEXT & LAYOUT FIX
 ========================================== */
 @media (max-width: 600px) {
+
   /* 1. Mobile-la LTR button-a header-la irundhu hide panrom */
   .dir-toggle-btn {
     display: none !important;
@@ -18861,10 +18237,12 @@ body.dark .about-card-box,
     gap: 8px !important;
   }
 }
+
 /* ==========================================
    MOBILE TEXT SIZE & COMPACT FIT FIX
 ========================================== */
 @media screen and (max-width: 600px) {
+
   /* Logo text size decrease */
   .logo-text,
   .nav-logo .logo-text {
@@ -18906,6 +18284,7 @@ body.dark .about-card-box,
     padding: 8px 12px !important;
   }
 }
+
 /* ==========================================
    ALIGN NAVBAR LOGO DIRECTLY WITH FOOTER
 ========================================== */
@@ -18928,11 +18307,6 @@ body.dark .about-card-box,
 
 /* Mobile specific alignment & overlap fix */
 @media screen and (max-width: 600px) {
-  /* Hides LTR button on mobile so Navbar Logo aligns perfectly with Footer */
-  #dirToggle,
-  .dir-toggle-btn {
-    display: none !important;
-  }
 
   .nav-inner {
     display: flex !important;
@@ -18964,13 +18338,15 @@ body.dark .about-card-box,
   .nav-cta {
     display: flex !important;
     align-items: center !important;
-    gap: 10px !important;
+    gap: 8px !important;
   }
 }
+
 /* ==========================================
    FORCE PUSH NAVBAR LOGO TO MATCH FOOTER
 ========================================== */
 @media screen and (max-width: 768px) {
+
   /* Reduce navbar left padding to absolute minimum */
   .navbar {
     padding-left: 0px !important;
@@ -19002,6 +18378,7 @@ body.dark .about-card-box,
 
 /* Mobile view-il header-il irundhu Order Now button-ai hide seiya */
 @media (max-width: 768px) {
+
   .nav-cta .btn-nav,
   .navbar .btn-nav {
     display: none !important;
@@ -19034,6 +18411,7 @@ body.dark .about-card-box,
 .mobile-menu-footer .mobile-cta:hover {
   background: #e04369 !important;
 }
+
 /* Order Now button height fix for Desktop (Mobile view unaffected) */
 .btn-nav {
   display: inline-flex !important;
@@ -19048,31 +18426,25 @@ body.dark .about-card-box,
 }
 
 
-/* Mobile Menu Header Padding & Left Alignment Fix */
+/* Mobile Menu Header Layout */
 .mobile-menu-header {
   position: relative !important;
   display: flex !important;
   align-items: center !important;
-  justify-content: flex-start !important;
-  padding: 16px 12px !important;
+  justify-content: space-between !important;
+  padding: 16px 20px !important;
   min-height: 50px !important;
   box-sizing: border-box !important;
-}
-
-.mobile-menu-header {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
 }
 
 .mobile-menu-header .mobile-logo {
   display: flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 8px !important;
   margin: 0 !important;
   padding: 0 !important;
-  margin-left: -40px !important;
+  text-decoration: none !important;
 }
-
 
 .mobile-menu-header .brand-name {
   background: linear-gradient(135deg, #00d2ff 0%, #ff527b 55%) !important;
@@ -19082,121 +18454,123 @@ body.dark .about-card-box,
   display: inline-block !important;
 }
 
-/* Position Close Button Perfectly to Right */
+/* Position Close Button Perfectly */
 .mobile-menu-header .mobile-close-btn {
-  position: absolute !important;
-  top: 50% !important;
-  transform: translateY(-50%) !important;
-  right: 12px !important;
+  position: static !important;
+  transform: none !important;
   margin: 0 !important;
 }
 
 .social-btn {
-    transition: all 0.2s ease-in-out !important;
-    -webkit-tap-highlight-color: transparent; /* Mobile blue highlight remover */
-  }
+  transition: all 0.2s ease-in-out !important;
+  -webkit-tap-highlight-color: transparent;
+  /* Mobile blue highlight remover */
+}
 
-  /* 1. Desktop Hover Only (Mobile-ல் Sticky Hover ஆகாது) */
-  @media (hover: hover) and (pointer: fine) {
-    .social-btn[aria-label="Instagram"]:hover {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
-      border-color: transparent !important;
-      color: #ffffff !important;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
-    }
-
-    .social-btn[aria-label="YouTube"]:hover {
-      background: #ff0000 !important;
-      border-color: #ff0000 !important;
-      color: #ffffff !important;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
-    }
-
-    .social-btn[aria-label="Facebook"]:hover {
-      background: #1877f2 !important;
-      border-color: #1877f2 !important;
-      color: #ffffff !important;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
-    }
-
-    .social-btn[aria-label="LinkedIn"]:hover {
-      background: #0a66c2 !important;
-      border-color: #0a66c2 !important;
-      color: #ffffff !important;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
-    }
-  }
-
+/* 1. Desktop Hover Only (Mobile-ல் Sticky Hover ஆகாது) */
+@media (hover: hover) and (pointer: fine) {
   .social-btn[aria-label="Instagram"]:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
     border-color: transparent !important;
     color: #ffffff !important;
-    transform: scale(0.92) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
   }
 
   .social-btn[aria-label="YouTube"]:hover {
     background: #ff0000 !important;
     border-color: #ff0000 !important;
     color: #ffffff !important;
-    transform: scale(0.92) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
   }
 
   .social-btn[aria-label="Facebook"]:hover {
     background: #1877f2 !important;
     border-color: #1877f2 !important;
     color: #ffffff !important;
-    transform: scale(0.92) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
   }
 
   .social-btn[aria-label="LinkedIn"]:hover {
     background: #0a66c2 !important;
     border-color: #0a66c2 !important;
     color: #ffffff !important;
-    transform: scale(0.92) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
   }
+}
 
-  .footer-col ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+.social-btn[aria-label="Instagram"]:hover {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  transform: scale(0.92) !important;
+}
 
-  .footer-col ul li {
-    margin-bottom: 10px !important;
-  }
+.social-btn[aria-label="YouTube"]:hover {
+  background: #ff0000 !important;
+  border-color: #ff0000 !important;
+  color: #ffffff !important;
+  transform: scale(0.92) !important;
+}
 
-  /* Link with Arrow & Gap */
-  .footer-col ul li a {
-    display: inline-flex !important;
-    align-items: center !important;
-    color: #a0aec0 !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-    transition: all 0.3s ease !important;
-  }
+.social-btn[aria-label="Facebook"]:hover {
+  background: #1877f2 !important;
+  border-color: #1877f2 !important;
+  color: #ffffff !important;
+  transform: scale(0.92) !important;
+}
 
-  /* Automatic Arrow Addition with Proper Gap */
-  .footer-col ul li a::before {
-    content: "→";
-    margin-right: 10px !important; /* Arrow மற்றும் Text இடையே உள்ள இடைவெளி */
-    color: #ff7495 !important;
-    font-size: 14px !important;
-    transition: transform 0.3s ease !important;
-  }
+.social-btn[aria-label="LinkedIn"]:hover {
+  background: #0a66c2 !important;
+  border-color: #0a66c2 !important;
+  color: #ffffff !important;
+  transform: scale(0.92) !important;
+}
 
-  /* Hover Effect */
-  .footer-col ul li a:hover {
-    color: #ffffff !important;
-  }
+.footer-col ul {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
 
-  .footer-col ul li a:hover::before {
-    transform: translateX(4px) !important; /* Hover செய்யும்போது அம்பு லேசாக வலப்பக்கம் நகரும் */
-  }
-  /* --- Light Mode (Default) --- */
+.footer-col ul li {
+  margin-bottom: 10px !important;
+}
+
+/* Link with Arrow & Gap */
+.footer-col ul li a {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: #a0aec0 !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Automatic Arrow Addition with Proper Gap */
+.footer-col ul li a::before {
+  content: "→";
+  margin-right: 10px !important;
+  /* Arrow மற்றும் Text இடையே உள்ள இடைவெளி */
+  color: #ff7495 !important;
+  font-size: 14px !important;
+  transition: transform 0.3s ease !important;
+}
+
+/* Hover Effect */
+.footer-col ul li a:hover {
+  color: #ffffff !important;
+}
+
+.footer-col ul li a:hover::before {
+  transform: translateX(4px) !important;
+  /* Hover செய்யும்போது அம்பு லேசாக வலப்பக்கம் நகரும் */
+}
+
+/* --- Light Mode (Default) --- */
 .contact-banner {
   background: #ffffff;
 }
@@ -19266,4 +18640,3344 @@ body.dark-mode .btn-contact-outline:hover,
   background: #ff5286;
   color: #ffffff;
   border-color: #ff5286;
+}
+
+/* ============================================================
+   CLEAN & RELIABLE RTL RULES (MIRROR WITHOUT REDESIGN)
+   ============================================================ */
+
+/* Base Document RTL */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  direction: rtl;
+}
+
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr;
+}
+
+/* Ensure Brand Name keeps LTR sequence */
+[dir="rtl"] .brand-name,
+[dir="rtl"] .nav-logo-text,
+[dir="rtl"] .logo-text .brand-name,
+[dir="rtl"] .mobile-logo .brand-name {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+  display: inline-block !important;
+}
+
+/* Desktop Navbar RTL */
+html[dir="rtl"] .navbar,
+html[dir="rtl"] .nav-inner {
+  direction: rtl;
+}
+
+html[dir="rtl"] .nav-links {
+  direction: rtl;
+}
+
+html[dir="rtl"] .nav-cta {
+  direction: rtl;
+}
+
+/* Desktop Dropdown RTL */
+html[dir="rtl"] .nav-dropdown-menu {
+  left: auto !important;
+  right: 50% !important;
+  transform: translateX(50%) translateY(8px) !important;
+  text-align: right !important;
+}
+
+html[dir="rtl"] .nav-dropdown:hover .nav-dropdown-menu,
+html[dir="rtl"] .nav-dropdown.open .nav-dropdown-menu,
+html[dir="rtl"] .nav-dropdown:focus-within .nav-dropdown-menu {
+  transform: translateX(50%) translateY(0) !important;
+}
+
+html[dir="rtl"] .nav-dropdown-menu a {
+  text-align: right !important;
+}
+
+/* Mobile Sidebar Drawer RTL */
+[dir="rtl"] .mobile-menu,
+[dir="rtl"] #mobileMenu {
+  left: auto !important;
+  right: 0 !important;
+  transform: translateX(100%) !important;
+  box-shadow: -4px 0 25px rgba(0, 0, 0, 0.12) !important;
+}
+
+[dir="rtl"] .mobile-menu.open,
+[dir="rtl"] #mobileMenu.open {
+  transform: translateX(0) !important;
+}
+
+[dir="rtl"] .mobile-menu-header {
+  direction: rtl !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+[dir="rtl"] .mobile-menu-nav {
+  direction: rtl !important;
+}
+
+[dir="rtl"] .mobile-menu-nav a,
+[dir="rtl"] .mobile-menu-nav .dropdown-toggle {
+  text-align: right !important;
+}
+
+[dir="rtl"] .mobile-menu .dropdown-submenu,
+[dir="rtl"] #mobileMenu .dropdown-submenu {
+  padding: 4px 14px 6px 0 !important;
+  border-left: none !important;
+  border-right: 2px solid rgba(255, 82, 123, 0.25) !important;
+  margin: 2px 14px 6px 0 !important;
+}
+
+[dir="rtl"] .mobile-menu .dropdown-submenu a,
+[dir="rtl"] #mobileMenu .dropdown-submenu a {
+  text-align: right !important;
+  justify-content: flex-start !important;
+}
+
+/* Direction Toggle Button Always Visible & Perfectly Styled */
+.dir-toggle-btn,
+#dirToggle {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--text-dark, #333) !important;
+  background: transparent !important;
+  color: var(--text-dark, #333) !important;
+  font-family: inherit !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+  user-select: none !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.dir-toggle-btn .dir-label,
+#dirToggle .dir-label {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.5px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+html[data-theme="dark"] .dir-toggle-btn,
+html[data-theme="dark"] #dirToggle {
+  background: #252232 !important;
+  border-color: rgba(255, 165, 190, 0.3) !important;
+  color: #f3f4f8 !important;
+}
+
+html[data-theme="dark"] .dir-toggle-btn:hover,
+html[data-theme="dark"] #dirToggle:hover {
+  border-color: var(--pink, #ff7495) !important;
+  color: var(--pink, #ff7495) !important;
+}
+
+/* ==========================================
+   HERO SECTION PERFECT CENTER FIX (LTR & RTL)
+   ========================================== */
+
+/* Force all text in hero content to align strictly center */
+.hero-content,
+.hero-content-inner,
+.hero-content-inner h1,
+.hero-content-inner p,
+.hero-content-inner span,
+[dir="rtl"] .hero-content,
+[dir="rtl"] .hero-content-inner,
+[dir="rtl"] .hero-content-inner h1,
+[dir="rtl"] .hero-content-inner p,
+[dir="rtl"] .hero-content-inner span {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  direction: ltr !important;
+  /* Prevents text block shift in RTL */
+}
+
+/* Ensure Heading lines stay balanced in center */
+.hero-content-inner h1 {
+  display: block !important;
+  width: 100% !important;
+}
+
+.hero-content-inner h1 span {
+  display: inline !important;
+}
+
+/* Button Group Alignment Fix */
+.hero-content-inner .btn-group,
+[dir="rtl"] .hero-content-inner .btn-group {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 25px auto 0 auto !important;
+  width: max-content !important;
+  direction: ltr !important;
+}
+
+/* Flip Buttons Position only in RTL */
+[dir="rtl"] .hero-content-inner .btn-group {
+  flex-direction: row-reverse !important;
+}
+
+/* Arrow direction in secondary button for RTL */
+[dir="rtl"] .hero-content-inner .btn-secondary {
+  direction: rtl !important;
+}
+
+/* Container Centering */
+.section-head {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/* Eyebrow / Tagline */
+.section-head .eyebrow {
+  color: #ff7495;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: block;
+  text-align: center !important;
+}
+
+/* Title */
+.section-head .section-title {
+  text-align: center !important;
+  margin: 10px 0 0 0 !important;
+  width: 100% !important;
+}
+
+/* Pink Line / Divider */
+.section-head .divider {
+  width: 50px;
+  height: 3px;
+  background: #ff7495;
+  margin: 15px auto 0 auto !important;
+  border-radius: 2px;
+}
+
+/* Subtitle */
+.section-head .section-subtitle {
+  text-align: center !important;
+  margin-top: 10px !important;
+  width: 100% !important;
+}
+
+/* ============================================================
+   FINAL NAVBAR LTR/RTL FIX — must stay at the very end of style.css
+   ============================================================ */
+
+.navbar .nav-inner {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+/* ---------- LTR: Logo -> Links -> CTA ---------- */
+html[dir="ltr"] .navbar .nav-inner {
+  direction: ltr !important;
+}
+
+html[dir="ltr"] .navbar .nav-logo,
+html[dir="ltr"] .navbar > .nav-inner > .logo-text {
+  order: 1 !important;
+  margin-right: auto !important;
+  margin-left: 0 !important;
+}
+
+html[dir="ltr"] .navbar .nav-links {
+  order: 2 !important;
+  direction: ltr !important;
+  text-align: left !important;
+  margin: 0 auto !important;
+}
+
+html[dir="ltr"] .navbar .nav-links a {
+  text-align: left !important;
+}
+
+html[dir="ltr"] .navbar .nav-cta {
+  order: 3 !important;
+  direction: ltr !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+}
+
+/* home1 */
+[dir="ltr"] .section-head {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-testimonials-eyebrow::before {
+  content: "✦ What Our Customers Say ✦";
+}
+
+[dir="ltr"] .custom-testimonials-title::before {
+  content: "Sweet Words from Sweet People";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .section-head {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-testimonials-eyebrow::before {
+  content: "✦ Say Customers Our What ✦";
+}
+
+[dir="rtl"] .custom-testimonials-title::before {
+  content: "People Sweet from Words Sweet";
+}
+
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .why-us-header {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-whyus-tagline::before {
+  content: "✦ Craftsmanship & Passion ✦";
+}
+
+[dir="ltr"] .custom-whyus-title::before {
+  content: "Why Dessert Lovers Choose Us";
+}
+
+[dir="ltr"] .custom-whyus-desc::before {
+  content: "Ordinary-ah edhum panradhilla! Pure ingredients, custom art, and fresh delivery thaan namma special identity.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .why-us-header {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-whyus-tagline::before {
+  content: "✦ Passion & Craftsmanship ✦";
+}
+
+[dir="rtl"] .custom-whyus-title::before {
+  content: "Us Choose Lovers Dessert Why";
+}
+
+[dir="rtl"] .custom-whyus-desc::before {
+  content: "Identity special namma thaan delivery fresh and ,art custom ,ingredients Pure !panradhilla edhum Ordinary-ah";
+}
+
+
+
+
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-story-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-story-eyebrow::before {
+  content: "✦ Our Sweet Story ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-story-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-story-eyebrow::before {
+  content: "✦ Story Sweet Our ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-about-heading {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-about-heading::before {
+  content: "About ";
+}
+
+[dir="ltr"] .custom-about-highlight::before {
+  content: "Our Bakery";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-about-heading {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-about-heading::before {
+  content: "Bakery  ";
+}
+
+[dir="rtl"] .custom-about-highlight::before {
+  content: " Our About";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-about-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-about-desc::before {
+  content: "From a small home kitchen to Coimbatore's most-loved bakery — here's the story behind every delicious bite.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-about-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-about-desc::before {
+  content: ".bite delicious every behind story the here's — bakery most-loved Coimbatore's to kitchen home small a From";
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-journey-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-journey-eyebrow::before {
+  content: "✦ Our Journey ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-journey-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-journey-eyebrow::before {
+  content: "✦ Journey Our ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-milestones-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-milestones-title::before {
+  content: "Milestones & Moments";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-milestones-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-milestones-title::before {
+  content: "Moments & Milestones";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-patrons-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-patrons-eyebrow::before {
+  content: "✦ Loved By Our Patrons ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-patrons-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-patrons-eyebrow::before {
+  content: "✦ Patrons Our By Loved ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-team-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-team-eyebrow::before {
+  content: "✦ Meet the Team ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-team-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-team-eyebrow::before {
+  content: "✦ Team the Meet ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-artists-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-artists-title::before {
+  content: "The Artists Behind the Magic";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-artists-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-artists-title::before {
+  content: "Magic the Behind Artists The";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-team-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-team-desc::before {
+  content: "Our talented team of bakers and cake artists pour their hearts into every creation.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-team-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-team-desc::before {
+  content: ".creation every into hearts their pour artists cake and bakers of team talented Our";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-chef-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-chef-eyebrow::before {
+  content: "✦ MEET OUR MASTER PASTRY CHEF ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-chef-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-chef-eyebrow::before {
+  content: "✦ CHEF PASTRY MASTER OUR MEET ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-chef-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-chef-eyebrow::before {
+  content: "✦ MEET OUR MASTER PASTRY CHEF ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-chef-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-chef-eyebrow::before {
+  content: "✦ CHEF PASTRY MASTER OUR MEET ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-chef-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-chef-title::before {
+  content: "Crafting Sweet Masterpieces With 12+ Years of Passion";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-chef-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-chef-title::before {
+  content: "Passion of Years 12+ With Masterpieces Sweet Crafting";
+}
+
+/* cakes */
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-signature-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-signature-eyebrow::before {
+  content: "✦ Our Signature Collection ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-signature-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-signature-eyebrow::before {
+  content: "✦ Collection Signature Our ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-gallery-heading {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-gallery-heading::before {
+  content: "Our ";
+}
+
+[dir="ltr"] .custom-gallery-highlight::before {
+  content: "Cake Gallery";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-gallery-heading {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-gallery-heading::before {
+  content: "Gallery";
+}
+
+[dir="rtl"] .custom-gallery-highlight::before {
+  content: "Cake Our";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-gallery-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-gallery-desc::before {
+  content: "Explore our handcrafted selection of classic and bespoke centerpiece creations, meticulously designed with artisanal precision.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-gallery-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-gallery-desc::before {
+  content: ".precision artisanal with designed meticulously ,creations centerpiece bespoke and classic of selection handcrafted our Explore";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-hampers-subtitle {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-hampers-subtitle::before {
+  content: "CURATED CELEBRATIONS";
+}
+
+[dir="ltr"] .custom-hampers-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-hampers-title::before {
+  content: "Handcrafted Hampers & Boxes";
+}
+
+[dir="ltr"] .custom-hampers-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-hampers-desc::before {
+  content: "Explore our signature gourmet gift collections designed to make every special event unforgettable.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-hampers-subtitle {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-hampers-subtitle::before {
+  content: "CELEBRATIONS CURATED";
+}
+
+[dir="rtl"] .custom-hampers-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-hampers-title::before {
+  content: "Boxes & Hampers Handcrafted";
+}
+
+[dir="rtl"] .custom-hampers-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-hampers-desc::before {
+  content: ".unforgettable event special every make to designed collections gift gourmet signature our Explore";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-works-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-works-eyebrow::before {
+  content: "✦ How It Works ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-works-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-works-eyebrow::before {
+  content: "✦ Works It How ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-confectioner-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-confectioner-eyebrow::before {
+  content: "✦ Master Confectioner";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-confectioner-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-confectioner-eyebrow::before {
+  content: "Confectioner Master ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-chef-creations-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-chef-creations-title::before {
+  content: "Meet Our Chef & Most Famous Creations";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-chef-creations-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-chef-creations-title::before {
+  content: "Creations Famous Most & Chef Our Meet";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-chef-creations-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-chef-creations-desc::before {
+  content: "Handcrafted signature cakes baked with passion, precision, and the finest organic ingredients.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-chef-creations-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-chef-creations-desc::before {
+  content: ".ingredients organic finest the and ,precision ,passion with baked cakes signature Handcrafted";
+}
+
+
+/* wedding */
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-wedding-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-eyebrow::before {
+  content: "✦ Royal Wedding Confectionery ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-wedding-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-eyebrow::before {
+  content: "✦ Confectionery Wedding Royal ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-wedding-highlight {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-highlight::before {
+  content: "Wedding Cakes";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-wedding-highlight {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-highlight::before {
+  content: "Cakes Wedding";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-wedding-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-desc::before {
+  content: "Handcrafted 3-tier to 7-tier bespoke centerpieces adorned with edible 24k gold leaf, lifelike sugar floral bouquets, and unforgettable gourmet flavors.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-wedding-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-desc::before {
+  content: ".flavors gourmet unforgettable and ,bouquets floral sugar lifelike ,leaf gold k24 edible with adorned centerpieces bespoke tier-7 to tier-3 Handcrafted";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-weddings-count {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-weddings-count::before {
+  content: "300+";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-weddings-count {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-weddings-count::before {
+  content: "+300";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-weddings-label {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-weddings-label::before {
+  content: "Weddings Catered";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-weddings-label {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-weddings-label::before {
+  content: "Catered Weddings";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-tier-count {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-tier-count::before {
+  content: "7-Tier";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-tier-count {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-tier-count::before {
+  content: "Tier-7";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-tier-label {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-tier-label::before {
+  content: "Custom Build Limit";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-tier-label {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-tier-label::before {
+  content: "Limit Build Custom";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-bridal-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-bridal-eyebrow::before {
+  content: "Bespoke Bridal Collections";
+}
+
+[dir="ltr"] .custom-bridal-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-bridal-title::before {
+  content: "Signature Wedding Cake Tiers";
+}
+
+[dir="ltr"] .custom-bridal-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-bridal-desc::before {
+  content: "Every wedding cake is custom designed to harmonize with your reception theme, bridal florals, and venue aesthetics.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-bridal-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-bridal-eyebrow::before {
+  content: "Collections Bridal Bespoke";
+}
+
+[dir="rtl"] .custom-bridal-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-bridal-title::before {
+  content: "Tiers Cake Wedding Signature";
+}
+
+[dir="rtl"] .custom-bridal-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-bridal-desc::before {
+  content: ".aesthetics venue and ,florals bridal ,theme reception your with harmonize to designed custom is cake wedding Every";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-wedding-styles-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-styles-eyebrow::before {
+  content: "Wedding Cake Inspirations";
+}
+
+[dir="ltr"] .custom-wedding-styles-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-styles-title::before {
+  content: "Popular Wedding Cake Styles";
+}
+
+[dir="ltr"] .custom-wedding-styles-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-styles-desc::before {
+  content: "Browse our most requested wedding cake aesthetics";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-wedding-styles-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-styles-eyebrow::before {
+  content: "Inspirations Cake Wedding";
+}
+
+[dir="rtl"] .custom-wedding-styles-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-styles-title::before {
+  content: "Styles Cake Wedding Popular";
+}
+
+[dir="rtl"] .custom-wedding-styles-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-styles-desc::before {
+  content: "aesthetics cake wedding requested most our Browse";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-pricing-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-pricing-eyebrow::before {
+  content: "Wedding Cake Pricing";
+}
+
+[dir="ltr"] .custom-pricing-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-pricing-title::before {
+  content: "Choose Your Perfect Package";
+}
+
+[dir="ltr"] .custom-pricing-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-pricing-desc::before {
+  content: "Transparent pricing with no hidden fees. ";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-pricing-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-pricing-eyebrow::before {
+  content: "Pricing Cake Wedding";
+}
+
+[dir="rtl"] .custom-pricing-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-pricing-title::before {
+  content: "Package Perfect Your Choose";
+}
+
+[dir="rtl"] .custom-pricing-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-pricing-desc::before {
+  content: ".fees hidden no with pricing Transparent";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-reviews-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-reviews-eyebrow::before {
+  content: "Love Stories We've Sweetened";
+}
+
+[dir="ltr"] .custom-reviews-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-reviews-title::before {
+  content: "From Our Happy Couples";
+}
+
+[dir="ltr"] .custom-reviews-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-reviews-desc::before {
+  content: "Real reviews from real weddings. Over 300+ weddings  across Tamil Nadu and Pondicherry.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-reviews-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-reviews-eyebrow::before {
+  content: "Sweetened We've Stories Love";
+}
+
+[dir="rtl"] .custom-reviews-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-reviews-title::before {
+  content: "Couples Happy Our From";
+}
+
+[dir="rtl"] .custom-reviews-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-reviews-desc::before {
+  content: ".Pondicherry and Nadu Tamil across  weddings +300 Over .weddings real from reviews Real";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-studio-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-studio-eyebrow::before {
+  content: "✦ Bespoke Confectionery Studio ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-studio-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-studio-eyebrow::before {
+  content: "✦ Studio Confectionery Bespoke ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-designer-highlight {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-designer-highlight::before {
+  content: "Designer Cakes";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-designer-highlight {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-designer-highlight::before {
+  content: "Cakes Designer";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-designer-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-designer-title::before {
+  content: "Custom 3D &";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-designer-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-designer-title::before {
+  content: "& D3 Custom";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-dream-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-dream-desc::before {
+  content: "If you can dream it, our sculptors can bake it. From intricate 3D characters to edible photo masterpieces, customized down to the finest detail.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-dream-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-dream-desc::before {
+  content: ".detail finest the to down customized ,masterpieces photo edible to characters D3 intricate From .it bake can sculptors our ,it dream can you If";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-guarantee-count {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-guarantee-count::before {
+  content: "100%";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-guarantee-count {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-guarantee-count::before {
+  content: "%100";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-guarantee-count { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-guarantee-count::before { content: "100%"; }
+
+[dir="ltr"] .custom-sculpted-label { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-sculpted-label::before { content: "Hand-Sculpted"; }
+
+[dir="ltr"] .custom-structure-count { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-structure-count::before { content: "3D"; }
+
+[dir="ltr"] .custom-structure-label { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-structure-label::before { content: "Structure Crafting"; }
+
+[dir="ltr"] .custom-order-count { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-order-count::before { content: "48hrs"; }
+
+[dir="ltr"] .custom-order-label { text-align: left; direction: ltr; }
+[dir="ltr"] .custom-order-label::before { content: "Advance Order"; }
+
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-guarantee-count { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-guarantee-count::before { content: "%100"; }
+
+[dir="rtl"] .custom-sculpted-label { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-sculpted-label::before { content: "Sculpted-Hand"; }
+
+[dir="rtl"] .custom-structure-count { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-structure-count::before { content: "D3"; }
+
+[dir="rtl"] .custom-structure-label { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-structure-label::before { content: "Crafting Structure"; }
+
+[dir="rtl"] .custom-order-count { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-order-count::before { content: "srh48"; }
+
+[dir="rtl"] .custom-order-label { text-align: right; direction: rtl; }
+[dir="rtl"] .custom-order-label::before { content: "Order Advance"; }
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-creative-eyebrow {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creative-eyebrow::before {
+  content: "Infinite Creative Possibilities";
+}
+
+[dir="ltr"] .custom-creative-title {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creative-title::before {
+  content: "Signature Custom Cake Styles";
+}
+
+[dir="ltr"] .custom-creative-desc {
+  text-align: left;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creative-desc::before {
+  content: "Choose from our beloved custom themes or send us your own photo reference for a 100% bespoke quotation crafted by our master artists.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-creative-eyebrow {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creative-eyebrow::before {
+  content: "Possibilities Creative Infinite";
+}
+
+[dir="rtl"] .custom-creative-title {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creative-title::before {
+  content: "Styles Cake Custom Signature";
+}
+
+[dir="rtl"] .custom-creative-desc {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creative-desc::before {
+  content: ".artists master our by crafted quotation bespoke %100 a for reference photo own your us send or themes custom beloved our from Choose";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-flavor-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-flavor-eyebrow::before {
+  content: "Mix & Match Your Dream Taste";
+}
+
+[dir="ltr"] .custom-flavor-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-flavor-title::before {
+  content: "The Custom Flavor Lab";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-flavor-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-flavor-eyebrow::before {
+  content: "Taste Dream Your Match & Mix";
+}
+
+[dir="rtl"] .custom-flavor-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-flavor-title::before {
+  content: "Lab Flavor Custom The";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-process-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-process-eyebrow::before {
+  content: "From Imagination to Reality";
+}
+
+[dir="ltr"] .custom-process-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-process-title::before {
+  content: "How We Bring Your Cake to Life";
+}
+
+[dir="ltr"] .custom-process-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-process-desc::before {
+  content: "Our meticulous 4-step artisan process ensures your dream cake is structurally flawless, visually stunning, and irresistibly delicious.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-process-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-process-eyebrow::before {
+  content: "Reality to Imagination From";
+}
+
+[dir="rtl"] .custom-process-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-process-title::before {
+  content: "Life to Cake Your Bring We How";
+}
+
+[dir="rtl"] .custom-process-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-process-desc::before {
+  content: ".delicious irresistibly and ,stunning visually ,flawless structurally is cake dream your ensures process artisan step-4 meticulous Our";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-faq-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-eyebrow::before {
+  content: "Got Questions?";
+}
+
+[dir="ltr"] .custom-faq-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-title::before {
+  content: "Custom Cake Questions & Answers";
+}
+
+[dir="ltr"] .custom-faq-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-desc::before {
+  content: "Everything you need to know about ordering a bespoke designer cake with us.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-faq-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-eyebrow::before {
+  content: "?Questions Got";
+}
+
+[dir="rtl"] .custom-faq-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-title::before {
+  content: "Answers & Questions Cake Custom";
+}
+
+[dir="rtl"] .custom-faq-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-desc::before {
+  content: ".us with cake designer bespoke a ordering about know to need you Everything";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-batch-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-batch-eyebrow::before {
+  content: "✦ Limited Edition Small-Batch ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-batch-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-batch-eyebrow::before {
+  content: "✦ Small-Batch Edition Limited ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-seasonal-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-seasonal-desc::before {
+  content: "Exclusive seasonal creations baked in limited quantities each week featuring rare harvest fruits, European pralines, and exotic spice infusions.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-seasonal-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-seasonal-desc::before {
+  content: ".infusions spice exotic and ,pralines European ,fruits harvest rare featuring week each quantities limited in baked creations seasonal Exclusive";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-specials-highlight {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specials-highlight::before {
+  content: "Cake Specials";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-specials-highlight {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specials-highlight::before {
+  content: "Specials Cake";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-weekly-count { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-weekly-count::before { content: "Weekly"; }
+
+[dir="ltr"] .custom-weekly-label { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-weekly-label::before { content: "Flavor Rotations"; }
+
+[dir="ltr"] .custom-harvest-count { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-harvest-count::before { content: "100%"; }
+
+[dir="ltr"] .custom-harvest-label { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-harvest-label::before { content: "Seasonal Harvest"; }
+
+[dir="ltr"] .custom-limited-count { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-limited-count::before { content: "Limited"; }
+
+[dir="ltr"] .custom-limited-label { text-align: center; direction: ltr; }
+[dir="ltr"] .custom-limited-label::before { content: "Small Batches"; }
+
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-weekly-count { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-weekly-count::before { content: "Weekly"; }
+
+[dir="rtl"] .custom-weekly-label { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-weekly-label::before { content: "Rotations Flavor"; }
+
+[dir="rtl"] .custom-harvest-count { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-harvest-count::before { content: "%100"; }
+
+[dir="rtl"] .custom-harvest-label { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-harvest-label::before { content: "Harvest Seasonal"; }
+
+[dir="rtl"] .custom-limited-count { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-limited-count::before { content: "Limited"; }
+
+[dir="rtl"] .custom-limited-label { text-align: center; direction: rtl; }
+[dir="rtl"] .custom-limited-label::before { content: "Batches Small"; }
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-specialist-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialist-eyebrow::before {
+  content: "✦ Meet Our Experts ✦";
+}
+
+[dir="ltr"] .custom-specialist-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialist-title::before {
+  content: "OUR SPECIALIST";
+}
+
+[dir="ltr"] .custom-specialist-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialist-desc::before {
+  content: "Behind every unforgettable celebration is a team of master pastry chefs and sugar artists dedicated to perfecting taste, structure, and design. Meet the creative mind bringing your custom cake dreams to life.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-specialist-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialist-eyebrow::before {
+  content: "✦ Experts Our Meet ✦";
+}
+
+[dir="rtl"] .custom-specialist-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialist-title::before {
+  content: "SPECIALIST OUR";
+}
+
+[dir="rtl"] .custom-specialist-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialist-desc::before {
+  content: ".life to dreams cake custom your bringing mind creative the Meet .design and ,structure ,taste perfecting to dedicated artists sugar and chefs pastry master of team a is celebration unforgettable every Behind";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-creations-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creations-eyebrow::before {
+  content: "This Month's Exclusive Small-Batch Bakes";
+}
+
+[dir="ltr"] .custom-creations-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creations-title::before {
+  content: "Limited Quantity Creations";
+}
+
+[dir="ltr"] .custom-creations-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-creations-desc::before {
+  content: "Hand-crafted in micro-batches using rare harvest fruits, single-origin chocolates, and artisanal nuts. Pre-order recommended before weekly batches sell out.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-creations-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creations-eyebrow::before {
+  content: "Bakes Small-Batch Exclusive Month's This";
+}
+
+[dir="rtl"] .custom-creations-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creations-title::before {
+  content: "Creations Quantity Limited";
+}
+
+[dir="rtl"] .custom-creations-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-creations-desc::before {
+  content: ".out sell batches weekly before recommended Pre-order .nuts artisanal and ,chocolates single-origin ,fruits harvest rare using micro-batches in Hand-crafted";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-integrity-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-integrity-eyebrow::before {
+  content: "No Compromises, Ever";
+}
+
+[dir="ltr"] .custom-integrity-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-integrity-title::before {
+  content: "Our Gourmet Sourcing Integrity";
+}
+
+[dir="ltr"] .custom-integrity-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-integrity-desc::before {
+  content: "Why do our Chef's Specials taste noticeably richer? We partner directly with ethical global producers for unmatched culinary purity.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-integrity-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-integrity-eyebrow::before {
+  content: "Ever ,Compromises No";
+}
+
+[dir="rtl"] .custom-integrity-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-integrity-title::before {
+  content: "Integrity Sourcing Gourmet Our";
+}
+
+[dir="rtl"] .custom-integrity-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-integrity-desc::before {
+  content: ".purity culinary unmatched for producers global ethical with directly partner We ?richer noticeably taste Specials Chef's our do Why";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-offer-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-offer-eyebrow::before {
+  content: "✦ What We Offer ✦";
+}
+
+[dir="ltr"] .custom-services-prefix {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-services-prefix::before {
+  content: "Our\00a0";
+}
+
+[dir="ltr"] .custom-services-highlight {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-services-highlight::before {
+  content: "Services";
+}
+
+[dir="ltr"] .custom-services-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-services-desc::before {
+  content: "From intimate birthday cakes to grand wedding tiers — we have the perfect service for every occasion.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-offer-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-offer-eyebrow::before {
+  content: "✦ Offer We What ✦";
+}
+
+[dir="rtl"] .custom-services-prefix {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-services-prefix::before {
+  content: "Services\00a0";
+}
+
+[dir="rtl"] .custom-services-highlight {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-services-highlight::before {
+  content: "our";
+}
+
+[dir="rtl"] .custom-services-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-services-desc::before {
+  content: ".occasion every for service perfect the have we — tiers wedding grand to cakes birthday intimate From";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-specialities-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialities-eyebrow::before {
+  content: "✦ Everything We Do ✦";
+}
+
+[dir="ltr"] .custom-specialities-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialities-title::before {
+  content: "Our Specialities";
+}
+
+[dir="ltr"] .custom-specialities-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specialities-desc::before {
+  content: "A full spectrum of artisan bakery services tailored to your celebration.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-specialities-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialities-eyebrow::before {
+  content: "✦ Do We Everything ✦";
+}
+
+[dir="rtl"] .custom-specialities-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialities-title::before {
+  content: "Specialities Our";
+}
+
+[dir="rtl"] .custom-specialities-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specialities-desc::before {
+  content: ".celebration your to tailored services bakery artisan of spectrum full A";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-highlights-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-highlights-eyebrow::before {
+  content: "✦ Service Highlights ✦";
+}
+
+[dir="ltr"] .custom-highlights-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-highlights-title::before {
+  content: "What Makes Our Bakery Service Different";
+}
+
+[dir="ltr"] .custom-highlights-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-highlights-desc::before {
+  content: "Every order is planned with care, design guidance and dependable support from start to finish.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-highlights-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-highlights-eyebrow::before {
+  content: "✦ Highlights Service ✦";
+}
+
+[dir="rtl"] .custom-highlights-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-highlights-title::before {
+  content: "Different Service Bakery Our Makes What";
+}
+
+[dir="rtl"] .custom-highlights-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-highlights-desc::before {
+  content: ".finish to start from support dependable and guidance design ,care with planned is order Every";
+}
+
+/* service */
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-questions-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-questions-eyebrow::before {
+  content: "✦ Helpful Info ✦";
+}
+
+[dir="ltr"] .custom-questions-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-questions-title::before {
+  content: "Common Questions About Our Services";
+}
+
+[dir="ltr"] .custom-questions-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-questions-desc::before {
+  content: "Everything you need to know before placing your cake order.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-questions-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-questions-eyebrow::before {
+  content: "✦ Info Helpful ✦";
+}
+
+[dir="rtl"] .custom-questions-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-questions-title::before {
+  content: "Services Our About Questions Common";
+}
+
+[dir="rtl"] .custom-questions-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-questions-desc::before {
+  content: ".order cake your placing before know to need you Everything";
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-art-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-art-eyebrow::before {
+  content: "✦ Edible Art ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-art-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-art-eyebrow::before {
+  content: "✦ Art Edible ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-gallery-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-gallery-desc::before {
+  content: "Every image here is a real cake we created. Click any photo to view it up close.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-gallery-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-gallery-desc::before {
+  content: ".close up it view to photo any Click .created we cake real a is here image Every";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-memories-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-memories-eyebrow::before {
+  content: "✦ Crafted for Memories ✦";
+}
+
+[dir="ltr"] .custom-memories-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-memories-title::before {
+  content: "Made to Feel Personal, Sweet, and Unforgettable";
+}
+
+[dir="ltr"] .custom-memories-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-memories-desc::before {
+  content: "From elegant wedding statements to playful party favourites, every cake is designed to match your story, your event, and your sweetest moments.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-memories-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-memories-eyebrow::before {
+  content: "✦ Memories for Crafted ✦";
+}
+
+[dir="rtl"] .custom-memories-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-memories-title::before {
+  content: "Unforgettable and ,Sweet ,Personal Feel to Made";
+}
+
+[dir="rtl"] .custom-memories-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-memories-desc::before {
+  content: ".moments sweetest your and ,event your ,story your match to designed is cake every ,favourites party playful to statements wedding elegant From";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-collection-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-collection-eyebrow::before {
+  content: "✦ Collection Highlights ✦";
+}
+
+[dir="ltr"] .custom-collection-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-collection-title::before {
+  content: "Explore Our Signature Cake Categories";
+}
+
+[dir="ltr"] .custom-collection-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-collection-desc::before {
+  content: "From intimate family celebrations to grand statement pieces, every category in our gallery is crafted for a different kind of sweet memory.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-collection-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-collection-eyebrow::before {
+  content: "✦ Highlights Collection ✦";
+}
+
+[dir="rtl"] .custom-collection-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-collection-title::before {
+  content: "Categories Cake Signature Our Explore";
+}
+
+[dir="rtl"] .custom-collection-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-collection-desc::before {
+  content: ".memory sweet of kind different a for crafted is gallery our in category every ,pieces statement grand to celebrations family intimate From";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-contact-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-contact-eyebrow::before {
+  content: "✦ We'd Love to Hear from You ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-contact-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-contact-eyebrow::before {
+  content: "✦ You from Hear to Love We'd ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-contact-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-contact-desc::before {
+  content: "Planning a wedding cake, need an express same-day birthday surprise, or looking for corporate gifting? Our pastry chefs and concierge are ready to assist.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-contact-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-contact-desc::before {
+  content: ".assist to ready are concierge and chefs pastry Our ?gifting corporate for looking or ,surprise birthday same-day express an need ,cake wedding a Planning";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-bakehouse-suffix {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-bakehouse-suffix::before {
+  content: "With Our Bakehouse";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-bakehouse-suffix {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-bakehouse-suffix::before {
+  content: "Bakehouse Our With";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-stat-value-1,
+[dir="ltr"] .custom-stat-label-1,
+[dir="ltr"] .custom-stat-value-2,
+[dir="ltr"] .custom-stat-label-2,
+[dir="ltr"] .custom-stat-value-3,
+[dir="ltr"] .custom-stat-label-3,
+[dir="ltr"] .custom-stat-value-4,
+[dir="ltr"] .custom-stat-label-4 {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-stat-value-1::before {
+  content: "1hr";
+}
+
+[dir="ltr"] .custom-stat-label-1::before {
+  content: "Average Response";
+}
+
+[dir="ltr"] .custom-stat-value-2::before {
+  content: "7 Days";
+}
+
+[dir="ltr"] .custom-stat-label-2::before {
+  content: "Kitchen Active";
+}
+
+[dir="ltr"] .custom-stat-value-3::before {
+  content: "4.9 ★";
+}
+
+[dir="ltr"] .custom-stat-label-3::before {
+  content: "2,400+ Reviews";
+}
+
+[dir="ltr"] .custom-stat-value-4::before {
+  content: "100%";
+}
+
+[dir="ltr"] .custom-stat-label-4::before {
+  content: "Fresh Guarantee";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-stat-value-1,
+[dir="rtl"] .custom-stat-label-1,
+[dir="rtl"] .custom-stat-value-2,
+[dir="rtl"] .custom-stat-label-2,
+[dir="rtl"] .custom-stat-value-3,
+[dir="rtl"] .custom-stat-label-3,
+[dir="rtl"] .custom-stat-value-4,
+[dir="rtl"] .custom-stat-label-4 {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-stat-value-1::before {
+  content: "1hr";
+}
+
+[dir="rtl"] .custom-stat-label-1::before {
+  content: "Response Average";
+}
+
+[dir="rtl"] .custom-stat-value-2::before {
+  content: "Days 7";
+}
+
+[dir="rtl"] .custom-stat-label-2::before {
+  content: "Active Kitchen";
+}
+
+[dir="rtl"] .custom-stat-value-3::before {
+  content: "★ 4.9";
+}
+
+[dir="rtl"] .custom-stat-label-3::before {
+  content: "Reviews +2,400";
+}
+
+[dir="rtl"] .custom-stat-value-4::before {
+  content: "%100";
+}
+
+[dir="rtl"] .custom-stat-label-4::before {
+  content: "Guarantee Fresh";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-studio-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-studio-eyebrow::before {
+  content: "Experience Our Spaces";
+}
+
+[dir="ltr"] .custom-studio-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-studio-title::before {
+  content: "Visit Our Coimbatore Studios & Pick-up Hubs";
+}
+
+[dir="ltr"] .custom-studio-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-studio-desc::before {
+  content: "Drop by for walk-in cake tastings, coffee pairings, or seamless curbside pickups.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-studio-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-studio-eyebrow::before {
+  content: "Spaces Our Experience";
+}
+
+[dir="rtl"] .custom-studio-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-studio-title::before {
+  content: "Hubs Pick-up & Studios Coimbatore Our Visit";
+}
+
+[dir="rtl"] .custom-studio-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-studio-desc::before {
+  content: ".pickups curbside seamless or ,pairings coffee ,tastings cake walk-in for by Drop";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-contact-faq-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-contact-faq-eyebrow::before {
+  content: "✦ Quick Help ✦";
+}
+
+[dir="ltr"] .custom-contact-faq-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-contact-faq-title::before {
+  content: "Contact & Ordering FAQ";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-contact-faq-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-contact-faq-eyebrow::before {
+  content: "✦ Help Quick ✦";
+}
+
+[dir="rtl"] .custom-contact-faq-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-contact-faq-title::before {
+  content: "FAQ Ordering & Contact";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-book-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-book-eyebrow::before {
+  content: "✦ Design Your Perfect Cake ✦";
+}
+
+[dir="ltr"] .custom-book-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-book-title::before {
+  content: "Book Your Cake";
+}
+
+[dir="ltr"] .custom-book-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-book-desc::before {
+  content: "Fill in the details below and our team will confirm your order within 2 hours. No payment needed upfront.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-book-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-book-eyebrow::before {
+  content: "✦ Cake Perfect Your Design ✦";
+}
+
+[dir="rtl"] .custom-book-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-book-title::before {
+  content: "Cake Your Book";
+}
+
+[dir="rtl"] .custom-book-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-book-desc::before {
+  content: ".upfront needed payment No .hours 2 within order your confirm will team our and below details the in Fill";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-kb-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-kb-eyebrow::before {
+  content: "✦ Complete Knowledge Base ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-kb-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-kb-eyebrow::before {
+  content: "✦ Base Knowledge Complete ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-faq-kb-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-kb-desc::before {
+  content: "Find instant, verified answers regarding ingredients, 100% eggless options, custom 3D designs, midnight deliveries, cake sizing, and payment policies.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-faq-kb-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-kb-desc::before {
+  content: ".policies payment and ,sizing cake ,deliveries midnight ,designs 3D custom ,options eggless %100 ,ingredients regarding answers verified ,instant Find";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-faq-stat-val-1,
+[dir="ltr"] .custom-faq-stat-lbl-1,
+[dir="ltr"] .custom-faq-stat-val-2,
+[dir="ltr"] .custom-faq-stat-lbl-2,
+[dir="ltr"] .custom-faq-stat-val-3,
+[dir="ltr"] .custom-faq-stat-lbl-3 {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-stat-val-1::before {
+  content: "25+";
+}
+
+[dir="ltr"] .custom-faq-stat-lbl-1::before {
+  content: "Topics Answered";
+}
+
+[dir="ltr"] .custom-faq-stat-val-2::before {
+  content: "100%";
+}
+
+[dir="ltr"] .custom-faq-stat-lbl-2::before {
+  content: "Eggless Options";
+}
+
+[dir="ltr"] .custom-faq-stat-val-3::before {
+  content: "24/7";
+}
+
+[dir="ltr"] .custom-faq-stat-lbl-3::before {
+  content: "Online Concierge";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-faq-stat-val-1,
+[dir="rtl"] .custom-faq-stat-lbl-1,
+[dir="rtl"] .custom-faq-stat-val-2,
+[dir="rtl"] .custom-faq-stat-lbl-2,
+[dir="rtl"] .custom-faq-stat-val-3,
+[dir="rtl"] .custom-faq-stat-lbl-3 {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-stat-val-1::before {
+  content: "+25";
+}
+
+[dir="rtl"] .custom-faq-stat-lbl-1::before {
+  content: "Answered Topics";
+}
+
+[dir="rtl"] .custom-faq-stat-val-2::before {
+  content: "%100";
+}
+
+[dir="rtl"] .custom-faq-stat-lbl-2::before {
+  content: "Options Eggless";
+}
+
+[dir="rtl"] .custom-faq-stat-val-3::before {
+  content: "24/7";
+}
+
+[dir="rtl"] .custom-faq-stat-lbl-3::before {
+  content: "Concierge Online";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-sizing-eyebrow {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-sizing-eyebrow::before {
+  content: "Portion Calculator";
+}
+
+[dir="ltr"] .custom-sizing-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-sizing-title::before {
+  content: "Cake Sizing & Serving Guide";
+}
+
+[dir="ltr"] .custom-sizing-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-sizing-desc::before {
+  content: "Not sure how much cake to order? Use our pastry chef's portion recommendation chart.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-sizing-eyebrow {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-sizing-eyebrow::before {
+  content: "Calculator Portion";
+}
+
+[dir="rtl"] .custom-sizing-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-sizing-title::before {
+  content: "Guide Serving & Sizing Cake";
+}
+
+[dir="rtl"] .custom-sizing-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-sizing-desc::before {
+  content: ".chart recommendation portion s'chef pastry our Use ?order to cake much how sure Not";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-memories-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-memories-title::before {
+  content: "Crafting Sweet Memories for Every Special Day";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-memories-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-memories-title::before {
+  content: "Day Special Every for Memories Sweet Crafting";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-memories-title {
+  text-align: left;        /* Left align for proper positioning */
+  margin-left: 24px;       /* Veliya thalli vara indentation spacing */
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-memories-title::before {
+  content: "Crafting Sweet Memories for Every Special Day";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-memories-title {
+  text-align: right;       /* Right align for RTL flow */
+  margin-right: 24px;      /* Opposite side spacing for RTL */
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-memories-title::before {
+  content: "Day Special Every for Memories Sweet Crafting";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-hero2-badge,
+[dir="ltr"] .custom-hero2-title,
+[dir="ltr"] .custom-hero2-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-hero2-badge::before {
+  content: "✦ MADE WITH LOVE ✦";
+}
+
+[dir="ltr"] .custom-hero2-title::before {
+  content: "Sweet Moments Start Right Here";
+}
+
+[dir="ltr"] .custom-hero2-desc::before {
+  content: "Welcome to our artisan confectionery studio. We blend French patisserie heritage with modern cake artistry to craft mouthwatering centerpieces for every milestone celebration.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-hero2-badge,
+[dir="rtl"] .custom-hero2-title,
+[dir="rtl"] .custom-hero2-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-hero2-badge::before {
+  content: "✦ LOVE WITH MADE ✦";
+}
+
+[dir="rtl"] .custom-hero2-title::before {
+  content: "Here Right Start Moments Sweet";
+}
+
+[dir="rtl"] .custom-hero2-desc::before {
+  content: ".celebration milestone every for centerpieces mouthwatering craft to artistry cake modern with heritage patisserie French blend We .studio confectionery artisan our to Welcome";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-love-badge {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-love-badge::before {
+  content: "✦ MADE WITH LOVE ✦";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-love-badge {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-love-badge::before {
+  content: "✦ LOVE WITH MADE ✦";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-artisan-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-artisan-desc::before {
+  content: "Welcome to our artisan confectionery studio. We blend French patisserie heritage with modern cake artistry to craft mouthwatering centerpieces for every milestone celebration.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-artisan-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-artisan-desc::before {
+  content: ".celebration milestone every for centerpieces mouthwatering craft to artistry cake modern with heritage patisserie French blend We .studio confectionery artisan our to Welcome";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-gradient-subheading {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-gradient-subheading::before {
+  content: "Start Right Here";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-gradient-subheading {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-gradient-subheading::before {
+  content: "Here Right Start";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-sweet-moments-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-sweet-moments-title::before {
+  content: "Sweet Moments";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-sweet-moments-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-sweet-moments-title::before {
+  content: "Moments Sweet";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-specials-eyebrow,
+[dir="ltr"] .custom-offers-title {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specials-eyebrow::before {
+  content: "✦ Handcrafted Specials ✦";
+}
+
+[dir="ltr"] .custom-offers-title::before {
+  content: "Our Signature Boxes & Offers";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-specials-eyebrow,
+[dir="rtl"] .custom-offers-title {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specials-eyebrow::before {
+  content: "✦ Specials Handcrafted ✦";
+}
+
+[dir="rtl"] .custom-offers-title::before {
+  content: "Offers & Boxes Signature Our";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-category-eyebrow,
+[dir="ltr"] .custom-category-title,
+[dir="ltr"] .custom-category-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-category-eyebrow::before {
+  content: "Handcrafted Varieties";
+}
+
+[dir="ltr"] .custom-category-title::before {
+  content: "Explore By Cake Category";
+}
+
+[dir="ltr"] .custom-category-desc::before {
+  content: "From whimsical birthday bento boxes to majestic 3-tier wedding centerpieces, find your ideal treat.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-category-eyebrow,
+[dir="rtl"] .custom-category-title,
+[dir="rtl"] .custom-category-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-category-eyebrow::before {
+  content: "Varieties Handcrafted";
+}
+
+[dir="rtl"] .custom-category-title::before {
+  content: "Category Cake By Explore";
+}
+
+[dir="rtl"] .custom-category-desc::before {
+  content: ".treat ideal your find ,centerpieces wedding tier-3 majestic to boxes bento birthday whimsical From";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-featured-eyebrow,
+[dir="ltr"] .custom-featured-title,
+[dir="ltr"] .custom-featured-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-featured-eyebrow::before {
+  content: "Chef's Signature Selection";
+}
+
+[dir="ltr"] .custom-featured-title::before {
+  content: "Featured Cake Creations";
+}
+
+[dir="ltr"] .custom-featured-desc::before {
+  content: "Each cake is baked to order using 100% pure organic dairy butter, Belgian chocolates, and Madagascar bourbon vanilla.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-featured-eyebrow,
+[dir="rtl"] .custom-featured-title,
+[dir="rtl"] .custom-featured-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-featured-eyebrow::before {
+  content: "Selection Signature s'Chef";
+}
+
+[dir="rtl"] .custom-featured-title::before {
+  content: "Creations Cake Featured";
+}
+
+[dir="rtl"] .custom-featured-desc::before {
+  content: ".vanilla bourbon Madagascar and ,chocolates Belgian ,butter dairy organic pure %100 using order to baked is cake Each";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-promise-eyebrow,
+[dir="ltr"] .custom-promise-title,
+[dir="ltr"] .custom-promise-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-promise-eyebrow::before {
+  content: "Our Promise";
+}
+
+[dir="ltr"] .custom-promise-title::before {
+  content: "Why Customers Choose Our Bakery";
+}
+
+[dir="ltr"] .custom-promise-desc::before {
+  content: "We are dedicated to crafting unforgettable memories with highest hygiene and ingredient purity.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-promise-eyebrow,
+[dir="rtl"] .custom-promise-title,
+[dir="rtl"] .custom-promise-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-promise-eyebrow::before {
+  content: "Promise Our";
+}
+
+[dir="rtl"] .custom-promise-title::before {
+  content: "Bakery Our Choose Customers Why";
+}
+
+[dir="rtl"] .custom-promise-desc::before {
+  content: ".purity ingredient and hygiene highest with memories unforgettable crafting to dedicated are We";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-deals-eyebrow,
+[dir="ltr"] .custom-deals-title,
+[dir="ltr"] .custom-deals-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-deals-eyebrow::before {
+  content: "Limited-Time Promotions";
+}
+
+[dir="ltr"] .custom-deals-title::before {
+  content: "Special Monthly Bakery Deals";
+}
+
+[dir="ltr"] .custom-deals-desc::before {
+  content: "Save on your celebration cakes with our exclusive packages and limited-time discounts.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-deals-eyebrow,
+[dir="rtl"] .custom-deals-title,
+[dir="rtl"] .custom-deals-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-deals-eyebrow::before {
+  content: "Promotions Time-Limited";
+}
+
+[dir="rtl"] .custom-deals-title::before {
+  content: "Deals Bakery Monthly Special";
+}
+
+[dir="rtl"] .custom-deals-desc::before {
+  content: ".discounts time-limited and packages exclusive our with cakes celebration your on Save";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-stories-eyebrow,
+[dir="ltr"] .custom-stories-title,
+[dir="ltr"] .custom-stories-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-stories-eyebrow::before {
+  content: "Celebrator Stories";
+}
+
+[dir="ltr"] .custom-stories-title::before {
+  content: "Loved by Over 15,000+ Customers";
+}
+
+[dir="ltr"] .custom-stories-desc::before {
+  content: "Read what our happy clients say about our taste, artistic detailing, and punctual delivery.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-stories-eyebrow,
+[dir="rtl"] .custom-stories-title,
+[dir="rtl"] .custom-stories-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-stories-eyebrow::before {
+  content: "Stories Celebrator";
+}
+
+[dir="rtl"] .custom-stories-title::before {
+  content: "Customers +15,000 Over by Loved";
+}
+
+[dir="rtl"] .custom-stories-desc::before {
+  content: ".delivery punctual and ,detailing artistic ,taste our about say clients happy our what Read";
+}
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-faq-eyebrow,
+[dir="ltr"] .custom-faq-title,
+[dir="ltr"] .custom-faq-desc {
+  text-align: center;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-faq-eyebrow::before {
+  content: "Got Questions?";
+}
+
+[dir="ltr"] .custom-faq-title::before {
+  content: "Frequently Asked Questions";
+}
+
+[dir="ltr"] .custom-faq-desc::before {
+  content: "Everything you need to know about cake customization, dietary options, and delivery.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-faq-eyebrow,
+[dir="rtl"] .custom-faq-title,
+[dir="rtl"] .custom-faq-desc {
+  text-align: center;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-faq-eyebrow::before {
+  content: "?Questions Got";
+}
+
+[dir="rtl"] .custom-faq-title::before {
+  content: "Questions Asked Frequently";
+}
+
+[dir="rtl"] .custom-faq-desc::before {
+  content: ".delivery and ,options dietary ,customization cake about know to need you Everything";
+}
+/* Force strict center alignment regardless of parent layout rules */
+.custom-cta-badge,
+.custom-cta-title,
+.custom-cta-desc {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-cta-badge,
+[dir="ltr"] .custom-cta-title,
+[dir="ltr"] .custom-cta-desc {
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-cta-badge::before {
+  content: "✦ LET'S BAKE YOUR DREAM CAKE ✦";
+}
+
+[dir="ltr"] .custom-cta-title::before {
+  content: "Ready to Make Your Celebration Sweet?";
+}
+
+[dir="ltr"] .custom-cta-desc::before {
+  content: "Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp.";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-cta-badge,
+[dir="rtl"] .custom-cta-title,
+[dir="rtl"] .custom-cta-desc {
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-cta-badge::before {
+  content: "✦ CAKE DREAM YOUR BAKE LET'S ✦";
+}
+
+[dir="rtl"] .custom-cta-title::before {
+  content: "?Sweet Celebration Your Make to Ready";
+}
+
+[dir="rtl"] .custom-cta-desc::before {
+  content: ".WhatsApp on directly decorators pastry master our with chat or ,online minutes 2 under in cake your Book";
+}
+/* Container alignment setup */
+.custom-wedding-h1 {
+  text-align: center !important;
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-wedding-top,
+[dir="ltr"] .custom-wedding-highlight {
+  text-align: center !important;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-wedding-top::before {
+  content: "Grand Luxury";
+}
+
+[dir="ltr"] .custom-wedding-highlight::before {
+  content: "Wedding Cakes";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-wedding-top,
+[dir="rtl"] .custom-wedding-highlight {
+  text-align: center !important;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-wedding-top::before {
+  content: "Luxury Grand";
+}
+
+[dir="rtl"] .custom-wedding-highlight::before {
+  content: "Cakes Wedding";
+}
+/* Container alignment setup */
+.custom-specials-h1 {
+  text-align: center !important;
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-specials-top,
+[dir="ltr"] .custom-specials-highlight {
+  text-align: center !important;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-specials-top::before {
+  content: "Chef's Seasonal";
+}
+
+[dir="ltr"] .custom-specials-highlight::before {
+  content: "Specials & Delights";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-specials-top,
+[dir="rtl"] .custom-specials-highlight {
+  text-align: center !important;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-specials-top::before {
+  content: "Seasonal s'Chef";
+}
+
+[dir="rtl"] .custom-specials-highlight::before {
+  content: "Delights & Specials";
+}
+/* Container alignment setup */
+.custom-contact-h1 {
+  text-align: center !important;
+}
+
+/* LTR Direction (English / Default) */
+[dir="ltr"] .custom-contact-top,
+[dir="ltr"] .custom-bakehouse-suffix {
+  text-align: center !important;
+  direction: ltr;
+}
+
+[dir="ltr"] .custom-contact-top::before {
+  content: "Get in Touch";
+}
+
+[dir="ltr"] .custom-bakehouse-suffix::before {
+  content: "With Our Bakehouse";
+}
+
+/* RTL Direction (Reversed / Right-to-Left) */
+[dir="rtl"] .custom-contact-top,
+[dir="rtl"] .custom-bakehouse-suffix {
+  text-align: center !important;
+  direction: rtl;
+}
+
+[dir="rtl"] .custom-contact-top::before {
+  content: "Touch in Get";
+}
+
+[dir="rtl"] .custom-bakehouse-suffix::before {
+  content: "Bakehouse Our With";
+}
+
+/* Direct Fallback injection (Guarantees text display even without [dir] attribute) */
+.custom-banner-eyebrow::before {
+  content: "✦ LET'S BAKE YOUR DREAM CAKE ✦" !important;
+}
+.custom-banner-title::before {
+  content: "Ready to Make Your Celebration Sweet?" !important;
+}
+.custom-banner-desc::before {
+  content: "Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp." !important;
+}
+.custom-btn-order::before {
+  content: "Order Online Now" !important;
+}
+.custom-btn-contact::before {
+  content: "Contact Us →" !important;
+}
+
+/* Direction-based Overrides */
+[dir="ltr"] .custom-banner-eyebrow::before { content: "✦ LET'S BAKE YOUR DREAM CAKE ✦" !important; }
+[dir="ltr"] .custom-banner-title::before { content: "Ready to Make Your Celebration Sweet?" !important; }
+[dir="ltr"] .custom-banner-desc::before { content: "Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp." !important; }
+[dir="ltr"] .custom-btn-order::before { content: "Order Online Now" !important; }
+[dir="ltr"] .custom-btn-contact::before { content: "Contact Us →" !important; }
+
+[dir="rtl"] .custom-banner-eyebrow::before { content: "✦ CAKE DREAM YOUR BAKE LET'S ✦" !important; }
+[dir="rtl"] .custom-banner-title::before { content: "?Sweet Celebration Your Make to Ready" !important; }
+[dir="rtl"] .custom-banner-desc::before { content: ".WhatsApp on directly decorators pastry master our with chat or ,online minutes 2 under in cake your Book" !important; }
+[dir="rtl"] .custom-btn-order::before { content: "Now Online Order" !important; }
+[dir="rtl"] .custom-btn-contact::before { content: "← Us Contact" !important; }
+/* ================================
+   MOBILE MENU - POSITION FIX
+   ================================ */
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    width: 85% !important;
+    max-width: 360px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-nav {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mobile-menu-nav > a,
+  .mobile-menu-nav .dropdown-toggle {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* LTR */
+  html[dir="ltr"] .mobile-menu {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  /* RTL */
+  html[dir="rtl"] .mobile-menu {
+    right: 0 !important;
+    left: auto !important;
+  }
+}
+
+/* ============================================================
+   FINAL NAVIGATION LAYOUT
+   Keep the desktop navigation in the header flow and use the
+   separate #mobileMenu drawer for mobile navigation.
+   ============================================================ */
+
+.navbar,
+.navbar .nav-inner {
+  box-sizing: border-box;
+}
+
+.navbar .nav-links {
+  position: static !important;
+  inset: auto !important;
+  display: flex !important;
+  flex: 0 1 auto !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: auto !important;
+  height: auto !important;
+  max-height: none !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+  transition: none !important;
+  z-index: auto !important;
+}
+
+.navbar .nav-links > li {
+  position: relative !important;
+  display: list-item !important;
+  width: auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.navbar .nav-links > li > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: auto !important;
+  min-height: 36px;
+  white-space: nowrap !important;
+}
+
+.navbar .nav-hamburger {
+  display: none !important;
+}
+
+.mobile-menu {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.mobile-menu.open,
+#mobileMenu.open {
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+@media (max-width: 992px) {
+  .navbar .nav-links {
+    display: none !important;
+  }
+
+  .navbar .nav-hamburger {
+    display: flex !important;
+  }
+
+  .mobile-menu,
+  #mobileMenu {
+    display: flex !important;
+  }
+}
+/* Mobile menu - default ah hide pannirukku, screen ku veliya */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  max-width: 80%;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 9999;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.2);
+  padding: 20px;
+}
+
+/* Hamburger click pannum bothu, JS idha class add pannum */
+.mobile-menu.active {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.mobile-menu-nav a {
+  display: block;
+  padding: 12px 0;
+  color: #1a202c;
+  text-decoration: none;
+  font-weight: 600;
 }

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
@@ -231,18 +231,15 @@
   <div class="hero-content" style="display:flex;justify-content:center;width:100%;">
     <div class="hero-content-inner" style="max-width:800px;margin:0 auto;text-align:center;padding:80px 15px;">
       
-      <span style="margin-top:-60px; font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#ff79a1;margin-bottom:16px;display:block;" class="fade-in-up">✦ Our Sweet Story ✦</span>
-      
-      <h1 class="fade-in-up delay-1" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;">
-        About <span style="color:#ff79a1;">Our Bakery</span>
-      </h1>
+      <span style="margin-top:-60px; font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#ff79a1;margin-bottom:16px;display:block;" class="fade-in-up custom-story-eyebrow"></span>
+      <h1 class="fade-in-up delay-1 custom-about-heading" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;display:block;">
+  <span class="custom-about-highlight" style="color:#ff79a1;display:inline-block;"></span>
+</h1>
       
       <div class="divider" style="margin:0 auto 24px auto;"></div>
       
-      <p class="fade-in-up delay-2" style="font-size:clamp(18px,2vw,22px);color:rgb(255, 255, 255);margin:0 auto 36px auto;max-width:680px;line-height:1.7;font-weight:500;">
-        From a small home kitchen to Coimbatore's most-loved bakery — here's the story behind every delicious bite.
-      </p>
-    <div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
+     <p class="fade-in-up delay-2 custom-about-desc" style="font-size:clamp(18px,2vw,22px);color:rgb(255, 255, 255);margin:0 auto 36px auto;max-width:680px;line-height:1.7;font-weight:500;display:block;"></p>
+    <div class="btn-group fade-in-up delay-3" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
   
   <!-- 1st Button: Know Our Chef -->
   <a href="../pages/about.html" 
@@ -258,7 +255,7 @@
      style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; box-sizing: border-box !important; margin: 0 !important;" 
      onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
      onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
-     Explore Menu &rarr;
+     Explore Menu <span class="btn-arrow">&rarr;</span>
   </a>
 
 </div>
@@ -323,8 +320,8 @@
   <section class="section bg-white">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Our Journey ✦</span>
-        <h2>Milestones & Moments</h2>
+        <span class="eyebrow custom-journey-eyebrow"></span>
+        <h2 class="custom-milestones-title"></h2>
         <div class="divider"></div>
       </div>
       <div style="max-width:680px;margin:0 auto;" class="fade-in-up">
@@ -369,9 +366,7 @@
     
     <!-- Section Header -->
     <div style="text-align: center; margin-bottom: 50px;">
-      <span style="display: inline-block; margin-bottom: 10px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;">
-        ✦ Loved By Our Patrons ✦
-      </span>
+      <span class="custom-patrons-eyebrow" style="display: inline-block; margin-bottom: 10px; font-weight: 700; font-size: 13px; color: #ff7495; text-transform: uppercase; letter-spacing: 2px;"></span>
       <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 45px); color: var(--text-dark, #1b2e3c); font-weight: 700; margin: 0;">
         Words from Our Happy Celebrations
       </h2>
@@ -561,10 +556,10 @@
   <section class="section bg-blush">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Meet the Team ✦</span>
+        <span class="eyebrow custom-team-eyebrow"></span>
         <h2>The Artists Behind the Magic</h2>
         <div class="divider"></div>
-        <p>Our talented team of bakers and cake artists pour their hearts into every creation.</p>
+       <p class="custom-team-desc"></p>
       </div>
 
       <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:24px;">
@@ -614,14 +609,10 @@
       <div style="flex: 1 1 500px; max-width: 600px; background: var(--bg-card, #ffffff); border-radius: 24px; padding: 40px 36px; text-align: start; box-sizing: border-box; border: 1px solid rgba(255, 121, 161, 0.25); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); transition: all 0.3s ease;">
         
         <!-- Eyebrow Tag -->
-        <span style="color: #ff79a1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;">
-          ✦ MEET OUR MASTER PASTRY CHEF ✦
-        </span>
+       <span class="custom-chef-eyebrow" style="color: #ff79a1; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: 12px;"></span>
         
         <!-- Heading -->
-        <h2 style="font-size: clamp(24px, 3.5vw, 34px); font-family: 'Playfair Display', serif, sans-serif; margin: 0 0 16px 0; line-height: 1.25; font-weight: 700; color: var(--text-dark, #1e293b);">
-          Crafting Sweet Masterpieces With 12+ Years of Passion
-        </h2>
+       <h2 class="custom-chef-title" style="font-size: clamp(24px, 3.5vw, 34px); font-family: 'Playfair Display', serif, sans-serif; margin: 0 0 16px 0; line-height: 1.25; font-weight: 700; color: var(--text-dark, #1e293b); display: block;"></h2>
         
         <div style="width: 50px; height: 3px; background: #ff79a1; margin: 0 0 20px 0; border-radius: 2px;"></div>
         
@@ -695,55 +686,54 @@
 <section class="section-sm" style="padding: 40px 15px; background: transparent;">
   <div class="container" style="max-width: 1100px; margin: 0 auto;">
     
-    <!-- Outer Banner Box (Dark Mode Adaptable) -->
-    <div class="offer-banner fade-in-up" style="background: var(--bg-card, #1a1926); border-radius: 24px; padding: 35px 25px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 121, 161, 0.15); box-sizing: border-box; overflow: hidden;">
+    <!-- Outer Banner Card -->
+    <div class="about-offer-banner fade-in-up" style="background: var(--bg-card, #ffffff); border-radius: 24px; padding: 40px 30px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); border: 1px solid rgba(255, 121, 161, 0.2); box-sizing: border-box; overflow: hidden;">
       
-      <!-- Content (Left Side) -->
-      <div class="offer-banner-text" style="flex: 1 1 320px; display: flex; flex-direction: column; align-items: flex-start; box-sizing: border-box;">
-        <div class="offer-banner-content" style="display: flex; flex-direction: column; align-items: flex-start; text-align: left; width: 100%;">
+      <!-- Text Area (Left) -->
+      <div class="about-banner-text" style="flex: 1 1 340px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; box-sizing: border-box;">
+        
+        <!-- Eyebrow Badge -->
+        <span class="custom-about-eyebrow" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; background: linear-gradient(135deg, #ff6584 0%, #d8436b 100%); color: #ffffff !important; padding: 8px 18px !important; border-radius: 50px !important; font-weight: 600 !important; font-size: 0.75rem !important; letter-spacing: 1px !important; text-transform: uppercase !important; margin-bottom: 20px !important; box-shadow: 0 4px 12px rgba(216, 67, 107, 0.35) !important;">
+          Can't Find What You Want?
+        </span>
+        
+        <!-- Heading -->
+        <h2 class="custom-about-title" style="font-size: clamp(1.8rem, 2.8vw, 2.4rem) !important; color: #1b2e3c !important; font-family: serif !important; font-weight: 700 !important; margin: 0 0 15px 0 !important; line-height: 1.25 !important; display: block !important; width: 100% !important;">
+          Design Your Own<br/>Dream Cake
+        </h2>
+        
+        <!-- Description -->
+        <p class="custom-about-desc" style="color: #556070 !important; font-size: 0.95rem !important; line-height: 1.6 !important; margin: 0 0 25px 0 !important; max-width: 480px !important; display: block !important; width: 100% !important;">
+          Our bakers love a challenge. Describe your vision and we'll make it a reality.
+        </p>
+
+        <!-- Properly Aligned Button Group -->
+        <div class="about-btn-group" style="display: flex !important; flex-wrap: wrap !important; gap: 12px !important; align-items: center !important; justify-content: flex-start !important; width: 100% !important;">
           
-          <!-- Eyebrow Badge -->
-          <span class="eyebrow" style="display: inline-block; background: linear-gradient(135deg, #ff6584 0%, #d8436b 100%); color: #ffffff; padding: 8px 18px; border-radius: 50px; font-weight: 600; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(216, 67, 107, 0.35);">
-            ✦ LET'S BAKE YOUR DREAM CAKE ✦
-          </span>
-          
-          <!-- Heading -->
-          <h2 style="font-size: clamp(1.6rem, 2.5vw, 2.2rem); color: var(--text-dark, #ffffff); font-family: serif; font-weight: 700; margin: 0 0 15px 0; line-height: 1.25;">
-            Ready to Make Your Celebration Sweet?
-          </h2>
-          
-          <!-- Paragraph -->
-          <p style="color: var(--text-mid, #a0aec0); font-size: 0.95rem; line-height: 1.6; margin: 0 0 25px 0; max-width: 480px;">
-            Book your cake in under 2 minutes online, or chat with our master pastry decorators directly on WhatsApp.
-          </p>
+          <!-- Primary Button -->
+          <a href="../pages/booking.html" class="btn-primary" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%) !important; color: #ffffff !important; padding: 10px 22px !important; border-radius: 50px !important; font-weight: 600 !important; font-size: 0.88rem !important; text-decoration: none !important; box-shadow: 0 4px 12px rgba(255, 82, 134, 0.35) !important; box-sizing: border-box !important; white-space: nowrap !important; height: 42px !important; margin: 0 !important;">
+            <i data-lucide="palette" style="width: 18px; height: 18px;"></i> 
+            <span class="custom-about-btn-order" style="display: inline-flex !important; align-items: center !important;">Start Designing</span>
+          </a>
+
+          <!-- Secondary Button -->
+          <a href="../pages/contact.html" class="btn-secondary custom-pink-hover" style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; background: #ffffff !important; color: #d8436b !important; padding: 10px 22px !important; border-radius: 50px !important; font-weight: 600 !important; font-size: 0.88rem !important; text-decoration: none !important; border: 1.5px solid #ff79a1 !important; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important; box-sizing: border-box !important; transition: all 0.3s ease !important; white-space: nowrap !important; height: 42px !important; margin: 0 !important;"
+             onmouseover="this.style.setProperty('background', 'linear-gradient(135deg, #ff79a1 0%, #ff5286 100%)', 'important'); this.style.setProperty('color', '#ffffff', 'important'); this.style.setProperty('border-color', 'transparent', 'important');"
+             onmouseout="this.style.setProperty('background', '#ffffff', 'important'); this.style.setProperty('color', '#d8436b', 'important'); this.style.setProperty('border-color', '#ff79a1', 'important');">
+            <span class="custom-about-btn-contact" style="display: inline-flex !important; align-items: center !important;">Chat with Us →</span>
+          </a>
+
         </div>
-
-       <!-- Button Group Container -->
-<div class="btn-group" style="width: auto; display: inline-flex; gap: 8px; margin: 0; align-items: center;">
-  
-  <!-- Primary Button -->
-  <a href="../pages/booking.html" class="btn-primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: linear-gradient(135deg, #ff79a1 0%, #ff5286 100%); color: #ffffff; padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.82rem; text-decoration: none; box-shadow: 0 4px 10px rgba(255, 82, 134, 0.3); box-sizing: border-box; white-space: nowrap;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cake"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h.01"/><path d="M12 4h.01"/><path d="M17 4h.01"/></svg> 
-    Order Online Now
-  </a>
-
-  <!-- Secondary Button (With Hover effect class) -->
-  <a href="../pages/contact.html" class="btn-secondary custom-pink-hover" style="display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #ffffff; color: #d8436b; padding: 8px 16px; border-radius: 50px; font-weight: 600; font-size: 0.82rem; text-decoration: none; border: 1px solid #ff79a1; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); box-sizing: border-box; transition: all 0.3s ease; white-space: nowrap;">
-    Contact Us →
-  </a>
-
-</div>
       </div>
 
-      <!-- Image (Right Side) -->
-      <div class="offer-banner-image" style="flex: 1 1 300px; max-width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
-        <img src="../assets/pexels-pavel-danilyuk-7180763.jpg" alt="Dream Cake Baker" style="width: 100%; height: 340px; display: block; object-fit: cover; border-radius: 16px;">
+      <!-- Image Area (Right) -->
+      <div class="about-banner-image" style="flex: 1 1 300px; max-width: 100%; border-radius: 16px; overflow: hidden; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+        <img src="../assets/pexels-pavel-danilyuk-7180763.jpg" alt="Baker Crafting Cake" style="width: 100%; height: 340px; display: block; object-fit: cover; border-radius: 16px;">
       </div>
 
     </div>
   </div>
 </section>
-
    <!-- FOOTER -->
  <footer class="footer">
   <div class="footer-grid">
@@ -821,7 +811,7 @@
       <h5>OPENING HOURS</h5>
       <ul class="hours-list">
         <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
+         <li><span>sat – sun</span><span> 8am – 9pm</span></li>
         <li><span>Sunday</span><span>9am – 8pm</span></li>
       </ul>
       

@@ -1,9 +1,9 @@
-
 /* ============================================================
    Sweet Delight Bakery — Shared JavaScript
    ============================================================ */
+
 // Filter Button Click Handler Example
-const filterBtns = document.querySelectorAll('[data-filter]'); // Unga filter btn selector
+const filterBtns = document.querySelectorAll('[data-filter]');
 const cakeCards = document.querySelectorAll('.cake-card');
 
 filterBtns.forEach(btn => {
@@ -24,8 +24,11 @@ filterBtns.forEach(btn => {
 
 /* ---- Immediate Direction Setup (Prevents FOUC) ---- */
 (function () {
-  const initialDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'rtl';
+  const initialDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'ltr';
   document.documentElement.setAttribute('dir', initialDir);
+  if (document.body) {
+    document.body.setAttribute('dir', initialDir);
+  }
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -65,76 +68,60 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-/* ---- LTR / RTL Direction Management ---- */
-const savedDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'rtl';
+  /* ---- LTR / RTL Direction Management ---- */
+  const savedDir = localStorage.getItem('sweet_delight_dir') || localStorage.getItem('siteDir') || 'ltr';
 
-function applyDirection(dir) {
-  const validDir = dir === 'ltr' ? 'ltr' : 'rtl';
-  document.documentElement.setAttribute('dir', validDir);
-  if (document.body) {
-    document.body.setAttribute('dir', validDir);
-  }
-  localStorage.setItem('sweet_delight_dir', validDir);
-  localStorage.setItem('siteDir', validDir);
+  function applyDirection(dir) {
+    const validDir = dir === 'rtl' ? 'rtl' : 'ltr';
+    document.documentElement.setAttribute('dir', validDir);
+    if (document.body) {
+      document.body.setAttribute('dir', validDir);
+    }
+    localStorage.setItem('sweet_delight_dir', validDir);
+    localStorage.setItem('siteDir', validDir);
 
-  // Ensure text spans keep correct word reading without reversing
-  document.querySelectorAll('.brand-name, .nav-logo-text, .nav-logo .logo-text').forEach(el => {
-    el.style.direction = 'ltr';
-    el.style.unicodeBidi = 'isolate';
-  });
+    // Brand Name-க்கு மட்டும் LTR தரப்படுகிறது (Heading பக்கங்களுக்கு இது பாதிக்காது)
+    document.querySelectorAll('.brand-name, .nav-logo-text, .nav-logo .logo-text').forEach(el => {
+      el.style.direction = 'ltr';
+      el.style.unicodeBidi = 'isolate';
+    });
 
-  // Ensure button groups follow the document direction (overriding any inline style)
-  document.querySelectorAll('.btn-group, .cta-btn-group, .hero-home2-btns').forEach(el => {
-    el.style.setProperty('direction', validDir, 'important');
-  });
-
-  // Update Explore Menu arrow according to direction
-  document.querySelectorAll('.btn-secondary').forEach(btn => {
-    if (btn.innerHTML.includes('Explore Menu')) {
-      if (validDir === 'rtl') {
-        btn.innerHTML = 'Explore Menu &larr;';
+    // Update all dir toggle buttons
+    document.querySelectorAll('.dir-toggle-btn, #dirToggle').forEach(btn => {
+      btn.setAttribute('data-dir', validDir);
+      btn.setAttribute('title', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+      btn.setAttribute('aria-label', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
+      const label = btn.querySelector('.dir-label');
+      if (label) {
+        label.textContent = validDir.toUpperCase();
       } else {
-        btn.innerHTML = 'Explore Menu &rarr;';
+        btn.innerHTML = '<span class="dir-label" style="font-size: 10px !important;">' + validDir.toUpperCase() + '</span>';
       }
-    }
-  });
+    });
 
-  document.querySelectorAll('.dir-toggle-btn').forEach(btn => {
-    btn.setAttribute('data-dir', validDir);
-    btn.setAttribute('title', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
-    btn.setAttribute('aria-label', validDir === 'rtl' ? 'Switch to LTR' : 'Switch to RTL');
-    const label = btn.querySelector('.dir-label');
-    if (label) {
-      label.textContent = validDir.toUpperCase();
-    } else if (!btn.querySelector('i') && !btn.querySelector('svg')) {
-      btn.innerHTML = '<span class="dir-label">' + validDir.toUpperCase() + '</span>';
-    }
-  });
+    initIcons();
+  }
 
-  initIcons();
-}
-
-applyDirection(savedDir);
+  applyDirection(savedDir);
 
   document.addEventListener('click', (e) => {
-    const btn = e.target.closest('.dir-toggle-btn');
+    const btn = e.target.closest('.dir-toggle-btn, #dirToggle');
     if (btn) {
-      const current = document.documentElement.getAttribute('dir') || 'rtl';
+      e.preventDefault();
+      const current = document.documentElement.getAttribute('dir') || 'ltr';
       const nextDir = current === 'rtl' ? 'ltr' : 'rtl';
       applyDirection(nextDir);
     }
   });
 
-  /* ---- Desktop Dropdowns (Click & Hover interaction) ---- */
+  /* ---- Desktop Dropdowns ---- */
   const desktopDropdowns = document.querySelectorAll('.nav-dropdown');
 
   desktopDropdowns.forEach(dropdown => {
     const toggleLink = dropdown.querySelector(':scope > a');
     if (toggleLink) {
       toggleLink.addEventListener('click', (e) => {
-        // Only intercept when acting as dropdown toggle
         const isOpen = dropdown.classList.contains('open');
-        // Close all other dropdowns
         desktopDropdowns.forEach(d => {
           if (d !== dropdown) d.classList.remove('open');
         });
@@ -149,7 +136,6 @@ applyDirection(savedDir);
     }
   });
 
-  // Close desktop dropdowns when clicking outside
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-dropdown')) {
       desktopDropdowns.forEach(d => d.classList.remove('open'));
@@ -163,14 +149,12 @@ applyDirection(savedDir);
     const toggleBtn = dropdown.querySelector('.dropdown-toggle, .mobile-dropdown-toggle, :scope > a');
     if (toggleBtn) {
       toggleBtn.addEventListener('click', (e) => {
-        // Only trigger accordion if there is a sub menu present
         const subMenu = dropdown.querySelector('.dropdown-menu, ul, .sub-menu, .submenu');
         if (subMenu) {
           e.preventDefault();
           e.stopPropagation();
           const isOpen = dropdown.classList.contains('open') || dropdown.classList.contains('active');
           
-          // Close other mobile dropdowns for accordion effect
           mobileDropdowns.forEach(d => {
             if (d !== dropdown) {
               d.classList.remove('open', 'active');
@@ -202,14 +186,13 @@ applyDirection(savedDir);
       }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on load
+    onScroll();
   }
 
   /* ---- Hamburger / Mobile menu ---- */
   const hamburger   = document.getElementById('hamburger');
   const mobileMenu  = document.getElementById('mobileMenu');
 
-  // Ensure backdrop exists
   let backdrop = document.getElementById('mobileBackdrop');
   if (!backdrop) {
     backdrop = document.createElement('div');
@@ -244,7 +227,6 @@ applyDirection(savedDir);
       }
     });
 
-    // Close on close button click
     const closeBtn = document.getElementById('navClose') || mobileMenu.querySelector('.mobile-close-btn, .nav-close-btn');
     if (closeBtn) {
       closeBtn.addEventListener('click', (e) => {
@@ -254,7 +236,6 @@ applyDirection(savedDir);
       });
     }
 
-    // Close on any navigation link click inside mobile menu (excluding dropdown toggles)
     mobileMenu.addEventListener('click', (e) => {
       const closeTarget = e.target.closest('#navClose, .mobile-close-btn, .nav-close-btn');
       if (closeTarget) {
@@ -264,22 +245,18 @@ applyDirection(savedDir);
       }
       const toggle = e.target.closest('.dropdown-toggle, .mobile-dropdown-toggle, .dropdown > a');
       const hasSub = toggle && toggle.closest('.dropdown, .mobile-dropdown')?.querySelector('.dropdown-menu, ul, .sub-menu, .submenu, .dropdown-submenu');
-      if (hasSub) {
-        // Dropdown toggle clicked -> do NOT close mobile menu drawer
-        return;
-      }
+      if (hasSub) return;
+
       const link = e.target.closest('a');
       if (link) {
         closeMenu();
       }
     });
 
-    // Close when tapping the overlay backdrop
     backdrop.addEventListener('click', () => {
       closeMenu();
     });
 
-    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') closeMenu();
     });
@@ -307,7 +284,6 @@ applyDirection(savedDir);
     const modalPrice = document.getElementById("modalPrice");
     const modalRating = document.getElementById("modalRating");
 
-    // Product cards click
     const cakeImages = document.querySelectorAll(".cake-card-img img");
     cakeImages.forEach(img => {
       img.addEventListener("click", () => {
@@ -324,7 +300,6 @@ applyDirection(savedDir);
       });
     });
 
-    // Gallery items click
     const galleryItemsWithData = document.querySelectorAll(".gallery-item[data-title]");
     galleryItemsWithData.forEach(item => {
       item.addEventListener("click", () => {
@@ -398,7 +373,7 @@ applyDirection(savedDir);
     const update = (now) => {
       const elapsed = now - start;
       const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+      const eased = 1 - Math.pow(1 - progress, 3);
       el.textContent = Math.round(eased * target).toLocaleString() + suffix;
       if (progress < 1) requestAnimationFrame(update);
     };
@@ -438,50 +413,17 @@ applyDirection(savedDir);
     });
   });
 
-  /* ---- Gallery lightbox ---- */
-  const galleryItems = document.querySelectorAll('.gallery-item:not([data-title])');
-  if (galleryItems.length > 0) {
-    let lightbox = document.getElementById('lightbox');
-    if (!lightbox) {
-      lightbox = document.createElement('div');
-      lightbox.id = 'lightbox';
-      lightbox.style.cssText = `
-        position:fixed;inset:0;background:rgba(0,0,0,0.88);
-        z-index:9999;display:none;align-items:center;justify-content:center;
-        cursor:pointer;padding:20px;
-      `;
-      lightbox.innerHTML = '<img id="lb-img" style="max-height:90vh;max-width:90vw;border-radius:16px;object-fit:contain;"/>';
-      document.body.appendChild(lightbox);
-
-      lightbox.addEventListener('click', () => {
-        lightbox.style.display = 'none';
-        document.body.style.overflow = '';
-      });
-    }
-
-    galleryItems.forEach(item => {
-      item.addEventListener('click', () => {
-        const img = item.querySelector('img');
-        if (img) {
-          document.getElementById('lb-img').src = img.src;
-          lightbox.style.display = 'flex';
-          document.body.style.overflow = 'hidden';
-        }
-      });
-    });
-  }
-
   /* ---- Category filter (cakes page) ---- */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const cakeCards  = document.querySelectorAll('.cake-card[data-category]');
+  const categoryFilterBtns = document.querySelectorAll('.filter-btn');
+  const categoryCakeCards  = document.querySelectorAll('.cake-card[data-category]');
 
-  if (filterBtns.length > 0) {
-    filterBtns.forEach(btn => {
+  if (categoryFilterBtns.length > 0) {
+    categoryFilterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
+        categoryFilterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
         const cat = btn.dataset.filter;
-        cakeCards.forEach(card => {
+        categoryCakeCards.forEach(card => {
           if (cat === 'all' || card.dataset.category === cat) {
             card.style.display = '';
             setTimeout(() => { card.style.opacity = '1'; card.style.transform = 'scale(1)'; }, 10);
@@ -495,44 +437,9 @@ applyDirection(savedDir);
     });
   }
 
-  /* ---- Smooth scroll for anchor links ---- */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const targetId = link.getAttribute('href');
-      if (targetId && targetId !== '#') {
-        const target = document.querySelector(targetId);
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
-
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const observerOptions = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 0.2 
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-         entry.target.classList.add("appear");
-        observer.unobserve(entry.target); 
-      }
-    });
-  }, observerOptions);
-
-  const banners = document.querySelectorAll(".offer-banner");
-  banners.forEach(banner => {
-    observer.observe(banner);
-  });
-});
-
+/* ---- Global Dropdown and Mobile Menu Controls ---- */
 function toggleDropdown(element) {
   if (!element) return;
   const parentDropdown = element.closest('.mobile-dropdown, .dropdown');
@@ -541,7 +448,6 @@ function toggleDropdown(element) {
   const allDropdowns = document.querySelectorAll('.mobile-dropdown, .mobile-menu .dropdown');
   const isOpen = parentDropdown.classList.contains('open') || parentDropdown.classList.contains('active');
 
-  // Close all other dropdowns
   allDropdowns.forEach(item => {
     if (item !== parentDropdown) {
       item.classList.remove('open', 'active');
@@ -550,7 +456,6 @@ function toggleDropdown(element) {
     }
   });
 
-  // Toggle current dropdown
   const subMenu = parentDropdown.querySelector('.dropdown-menu, ul, .sub-menu, .submenu, .dropdown-submenu');
   if (isOpen) {
     parentDropdown.classList.remove('open', 'active');
@@ -575,26 +480,43 @@ function closeMobileMenu() {
 
 window.toggleDropdown = toggleDropdown;
 window.closeMobileMenu = closeMobileMenu;
+
 document.addEventListener("DOMContentLoaded", function () {
-  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true"; // User login state
+  const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
 
-  // Profile Icon Click Handler
-  document.getElementById("profile-icon").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!isLoggedIn) {
-      window.location.href = "../pages/login.html"; // Login page-ku redirect aagum
-    } else {
-      window.location.href = "../pages/account.html"; // Already logged in-na account page-ku pogum
-    }
-  });
+  const profileIcon = document.getElementById("profile-icon");
+  if (profileIcon) {
+    profileIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!isLoggedIn) {
+        window.location.href = "../pages/login.html";
+      } else {
+        window.location.href = "../pages/account.html";
+      }
+    });
+  }
 
-  // Cart Icon Click Handler
-  document.getElementById("cart-icon").addEventListener("click", function (e) {
-    e.preventDefault();
-    if (!isLoggedIn) {
-      window.location.href = "../pages/login.html"; // Login pannala na login page-ku pogum
-    } else {
-      window.location.href = "../pages/cart.html"; // Cart page-ku pogum
-    }
-  });
+  const cartIcon = document.getElementById("cart-icon");
+  if (cartIcon) {
+    cartIcon.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (!isLoggedIn) {
+        window.location.href = "../pages/login.html";
+      } else {
+        window.location.href = "../pages/cart.html";
+      }
+    });
+  }
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Set default direction to LTR if not already present
+  if (!document.documentElement.hasAttribute("dir")) {
+    document.documentElement.setAttribute("dir", "ltr");
+  }
+});
+
+// Switch function for language/direction toggle
+function setPageDirection(direction) {
+  document.documentElement.setAttribute("dir", direction);
+}

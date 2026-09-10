@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -283,21 +283,18 @@
   <div class="hero-content" style="display:flex;justify-content:center;width:100%;">
     <div class="hero-content-inner" style="max-width:800px;margin:0 auto;text-align:center;padding:80px 15px;">
       
-      <span style="margin-top:-30px; font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#ff79a1;margin-bottom:16px;display:block;" class="fade-in-up">
-✦ What We Offer ✦</span>
+      <span class="fade-in-up custom-offer-eyebrow" style="margin-top:-30px; font-size:14px;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:#ff79a1;margin-bottom:16px;display:block;"></span>
+
+<h1 class="fade-in-up delay-1" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;display:block;">
+  <span class="custom-services-prefix" style="display:inline-block;"></span>
+  <span class="custom-services-highlight" style="color:#ff79a1;display:inline-block;"></span>
+</h1>
+
+<div class="divider" style="margin:0 auto 24px auto;"></div>
+
+<p class="fade-in-up delay-2 custom-services-desc" style="font-size: clamp(18px, 2vw, 22px); color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 680px; line-height: 1.7; font-weight: 500; text-shadow: none !important; filter: none !important; display: block;"></p>
       
-      <h1 class="fade-in-up delay-1" style="font-size:clamp(48px,7.5vw,90px);color:var(--text-dark);margin-bottom:24px;line-height:1.1;">
-        Our <span style="color:#ff79a1;">Services</span>
-      </h1>
-      
-      <div class="divider" style="margin:0 auto 24px auto;"></div>
-      
-      <p class="fade-in-up delay-2" 
-   style="font-size: clamp(18px, 2vw, 22px); color: var(--text-mid, #283c5a) !important; margin: 0 auto 36px auto; max-width: 680px; line-height: 1.7; font-weight: 500; text-shadow: none !important; filter: none !important;">
-   From intimate birthday cakes to grand wedding tiers — we have the perfect service for every occasion.
-</p>
-      
-    <div class="btn-group fade-in-up delay-3" style="display: flex !important; direction: ltr !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
+    <div class="btn-group fade-in-up delay-3" style="display: flex !important; justify-content: center !important; align-items: center !important; gap: 8px !important; width: auto !important; max-width: fit-content !important; margin: 25px auto 0 auto !important; flex-wrap: wrap !important;">
   
   <!-- 1st Button: About Us -->
   <a href="../pages/about.html" 
@@ -313,7 +310,7 @@
      style="display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; height: 44px !important; padding: 0 18px !important; border-radius: 50px !important; border: 2px solid #ff7495 !important; background-color: #ffffff !important; color: #ff7495 !important; font-size: 14px !important; font-weight: 700 !important; text-decoration: none !important; transition: all 0.3s ease !important; box-shadow: 0 6px 20px rgba(0,0,0,0.15) !important; box-sizing: border-box !important; margin: 0 !important;" 
      onmouseover="this.style.setProperty('background-color', '#ff7495', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
      onmouseout="this.style.setProperty('background-color', '#ffffff', 'important'); this.style.setProperty('color', '#ff7495', 'important');">
-     Explore &rarr;
+     Explore <span class="btn-arrow">&rarr;</span>
   </a>
 
 </div>
@@ -322,48 +319,54 @@
   </div>
 </section>
 <!-- ===================== ABOUT US SECTION (FIXED VISIBILITY) ===================== -->
-<section class="about-section">
-  <div class="about-container">
-    <div class="about-wrapper">
+<section class="about-section" style="padding: 60px 20px; background: transparent; width: 100%; box-sizing: border-box;">
+  <div class="about-container" style="max-width: 1200px; margin: 0 auto; width: 100%;">
+    <div class="about-wrapper" style="display: flex; flex-direction: row; align-items: center; gap: 48px; width: 100%; flex-wrap: wrap;">
       
-      <!-- Left Side Content Box -->
-      <div class="about-card-box">
-        <span class="about-subtitle">
+      <!-- Left Side: Image Box -->
+      <div class="about-image-box" style="flex: 1; min-width: 320px; position: relative;">
+        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=80" alt="Artisan Cake Crafting" loading="lazy" style="width: 100%; height: 440px; object-fit: cover; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); display: block;" />
+       
+      </div>
+
+      <!-- Right Side: Content Box (Dark & Light Theme Perfect Support) -->
+      <div class="about-card-box" style="flex: 1; min-width: 320px; text-align: left; background: transparent !important; padding: 0 !important; border: none !important; box-shadow: none !important;">
+        
+        <span class="about-subtitle" style="font-size: 13px; font-weight: 700; text-transform: uppercase; color: #ff527b; letter-spacing: 0.15em; display: block; margin-bottom: 12px;">
           ✦ Craftsmen of Sweet Memories ✦
         </span>
         
-        <h2 class="about-title">
+        <!-- Heading: Uses Theme Text Variable or Default Inherit -->
+        <h2 class="about-title" style="font-size: 32px; font-weight: 700; color: var(--text-color, var(--text-main, var(--heading-color, inherit))); line-height: 1.25; margin: 0 0 16px 0;">
           Baking With Passion & Fine Artistry Since 2018
         </h2>
         
-        <div class="about-divider"></div>
+        <div class="about-divider" style="width: 60px; height: 3px; background-color: #ff527b; margin-bottom: 20px; border-radius: 2px;"></div>
         
-        <p class="about-desc">
-          At <strong class="pink-text">Sweet Delight</strong>, we believe every celebration deserves a centerpiece that looks as breathtaking as it tastes. From hand-crafted sugar flowers to rich gourmet ganaches, our master bakers combine traditional patisserie techniques with modern designs.
+        <!-- Descriptions: Automatically matches site theme font color -->
+        <p class="about-desc" style="font-size: 15px; line-height: 1.7; color: var(--text-color, var(--text-muted, var(--body-color, inherit))); margin-bottom: 16px;">
+          At <strong class="pink-text" style="color: #ff527b !important;">Sweet Delight</strong>, we believe every celebration deserves a centerpiece that looks as breathtaking as it tastes. From hand-crafted sugar flowers to rich gourmet ganaches, our master bakers combine traditional patisserie techniques with modern designs.
         </p>
         
-        <p class="about-desc">
+        <p class="about-desc" style="font-size: 15px; line-height: 1.7; color: var(--text-color, var(--text-muted, var(--body-color, inherit))); margin-bottom: 24px;">
           Whether you need an elegant multi-tier wedding cake, customized corporate hampers, or a quick same-day birthday surprise in Coimbatore — we craft every cake using 100% natural and premium ingredients.
         </p>
         
         <!-- Buttons Group -->
-        <div class="about-btn-group">
-          <a href="../pages/about.html" class="about-btn-primary">
+        <div class="about-btn-group" style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+          <a href="../pages/about.html" class="about-btn-primary" style="display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; background: linear-gradient(135deg, #ff527b, #ff758c); color: #ffffff !important; border-radius: 30px; text-decoration: none; font-weight: 700; font-size: 14px; box-shadow: 0 4px 15px rgba(255, 82, 123, 0.3);">
             Read Full Story
           </a>
           
-          <a href="../pages/booking.html" class="about-btn-secondary">
-            Book Consultation
-          </a>
+         <a href="../pages/booking.html" 
+   class="about-btn-secondary" 
+   style="display: inline-flex !important; align-items: center !important; justify-content: center !important; padding: 10px 20px !important; border: 2px solid #ff527b !important; background-color: transparent !important; color: #ff527b !important; border-radius: 30px !important; text-decoration: none !important; font-family: 'Poppins', sans-serif !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.5px !important; transition: all 0.3s ease !important; box-sizing: border-box !important;"
+   onmouseover="this.style.setProperty('background-color', '#ff527b', 'important'); this.style.setProperty('color', '#ffffff', 'important');" 
+   onmouseout="this.style.setProperty('background-color', 'transparent', 'important'); this.style.setProperty('color', '#ff527b', 'important');">
+   <span style="color: inherit !important;">Book Consultation</span>
+</a>
         </div>
-      </div>
 
-      <!-- Right Side Image Box -->
-      <div class="about-image-box">
-        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&auto=format&fit=crop&q=80" alt="Artisan Cake Crafting" loading="lazy" />
-        <span class="about-badge">
-          ✨ 100% Freshly Baked
-        </span>
       </div>
 
     </div>
@@ -572,10 +575,10 @@
     
     <!-- Section Header -->
     <div class="section-head fade-in-up" style="text-align: center; margin-bottom: 35px;">
-      <span class="eyebrow" style="color: #ff79a1; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px;">✦ Everything We Do ✦</span>
-      <h2 style="font-size: 2rem; color: var(--text-dark, #1a202c); font-family: serif; margin: 8px 0;">Our Specialities</h2>
-      <div class="divider" style="width: 50px; height: 3px; background: #ff79a1; margin: 10px auto 15px auto; border-radius: 2px;"></div>
-      <p style="color: var(--text-mid, #4a5568); font-size: 0.95rem; max-width: 600px; margin: 0 auto;">A full spectrum of artisan bakery services tailored to your celebration.</p>
+     <span class="eyebrow custom-specialities-eyebrow" style="color: #ff79a1; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; display: block;"></span>
+<h2 class="custom-specialities-title" style="font-size: 2rem; color: var(--text-dark, #1a202c); font-family: serif; margin: 8px 0; display: block;"></h2>
+<div class="divider" style="width: 50px; height: 3px; background: #ff79a1; margin: 10px auto 15px auto; border-radius: 2px;"></div>
+<p class="custom-specialities-desc" style="color: var(--text-mid, #4a5568); font-size: 0.95rem; max-width: 600px; margin: 0 auto; display: block;"></p>
     </div>
 
     <!-- Cards Grid / Flex Container -->
@@ -701,10 +704,10 @@
   <section class="section bg-white">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Service Highlights ✦</span>
-        <h2>What Makes Our Bakery Service Different</h2>
-        <div class="divider"></div>
-        <p>Every order is planned with care, design guidance and dependable support from start to finish.</p>
+       <span class="eyebrow custom-highlights-eyebrow" style="display: block;"></span>
+<h2 class="custom-highlights-title" style="display: block;"></h2>
+<div class="divider"></div>
+<p class="custom-highlights-desc" style="display: block;"></p>
       </div>
 <div class="feature-list-grid fade-in-up" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; width: 100%;">
   
@@ -784,10 +787,10 @@
   <section class="section bg-blush">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Transparent Pricing ✦</span>
-        <h2>Our Pricing Plans</h2>
-        <div class="divider"></div>
-        <p>Honest, upfront pricing with no hidden fees. Every tier includes free delivery.</p>
+       <span class="eyebrow custom-pricing-eyebrow" style="display: block;"></span>
+<h2 class="custom-pricing-title" style="display: block;"></h2>
+<div class="divider"></div>
+<p class="custom-pricing-desc" style="display: block;"></p>
       </div>
 
       <div class="pricing-table">
@@ -846,10 +849,10 @@
   <section class="section bg-white">
     <div class="container">
       <div class="section-head fade-in-up">
-        <span class="eyebrow">✦ Helpful Info ✦</span>
-        <h2>Common Questions About Our Services</h2>
-        <div class="divider"></div>
-        <p>Everything you need to know before placing your cake order.</p>
+       <span class="eyebrow custom-questions-eyebrow" style="display: block;"></span>
+<h2 class="custom-questions-title" style="display: block;"></h2>
+<div class="divider"></div>
+<p class="custom-questions-desc" style="display: block;"></p>
       </div>
 
       <div class="faq-wrap fade-in-up">
@@ -999,7 +1002,7 @@
       <h5>OPENING HOURS</h5>
       <ul class="hours-list">
         <li><span>Mon – Fri</span><span>8am – 9pm</span></li>
-        <li><span>Saturday</span><span>8am – 10pm</span></li>
+ <li><span>sat – sun</span><span> 8am – 9pm</span></li>
         <li><span>Sunday</span><span>9am – 8pm</span></li>
       </ul>
       
