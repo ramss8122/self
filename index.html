@@ -248,53 +248,53 @@
   <!-- Mobile Menu -->
   <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
-  <!-- Sidebar Header with Logo & Close Button -->
-  <div class="mobile-menu-header">
-    <a href="../index.html" class="logo-text">
-      <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" width="30" height="30" />
-      <span class="brand-name">Sweet Delight</span>
-    </a>
-    <button class="mobile-close-btn" id="navClose" onclick="closeMobileMenu()" aria-label="Close menu">&times;</button>
-  </div>
-
-  <!-- Navigation Menu -->
-  <div class="mobile-menu-nav">
-    <div class="mobile-dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
-        <span>Home</span>
-        <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </a>
-      <div class="dropdown-submenu">
-        <a href="../index.html" class="active" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
-        <a href="../pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
-      </div>
-    </div>
-
-    <a href="../pages/about.html" onclick="closeMobileMenu()">About</a>
-
-    <div class="mobile-dropdown">
-      <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
-        <span>All Cakes</span>
-        <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </a>
-      <div class="dropdown-submenu">
-        <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
-        <a href="../pages/wedding.html" onclick="closeMobileMenu()">Wedding Cakes</a>
-        <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
-        <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
-      </div>
-    </div>
-
-    <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
-    <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
-    <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
-  </div>
-
-  <!-- Sidebar Footer -->
-  <div class="mobile-menu-footer">
-    <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
-  </div>
+    <!-- Sidebar Header -->
+    <div class="mobile-menu-header">
+  <a href="../index.html" class="mobile-logo">
+    <img src="../assets/images/sweetdelight-icon.svg" alt="SweetDelight Logo" class="logo-icon-img" width="28" height="28" />
+    <span class="brand-name">Sweet Delight</span>
+  </a>
+  <button type="button" class="mobile-close-btn" id="navClose" aria-label="Close menu">&times;</button>
 </div>
+
+    <!-- Navigation Menu -->
+    <div class="mobile-menu-nav">
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>Home</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../index.html" onclick="closeMobileMenu()">Home 1 (Classic Patisserie)</a>
+          <a href="../pages/home2.html" onclick="closeMobileMenu()">Home 2 (Artisan Studio)</a>
+        </div>
+      </div>
+
+      <a href="../pages/about.html" class="active" onclick="closeMobileMenu()">About</a>
+
+      <div class="mobile-dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle" onclick="toggleDropdown(this)">
+          <span>All Cakes</span>
+          <svg class="dropdown-chevron" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="dropdown-submenu">
+          <a href="../pages/cakes.html" onclick="closeMobileMenu()">All Cakes Collection</a>
+          <a href="../pages/wedding.html" onclick="closeMobileMenu()">Wedding Cakes</a>
+          <a href="../pages/custom.html" onclick="closeMobileMenu()">Custom 3D Designs</a>
+          <a href="../pages/specials.html" onclick="closeMobileMenu()">Chef's Specials</a>
+        </div>
+      </div>
+
+      <a href="../pages/services.html" onclick="closeMobileMenu()">Services</a>
+      <a href="../pages/gallery.html" onclick="closeMobileMenu()">Gallery</a>
+      <a href="../pages/contact.html" onclick="closeMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Sidebar Footer -->
+    <div class="mobile-menu-footer">
+      <a href="../pages/booking.html" class="mobile-cta" onclick="closeMobileMenu()">Order Now</a>
+    </div>
+  </div>
 
     <!-- ===================== HERO ===================== -->
   <section class="hero">
@@ -403,7 +403,7 @@
         </a>
         
         <!-- Button 2: Book Consultation -->
-        <a href="../pages/custom.html" class="custom-hover-btn" style="background: var(--bg-card, #ffffff); color: var(--text-dark, #1b2e3c) !important; border: 1.5px solid var(--border-color, rgba(255, 116, 149, 0.4)); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; display: inline-block;">
+        <a href="../pages/custom.html" class="custom-hover-btn" style="background: var(--bg-card, #ffffff); color: var(--text-dark, #f79eeb) !important; border: 1.5px solid var(--border-color, rgba(255, 116, 149, 0.4)); padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 15px; display: inline-block;">
           Book Consultation
         </a>
       </div>
